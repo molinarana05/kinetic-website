@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 32" width="140" height="32">
+  <rect width="140" height="32" fill="none"/>
+  <!-- HighRadius in their brand teal/dark -->
+  <text x="0" y="22" font-family="Arial, sans-serif" font-weight="700" font-size="15" fill="#0A2540" letter-spacing="-0.3">High<tspan fill="#00B4D8">Radius</tspan></text>
+</svg>

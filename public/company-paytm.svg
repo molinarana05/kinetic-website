@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 32" width="120" height="32">
+  <rect width="120" height="32" fill="none"/>
+  <!-- Paytm wordmark in brand blue -->
+  <text x="0" y="24" font-family="Arial, sans-serif" font-weight="900" font-size="22" fill="#002970" letter-spacing="-0.5">Pa</text>
+  <text x="28" y="24" font-family="Arial, sans-serif" font-weight="900" font-size="22" fill="#00BAF2">ytm</text>
+</svg>
