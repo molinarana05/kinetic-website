@@ -474,6 +474,103 @@ export default function HomeClient() {
                 <ServicesDesktopInline />
             </div>
 
+            {/* How It Works */}
+            <section id="how-it-works" className="py-16 md:py-24 bg-[#0a0118] relative z-10 border-y border-white/5">
+                <div className="container mx-auto px-6 md:px-4">
+                    <div className="text-center mb-12 md:mb-20">
+                        <motion.h2
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="text-5xl md:text-6xl font-[900] mb-4 tracking-tight text-white uppercase"
+                        >
+                            HOW IT WORKS
+                        </motion.h2>
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.1 }}
+                            className="text-[3vw] md:text-[18px] font-[900] text-[#CCFF00] uppercase tracking-[0.1em] md:tracking-[0.2em]"
+                        >
+                            ENGINEERED FOR SPEED. OPTIMIZED FOR REVENUE.
+                        </motion.p>
+                    </div>
+
+                    <div className="grid md:grid-cols-3 gap-8 relative items-stretch">
+                        {/* Connector Line - Animated fade-in with better visibility */}
+                        <motion.div
+                            initial={{ opacity: 0, scaleX: 0 }}
+                            whileInView={{ opacity: 0.6, scaleX: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.5, duration: 1 }}
+                            className="absolute top-[60px] left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-transparent via-neon to-transparent hidden md:block origin-left z-0"
+                        />
+                        {/* Flow Arrows */}
+                        <div className="absolute top-[52px] left-0 right-0 hidden md:flex justify-around pointer-events-none z-0 px-[20%]">
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 0.4 }}
+                                transition={{ delay: 1.2 }}
+                                className="text-neon text-xl font-thin select-none"
+                            >→</motion.div>
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 0.4 }}
+                                transition={{ delay: 1.6 }}
+                                className="text-neon text-xl font-thin select-none"
+                            >→</motion.div>
+                        </div>
+
+                        {[
+                            {
+                                title: "THE DOWNLOAD",
+                                tagLine: "No scripts. You talk, I extract.",
+                                context: "One 60-min deep-dive call per month.",
+                                get: <>Research-backed list of buyer questions<br />(prioritized)</>
+                            },
+                            {
+                                title: "THE ENGINE",
+                                tagLine: "20+ assets from your words.",
+                                context: "LinkedIn posts, Newsletters, and Articles that make you the obvious choice.",
+                                get: "Ready-to-publish posts, pages, and templates"
+                            },
+                            {
+                                title: "THE GROWTH",
+                                tagLine: "Authority without typing.",
+                                context: "You build authority and pipeline while you sleep.",
+                                get: "Living proof ledger of wins, learnings, and next actions"
+                            }
+                        ].map((step, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 40, x: -20 }}
+                                whileInView={{ opacity: 1, y: 0, x: 0 }}
+                                viewport={{ once: true, margin: "-100px" }}
+                                transition={{ delay: i * 0.4, duration: 0.8, ease: "easeOut" }}
+                                className="relative z-10 flex"
+                            >
+                                <Card className="group flex-1 flex flex-col items-center text-center p-10 border-white/5 bg-black/40 hover:bg-black/60 shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(189,0,255,0.1)] hover:border-neon/30">
+                                    {/* Numbered Circle - Pulse on hover */}
+                                    <div className="w-14 h-14 rounded-full bg-[#CCFF00] text-black flex items-center justify-center mb-6 font-bold text-xl neon-button-shadow group-hover:animate-pulse-glow transition-all duration-300">
+                                        {i + 1}
+                                    </div>
+
+                                    <h3 className="text-2xl font-black mb-4 tracking-widest text-white">{step.title}</h3>
+
+                                    <div className="space-y-4">
+                                        <p className="text-white text-xl font-bold leading-tight">{step.tagLine}</p>
+                                        <p className="text-gray-400 text-sm leading-relaxed font-light">
+                                            {step.context}
+                                        </p>
+                                    </div>
+                                </Card>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* Noise & Signal — THE FIXED SECTION */}
             <NoiseAndSignal />
 

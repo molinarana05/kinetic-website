@@ -2,6 +2,7 @@
 import { Button } from "./ui/Button";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { HeroHeadline } from "./HeroHeadline";
 
 export const HeroDesktop = () => {
     return (
@@ -16,22 +17,7 @@ export const HeroDesktop = () => {
             <div className="relative z-10 container mx-auto px-4">
                 <div className="max-w-6xl">
                     {/* Cluster 1: Message (Headline) */}
-                    <h1 className="text-6xl md:text-8xl lg:text-[90px] font-black tracking-tighter mb-8 leading-none text-white uppercase">
-                        <div className="flex flex-col gap-0 items-start">
-                            {/* Line 1 */}
-                            <div className="flex items-center gap-3 animate-fade-in-up" style={{ animationDelay: "0ms" }}>
-                                <span className="text-[#CCFF00]">AI + HUMAN</span>
-                            </div>
-                            {/* Line 2 */}
-                            <span className="block animate-fade-in-up text-white" style={{ animationDelay: "100ms" }}>
-                                CONTENT AT
-                            </span>
-                            {/* Line 3 */}
-                            <span className="block animate-fade-in-up text-white" style={{ animationDelay: "200ms" }}>
-                                BUSINESS SPEED
-                            </span>
-                        </div>
-                    </h1>
+                    <HeroHeadline />
 
                     {/* Cluster 2: Support (Promise) */}
                     <div className="flex flex-col items-start gap-6 mb-12 animate-fade-in-up" style={{ animationDelay: "300ms" }}>

@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "./ui/Button";
 import { ArrowRight } from "lucide-react";
+import { HeroHeadline } from "./HeroHeadline";
 
 export const Hero = () => {
     return (
@@ -20,21 +21,8 @@ export const Hero = () => {
             <div className="relative z-10 container mx-auto px-6 md:px-16"> {/* Increased side padding for mobile */}
                 <div className="max-w-6xl">
                     {/* Cluster 1: Message (Headline) */}
-                    <div className="flex flex-col gap-2 mb-4 md:mb-8 font-bold tracking-tighter text-white leading-[1.1] md:leading-[0.9]">
-                        {/* Line 1 */}
-                        <h1 className="flex items-center gap-2 md:gap-4 animate-fade-in-up" style={{ animationDelay: "0ms" }}>
-                            <span className="text-[8vw] md:text-7xl lg:text-[85px] text-[#CCFF00]">AI + HUMAN</span>
-                        </h1>
-
-                        {/* Line 2 */}
-                        <span className="block animate-fade-in-up text-[8vw] md:text-7xl lg:text-[85px] text-white" style={{ animationDelay: "100ms" }}>
-                            CONTENT AT
-                        </span>
-
-                        {/* Line 3 */}
-                        <span className="block animate-fade-in-up text-[8vw] md:text-7xl lg:text-[85px] text-white" style={{ animationDelay: "200ms" }}>
-                            BUSINESS SPEED
-                        </span>
+                    <div className="mb-4 md:mb-8 text-white">
+                        <HeroHeadline />
                     </div>
 
                     {/* Cluster 2: Support (Promise) */}
