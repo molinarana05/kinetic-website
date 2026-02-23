@@ -1,233 +1,189 @@
+import { getSortedPostsData } from "../../lib/markdown";
 import Link from "next/link";
-import Image from "next/image";
 import { NavbarDesktop } from "../components/NavbarDesktop";
 import { Navbar } from "../components/Navbar";
-import { getSortedPostsData } from "../../lib/markdown";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Insights | Moxie Digital",
-    description: "Marketing strategy, B2B growth, and founder-led brand building from Molina Rana.",
+    title: "The Moxie Journal | B2B Content Strategies",
+    description: "Insights, teardowns, and frameworks for B2B founders building compounding content systems.",
     alternates: { canonical: "https://www.moxie-digital.com/blog" },
 };
 
-// Curated, free Unsplash images matched to each article by slug
-// All via images.unsplash.com — no API key needed, attribution via alt text
-const COVER_IMAGES: Record<string, { url: string; credit: string }> = {
-    "founder-led-marketing-saas-2026": {
-        url: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=900&q=80",
-        credit: "Campaign Creators on Unsplash",
-    },
-    "b2b-founders-linkedin-content": {
-        url: "https://images.unsplash.com/photo-1611944212129-29977ae1398c?w=900&q=80",
-        credit: "LinkedIn via Unsplash",
-    },
-    "linkedin-growth-strategy-b2b": {
-        url: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=900&q=80",
-        credit: "John Schnobrich on Unsplash",
-    },
-    "agency-vs-in-house-vs-founder-led": {
-        url: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&q=80",
-        credit: "Jason Goodman on Unsplash",
-    },
-    "b2b-branding-agency-vs-founder": {
-        url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&q=80",
-        credit: "Jake Nackos on Unsplash",
-    },
-    "brand-awareness-campaign-guide": {
-        url: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=900&q=80",
-        credit: "Melanie Deziel on Unsplash",
-    },
-    "personal-branding-agency-guide": {
-        url: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=900&q=80",
-        credit: "LinkedIn Sales Solutions on Unsplash",
-    },
-    "personal-branding-for-executives": {
-        url: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&q=80",
-        credit: "Annie Spratt on Unsplash",
-    },
-    "top-marketing-agencies-comparison": {
-        url: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80",
-        credit: "Campaign Creators on Unsplash",
-    },
-    "what-does-a-branding-consultant-do": {
-        url: "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=900&q=80",
-        credit: "You X Ventures on Unsplash",
-    },
-    "what-is-brand-strategy": {
-        url: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=900&q=80",
-        credit: "Balázs Kétyi on Unsplash",
-    },
-};
+export default function BlogIndex() {
+    const posts = getSortedPostsData() as any[];
 
-const FALLBACK_IMG = "https://images.unsplash.com/photo-1552581234-26160f608093?w=900&q=80";
+    // Safety check since we might not have enough posts to fill the exact NYT grid perfectly
+    const leadPost = posts[0];
+    const leftColPosts = posts.slice(1, 3);
+    const rightColPosts = posts.slice(3, 7);
+    const remainingPosts = posts.slice(7);
 
-function formatDate(dateStr: string) {
-    const d = new Date(dateStr);
-    return d.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
-}
-
-export default function BlogPage() {
-    const posts = getSortedPostsData();
-    if (!posts.length) {
-        return (
-            <main className="min-h-screen bg-[#0a0118] text-white flex items-center justify-center">
-                <div className="md:hidden"><Navbar /></div>
-                <NavbarDesktop />
-                <p className="text-gray-600 uppercase tracking-widest text-xs">Coming Soon</p>
-            </main>
-        );
-    }
-
-    const [hero, ...rest] = posts;
-    const heroImg = COVER_IMAGES[hero.id]?.url ?? FALLBACK_IMG;
+    // Current date for the dateline
+    const today = new Date().toLocaleDateString("en-US", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+    });
 
     return (
-        <main className="min-h-screen bg-[#0a0118] text-white selection:bg-[#CCFF00]/30">
-            <div className="md:hidden"><Navbar /></div>
+        <main className="min-h-screen bg-[#0a0118] text-white selection:bg-[#CCFF00]/30 overflow-x-hidden">
+            <div className="md:hidden">
+                <Navbar />
+            </div>
             <NavbarDesktop />
 
-            {/* ── MASTHEAD ─────────────────────────────────────────────────── */}
-            <div className="pt-28 pb-6 px-6 max-w-7xl mx-auto border-b border-white/10">
-                <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-                    <div>
-                        <span className="text-[#CCFF00] font-mono text-xs uppercase tracking-[0.3em] mb-2 block">
-                            Moxie Digital · Insights
-                        </span>
-                        <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-none uppercase text-white">
-                            The&nbsp;<span className="text-[#CCFF00]">Feed</span>
-                        </h1>
+            {/* NYT Style Wrapper */}
+            <div className="pt-28 pb-16 px-4 md:px-8 max-w-[1400px] mx-auto">
+
+                {/* Masthead */}
+                <div className="border-b-4 border-white pb-6 mb-8 text-center relative">
+                    <div className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-gray-400 mb-6">{today}</div>
+
+                    <h1 className="text-6xl md:text-8xl lg:text-[120px] font-serif font-black tracking-tighter leading-none text-white mb-6 transform scale-y-110">
+                        The Moxie Journal
+                    </h1>
+
+                    <div className="flex flex-col md:flex-row justify-between items-center border-t border-white/20 border-b border-white/20 py-3 mt-8 gap-4 md:gap-0">
+                        <div className="text-xs font-mono uppercase tracking-widest text-gray-300">New Delhi / Global</div>
+                        <div className="text-xs font-mono uppercase tracking-[0.3em] font-bold text-[#CCFF00]">AI + Human Content Strategy</div>
+                        <div className="text-xs font-mono uppercase tracking-widest text-gray-300">Insights & Frameworks</div>
                     </div>
-                    <p className="text-gray-500 text-sm max-w-xs leading-relaxed italic">
-                        Growth, amplification & founder-led brand strategy — from the trenches.
-                    </p>
                 </div>
-            </div>
 
-            <div className="max-w-7xl mx-auto px-6 py-10">
+                {/* Editorial Grid - Above the fold */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 border-b border-white/20 pb-16 mb-16">
 
-                {/* ── HERO FEATURE ──────────────────────────────────────────── */}
-                <Link href={`/blog/${hero.id}`} className="group block mb-16">
-                    <div className="grid md:grid-cols-2 gap-0 rounded-2xl overflow-hidden border border-white/10 hover:border-[#CCFF00]/40 transition-colors duration-300">
-                        {/* Image */}
-                        <div className="relative h-64 md:h-[420px] overflow-hidden">
-                            <Image
-                                src={heroImg}
-                                alt={`${hero.title} - B2B Content Marketing and Founder-Led Growth Insights by Moxie Digital`}
-                                fill
-                                className="object-cover group-hover:scale-105 transition-transform duration-700"
-                                sizes="(max-width: 768px) 100vw, 50vw"
-                                unoptimized
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent" />
-                        </div>
-                        {/* Content */}
-                        <div className="bg-black/60 p-8 md:p-12 flex flex-col justify-center">
-                            {hero.tags?.[0] && (
-                                <span className="text-[#CCFF00] font-mono text-xs uppercase tracking-widest mb-4 inline-block">
-                                    {hero.tags[0]}
-                                </span>
-                            )}
-                            <h2 className="text-3xl md:text-4xl font-black tracking-tighter leading-tight mb-4 group-hover:text-[#CCFF00] transition-colors duration-300">
-                                {hero.title}
-                            </h2>
-                            {hero.description && (
-                                <p className="text-gray-400 text-base leading-relaxed mb-6">
-                                    {hero.description}
+                    {/* Left Column (2 Stories) */}
+                    <div className="lg:col-span-3 flex flex-col gap-10 border-b lg:border-b-0 lg:border-r border-white/20 pb-10 lg:pb-0 lg:pr-8">
+                        {leftColPosts.map((post) => (
+                            <Link href={`/blog/${post.id}`} key={post.id} className="group block overflow-hidden">
+                                <h2 className="text-2xl lg:text-3xl font-serif font-bold text-white leading-tight mb-3 group-hover:text-[#CCFF00] transition-colors">
+                                    {post.title}
+                                </h2>
+                                <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                                    {post.description}
                                 </p>
-                            )}
-                            <div className="flex items-center justify-between">
-                                <span className="text-gray-600 font-mono text-xs">{formatDate(hero.date)}</span>
-                                <span className="text-[#CCFF00] text-sm font-bold group-hover:translate-x-1 transition-transform duration-200">
-                                    Read →
-                                </span>
-                            </div>
-                        </div>
+                                <div className="flex items-center gap-3 text-xs uppercase tracking-widest font-mono text-gray-500">
+                                    <span>{post.date}</span>
+                                    <span>·</span>
+                                    <span className="text-[#CCFF00]">{post.readingTime}</span>
+                                </div>
+                            </Link>
+                        ))}
                     </div>
-                </Link>
 
-                {/* ── SECTION DIVIDER ───────────────────────────────────────── */}
-                <div className="flex items-center gap-4 mb-10">
-                    <div className="w-8 h-0.5 bg-[#CCFF00]" />
-                    <span className="text-xs font-mono uppercase tracking-[0.3em] text-gray-500">Latest Articles</span>
-                    <div className="flex-1 h-px bg-white/5" />
-                </div>
-
-                {/* ── ARTICLE GRID ──────────────────────────────────────────── */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {rest.map((post) => {
-                        const img = COVER_IMAGES[post.id]?.url ?? FALLBACK_IMG;
-                        return (
-                            <Link
-                                key={post.id}
-                                href={`/blog/${post.id}`}
-                                className="group block"
-                            >
-                                <article className="h-full flex flex-col rounded-xl overflow-hidden border border-white/10 bg-black/30 hover:border-[#CCFF00]/40 transition-colors duration-300 hover:-translate-y-1 transition-transform">
-                                    {/* Card image */}
-                                    <div className="relative h-48 overflow-hidden flex-shrink-0">
-                                        <Image
-                                            src={img}
-                                            alt={`${post.title} - B2B Marketing Article by Moxie Digital`}
-                                            fill
-                                            className="object-cover group-hover:scale-105 transition-transform duration-700"
-                                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                                            unoptimized
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                                        {/* Tag chip on image */}
-                                        {post.tags?.[0] && (
-                                            <span className="absolute top-3 left-3 bg-[#CCFF00] text-black text-[10px] font-black uppercase tracking-widest px-2 py-1 rounded">
-                                                {post.tags[0]}
-                                            </span>
-                                        )}
-                                    </div>
-                                    {/* Card content */}
-                                    <div className="flex flex-col flex-1 p-5">
-                                        <span className="text-gray-600 font-mono text-[10px] mb-2 block">
-                                            {formatDate(post.date)}
+                    {/* Center Lead Story */}
+                    <div className="lg:col-span-6 flex flex-col border-b lg:border-b-0 lg:border-r border-white/20 pb-10 lg:pb-0 lg:pr-8">
+                        {leadPost && (
+                            <Link href={`/blog/${leadPost.id}`} className="group block">
+                                <div className="mb-6 flex justify-center">
+                                    <span className="text-xs font-black uppercase tracking-[0.2em] bg-white text-black px-3 py-1">
+                                        Cover Story
+                                    </span>
+                                </div>
+                                <h2 className="text-4xl lg:text-6xl font-serif font-black text-center text-white leading-[1.1] mb-6 group-hover:text-[#CCFF00] transition-colors">
+                                    {leadPost.title}
+                                </h2>
+                                <div className="flex justify-center gap-4 mb-8">
+                                    {leadPost.tags?.slice(0, 2).map((tag) => (
+                                        <span key={tag} className="text-xs font-mono uppercase tracking-widest border border-white/30 px-2 py-1 text-gray-300">
+                                            {tag}
                                         </span>
-                                        <h3 className="text-lg font-black tracking-tight leading-snug mb-3 group-hover:text-[#CCFF00] transition-colors duration-300 line-clamp-3">
-                                            {post.title}
-                                        </h3>
-                                        {post.description && (
-                                            <p className="text-gray-500 text-xs leading-relaxed line-clamp-2 flex-1">
-                                                {post.description}
-                                            </p>
-                                        )}
-                                        <div className="mt-4 pt-4 border-t border-white/5 flex items-center justify-between">
-                                            <div className="flex gap-1 flex-wrap">
-                                                {post.tags?.slice(1, 2).map((t) => (
-                                                    <span key={t} className="text-[9px] text-gray-600 uppercase tracking-wider border border-white/10 px-2 py-0.5 rounded-full">
-                                                        {t}
-                                                    </span>
-                                                ))}
-                                            </div>
-                                            <span className="text-[#CCFF00] text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                                                Read →
+                                    ))}
+                                </div>
+                                <p className="text-xl lg:text-2xl text-gray-300 font-serif leading-relaxed text-center mb-8 px-4 lg:px-12">
+                                    {leadPost.description}
+                                </p>
+                                <div className="flex text-center justify-center items-center gap-4 text-sm uppercase tracking-widest font-mono text-gray-400 border-t border-b border-white/10 py-4">
+                                    <span>By Molina Rana</span>
+                                    <span>|</span>
+                                    <span>{leadPost.date}</span>
+                                    <span>|</span>
+                                    <span className="text-[#CCFF00]">{leadPost.readingTime}</span>
+                                </div>
+                            </Link>
+                        )}
+                    </div>
+
+                    {/* Right Column (Latest/Trending) */}
+                    <div className="lg:col-span-3 flex flex-col">
+                        <h3 className="text-xs font-black uppercase tracking-[0.2em] border-b-2 border-white/40 pb-3 mb-6 flex items-center justify-between">
+                            <span>Latest Additions</span>
+                            <span className="text-[#CCFF00]">Trending</span>
+                        </h3>
+                        <div className="flex flex-col gap-6">
+                            {rightColPosts.map((post, idx) => (
+                                <Link href={`/blog/${post.id}`} key={post.id} className="group block border-b border-white/10 pb-6 last:border-0 hover:bg-white/5 p-2 -mx-2 rounded transition-colors">
+                                    <div className="flex gap-4">
+                                        <span className="text-4xl font-serif font-bold text-white/20 group-hover:text-[#CCFF00]/50 transition-colors">
+                                            {idx + 1}
+                                        </span>
+                                        <div>
+                                            <h4 className="text-base font-bold text-white group-hover:text-[#CCFF00] leading-tight mb-2 transition-colors">
+                                                {post.title}
+                                            </h4>
+                                            <span className="text-xs font-mono text-gray-500 uppercase tracking-widest">
+                                                {post.date}
                                             </span>
                                         </div>
                                     </div>
-                                </article>
-                            </Link>
-                        );
-                    })}
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
                 </div>
 
-                {/* ── BOTTOM CTA ────────────────────────────────────────────── */}
-                <div className="mt-20 pt-12 border-t border-white/5 text-center">
-                    <p className="text-gray-500 text-sm mb-6">
-                        Want these insights in your inbox?
+                {/* Second Section: The Archive / More Stories */}
+                {remainingPosts.length > 0 && (
+                    <div className="pt-4">
+                        <div className="flex items-center justify-between border-b-2 border-white/40 pb-4 mb-10">
+                            <h3 className="text-2xl font-serif font-black uppercase tracking-widest">More from the Archive</h3>
+                            <span className="text-xs font-mono text-gray-500 uppercase tracking-widest hidden md:block">
+                                Strategies · Case Studies · Frameworks
+                            </span>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+                            {remainingPosts.map((post) => (
+                                <Link href={`/blog/${post.id}`} key={post.id} className="group block border-t border-white/20 pt-6">
+                                    <div className="mb-4">
+                                        <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#CCFF00]">
+                                            {post.tags?.[0] || 'Insight'}
+                                        </span>
+                                    </div>
+                                    <h4 className="text-xl font-serif font-bold text-white leading-snug mb-3 group-hover:text-[#CCFF00] transition-colors">
+                                        {post.title}
+                                    </h4>
+                                    <p className="text-sm text-gray-400 line-clamp-3 mb-4 leading-relaxed font-serif">
+                                        {post.description}
+                                    </p>
+                                    <div className="text-xs font-mono text-gray-500 uppercase tracking-widest">
+                                        {post.date}
+                                    </div>
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
+                {/* Footer of Blog Index */}
+                <div className="mt-24 pt-12 border-t border-white/20 text-center">
+                    <h3 className="text-3xl font-serif font-black mb-6">Build your inbound engine.</h3>
+                    <p className="text-gray-400 mb-8 max-w-lg mx-auto">
+                        Join the founders receiving weekly insights on AEO, GEO, and zero-click search strategies.
                     </p>
                     <a
-                        href="https://www.linkedin.com/in/molina-rana/"
+                        href="https://moxiedigital.beehiiv.com/subscribe"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block bg-[#CCFF00] text-black font-black uppercase tracking-widest px-8 py-3 rounded text-sm hover:bg-white hover:-translate-y-0.5 transition-all"
+                        className="inline-block bg-[#CCFF00] text-black font-black uppercase tracking-widest px-8 py-4 text-sm hover:bg-white transition-colors rounded-sm"
                     >
-                        Follow on LinkedIn →
+                        Subscribe to the Newsletter
                     </a>
                 </div>
+
             </div>
         </main>
     );

@@ -50,6 +50,21 @@ export default function HomeClient() {
                 <CredibilityStrip />
             </div>
 
+            {/* AI + Human Philosophy Strip */}
+            <section className="py-12 md:py-16 bg-[#CCFF00] text-black relative z-10 overflow-hidden transform -skew-y-1 my-16 md:my-24 shadow-[0_0_50px_rgba(204,255,0,0.15)]">
+                <div className="transform skew-y-1">
+                    <div className="container mx-auto px-6 max-w-5xl text-center">
+                        <span className="font-mono text-xs uppercase tracking-[0.3em] mb-3 block opacity-80">Our Approach</span>
+                        <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-6">
+                            The AI + Human Philosophy
+                        </h2>
+                        <p className="text-lg md:text-2xl font-bold max-w-4xl mx-auto leading-snug">
+                            AI creates the speed. Humans bring the strategy, taste, and truth. We don&apos;t replace expertise with automation; we arm senior strategists with autonomous engines to build compounding pipeline.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
             <div className="relative z-10 md:hidden">
                 <Services />
             </div>
@@ -488,28 +503,28 @@ export default function HomeClient() {
                     <div className="space-y-[40px]">
                         {[
                             {
-                                q: "What is a revenue-led content strategy for B2B founders?",
-                                a: "Most agencies focus on vanity metrics like likes and impressions. A revenue-led strategy focuses on pipeline. I build a system that identifies the specific pain points of your ideal customers and addresses them with high-authority content. This transforms your LinkedIn profile from a social feed into a lead generation engine that attracts sales-ready prospects."
+                                q: "What is Moxie Digital?",
+                                a: "Moxie Digital is a full-stack content studio powered by AI precision and senior human strategy. We build eight distinct content engines into a single compounding system that drives B2B pipeline."
                             },
                             {
-                                q: "How does a founder-led brand engine differ from a standard digital agency?",
-                                a: "Agencies often assign junior account managers to your brand. They prioritize volume over depth. As a senior operator, I install a high-leverage system that I run personally. I use the same frameworks I built for market leaders like Paytm and Bajaj. You get senior-level strategy and execution without the agency overhead or the lack of business context."
+                                q: "What is your AI + Human approach?",
+                                a: "AI creates the speed, and humans bring the strategy, taste, and truth. We use autonomous AI agents to research, draft, and optimize at scale, while senior strategists provide the editorial judgment and industry expertise."
                             },
                             {
-                                q: "What is the time commitment required from a busy founder?",
-                                a: "The goal of this system is to buy back your time. We use a high-leverage \"Extraction Session\" once a month. I spend sixty minutes extracting your unique insights and industry expertise. My team and I then turn that single hour into a full month of strategic content. You stay in your zone of genius while the engine runs in the background."
+                                q: "What services do you offer?",
+                                a: "We offer eight core engines: Content Repurposing, SEO, Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), LinkedIn Branding, Newsletters, Email Marketing, and custom AI Agents."
+                            },
+                            {
+                                q: "What is Answer Engine Optimization (AEO)?",
+                                a: "AEO is the practice of optimizing your website and content so that AI-powered answer engines (like Perplexity, ChatGPT, and Google AI Overviews) cite your brand as a trusted source when users ask relevant questions."
+                            },
+                            {
+                                q: "What is the time commitment required from me?",
+                                a: "For our flagship Content Repurposing engine, it is just one 60-minute interview per month. We extract your insights and turn that single hour into 30 days of strategic content across every channel."
                             },
                             {
                                 q: "Can this content engine actually drive measurable B2B pipeline?",
-                                a: "Yes. We do not post for the sake of posting. Every piece of content is designed to move a prospect through the buyer’s journey. We target middle-of-the-funnel and bottom-of-the-funnel intent. This ensures that when a lead reaches out, they are already educated on your value and ready for a discovery call."
-                            },
-                            {
-                                q: "Why is a \"Growth Engine\" better than hiring a full-time content manager?",
-                                a: "A full-time hire requires management, benefits, and significant training. Most content managers understand writing but do not understand B2B business strategy. I provide a plug-and-play system that is already proven at scale. You get the output of a high-end marketing department for a fraction of the cost of a senior full-time hire."
-                            },
-                            {
-                                q: "How long does it take to see results from a founder growth system?",
-                                a: "Authority building is a compounding game. You will typically see a shift in the quality of your network and inbound engagement within the first thirty days. By day ninety, the engine is fully optimized. At this stage, the content begins to consistently drive inbound inquiries and positions you as the go-to authority in your specific niche."
+                                a: "Yes. We don't post for the sake of engagement. Every piece of content—whether it is an SEO article or an AI agent output—is designed to move a prospect through the buyer's journey toward a discovery call."
                             }
                         ].map((item, i) => (
                             <motion.div

@@ -7,11 +7,11 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: {
-        default: "Moxie Digital | One Month of Content in One Hour for Founders",
+        default: "Moxie Digital | Full-Stack Content Studio",
         template: "%s | Moxie Digital"
     },
-    description: "Stop wasting time on content creation. Moxie Digital turns a one-hour interview into 30 days of high-converting B2B LinkedIn content. Scale your brand today.",
-    keywords: ["Founder-Led Marketing", "B2B Growth", "Revenue-First Content Strategy", "B2B SaaS Marketing", "LinkedIn Content System", "GTM Strategy"],
+    description: "A full-stack content studio powered by AI precision and senior human strategy. Eight engines. One system. Compounding pipeline.",
+    keywords: ["AI Content Studio", "B2B Growth", "Content Repurposing", "AEO", "Answer Engine Optimization", "B2B SaaS Marketing", "LinkedIn Content System", "SEO"],
     authors: [{ name: "Molina Rana" }],
     creator: "Moxie Digital",
     publisher: "Moxie Digital",
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
         apple: "/logo.png",
     },
     openGraph: {
-        title: "Moxie Digital | One Month of Content in One Hour for Founders",
-        description: "Stop wasting time on content creation. Moxie Digital turns a one-hour interview into 30 days of high-converting B2B LinkedIn content. Scale your brand today.",
+        title: "Moxie Digital | Full-Stack Content Studio",
+        description: "A full-stack content studio powered by AI precision and senior human strategy. Eight engines. One system. Compounding pipeline.",
         url: "https://www.moxie-digital.com/",
         siteName: "Moxie Digital",
         images: [
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
                 url: "https://www.moxie-digital.com/og-default.png",
                 width: 1200,
                 height: 630,
-                alt: "Moxie Digital - Founder-Led Marketing",
+                alt: "Moxie Digital - Full-Stack Content Studio",
             },
         ],
         locale: "en_US",
@@ -43,8 +43,8 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Moxie Digital | One Month of Content in One Hour for Founders",
-        description: "Stop wasting time on content creation. Moxie Digital turns a one-hour interview into 30 days of high-converting B2B LinkedIn content. Scale your brand today.",
+        title: "Moxie Digital | Full-Stack Content Studio",
+        description: "A full-stack content studio powered by AI precision and senior human strategy. Eight engines. One system. Compounding pipeline.",
         creator: "@MoxieDigital",
         images: ["https://www.moxie-digital.com/og-default.png"],
     },
@@ -73,6 +73,7 @@ const MOXIE_SITE_JSONLD = {
             "@type": "Organization",
             "@id": "https://www.moxie-digital.com/#organization",
             "name": "Moxie Digital",
+            "description": "Moxie Digital is a full-stack content studio founded by Molina Rana, powered by AI precision and senior human strategy. We build eight distinct content engines including AEO, GEO, and Content Repurposing for B2B pipeline growth.",
             "url": "https://www.moxie-digital.com/",
             "logo": {
                 "@type": "ImageObject",
@@ -113,26 +114,26 @@ const MOXIE_SITE_JSONLD = {
             "@type": "WebPage",
             "@id": "https://www.moxie-digital.com/#homepage",
             "url": "https://www.moxie-digital.com/",
-            "name": "Moxie Digital | One Month of Content in One Hour for Founders",
+            "name": "Moxie Digital | Full-Stack Content Studio",
             "isPartOf": { "@id": "https://www.moxie-digital.com/#website" },
             "about": { "@id": "https://www.moxie-digital.com/#founder" },
-            "description": "Stop wasting time on content creation. Moxie Digital turns a one-hour interview into 30 days of high-converting B2B LinkedIn content. Scale your brand today."
+            "description": "A full-stack content studio powered by AI precision and senior human strategy. Eight engines. One system. Compounding pipeline."
         },
         {
             "@type": "Service",
-            "@id": "https://www.moxie-digital.com/services/b2b",
-            "name": "B2B Systems",
+            "@id": "https://www.moxie-digital.com/services/content-repurposing",
+            "name": "Content Repurposing",
             "provider": { "@id": "https://www.moxie-digital.com/#organization" },
-            "serviceType": "Marketing Automation & Growth Systems",
-            "description": "Complex sales cycles simplified into predictable growth engines."
+            "serviceType": "Content Marketing",
+            "description": "Turn one interview into 30 days of content across LinkedIn, newsletters, blogs, and more."
         },
         {
             "@type": "Service",
-            "@id": "https://www.moxie-digital.com/services/b2c",
-            "name": "B2C Systems",
+            "@id": "https://www.moxie-digital.com/services/aeo",
+            "name": "Answer Engine Optimization",
             "provider": { "@id": "https://www.moxie-digital.com/#organization" },
-            "serviceType": "Consumer Acquisition & Brand Amplification",
-            "description": "Customer acquisition scaled through resonant brand storytelling."
+            "serviceType": "AI Search Optimization",
+            "description": "Get your brand cited by Perplexity, ChatGPT, and Google AI Overviews."
         }
     ]
 };

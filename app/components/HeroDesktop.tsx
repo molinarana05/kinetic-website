@@ -16,22 +16,19 @@ export const HeroDesktop = () => {
             <div className="relative z-10 container mx-auto px-4">
                 <div className="max-w-6xl">
                     {/* Cluster 1: Message (Headline) */}
-                    <h1 className="text-6xl md:text-8xl lg:text-[96px] font-black tracking-tighter mb-8 leading-none text-white uppercase">
+                    <h1 className="text-6xl md:text-8xl lg:text-[90px] font-black tracking-tighter mb-8 leading-none text-white uppercase">
                         <div className="flex flex-col gap-0 items-start">
-                            {/* Line 1: Text + Arrow */}
-                            <div className="flex items-center gap-4 animate-fade-in-up" style={{ animationDelay: "0ms" }}>
-                                <span>1 HOUR OF TALKING</span>
-                                {/* Arrow Icon - At the end of Line 1 */}
-                                <div className="relative w-[0.8em] h-[0.8em] inline-flex items-center justify-center">
-                                    <div className="text-[#CCFF00] animate-flip drop-shadow-[0_0_20px_rgba(204,255,0,1)] filter brightness-110">
-                                        <ArrowRight size="100%" strokeWidth={4} />
-                                    </div>
-                                </div>
+                            {/* Line 1 */}
+                            <div className="flex items-center gap-3 animate-fade-in-up" style={{ animationDelay: "0ms" }}>
+                                <span className="text-[#CCFF00]">AI + HUMAN</span>
                             </div>
-
-                            {/* Line 2: Strictly Left Aligned */}
-                            <span className="block animate-fade-in-up text-[#CCFF00]" style={{ animationDelay: "100ms" }}>
-                                1 MONTH OF CONTENT
+                            {/* Line 2 */}
+                            <span className="block animate-fade-in-up text-white" style={{ animationDelay: "100ms" }}>
+                                CONTENT AT
+                            </span>
+                            {/* Line 3 */}
+                            <span className="block animate-fade-in-up text-white" style={{ animationDelay: "200ms" }}>
+                                BUSINESS SPEED
                             </span>
                         </div>
                     </h1>
@@ -40,9 +37,10 @@ export const HeroDesktop = () => {
                     <div className="flex flex-col items-start gap-6 mb-12 animate-fade-in-up" style={{ animationDelay: "300ms" }}>
                         {/* Promise Line */}
                         <p className="text-xl md:text-2xl text-gray-200 max-w-2xl font-light leading-relaxed">
-                            Stop forcing yourself to write. I interview you once a month, extract your brilliance, and build a <span className="text-[#CCFF00] font-[900]">founder-led brand</span> that generates leads while you sleep.
+                            A full-stack content studio powered by <span className="text-[#CCFF00] font-[900]">AI precision</span> and <span className="text-[#CCFF00] font-[900]">senior human strategy</span>. Eight engines. One system. Compounding pipeline.
                         </p>
                     </div>
+
 
                     {/* Cluster 3: Action (CTA) + Credibility */}
                     <div className="flex flex-col items-start gap-8 opacity-0 animate-fade-in-up" style={{ animationDelay: "500ms", animationFillMode: "forwards" }}>

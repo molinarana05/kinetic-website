@@ -1,152 +1,125 @@
 "use client";
 import { motion } from "framer-motion";
-import { Card } from "./ui/Card";
+import Link from "next/link";
 
 const services = [
     {
-        title: "For B2B teams",
-        target: "SaaS, DevTools, AI infra, consultancies",
-        outcome: "Positioning that sticks; Inbound pipeline that grows",
-        items: ["Positioning & messaging refresh", "LinkedIn & search content engine", "Community & advocacy loops"],
-        timeline: "4–6 weeks",
+        icon: "🔄",
+        title: "Content Repurposing",
+        description: "One interview. 30 touchpoints across every channel.",
+        tag: "FLAGSHIP",
+        href: "/services/content-repurposing",
     },
     {
-        title: "For B2C brands",
-        target: "Beauty, fashion, wellness, creators",
-        outcome: "Stories that resonate; Community that follows",
-        items: ["Story‑driven content direction", "Instagram & influencer loops", "Launch support & retention"],
-        timeline: "6–8 weeks",
+        icon: "🔍",
+        title: "SEO",
+        description: "Pipeline-intent keywords. Organic leads that close.",
+        tag: "ORGANIC",
+        href: "/services/seo",
+    },
+    {
+        icon: "🧠",
+        title: "AEO",
+        description: "Be the answer AI tools cite. Zero-click authority.",
+        tag: "AEO",
+        href: "/services/aeo",
+    },
+    {
+        icon: "⚡",
+        title: "GEO",
+        description: "Get cited inside AI-generated answers. Own the category.",
+        tag: "GEO",
+        href: "/services/geo",
+    },
+    {
+        icon: "💼",
+        title: "LinkedIn Branding",
+        description: "Personal & company branding that attracts inbound.",
+        tag: "SOCIAL",
+        href: "/services/linkedin-branding",
+    },
+    {
+        icon: "📮",
+        title: "Newsletters",
+        description: "Own your audience forever. Community that buys.",
+        tag: "COMMUNITY",
+        href: "/services/newsletters",
+    },
+    {
+        icon: "📧",
+        title: "Email Marketing",
+        description: "Behavior-triggered sequences that move prospects to meetings.",
+        tag: "PIPELINE",
+        href: "/services/email-marketing",
+    },
+    {
+        icon: "🤖",
+        title: "AI Agents",
+        description: "AI speed. Human intelligence. Content at scale.",
+        tag: "AI+HUMAN",
+        href: "/services/ai-agents",
     },
 ];
 
 export const Services = () => {
     return (
-        <section id="services" className="py-16 md:py-32 relative">
-            <div className="container mx-auto px-6 md:px-4">
-                {/* Heading & Subheading */}
-                <div className="text-center mb-12 md:mb-20">
+        <section id="services" className="py-16 relative z-10 md:hidden">
+            <div className="container mx-auto px-6">
+                <div className="text-center mb-12">
+                    <span className="text-[#CCFF00] font-mono text-xs uppercase tracking-[0.3em] mb-3 block">
+                        Full-Stack Content Studio
+                    </span>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-5xl md:text-6xl font-[900] mb-4 tracking-tight text-white uppercase"
+                        className="text-5xl font-[900] mb-3 tracking-tight text-white uppercase"
                     >
                         WHAT WE DO
                     </motion.h2>
-
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-[3vw] md:text-[18px] font-[900] text-[#CCFF00] uppercase tracking-[0.1em] md:tracking-[0.2em]"
+                        className="text-[3.5vw] font-[900] text-[#CCFF00] uppercase tracking-[0.1em]"
                     >
-                        TWO TRACKS. SAME OUTCOME. BOOKED BUSINESS.
+                        EIGHT ENGINES. ONE SYSTEM.
                     </motion.p>
                 </div>
 
-                <motion.div
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    variants={{
-                        hidden: { opacity: 0 },
-                        visible: {
-                            opacity: 1,
-                            transition: { staggerChildren: 0.2 }
-                        }
-                    }}
-                    className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto"
-                >
-                    {/* B2B Card */}
-                    <motion.div
-                        variants={{
-                            hidden: { opacity: 0, x: -50 },
-                            visible: { opacity: 1, x: 0, transition: { duration: 0.6 } }
-                        }}
-                    >
-                        <Card className="h-full hover:shadow-[0_0_40px_rgba(204,255,0,0.2)] hover:border-neon/30 transition-all duration-500 border-white/5 p-10 flex flex-col group relative overflow-hidden">
-                            <div className="flex flex-col items-start gap-4 mb-1">
-                                {/* Most Popular Tag - Now top-left and attached to title flow */}
-                                <span className="text-[10px] font-bold text-neon uppercase tracking-widest border border-neon/30 bg-neon/5 px-2 py-0.5 rounded leading-none">
-                                    FLAGSHIP
-                                </span>
-                                <h3 className="text-2xl font-bold text-white">THE FOUNDER ENGINE</h3>
-                            </div>
-                            <p className="text-sm text-gray-500 italic mb-8">SaaS, DevTools, AI infra, consultancies</p>
-
-                            {/* Outcome Line - Single Line */}
-                            <p className="text-lg text-white mb-6 font-medium leading-relaxed border-l-2 border-neon pl-4">
-                                Positioning that sticks. Pipeline that grows.
-                            </p>
-
-                            <ul className="space-y-4 mb-10 flex-grow">
-                                {[
-                                    "Monthly 60-Min Interview",
-                                    "Strategy & Repurposing",
-                                    "Pipeline Reporting"
-                                ].map((item, j) => (
-                                    <li key={j} className="flex items-start text-gray-300 text-sm md:text-base">
-                                        <span className="min-w-[4px] h-1 w-1 bg-neon rounded-full mt-2.5 mr-3 shadow-[0_0_6px_#CCFF00]" />
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
-
-                            <div className="flex justify-between items-end border-t border-white/5 pt-6 mt-auto">
-                                <a href="#contact" className="text-sm font-bold text-[#CCFF00] group-hover:text-white hover:underline transition-colors flex items-center gap-2">
-                                    See The Engine <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
-                                </a>
-                                <span className="text-xs border border-white/40 text-white px-3 py-1 rounded-full bg-white/20 font-medium">
-                                    4–6 weeks
-                                </span>
-                            </div>
-                        </Card>
-                    </motion.div>
-
-                    {/* B2C Card */}
-                    <motion.div
-                        variants={{
-                            hidden: { opacity: 0, x: 50 },
-                            visible: { opacity: 1, x: 0, transition: { duration: 0.6 } }
-                        }}
-                    >
-                        <Card className="h-full hover:shadow-[0_0_40px_rgba(204,255,0,0.2)] hover:border-neon/30 transition-all duration-500 border-white/5 p-10 flex flex-col group overflow-hidden">
-                            <div className="pt-7"> {/* Spacing to align with B2B card's extra tag header */}
-                                <h3 className="text-2xl font-bold mb-1 text-white">CUSTOM CONSULTING</h3>
-                            </div>
-                            <p className="text-sm text-gray-500 italic mb-8">For complex teams needing bespoke strategy.</p>
-
-                            {/* Outcome Line - Single Line */}
-                            <p className="text-lg text-white mb-6 font-medium leading-relaxed border-l-2 border-neon pl-4">
-                                Stories that sell. Community that follows.
-                            </p>
-
-                            <ul className="space-y-4 mb-10 flex-grow">
-                                {[
-                                    "Workshops & Strategy Audits",
-                                    "Team Training & Playbooks",
-                                    "Ad-hoc Growth SPRINTS"
-                                ].map((item, j) => (
-                                    <li key={j} className="flex items-start text-gray-300 text-sm md:text-base">
-                                        <span className="min-w-[4px] h-1 w-1 bg-neon rounded-full mt-2.5 mr-3 shadow-[0_0_6px_#CCFF00]" />
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
-
-                            <div className="flex justify-between items-end border-t border-white/5 pt-6 mt-auto">
-                                <a href="#contact" className="text-sm font-bold text-[#CCFF00] group-hover:text-white hover:underline transition-colors flex items-center gap-2">
-                                    Book a Consult <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
-                                </a>
-                                <span className="text-xs border border-white/40 text-white px-3 py-1 rounded-full bg-white/20 font-medium">
-                                    6–8 weeks
-                                </span>
-                            </div>
-                        </Card>
-                    </motion.div>
-                </motion.div>
+                <div className="grid grid-cols-2 gap-4">
+                    {services.map((svc, i) => (
+                        <motion.div
+                            key={i}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: i * 0.05 }}
+                        >
+                            <Link href={svc.href} className="group block h-full">
+                                <div className="h-full border border-white/5 bg-black/40 rounded-sm p-5 flex flex-col hover:border-[#CCFF00]/30 transition-all duration-300">
+                                    <div className="text-2xl mb-3">{svc.icon}</div>
+                                    <span className="text-[8px] font-black text-[#CCFF00] uppercase tracking-widest border border-[#CCFF00]/30 bg-[#CCFF00]/5 px-1.5 py-0.5 rounded self-start mb-3 leading-none">
+                                        {svc.tag}
+                                    </span>
+                                    <h3 className="text-sm font-black uppercase tracking-tight text-white mb-2 leading-tight group-hover:text-[#CCFF00] transition-colors duration-300">
+                                        {svc.title}
+                                    </h3>
+                                    <p className="text-gray-600 text-[10px] leading-relaxed flex-1">
+                                        {svc.description}
+                                    </p>
+                                    <div className="mt-4 pt-3 border-t border-white/5">
+                                        <span className="text-[#CCFF00] text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                                            Learn more →
+                                        </span>
+                                    </div>
+                                </div>
+                            </Link>
+                        </motion.div>
+                    ))}
+                </div>
             </div>
-        </section >
+        </section>
     );
 };

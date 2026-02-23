@@ -21,20 +21,19 @@ export const Hero = () => {
                 <div className="max-w-6xl">
                     {/* Cluster 1: Message (Headline) */}
                     <div className="flex flex-col gap-2 mb-4 md:mb-8 font-bold tracking-tighter text-white leading-[1.1] md:leading-[0.9]">
-                        {/* Line 1: Text + Arrow */}
+                        {/* Line 1 */}
                         <h1 className="flex items-center gap-2 md:gap-4 animate-fade-in-up" style={{ animationDelay: "0ms" }}>
-                            <span className="text-[8vw] md:text-7xl lg:text-[85px]">1 HOUR OF TALKING</span>
-                            {/* Arrow Icon - Reverted to Lucide Arrow (Clean & Balanced) */}
-                            <div className="relative text-[8vw] md:text-7xl lg:text-[85px] w-[1em] h-[1em] inline-flex items-center justify-center transform translate-y-[0.05em]">
-                                <div className="text-[#CCFF00] animate-flip drop-shadow-[0_0_20px_rgba(204,255,0,1)] filter brightness-110 w-full h-full">
-                                    <ArrowRight className="w-full h-full" strokeWidth={5} absoluteStrokeWidth={true} />
-                                </div>
-                            </div>
+                            <span className="text-[8vw] md:text-7xl lg:text-[85px] text-[#CCFF00]">AI + HUMAN</span>
                         </h1>
 
-                        {/* Line 2: Strictly Left Aligned - Matching Size */}
-                        <span className="block animate-fade-in-up text-[8vw] md:text-7xl lg:text-[85px]" style={{ animationDelay: "100ms" }}>
-                            1 MONTH OF CONTENT
+                        {/* Line 2 */}
+                        <span className="block animate-fade-in-up text-[8vw] md:text-7xl lg:text-[85px] text-white" style={{ animationDelay: "100ms" }}>
+                            CONTENT AT
+                        </span>
+
+                        {/* Line 3 */}
+                        <span className="block animate-fade-in-up text-[8vw] md:text-7xl lg:text-[85px] text-white" style={{ animationDelay: "200ms" }}>
+                            BUSINESS SPEED
                         </span>
                     </div>
 
@@ -42,7 +41,7 @@ export const Hero = () => {
                     <div className="flex flex-col items-start gap-6 mb-12 animate-fade-in-up" style={{ animationDelay: "300ms" }}>
                         {/* Promise Line */}
                         <h2 className="text-lg md:text-2xl text-gray-200 max-w-2xl font-light leading-relaxed">
-                            Stop forcing yourself to write. I interview you once a month, extract your brilliance, and build a <span className="text-[#CCFF00] font-[900]">founder-led brand</span> that generates leads while you sleep.
+                            A full-stack content studio powered by <span className="text-[#CCFF00] font-[900]">AI precision</span> and <span className="text-[#CCFF00] font-[900]">senior human strategy</span>. Eight engines. One system. Compounding pipeline.
                         </h2>
                     </div>
 
