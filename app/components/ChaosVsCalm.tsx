@@ -78,7 +78,7 @@ export const ChaosVsCalm = () => {
                     backgroundColor: merged ? "#0a0118" : "#0d0b0b"
                 }}
                 transition={{ duration: 1.2, ease: [0.77, 0, 0.175, 1] }}
-                className="absolute top-0 bottom-0 flex flex-col items-center justify-center overflow-hidden px-6 md:px-12"
+                className="absolute top-0 bottom-0 flex flex-col items-center justify-center overflow-y-auto overflow-x-hidden px-6 md:px-12 py-16 md:py-0"
             >
                 <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center justify-center text-center">
                     <AnimatePresence mode="wait">

@@ -75,7 +75,7 @@ export const Navbar = () => {
                     {/* MOBILE HAMBURGER */}
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className="md:hidden z-50 text-[#CCFF00] p-2"
+                        className="relative z-[60] text-[#CCFF00] p-2"
                     >
                         {isOpen ? <X size={32} /> : <Menu size={32} />}
                     </button>
@@ -88,14 +88,14 @@ export const Navbar = () => {
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: "100%" }}
                                 transition={{ type: "tween", duration: 0.3 }}
-                                className="fixed inset-0 bg-black z-40 flex flex-col items-center justify-center gap-8"
+                                className="fixed inset-0 bg-black z-50 flex flex-col items-center justify-start overflow-y-auto pt-32 pb-12 gap-8"
                             >
                                 {[{ name: "Services", href: "/#services" }, { name: "Early Wins", href: "/#early-wins" }, { name: "Insights", href: "/blog" }, { name: "Tools", href: "/tools" }, { name: "About", href: "/about" }, { name: "FAQ", href: "/#faq" }].map((item) => (
                                     <Link
                                         key={item.name}
                                         href={item.href}
                                         onClick={() => setIsOpen(false)}
-                                        className="text-4xl font-[900] text-white uppercase tracking-tight hover:text-[#CCFF00] transition-colors"
+                                        className="text-3xl font-[900] text-white uppercase tracking-tight hover:text-[#CCFF00] transition-colors"
                                     >
                                         {item.name}
                                     </Link>
@@ -105,7 +105,7 @@ export const Navbar = () => {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     onClick={() => setIsOpen(false)}
-                                    className="text-[#CCFF00] text-xl font-bold uppercase tracking-widest mt-8 border border-[#CCFF00] px-8 py-4 rounded hover:bg-[#CCFF00] hover:text-black transition-all"
+                                    className="text-[#CCFF00] text-lg font-bold uppercase tracking-widest mt-4 border border-[#CCFF00] px-8 py-4 rounded hover:bg-[#CCFF00] hover:text-black transition-all"
                                 >
                                     BOOK A CALL
                                 </Link>
