@@ -2,23 +2,24 @@ import { Metadata } from "next";
 import { ServicePageTemplate } from "../../components/ServicePageTemplate";
 
 export const metadata: Metadata = {
-    title: "B2B SEO Services | Moxie Digital",
-    description: "Pipeline-first SEO for B2B SaaS teams. Moxie Digital builds search systems that generate qualified leads, not just traffic.",
+    title: "B2B SaaS SEO & Pillar Content Strategy | Moxie Digital",
+    description: "Stop writing fluff. We engineer high-intent B2B SEO strategies that target bottom-of-funnel buyers and generate qualified pipeline.",
     alternates: { canonical: "https://www.moxie-digital.com/services/seo" },
 };
 
-export default function SeoPage() {
+export default function SEOPage() {
     return (
         <ServicePageTemplate
             meta={{
-                title: "B2B SEO Services | Moxie Digital",
-                description: "Pipeline-first SEO for B2B SaaS.",
+                title: "B2B SaaS SEO",
+                description: "Drive high-intent pipeline from search",
                 canonical: "https://www.moxie-digital.com/services/seo",
             }}
-            tag="Moxie Digital · Services"
-            headline={"Search\nEngine\nOptimization"}
-            subheadline="Rank for What Pays. Not What Looks Good."
-            description="Most SEO focuses on traffic. We focus on pipeline. Our B2B SEO system maps your buyer journey, targets the precise queries your ICP uses when they are ready to buy, and builds content clusters that compound over time."
+            tag="SEARCH"
+            headline="B2B SaaS SEO"
+            subheadline="Capture High-Intent Demand"
+            description="If your SEO strategy is bringing in traffic but no demos, you are targeting the wrong intent. We build search architectures that capture buyers exactly when they are looking for your solution."
+            definition="B2B SaaS SEO is the specialized optimization of website architecture, technical performance, and high-intent, bottom-of-the-funnel pillar content designed specifically to capture software buyers during their active evaluation phase."
             features={[
                 {
                     icon: "🗺️",

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { NavbarDesktop } from "./NavbarDesktop";
 import { Navbar } from "./Navbar";
 import { Metadata } from "next";
+import Script from "next/script";
 
 interface ServiceFeature {
     icon: string;
@@ -19,6 +20,7 @@ interface ServicePageProps {
     headline: string;
     subheadline: string;
     description: string;
+    definition?: string; // Explicit AEO definition block
     features: ServiceFeature[];
     deliverables: string[];
     outcome: string;
@@ -26,11 +28,12 @@ interface ServicePageProps {
 }
 
 export function ServicePageTemplate({
-    meta: _meta,
+    meta,
     tag,
     headline,
     subheadline,
     description,
+    definition,
     features,
     deliverables,
     outcome,
@@ -39,8 +42,50 @@ export function ServicePageTemplate({
     const calendarUrl =
         "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3L4_zCLswgoxBhyScpqolDXObrnSfhFLh-Kh2Nw68WXVrUpTlD6hPAXhCC0wVMtQ56B2lfDoPz";
 
+    const serviceSchema = {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": headline,
+        "provider": {
+            "@type": "Organization",
+            "name": "Moxie Digital"
+        },
+        "description": description,
+        "url": meta.canonical,
+        "offers": {
+            "@type": "Offer",
+            "description": "B2B Content Marketing & Growth Engine Setup"
+        }
+    };
+
+    const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faq.map(f => ({
+            "@type": "Question",
+            "name": f.q,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": f.a
+            }
+        }))
+    };
+
     return (
         <main className="min-h-screen bg-[#0a0118] text-white selection:bg-[#CCFF00]/30 overflow-x-hidden">
+            <Script
+                id={`service-schema-${tag}`}
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+            />
+            {faq.length > 0 && (
+                <Script
+                    id={`faq-schema-${tag}`}
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+                />
+            )}
+
             <div className="md:hidden">
                 <Navbar />
             </div>
@@ -58,9 +103,19 @@ export function ServicePageTemplate({
                     <p className="text-xl md:text-2xl text-[#CCFF00] font-bold uppercase tracking-widest mb-8">
                         {subheadline}
                     </p>
-                    <p className="text-gray-300 text-lg leading-relaxed max-w-2xl mb-12">
+                    <p className="text-gray-300 text-lg leading-relaxed max-w-2xl mb-8">
                         {description}
                     </p>
+
+                    {definition && (
+                        <div className="relative mb-12 max-w-2xl bg-white/5 border border-white/10 p-6 rounded-sm">
+                            <h2 className="text-sm font-bold uppercase tracking-widest text-[#CCFF00] mb-2">What is {headline}?</h2>
+                            <p className="text-gray-200 text-base leading-relaxed">
+                                {definition}
+                            </p>
+                        </div>
+                    )}
+
                     <div className="flex flex-col sm:flex-row gap-4">
                         <a
                             href={calendarUrl}

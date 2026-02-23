@@ -1,24 +1,25 @@
-import { Metadata } from "next";
 import { ServicePageTemplate } from "../../components/ServicePageTemplate";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "AI Agent Creation for Marketing | Moxie Digital",
-    description: "Custom AI agents that research, draft, publish, and optimize your marketing at scale. Moxie Digital builds AI+Human marketing systems for B2B teams.",
+    title: "AI Agent Workflows for Marketing Teams | Moxie Digital",
+    description: "Deploy autonomous AI agents that research, create, and distribute B2B marketing content at scale. Stop acting like a prompt engineer and start acting like a manager.",
     alternates: { canonical: "https://www.moxie-digital.com/services/ai-agents" },
 };
 
-export default function AiAgentsPage() {
+export default function AIAgentsPage() {
     return (
         <ServicePageTemplate
             meta={{
-                title: "AI Agent Creation for Marketing | Moxie Digital",
-                description: "Custom AI agents for marketing automation.",
+                title: "AI Agent Workflows",
+                description: "Deploy autonomous workflows",
                 canonical: "https://www.moxie-digital.com/services/ai-agents",
             }}
-            tag="Moxie Digital · Services"
-            headline={"AI Agent\nCreation"}
-            subheadline="AI Speed. Human Intelligence."
-            description="AI agents are not chatbots. They are autonomous systems that research, draft, publish, and optimize your marketing — continuously, at scale, without step-by-step instruction. We design and build custom AI agents that give your lean team the output capacity of a department."
+            tag="AUTOMATION"
+            headline="AI Agents"
+            subheadline="Autonomous Marketing Execution"
+            description="ChatGPT is a tool. We build systems. We design custom AI agent workflows to research competitors, draft strategic assets, and manage content pipelines autonomously."
+            definition="Marketing AI Agent Workflows involve deploying autonomous, multi-agent systems—such as AutoGPT or CrewAI frameworks—to independently execute complex marketing tasks including competitive research, drafting multi-channel copy, and structuring content calendars."
             features={[
                 {
                     icon: "🤖",

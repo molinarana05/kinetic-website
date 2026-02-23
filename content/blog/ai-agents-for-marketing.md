@@ -1,9 +1,10 @@
 ---
 title: "AI Agents for Marketing: What They Are and How to Use Them"
-date: "2026-02-01"
-description: "AI agents are not just chatbots. They are autonomous systems that can research, draft, publish, and optimize your marketing — at scale. Here is how they work."
-tags: ["AI Agents", "Marketing Automation", "AI+Human"]
-readingTime: "7 min read"
+date: "2026-02-23"
+description: "AI agents are moving from chat interfaces to autonomous actors. Learn how to deploy AI agents in your B2B marketing stack to research, create, and distribute content at scale."
+tags: ["AI Agents", "Automation", "Marketing Operations"]
+readingTime: "5 min read"
+image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2000&auto=format&fit=crop"
 ---
 
 The phrase "AI in marketing" has been overused to the point of meaninglessness. Most of what is called "AI marketing" is just a chatbot suggesting subject lines.

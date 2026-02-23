@@ -3,6 +3,7 @@ import Link from "next/link";
 import { NavbarDesktop } from "../components/NavbarDesktop";
 import { Navbar } from "../components/Navbar";
 import { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
     title: "The Moxie Journal | B2B Content Strategies",
@@ -59,6 +60,11 @@ export default function BlogIndex() {
                     <div className="lg:col-span-3 flex flex-col gap-10 border-b lg:border-b-0 lg:border-r border-white/20 pb-10 lg:pb-0 lg:pr-8">
                         {leftColPosts.map((post) => (
                             <Link href={`/blog/${post.id}`} key={post.id} className="group block overflow-hidden">
+                                {post.image && (
+                                    <div className="relative w-full aspect-video mb-4 overflow-hidden border border-white/10 grayscale group-hover:grayscale-0 transition-all duration-500">
+                                        <Image src={post.image} alt={post.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                                    </div>
+                                )}
                                 <h2 className="text-2xl lg:text-3xl font-serif font-bold text-white leading-tight mb-3 group-hover:text-[#CCFF00] transition-colors">
                                     {post.title}
                                 </h2>
@@ -86,8 +92,13 @@ export default function BlogIndex() {
                                 <h2 className="text-4xl lg:text-6xl font-serif font-black text-center text-white leading-[1.1] mb-6 group-hover:text-[#CCFF00] transition-colors">
                                     {leadPost.title}
                                 </h2>
+                                {leadPost.image && (
+                                    <div className="relative w-full aspect-[16/9] mb-8 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700 border border-white/20">
+                                        <Image src={leadPost.image} alt={leadPost.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" priority />
+                                    </div>
+                                )}
                                 <div className="flex justify-center gap-4 mb-8">
-                                    {leadPost.tags?.slice(0, 2).map((tag) => (
+                                    {leadPost.tags?.slice(0, 2).map((tag: string) => (
                                         <span key={tag} className="text-xs font-mono uppercase tracking-widest border border-white/30 px-2 py-1 text-gray-300">
                                             {tag}
                                         </span>

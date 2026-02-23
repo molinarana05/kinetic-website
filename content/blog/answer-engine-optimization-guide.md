@@ -4,6 +4,7 @@ date: "2026-02-20"
 description: "Answer Engine Optimization (AEO) is the new SEO. Here is the definitive guide to getting your brand cited by AI assistants like Perplexity, ChatGPT, and Gemini."
 tags: ["AEO", "AI Search", "B2B Growth"]
 readingTime: "7 min read"
+image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2000&auto=format&fit=crop"
 ---
 
 The search game has changed. When someone types "best B2B content marketing agency" into Perplexity or ChatGPT, they are not getting ten blue links. They are getting **one answer**. One brand cited. One winner.

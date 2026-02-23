@@ -1,9 +1,10 @@
 ---
-title: "What is GEO? How to Rank in AI-Generated Answers in 2026"
-date: "2026-02-18"
-description: "Generative Engine Optimization (GEO) is the practice of getting your content cited within AI-generated responses. This is how you do it."
-tags: ["GEO", "AI Search", "Content Strategy"]
-readingTime: "6 min read"
+title: "What is GEO? How to Rank in AI-Generated Answers"
+date: "2026-02-23"
+description: "Generative Engine Optimization (GEO) is the next evolution of search. Learn how to structure your content to be cited by AI Overviews and ChatGPT."
+tags: ["GEO", "Answers Engines", "AI SEO"]
+readingTime: "7 min read"
+image: "https://images.unsplash.com/photo-1620825937374-87fc1d6aaffa?q=80&w=2000&auto=format&fit=crop"
 ---
 
 Every week, millions of people ask AI tools like ChatGPT, Gemini, and Perplexity for recommendations, comparisons, and expert opinions. The AI generates a response — and it cites sources.

@@ -4,6 +4,7 @@ date: "2026-02-03"
 description: "Most B2B email programs measure the wrong things and die slow deaths. Here is the framework that aligns email with revenue."
 tags: ["Email Marketing", "B2B Growth", "Marketing Automation"]
 readingTime: "5 min read"
+image: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?q=80&w=2000&auto=format&fit=crop"
 ---
 
 If your benchmark for email marketing success is a 25% open rate, you are measuring a vanity metric. A 25% open rate on 1,000 subscribers with zero calls booked is a failed programme. A 35% open rate with four demos in the pipeline is the only email programme that matters.

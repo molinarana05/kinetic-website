@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { ServicePageTemplate } from "../../components/ServicePageTemplate";
 
 export const metadata: Metadata = {
-    title: "LinkedIn Personal & Company Branding | Moxie Digital",
-    description: "Build a LinkedIn presence that generates inbound pipeline. Moxie Digital's LinkedIn branding system for B2B founders and executive teams.",
+    title: "LinkedIn Personal Branding for Founders | Moxie Digital",
+    description: "Launch your founder brand on LinkedIn. We build end-to-end LinkedIn content engines that position you as an industry authority and generate high-intent inbound leads.",
     alternates: { canonical: "https://www.moxie-digital.com/services/linkedin-branding" },
 };
 
@@ -11,14 +11,15 @@ export default function LinkedInBrandingPage() {
     return (
         <ServicePageTemplate
             meta={{
-                title: "LinkedIn Personal & Company Branding | Moxie Digital",
-                description: "Build a LinkedIn presence that generates inbound pipeline.",
+                title: "LinkedIn Branding",
+                description: "Turn your profile into a pipeline engine",
                 canonical: "https://www.moxie-digital.com/services/linkedin-branding",
             }}
-            tag="Moxie Digital · Services"
-            headline={"LinkedIn\nBranding"}
-            subheadline="Authority That Attracts. Not Just Boasts."
-            description="LinkedIn is the highest-ROI marketing channel for B2B brands — if you know how to use it. We build personal and company branding systems that make your founders the obvious choice in your category, driving inbound leads without a single cold message."
+            tag="AUTHORITY"
+            headline="LinkedIn Branding"
+            subheadline="Pipeline from your Profile"
+            description="Most founders post for engagement. We construct architectures that turn your personal LinkedIn into your company's highest-converting acquisition channel."
+            definition="LinkedIn Personal Branding for B2B Founders is the execution of a highly targeted content strategy that leverages the executive's industry expertise to build trust, educate the market, and attract inbound enterprise sales opportunities."
             features={[
                 {
                     icon: "👤",

@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { ServicePageTemplate } from "../../components/ServicePageTemplate";
 
 export const metadata: Metadata = {
-    title: "B2B Email Marketing | Moxie Digital",
-    description: "Email marketing engineered for B2B pipeline. Moxie Digital builds behavior-based sequences, nurture programs, and email systems tied directly to revenue.",
+    title: "B2B Email Marketing Strategy | Moxie Digital",
+    description: "Align your newsletter with pipeline generation. We build automated B2B email marketing workflows that nurture leads and book meetings, not just track vanity metrics.",
     alternates: { canonical: "https://www.moxie-digital.com/services/email-marketing" },
 };
 
@@ -11,14 +11,15 @@ export default function EmailMarketingPage() {
     return (
         <ServicePageTemplate
             meta={{
-                title: "B2B Email Marketing | Moxie Digital",
-                description: "Email marketing engineered for B2B pipeline.",
+                title: "B2B Email Marketing",
+                description: "Book meetings from your list",
                 canonical: "https://www.moxie-digital.com/services/email-marketing",
             }}
-            tag="Moxie Digital · Services"
-            headline={"Email\nMarketing"}
-            subheadline="Pipeline in the Inbox. Not Spam."
-            description="Email is the highest-ROI channel in B2B marketing — when it is done right. Most email programs are broadcast newsletters that nobody reads. We build intent-driven, behavior-triggered email systems that accelerate deals, reactivate cold leads, and generate meetings on autopilot."
+            tag="Email"
+            headline="Email Marketing"
+            subheadline="Beyond The Open Rate"
+            description="If your benchmark for email success is a 30% open rate with zero meetings booked, it's a failed program. We optimize for revenue."
+            definition="B2B Email Marketing is the strategic use of automated email sequences and segmented newsletters to continuously educate leads, accelerate the sales cycle, and drive middle-of-the-funnel prospects toward a booked discovery call."
             features={[
                 {
                     icon: "🎯",

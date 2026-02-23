@@ -1,9 +1,10 @@
 ---
-title: "How to Turn One Piece of Content Into 30 Touchpoints"
-date: "2026-02-12"
-description: "Content repurposing is the highest-leverage marketing activity available to B2B founders. Here is the system for doing it right."
-tags: ["Content Repurposing", "B2B Content", "LinkedIn"]
-readingTime: "6 min read"
+title: "How to Turn One Interview Into 30 Touchpoints"
+date: "2026-02-23"
+description: "Stop creating net-new content every day. Learn the exact framework we use to turn a single 60-minute founder interview into a month of high-converting assets across LinkedIn, email, and blogs."
+tags: ["Content Repurposing", "B2B Strategy", "Efficiency"]
+readingTime: "5 min read"
+image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2000&auto=format&fit=crop"
 ---
 
 The most expensive thing in content marketing is not the video production, the design retainer, or the copywriter. It is the **cost of creating something once and using it once**. Every asset you produce that only lives in one format is a wasted investment.

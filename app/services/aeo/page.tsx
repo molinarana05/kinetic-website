@@ -2,23 +2,24 @@ import { Metadata } from "next";
 import { ServicePageTemplate } from "../../components/ServicePageTemplate";
 
 export const metadata: Metadata = {
-    title: "Answer Engine Optimization (AEO) | Moxie Digital",
-    description: "Get your brand cited by Perplexity, ChatGPT, and Google AI Overviews. Moxie Digital builds AEO systems that make your brand the answer.",
+    title: "Answer Engine Optimization (AEO) Agency | Moxie Digital",
+    description: "Rank your B2B SaaS in Perplexity, ChatGPT, and Google AI Overviews. Ensure your brand is cited as the definitive answer by autonomous agents.",
     alternates: { canonical: "https://www.moxie-digital.com/services/aeo" },
 };
 
-export default function AeoPage() {
+export default function AEOPage() {
     return (
         <ServicePageTemplate
             meta={{
-                title: "Answer Engine Optimization (AEO) | Moxie Digital",
-                description: "Get your brand cited by AI answer engines.",
+                title: "Answer Engine Optimization",
+                description: "Optimize for Perplexity and AI Overviews",
                 canonical: "https://www.moxie-digital.com/services/aeo",
             }}
-            tag="Moxie Digital · Services"
-            headline={"Answer Engine\nOptimization"}
-            subheadline="Be the Answer. Not Just a Result."
-            description="When someone asks Perplexity, ChatGPT, or Google AI 'Who is the best B2B content marketing agency?' — is your brand the answer? AEO is the discipline of making sure it is. We build entity definitions, structured data, and Q&A content that positions your brand as the authoritative source AI engines trust and cite."
+            tag="AEO"
+            headline="Answer Engine Optimization"
+            subheadline="Be Cited by Perplexity & ChatGPT"
+            description="Users don't click links anymore. They ask AI. If your brand isn't cited in the generated answer, you don't exist in the modern buyer journey."
+            definition="Answer Engine Optimization (AEO) is the process of structuring your website content so that AI assistants—such as ChatGPT, Perplexity, and Google AI Overviews—cite your brand as the definitive source when answering user queries."
             features={[
                 {
                     icon: "🧠",

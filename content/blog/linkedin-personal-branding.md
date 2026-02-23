@@ -4,6 +4,7 @@ date: "2026-02-08"
 description: "LinkedIn is the highest-ROI marketing channel for B2B founders. Here is the personal branding playbook that generates leads, not likes."
 tags: ["LinkedIn", "Personal Branding", "Founder Marketing"]
 readingTime: "6 min read"
+image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=2000&auto=format&fit=crop"
 ---
 
 Every B2B founder has heard the advice: "Post on LinkedIn." Most do it for three weeks, get a few likes from colleagues, and conclude it does not work.

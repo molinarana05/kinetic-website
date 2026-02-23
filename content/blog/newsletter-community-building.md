@@ -1,9 +1,10 @@
 ---
 title: "How to Build a Community Around Your Newsletter"
-date: "2026-02-05"
-description: "Most newsletters are broadcast mechanisms. The best ones are communities. Here is how to build a newsletter that creates belonging, not just subscribers."
-tags: ["Newsletter", "Community Building", "Email"]
-readingTime: "6 min read"
+date: "2026-02-23"
+description: "Stop broadcasting and start engaging. A newsletter is the most powerful owned channel a B2B SaaS company can build. Here is how."
+tags: ["Newsletters", "Owned Media", "Community"]
+readingTime: "5 min read"
+image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2000&auto=format&fit=crop"
 ---
 
 There are two kinds of newsletters. The first is a broadcast: one voice, pushing information to a passive audience that may or may not read it. The second is a community: a shared space where a defined group of people comes to feel known, challenged, and connected.

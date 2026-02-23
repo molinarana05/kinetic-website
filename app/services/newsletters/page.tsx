@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { ServicePageTemplate } from "../../components/ServicePageTemplate";
 
 export const metadata: Metadata = {
-    title: "Newsletter & Community Building | Moxie Digital",
-    description: "Build a newsletter your subscribers actually read. Moxie Digital creates community-driven newsletters that generate pipeline for B2B brands.",
+    title: "B2B Newsletter Creation & Community Building | Moxie Digital",
+    description: "Build a compounding owned audience. We create strategic B2B newsletters that turn passive industry observers into an engaged community of future buyers.",
     alternates: { canonical: "https://www.moxie-digital.com/services/newsletters" },
 };
 
@@ -11,14 +11,15 @@ export default function NewslettersPage() {
     return (
         <ServicePageTemplate
             meta={{
-                title: "Newsletter & Community Building | Moxie Digital",
-                description: "Build a newsletter that generates pipeline.",
+                title: "B2B Newsletters",
+                description: "Build a community, not just a list",
                 canonical: "https://www.moxie-digital.com/services/newsletters",
             }}
-            tag="Moxie Digital · Services"
-            headline={"Newsletters &\nCommunity"}
-            subheadline="Own Your Audience. Forever."
-            description="Algorithms change. Platforms die. Your newsletter list is the only audience you own. We build community-driven newsletters that readers look forward to opening — and that quietly, consistently generate business for you."
+            tag="COMMUNITY"
+            headline="B2B Newsletters"
+            subheadline="Build an Owned Audience"
+            description="Algorithms change. Your email list does not. A powerful B2B newsletter is the ultimate moat against rising acquisition costs, turning rented attention into owned community."
+            definition="B2B Newsletter Creation is the systematic production of high-value, recurring email publications designed to cultivate an owned audience, establish thought leadership, and reduce reliance on paid acquisition channels."
             features={[
                 {
                     icon: "📮",

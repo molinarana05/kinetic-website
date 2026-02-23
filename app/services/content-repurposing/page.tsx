@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { ServicePageTemplate } from "../../components/ServicePageTemplate";
 
 export const metadata: Metadata = {
-    title: "Content Repurposing Services | Moxie Digital",
-    description: "Turn one interview into 30 days of content across LinkedIn, newsletters, blogs, and more. Moxie Digital's content repurposing system for B2B brands.",
+    title: "Content Repurposing Services for B2B Creators | Moxie Digital",
+    description: "Turn one 60-minute founder interview into 30 days of high-converting content for LinkedIn, email, and blogs. The ultimate B2B content repurposing engine.",
     alternates: { canonical: "https://www.moxie-digital.com/services/content-repurposing" },
 };
 
@@ -11,14 +11,15 @@ export default function ContentRepurposingPage() {
     return (
         <ServicePageTemplate
             meta={{
-                title: "Content Repurposing Services | Moxie Digital",
-                description: "Turn one interview into 30 days of content.",
+                title: "Content Repurposing",
+                description: "Turn 1 hour into 30 days of content",
                 canonical: "https://www.moxie-digital.com/services/content-repurposing",
             }}
-            tag="Moxie Digital · Services"
-            headline={"Content\nRepurposing"}
-            subheadline="One Source. Thirty Touchpoints."
-            description="Stop creating from scratch every time. Our content repurposing system extracts your best thinking from a single session and distributes it across every channel your buyers are on — LinkedIn, email, blog, video — all in your authentic voice."
+            tag="FLAGSHIP"
+            headline="Content Repurposing"
+            subheadline="1 Interview. 30 Touchpoints."
+            description="Stop creating net-new content every day. We build an extraction engine that turns one hour of your time into a full month of strategic assets."
+            definition="Content Repurposing is a marketing strategy that transforms a single high-value pillar asset—such as a webinar or a founder interview—into multiple formatting variations tailored for different distribution channels like LinkedIn, email newsletters, and blog posts."
             features={[
                 {
                     icon: "🎙️",

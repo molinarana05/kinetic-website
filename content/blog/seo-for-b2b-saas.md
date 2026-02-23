@@ -1,9 +1,10 @@
 ---
 title: "The B2B SaaS SEO Playbook for 2026"
-date: "2026-02-10"
-description: "SEO for B2B SaaS is not about traffic. It is about pipeline. Here is the framework for building search authority that generates revenue."
-tags: ["SEO", "B2B SaaS", "Content Strategy"]
+date: "2026-02-23"
+description: "Stop writing top-of-funnel fluff. Learn how to build a revenue-first SEO strategy that targets high-intent buyers and drives demos."
+tags: ["SEO", "B2B SaaS", "Demand Generation"]
 readingTime: "7 min read"
+image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000&auto=format&fit=crop"
 ---
 
 The average B2B SaaS company spends six months and significant budget on SEO before getting their first organic lead. Most of that delay is not algorithmic — it is strategic. They are optimizing the wrong pages, targeting the wrong keywords, and measuring the wrong outcomes.
