@@ -68,7 +68,7 @@ export default function FounderROICalculator() {
     const paybackMonths = contentBudget > 0 ? Math.ceil(contentBudget / ((founderMonthlyRevenue - currentMonthlyRevenue) / 12 + (currentMonthlyCost - founderMonthlyCost) / 12)) : 0;
 
     return (
-        <main className="min-h-screen bg-[#0d0b0b] text-white">
+        <main className="min-h-screen bg-[#0a0118] text-white">
             {showGate && (
                 <EmailGate
                     toolName="Founder Content ROI Calculator"

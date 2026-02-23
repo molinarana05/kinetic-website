@@ -145,7 +145,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${inter.className} bg-[#0d0b0b] text-[#e8e4df] antialiased overflow-x-hidden`}>
+            <body className={`${inter.className} bg-[#0a0118] text-[#e8e4df] antialiased overflow-x-hidden`}>
                 <Script
                     id="jsonld-sitewide"
                     type="application/ld+json"

@@ -12,7 +12,7 @@ export default function TermsOfService() {
     const updated = "20 February 2026";
 
     return (
-        <main className="min-h-screen bg-[#0d0b0b] text-white">
+        <main className="min-h-screen bg-[#0a0118] text-white">
             <div className="md:hidden"><Navbar /></div>
             <NavbarDesktop />
 

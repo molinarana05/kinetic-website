@@ -122,7 +122,7 @@ const certifications = [
 
 export default function AboutPage() {
     return (
-        <main className="min-h-screen bg-[#0d0b0b] text-white">
+        <main className="min-h-screen bg-[#0a0118] text-white">
             <div className="md:hidden"><Navbar /></div>
             <NavbarDesktop />
 
@@ -162,7 +162,7 @@ export default function AboutPage() {
                                     className="object-cover object-top"
                                 />
                                 {/* Subtle overlay gradient at bottom */}
-                                <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#0d0b0b]/60 to-transparent" />
+                                <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#0a0118]/60 to-transparent" />
                             </div>
                             {/* Neon accent dot */}
                             <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-6 h-1.5 bg-[#CCFF00] rounded-full shadow-[0_0_12px_#CCFF00]" />

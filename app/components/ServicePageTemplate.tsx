@@ -72,7 +72,7 @@ export function ServicePageTemplate({
     };
 
     return (
-        <main className="min-h-screen bg-[#0d0b0b] text-white selection:bg-[#CCFF00]/30 overflow-x-hidden">
+        <main className="min-h-screen bg-[#0a0118] text-white selection:bg-[#CCFF00]/30 overflow-x-hidden">
             <Script
                 id={`service-schema-${tag}`}
                 type="application/ld+json"

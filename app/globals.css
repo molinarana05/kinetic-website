@@ -10,10 +10,10 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background-color: #0d0b0b;
+  background-color: #0a0118;
   background: radial-gradient(circle at top right,
       #1f0a3c,
-      #0d0b0b 60%,
+      #0a0118 60%,
       #000000 100%);
   overflow-x: hidden;
   min-height: 100vh;

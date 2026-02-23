@@ -2,6 +2,7 @@
 import { Button } from "./ui/Button";
 import { ArrowRight } from "lucide-react";
 import { HeroHeadline } from "./HeroHeadline";
+import { TypewriterEffect } from "./ui/TypewriterEffect";
 
 export const Hero = () => {
     return (
@@ -28,9 +29,14 @@ export const Hero = () => {
                     {/* Cluster 2: Support (Promise) */}
                     <div className="flex flex-col items-start gap-6 mb-12 animate-fade-in-up" style={{ animationDelay: "300ms" }}>
                         {/* Promise Line */}
-                        <h2 className="text-lg md:text-2xl text-gray-200 max-w-2xl font-light leading-relaxed">
-                            A full-stack content studio powered by <span className="text-[#CCFF00] font-[900]">AI precision</span> and <span className="text-[#CCFF00] font-[900]">senior human strategy</span>. Eight engines. One system. Compounding pipeline.
-                        </h2>
+                        <div className="flex flex-col gap-4">
+                            <h2 className="text-lg md:text-2xl text-gray-200 max-w-2xl font-light leading-relaxed">
+                                A full-stack content studio powered by <span className="text-[#CCFF00] font-[900]">AI precision</span> and <span className="text-[#CCFF00] font-[900]">senior human strategy</span>.
+                            </h2>
+                            <div className="text-xl md:text-3xl text-[#CCFF00] font-black tracking-tight mt-1">
+                                <TypewriterEffect text="Eight engines. One system. Compounding pipeline." delay={2000} speed={40} cursor={true} />
+                            </div>
+                        </div>
                     </div>
 
                     {/* Cluster 3: Action (CTA) + Credibility */}
@@ -60,7 +66,7 @@ export const Hero = () => {
 
 
             {/* Bottom Gradient Fade */}
-            <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0d0b0b] to-transparent pointer-events-none z-0" />
+            <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0a0118] to-transparent pointer-events-none z-0" />
         </section >
     );
 };

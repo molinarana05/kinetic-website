@@ -29,7 +29,7 @@ export default function BlogIndex() {
     });
 
     return (
-        <main className="min-h-screen bg-[#0d0b0b] text-white selection:bg-[#CCFF00]/30 overflow-x-hidden">
+        <main className="min-h-screen bg-[#0a0118] text-white selection:bg-[#CCFF00]/30 overflow-x-hidden">
             <div className="md:hidden">
                 <Navbar />
             </div>
@@ -119,7 +119,7 @@ export default function BlogIndex() {
                     </div>
 
                     {/* Right Column (Latest/Trending) */}
-                    <div className="lg:col-span-3 flex flex-col">
+                    <div className="lg:col-span-3 flex flex-col lg:sticky lg:top-32 self-start">
                         <h3 className="text-xs font-black uppercase tracking-[0.2em] border-b-2 border-white/40 pb-3 mb-6 flex items-center justify-between">
                             <span>Latest Additions</span>
                             <span className="text-[#CCFF00]">Trending</span>

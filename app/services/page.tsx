@@ -231,7 +231,7 @@ export default function ServicesPage() {
     const [openFaq, setOpenFaq] = useState<number | null>(null);
 
     return (
-        <main className="min-h-screen bg-[#0d0b0b] text-white overflow-x-hidden">
+        <main className="min-h-screen bg-[#0a0118] text-white overflow-x-hidden">
             <div className="md:hidden"><Navbar /></div>
             <NavbarDesktop />
 

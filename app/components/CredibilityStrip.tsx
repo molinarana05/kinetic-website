@@ -28,7 +28,7 @@ const PADDING = 10; // px — same for all, so every card appears visually equal
 
 export const CredibilityStrip = () => {
     return (
-        <section className="py-10 md:py-16 border-gradient-y bg-[#0d0b0b] relative z-20">
+        <section className="py-10 md:py-16 border-gradient-y bg-[#0a0118] relative z-20">
             <div className="w-full px-5 md:px-[80px] relative z-10 grid md:grid-cols-[200px_1fr] items-center gap-8 md:gap-12">
                 {/* Label */}
                 <h3 className="text-xs text-gray-500 font-medium uppercase tracking-widest text-center md:text-left whitespace-nowrap">

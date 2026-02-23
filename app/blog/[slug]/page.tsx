@@ -88,7 +88,7 @@ export default async function BlogPost({ params }: Props) {
     };
 
     return (
-        <main className="min-h-screen bg-[#0d0b0b] text-white selection:bg-neon/30 pb-24">
+        <main className="min-h-screen bg-[#0a0118] text-white selection:bg-neon/30 pb-24">
             <Script
                 id={`jsonld-article-${params.slug}`}
                 type="application/ld+json"

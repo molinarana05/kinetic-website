@@ -31,7 +31,7 @@ export const NavbarDesktop = () => {
                 </Link>
 
                 <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-8">
-                    {[{ name: "Services", href: "/services" }, { name: "Early Wins", href: "/#early-wins" }, { name: "Insights", href: "/blog" }, { name: "Tools", href: "/tools" }, { name: "About", href: "/about" }, { name: "FAQ", href: "/#faq" }].map((item, index) => (
+                    {[{ name: "Services", href: "/#services" }, { name: "Early Wins", href: "/#early-wins" }, { name: "Insights", href: "/blog" }, { name: "Tools", href: "/tools" }, { name: "About", href: "/about" }, { name: "FAQ", href: "/#faq" }].map((item, index) => (
                         <Link
                             key={item.name}
                             href={item.href}

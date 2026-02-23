@@ -45,7 +45,7 @@ export function EmailGate({ toolName, resultSummary, onUnlock, resultPayload }: 
     };
 
     return (
-        <div className="fixed inset-0 bg-[#0d0b0b]/90 backdrop-blur-sm z-50 flex items-center justify-center px-6">
+        <div className="fixed inset-0 bg-[#0a0118]/90 backdrop-blur-sm z-50 flex items-center justify-center px-6">
             <div className="w-full max-w-md border border-[#CCFF00]/40 rounded-2xl bg-black p-8 shadow-2xl shadow-[#CCFF00]/5">
                 {/* Icon */}
                 <div className="w-14 h-14 rounded-full bg-[#CCFF00]/10 border border-[#CCFF00]/30 flex items-center justify-center text-2xl mb-6 mx-auto">

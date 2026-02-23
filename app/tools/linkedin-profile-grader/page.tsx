@@ -47,7 +47,7 @@ export default function LinkedInProfileGrader() {
     const gaps = questions.filter(q => answers[q.id] === false);
 
     return (
-        <main className="min-h-screen bg-[#0d0b0b] text-white">
+        <main className="min-h-screen bg-[#0a0118] text-white">
             {showGate && (
                 <EmailGate
                     toolName="LinkedIn Profile Grader"

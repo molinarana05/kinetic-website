@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 const services = [
     {
@@ -98,21 +99,21 @@ export const Services = () => {
                             transition={{ delay: i * 0.05 }}
                         >
                             <Link href={svc.href} className="group block h-full">
-                                <div className="h-full border border-white/5 bg-black/40 rounded-sm p-5 flex flex-col hover:border-[#CCFF00]/30 transition-all duration-300">
-                                    <div className="text-2xl mb-3">{svc.icon}</div>
-                                    <span className="text-[8px] font-black text-[#CCFF00] uppercase tracking-widest border border-[#CCFF00]/30 bg-[#CCFF00]/5 px-1.5 py-0.5 rounded self-start mb-3 leading-none">
+                                <div className="h-full border border-white/5 bg-black/40 rounded-xl p-6 flex flex-col hover:border-[#CCFF00]/30 transition-all duration-300">
+                                    <div className="text-3xl mb-4">{svc.icon}</div>
+                                    <span className="text-[9px] font-black text-[#CCFF00] uppercase tracking-widest border border-[#CCFF00]/30 bg-[#CCFF00]/5 px-2 py-1 rounded self-start mb-4 leading-none">
                                         {svc.tag}
                                     </span>
-                                    <h3 className="text-sm font-black uppercase tracking-tight text-white mb-2 leading-tight group-hover:text-[#CCFF00] transition-colors duration-300">
+                                    <h3 className="text-lg font-black uppercase tracking-tighter text-white mb-3 leading-tight group-hover:text-[#CCFF00] transition-colors duration-300">
                                         {svc.title}
                                     </h3>
-                                    <p className="text-gray-600 text-[10px] leading-relaxed flex-1">
+                                    <p className="text-[#e8e4df] opacity-80 text-xs leading-relaxed flex-1">
                                         {svc.description}
                                     </p>
-                                    <div className="mt-4 pt-3 border-gradient-t">
-                                        <span className="text-[#CCFF00] text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">
-                                            Learn more →
-                                        </span>
+                                    <div className="mt-6 flex items-center justify-end opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                        <div className="w-8 h-8 rounded-full border border-[#CCFF00] flex items-center justify-center text-[#CCFF00] bg-[#CCFF00]/10">
+                                            <ArrowRight size={14} />
+                                        </div>
                                     </div>
                                 </div>
                             </Link>

@@ -117,7 +117,7 @@ export default function ContentAgencyQuiz() {
     const verdict = verdicts[verdictKey];
 
     return (
-        <main className="min-h-screen bg-[#0d0b0b] text-white">
+        <main className="min-h-screen bg-[#0a0118] text-white">
             {showGate && (
                 <EmailGate
                     toolName="Content Agency Readiness Quiz"

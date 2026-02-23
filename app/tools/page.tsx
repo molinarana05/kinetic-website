@@ -62,7 +62,7 @@ const tools = [
 
 export default function ToolsPage() {
     return (
-        <main className="min-h-screen bg-[#0d0b0b] text-white">
+        <main className="min-h-screen bg-[#0a0118] text-white">
             <div className="md:hidden"><Navbar /></div>
             <NavbarDesktop />
             <div className="pt-32 pb-24 px-6 max-w-5xl mx-auto">

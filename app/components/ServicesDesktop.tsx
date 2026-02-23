@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 const services = [
     {
@@ -118,30 +119,30 @@ export const ServicesDesktop = () => {
                     {services.map((svc, i) => (
                         <motion.div key={i} variants={cardVariants}>
                             <Link href={svc.href} className="group block h-full">
-                                <div className="h-full border border-white/5 bg-black/40 rounded-sm p-7 flex flex-col hover:border-[#CCFF00]/40 hover:-translate-y-1 hover:bg-black/60 hover:shadow-[0_0_30px_rgba(204,255,0,0.08)] transition-all duration-300">
+                                <div className="h-full border border-white/5 bg-black/40 rounded-xl p-8 flex flex-col hover:border-[#CCFF00]/40 hover:-translate-y-2 hover:bg-black/60 hover:shadow-[0_0_40px_rgba(204,255,0,0.1)] transition-all duration-300 group-hover:bg-[#0a0118]">
                                     {/* Icon */}
-                                    <div className="text-3xl mb-4">{svc.icon}</div>
+                                    <div className="text-4xl mb-5">{svc.icon}</div>
 
                                     {/* Tag */}
-                                    <span className="text-[9px] font-black text-[#CCFF00] uppercase tracking-widest border border-[#CCFF00]/30 bg-[#CCFF00]/5 px-2 py-0.5 rounded self-start mb-4 leading-none">
+                                    <span className="text-[10px] font-black text-[#CCFF00] uppercase tracking-widest border border-[#CCFF00]/30 bg-[#CCFF00]/5 px-2.5 py-1 rounded self-start mb-5 leading-none">
                                         {svc.tag}
                                     </span>
 
                                     {/* Title */}
-                                    <h3 className="text-base font-black uppercase tracking-tight text-white mb-3 leading-tight group-hover:text-[#CCFF00] transition-colors duration-300">
+                                    <h3 className="text-xl md:text-2xl font-black uppercase tracking-tighter text-white mb-4 leading-[1.1] group-hover:text-[#CCFF00] transition-colors duration-300">
                                         {svc.title}
                                     </h3>
 
                                     {/* Description */}
-                                    <p className="text-gray-500 text-xs leading-relaxed flex-1">
+                                    <p className="text-[#e8e4df] opacity-80 text-sm leading-relaxed flex-1">
                                         {svc.description}
                                     </p>
 
                                     {/* Arrow */}
-                                    <div className="mt-6 pt-4 border-gradient-t flex items-center justify-end">
-                                        <span className="text-[#CCFF00] text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                                            Learn more →
-                                        </span>
+                                    <div className="mt-8 flex items-center justify-end opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-[-10px] group-hover:translate-x-0">
+                                        <div className="w-10 h-10 rounded-full border border-[#CCFF00] flex items-center justify-center text-[#CCFF00] bg-[#CCFF00]/10">
+                                            <ArrowRight size={18} />
+                                        </div>
                                     </div>
                                 </div>
                             </Link>
