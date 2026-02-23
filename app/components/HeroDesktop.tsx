@@ -24,12 +24,12 @@ export const HeroDesktop = () => {
                     <div className="flex flex-col items-start gap-6 mb-12 animate-fade-in-up" style={{ animationDelay: "300ms" }}>
                         {/* Promise Line */}
                         <div className="flex flex-col gap-4">
-                            <p className="text-xl md:text-2xl text-gray-200 max-w-2xl font-light leading-relaxed">
-                                A full-stack content studio powered by <span className="text-[#CCFF00] font-[900]">AI precision</span> and <span className="text-[#CCFF00] font-[900]">senior human strategy</span>.
+                            <p className="text-xl md:text-2xl text-gray-200 max-w-4xl font-light leading-relaxed">
+                                A full-stack content studio powered by <span className="text-[#CCFF00] font-[900]">AI precision</span> and <span className="text-[#CCFF00] font-[900]">senior human strategy</span>.{" "}
+                                <span className="text-[#CCFF00] font-[900]">
+                                    <TypewriterEffect text="Eight engines. One system. Compounding pipeline." delay={2000} speed={40} cursor={true} className="inline" />
+                                </span>
                             </p>
-                            <div className="text-2xl md:text-3xl text-[#CCFF00] font-black tracking-tight">
-                                <TypewriterEffect text="Eight engines. One system. Compounding pipeline." delay={2000} speed={40} cursor={true} />
-                            </div>
                         </div>
                     </div>
 

@@ -475,9 +475,9 @@ export default function HomeClient() {
             {/* Services */}
             <div id="services">
                 <div className="relative z-10 md:hidden">
-                    <ServicesMobile />
+                    <Services />
                 </div>
-                <ServicesDesktopInline />
+                <ServicesDesktop />
             </div>
 
             {/* 4. Split-Screen Chaos vs. Calm */}

@@ -27,11 +27,11 @@ export const ChaosVsCalm = () => {
                         id: Date.now(),
                         text: noiseTexts[Math.floor(Math.random() * noiseTexts.length)],
                         top: `${Math.random() * 90}%`,
-                        left: `${Math.random() * 80}%`,
+                        left: `${Math.random() * 60}%`, // Keep text within bounds
                     };
-                    return [...prev.slice(-15), newGlitch]; // Keep last 15
+                    return [...prev.slice(-40), newGlitch]; // Keep last 40 to clutter screen
                 });
-            }, 100);
+            }, 200);
 
             return () => clearInterval(interval);
         }
@@ -51,9 +51,9 @@ export const ChaosVsCalm = () => {
                     <motion.div
                         key={glitch.id}
                         initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: [0, 1, 0], scale: [0.8, 1, 1.1] }}
-                        transition={{ duration: 0.3 }}
-                        className="absolute text-[10px] md:text-sm font-mono text-gray-500 bg-white/5 border border-white/10 p-2 md:p-3 whitespace-nowrap"
+                        animate={{ opacity: [0, 1, 1, 0], scale: [0.8, 1, 1, 1.05], y: [0, -10] }}
+                        transition={{ duration: 6, times: [0, 0.1, 0.9, 1], ease: "linear" }}
+                        className="absolute text-[10px] md:text-sm font-mono text-gray-300 bg-black/80 border border-white/10 p-2 md:p-3 whitespace-nowrap z-20 shadow-lg backdrop-blur-sm"
                         style={{ top: glitch.top, left: glitch.left }}
                     >
                         {glitch.text}
@@ -154,12 +154,16 @@ export const ChaosVsCalm = () => {
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 2, duration: 1 }}
-                    className="absolute bottom-10 left-1/2 -translate-x-1/2 z-50 text-white flex flex-col items-center gap-2 pointer-events-none"
+                    transition={{ delay: 1.5, duration: 1 }}
+                    className="absolute bottom-12 left-1/2 -translate-x-1/2 z-50 text-white flex flex-col items-center gap-2 pointer-events-none"
                 >
-                    <span className="text-xs uppercase tracking-[0.3em] font-mono text-gray-400 bg-black/50 px-4 py-2 rounded-full border border-white/10 backdrop-blur-sm shadow-2xl">
+                    <motion.div
+                        animate={{ scale: [1, 1.05, 1], boxShadow: ["0 0 20px rgba(204,255,0,0.2)", "0 0 50px rgba(204,255,0,0.6)", "0 0 20px rgba(204,255,0,0.2)"] }}
+                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                        className="text-xs md:text-sm uppercase tracking-[0.2em] font-black text-black bg-[#CCFF00] px-6 py-3 md:px-8 md:py-4 rounded-full border-2 border-white/20 shadow-2xl"
+                    >
                         Click Anywhere To Synthesize
-                    </span>
+                    </motion.div>
                 </motion.div>
             )}
         </section>

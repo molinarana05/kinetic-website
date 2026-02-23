@@ -1,60 +1,70 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, RefreshCw, Search, Sparkles, Globe, Linkedin, Mail, Send, Bot } from "lucide-react";
+
+// Animated Neon Vectors
+const AnimatedRefresh = () => <motion.div animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 6, ease: "linear" }}><RefreshCw className="text-[#CCFF00]" size={36} /></motion.div>;
+const AnimatedSearch = () => <motion.div animate={{ scale: [1, 1.15, 1], rotate: [0, 5, -5, 0] }} transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}><Search className="text-[#CCFF00]" size={36} /></motion.div>;
+const AnimatedSparkles = () => <motion.div animate={{ opacity: [1, 0.5, 1], scale: [1, 1.1, 1] }} transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}><Sparkles className="text-[#CCFF00]" size={36} /></motion.div>;
+const AnimatedGlobe = () => <motion.div animate={{ rotateY: [0, 360] }} transition={{ repeat: Infinity, duration: 8, ease: "linear" }}><Globe className="text-[#CCFF00]" size={36} /></motion.div>;
+const AnimatedLinkedin = () => <motion.div animate={{ y: [0, -4, 0] }} transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}><Linkedin className="text-[#CCFF00]" size={36} /></motion.div>;
+const AnimatedMail = () => <motion.div animate={{ rotate: [0, 5, -5, 0] }} transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}><Mail className="text-[#CCFF00]" size={36} /></motion.div>;
+const AnimatedSend = () => <motion.div animate={{ x: [0, 5, 0], y: [0, -5, 0] }} transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}><Send className="text-[#CCFF00]" size={36} /></motion.div>;
+const AnimatedBot = () => <motion.div animate={{ scale: [1, 1.05, 1] }} transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}><Bot className="text-[#CCFF00]" size={36} /></motion.div>;
 
 const services = [
     {
-        icon: "🔄",
+        icon: <AnimatedRefresh />,
         title: "Content Repurposing",
-        description: "One interview. 30 touchpoints. Every channel, every week.",
+        description: "One interview. 30 touchpoints across every channel.",
         tag: "FLAGSHIP",
         href: "/services/content-repurposing",
     },
     {
-        icon: "🔍",
+        icon: <AnimatedSearch />,
         title: "SEO",
-        description: "Pipeline-intent keywords. Topical authority. Organic leads that close.",
+        description: "Pipeline-intent keywords. Organic leads that close.",
         tag: "ORGANIC",
         href: "/services/seo",
     },
     {
-        icon: "🤖",
-        title: "Answer Engine Optimization",
-        description: "Be the answer Perplexity, ChatGPT & Gemini cite. Zero-click authority.",
+        icon: <AnimatedSparkles />,
+        title: "AEO",
+        description: "Be the answer AI tools cite. Zero-click authority.",
         tag: "AEO",
         href: "/services/aeo",
     },
     {
-        icon: "⚡",
-        title: "Generative Engine Optimization",
-        description: "Get cited inside AI-generated responses. Own the category in AI search.",
+        icon: <AnimatedGlobe />,
+        title: "GEO",
+        description: "Get cited inside AI-generated answers. Own the category.",
         tag: "GEO",
         href: "/services/geo",
     },
     {
-        icon: "💼",
+        icon: <AnimatedLinkedin />,
         title: "LinkedIn Branding",
-        description: "Personal & company branding that attracts inbound. No cold outreach needed.",
+        description: "Personal & company branding that attracts inbound.",
         tag: "SOCIAL",
         href: "/services/linkedin-branding",
     },
     {
-        icon: "📮",
+        icon: <AnimatedMail />,
         title: "Newsletters",
-        description: "Own your audience forever. A community that buys — not just reads.",
+        description: "Own your audience forever. Community that buys.",
         tag: "COMMUNITY",
         href: "/services/newsletters",
     },
     {
-        icon: "📧",
+        icon: <AnimatedSend />,
         title: "Email Marketing",
         description: "Behavior-triggered sequences that move prospects to meetings on autopilot.",
         tag: "PIPELINE",
         href: "/services/email-marketing",
     },
     {
-        icon: "🤖",
+        icon: <AnimatedBot />,
         title: "AI Agent Creation",
         description: "Custom AI agents that draft, publish and optimize your content at scale.",
         tag: "AI+HUMAN",
@@ -77,7 +87,7 @@ const cardVariants = {
 
 export const ServicesDesktop = () => {
     return (
-        <section id="services" className="py-24 md:py-32 relative hidden md:block z-10">
+        <section className="py-24 md:py-32 relative hidden md:block z-10">
             <div className="container mx-auto px-4 max-w-7xl">
                 {/* Heading */}
                 <div className="text-center mb-16">
@@ -119,9 +129,9 @@ export const ServicesDesktop = () => {
                     {services.map((svc, i) => (
                         <motion.div key={i} variants={cardVariants}>
                             <Link href={svc.href} className="group block h-full">
-                                <div className="h-full border border-white/5 bg-black/40 rounded-xl p-8 flex flex-col hover:border-[#CCFF00]/40 hover:-translate-y-2 hover:bg-black/60 hover:shadow-[0_0_40px_rgba(204,255,0,0.1)] transition-all duration-300 group-hover:bg-[#0a0118]">
+                                <div className="h-full border border-white/10 bg-[#0a0118] shadow-2xl rounded-xl p-8 flex flex-col hover:border-[#CCFF00]/40 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(204,255,0,0.15)] transition-all duration-300">
                                     {/* Icon */}
-                                    <div className="text-4xl mb-5">{svc.icon}</div>
+                                    <div className="text-4xl mb-5 flex items-center justify-start">{svc.icon}</div>
 
                                     {/* Tag */}
                                     <span className="text-[10px] font-black text-[#CCFF00] uppercase tracking-widest border border-[#CCFF00]/30 bg-[#CCFF00]/5 px-2.5 py-1 rounded self-start mb-5 leading-none">
@@ -134,7 +144,7 @@ export const ServicesDesktop = () => {
                                     </h3>
 
                                     {/* Description */}
-                                    <p className="text-[#e8e4df] opacity-80 text-sm leading-relaxed flex-1">
+                                    <p className="text-[#e8e4df] opacity-90 text-base leading-relaxed flex-1">
                                         {svc.description}
                                     </p>
 

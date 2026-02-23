@@ -8,21 +8,20 @@ export const HeroHeadline = () => {
     // 0: Initial wait
     // 1: Typing generic text
     // 2: Pause before destruction
-    // 3: Highlighting/Selecting generic text
-    // 4: Backspacing highlighted text
+    // 3: Strikethrough generic text
+    // 4: Backspacing (delete generic text letter by letter)
     // 5: Typing sharp line 1 part 1 (Label: AI + HUMAN)
     // 6: Typing sharp line 1 part 2 ( CONTENT AT)
-    // 7: Typing sharp line 2 (BUSINESS SPEED)
+    // 7: Typing sharp line 2 (BREAKNECK SPEED)
     // 8: Final pause before looping back to 0
     const [step, setStep] = useState(0);
 
     const genericText = "GENERIC B2B CONTENT AGENCY";
     const [genericDisplay, setGenericDisplay] = useState("");
-    const [selectedAmount, setSelectedAmount] = useState(0);
 
     const sharpLabel = "AI + HUMAN";
     const sharp1Rest = " CONTENT AT";
-    const sharp2 = "BUSINESS SPEED";
+    const sharp2 = "BREAKNECK SPEED";
 
     const [labelDisplay, setLabelDisplay] = useState("");
     const [restDisplay, setRestDisplay] = useState("");
@@ -30,8 +29,9 @@ export const HeroHeadline = () => {
 
     // Timings
     const typeSpeed = 40;
-    const deleteSpeed = 20; // Backspace speed
-    const highlightSpeed = 15; // Selection speed
+    const deleteSpeed = 30; // Letter-by-letter backspace speed
+    const pauseBeforeStrike = 1500;
+    const pauseAfterStrike = 800;
 
     useEffect(() => {
         let timeout: NodeJS.Timeout;
@@ -39,7 +39,6 @@ export const HeroHeadline = () => {
         if (step === 0) {
             // Reset state for looping
             setGenericDisplay("");
-            setSelectedAmount(0);
             setLabelDisplay("");
             setRestDisplay("");
             setSharp2Display("");
@@ -50,26 +49,19 @@ export const HeroHeadline = () => {
                     setGenericDisplay(genericText.substring(0, genericDisplay.length + 1));
                 }, typeSpeed);
             } else {
-                timeout = setTimeout(() => setStep(2), 2000); // Wait longer before destruction!
+                timeout = setTimeout(() => setStep(2), pauseBeforeStrike);
             }
         } else if (step === 2) {
-            setStep(3); // Start selecting
+            // Start Strikethrough
+            setStep(3);
         } else if (step === 3) {
-            // Highlighting effect
-            if (selectedAmount < genericText.length) {
-                timeout = setTimeout(() => {
-                    setSelectedAmount(s => s + 1);
-                }, highlightSpeed);
-            } else {
-                // Wait briefly, then start backspacing
-                timeout = setTimeout(() => setStep(4), 300);
-            }
+            // Hold the strikethrough for a moment before backspacing
+            timeout = setTimeout(() => setStep(4), pauseAfterStrike);
         } else if (step === 4) {
             // Backspace delete
             if (genericDisplay.length > 0) {
                 timeout = setTimeout(() => {
                     setGenericDisplay(prev => prev.substring(0, prev.length - 1));
-                    setSelectedAmount(prev => Math.max(0, prev - 1)); // Shrink selection as we delete
                 }, deleteSpeed);
             } else {
                 timeout = setTimeout(() => setStep(5), 300);
@@ -104,23 +96,17 @@ export const HeroHeadline = () => {
         }
 
         return () => clearTimeout(timeout);
-    }, [step, genericDisplay, selectedAmount, labelDisplay, restDisplay, sharp2Display]);
+    }, [step, genericDisplay, labelDisplay, restDisplay, sharp2Display]);
 
     return (
         <h1 className="text-[9.5vw] md:text-8xl lg:text-[85px] xl:text-[90px] font-black tracking-tighter mb-6 lg:mb-8 leading-[1.1] md:leading-tight uppercase min-h-[3.3em] md:min-h-[2.2em]">
             {step < 5 ? (
                 <div className="flex items-center text-white min-h-[3.3em] md:min-h-0">
-                    {/* Render generic text with selection highlight */}
-                    {selectedAmount > 0 ? (
-                        <span className="leading-tight break-words">
-                            {genericDisplay.substring(0, genericDisplay.length - selectedAmount)}
-                            <span className="bg-[#CCFF00] text-black">
-                                {genericDisplay.substring(genericDisplay.length - selectedAmount)}
-                            </span>
-                        </span>
-                    ) : (
-                        <span className="leading-tight break-words">{genericDisplay}</span>
-                    )}
+                    <span
+                        className={`leading-tight break-words transition-all duration-300 ${step >= 3 ? "line-through decoration-[#CCFF00] decoration-[4px] md:decoration-[8px] opacity-50" : ""}`}
+                    >
+                        {genericDisplay}
+                    </span>
                     {/* Blinking cursor */}
                     <motion.span
                         initial={{ opacity: 0 }}
@@ -158,7 +144,7 @@ export const HeroHeadline = () => {
                         )}
                     </div>
 
-                    {/* Line 2: BUSINESS SPEED */}
+                    {/* Line 2: BREAKNECK SPEED */}
                     <div className="flex items-center leading-tight">
                         <span className="text-white">{sharp2Display}</span>
                         {step >= 7 && (
