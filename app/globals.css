@@ -10,10 +10,10 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background-color: #0a0118;
+  background-color: #0d0b0b;
   background: radial-gradient(circle at top right,
       #1f0a3c,
-      #0a0118 60%,
+      #0d0b0b 60%,
       #000000 100%);
   overflow-x: hidden;
   min-height: 100vh;
@@ -190,8 +190,25 @@ body {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .no-scrollbar {
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+@layer utilities {
+  .border-gradient-t {
+    border-top: 1px solid;
+    border-image: linear-gradient(to right, transparent, rgba(255,200,100,0.15), transparent) 1;
+    border-left: 0; border-right: 0; border-bottom: 0;
+  }
+  .border-gradient-b {
+    border-bottom: 1px solid;
+    border-image: linear-gradient(to right, transparent, rgba(255,200,100,0.15), transparent) 1;
+    border-left: 0; border-right: 0; border-top: 0;
+  }
+  .border-gradient-y {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-image: linear-gradient(to right, transparent, rgba(255,200,100,0.15), transparent) 1;
+    border-left: 0; border-right: 0;
+  }
 }

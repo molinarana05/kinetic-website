@@ -128,7 +128,7 @@ export default function FounderBrandScore() {
     const tier = getTier(score);
 
     return (
-        <main className="min-h-screen bg-[#0a0118] text-white">
+        <main className="min-h-screen bg-[#0d0b0b] text-white">
             {showGate && (
                 <EmailGate
                     toolName="Founder Brand Score"

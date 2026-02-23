@@ -84,7 +84,7 @@ export const HeroDesktop = () => {
 
 
             {/* Bottom Gradient Fade */}
-            <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0a0118] to-transparent pointer-events-none z-0" />
+            <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0d0b0b] to-transparent pointer-events-none z-0" />
         </section >
     );
 };

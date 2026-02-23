@@ -29,7 +29,7 @@ export default function BlogIndex() {
     });
 
     return (
-        <main className="min-h-screen bg-[#0a0118] text-white selection:bg-[#CCFF00]/30 overflow-x-hidden">
+        <main className="min-h-screen bg-[#0d0b0b] text-white selection:bg-[#CCFF00]/30 overflow-x-hidden">
             <div className="md:hidden">
                 <Navbar />
             </div>
@@ -46,7 +46,7 @@ export default function BlogIndex() {
                         The Moxie Journal
                     </h1>
 
-                    <div className="flex flex-col md:flex-row justify-between items-center border-t border-white/20 border-b border-white/20 py-3 mt-8 gap-4 md:gap-0">
+                    <div className="flex flex-col md:flex-row justify-between items-center border-gradient-t border-gradient-b py-3 mt-8 gap-4 md:gap-0">
                         <div className="text-xs font-mono uppercase tracking-widest text-gray-300">New Delhi / Global</div>
                         <div className="text-xs font-mono uppercase tracking-[0.3em] font-bold text-[#CCFF00]">AI + Human Content Strategy</div>
                         <div className="text-xs font-mono uppercase tracking-widest text-gray-300">Insights & Frameworks</div>
@@ -54,7 +54,7 @@ export default function BlogIndex() {
                 </div>
 
                 {/* Editorial Grid - Above the fold */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 border-b border-white/20 pb-16 mb-16">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 border-gradient-b pb-16 mb-16">
 
                     {/* Left Column (2 Stories) */}
                     <div className="lg:col-span-3 flex flex-col gap-10 border-b lg:border-b-0 lg:border-r border-white/20 pb-10 lg:pb-0 lg:pr-8">
@@ -107,7 +107,7 @@ export default function BlogIndex() {
                                 <p className="text-xl lg:text-2xl text-gray-300 font-serif leading-relaxed text-center mb-8 px-4 lg:px-12">
                                     {leadPost.description}
                                 </p>
-                                <div className="flex text-center justify-center items-center gap-4 text-sm uppercase tracking-widest font-mono text-gray-400 border-t border-b border-white/10 py-4">
+                                <div className="flex text-center justify-center items-center gap-4 text-sm uppercase tracking-widest font-mono text-gray-400 border-t border-gradient-b py-4">
                                     <span>By Molina Rana</span>
                                     <span>|</span>
                                     <span>{leadPost.date}</span>
@@ -126,7 +126,7 @@ export default function BlogIndex() {
                         </h3>
                         <div className="flex flex-col gap-6">
                             {rightColPosts.map((post, idx) => (
-                                <Link href={`/blog/${post.id}`} key={post.id} className="group block border-b border-white/10 pb-6 last:border-0 hover:bg-white/5 p-2 -mx-2 rounded transition-colors">
+                                <Link href={`/blog/${post.id}`} key={post.id} className="group block border-gradient-b pb-6 last:border-0 hover:bg-white/5 p-2 -mx-2 rounded transition-colors">
                                     <div className="flex gap-4">
                                         <span className="text-4xl font-serif font-bold text-white/20 group-hover:text-[#CCFF00]/50 transition-colors">
                                             {idx + 1}
@@ -158,7 +158,7 @@ export default function BlogIndex() {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
                             {remainingPosts.map((post) => (
-                                <Link href={`/blog/${post.id}`} key={post.id} className="group block border-t border-white/20 pt-6">
+                                <Link href={`/blog/${post.id}`} key={post.id} className="group block border-gradient-t pt-6">
                                     <div className="mb-4">
                                         <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#CCFF00]">
                                             {post.tags?.[0] || 'Insight'}
@@ -180,7 +180,7 @@ export default function BlogIndex() {
                 )}
 
                 {/* Footer of Blog Index */}
-                <div className="mt-24 pt-12 border-t border-white/20 text-center">
+                <div className="mt-24 pt-12 border-gradient-t text-center">
                     <h3 className="text-3xl font-serif font-black mb-6">Build your inbound engine.</h3>
                     <p className="text-gray-400 mb-8 max-w-lg mx-auto">
                         Join the founders receiving weekly insights on AEO, GEO, and zero-click search strategies.

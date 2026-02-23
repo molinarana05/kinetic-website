@@ -109,7 +109,7 @@ export const Services = () => {
                                     <p className="text-gray-600 text-[10px] leading-relaxed flex-1">
                                         {svc.description}
                                     </p>
-                                    <div className="mt-4 pt-3 border-t border-white/5">
+                                    <div className="mt-4 pt-3 border-gradient-t">
                                         <span className="text-[#CCFF00] text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">
                                             Learn more →
                                         </span>

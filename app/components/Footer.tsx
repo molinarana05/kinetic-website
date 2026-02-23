@@ -27,7 +27,7 @@ const social = [
 
 export default function Footer() {
     return (
-        <footer className="py-16 border-t border-white/10 bg-black relative z-10">
+        <footer className="py-16 border-gradient-t bg-black relative z-10">
             <div className="container mx-auto px-6 max-w-6xl">
                 {/* Top grid */}
                 <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-10 mb-12">
@@ -96,7 +96,7 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom bar */}
-                <div className="pt-8 border-t border-white/[0.08] flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-widest text-gray-500">
+                <div className="pt-8 border-gradient-t flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-widest text-gray-500">
                     <span>© {new Date().getFullYear()} Moxie Digital. All rights reserved.</span>
                     <div className="flex gap-6">
                         <Link href="/privacy-policy" className="hover:text-[#CCFF00] transition-colors">Privacy Policy</Link>

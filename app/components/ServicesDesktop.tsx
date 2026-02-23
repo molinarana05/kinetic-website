@@ -138,7 +138,7 @@ export const ServicesDesktop = () => {
                                     </p>
 
                                     {/* Arrow */}
-                                    <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-end">
+                                    <div className="mt-6 pt-4 border-gradient-t flex items-center justify-end">
                                         <span className="text-[#CCFF00] text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                                             Learn more →
                                         </span>

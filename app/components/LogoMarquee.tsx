@@ -29,7 +29,7 @@ interface Props {
 
 export function LogoMarquee({ label = "Trusted by", speed = 30 }: Props) {
     return (
-        <section className="py-12 border-y border-white/5 bg-black/40 overflow-hidden select-none">
+        <section className="py-12 border-gradient-y bg-black/40 overflow-hidden select-none">
             {label && (
                 <p className="text-center text-xs font-mono uppercase tracking-[0.3em] text-gray-600 mb-8">
                     {label}
@@ -39,9 +39,9 @@ export function LogoMarquee({ label = "Trusted by", speed = 30 }: Props) {
             <div className="relative">
                 {/* Edge fade masks */}
                 <div className="pointer-events-none absolute left-0 top-0 h-full w-24 z-10"
-                    style={{ background: "linear-gradient(to right, #0a0118 0%, transparent 100%)" }} />
+                    style={{ background: "linear-gradient(to right, #0d0b0b 0%, transparent 100%)" }} />
                 <div className="pointer-events-none absolute right-0 top-0 h-full w-24 z-10"
-                    style={{ background: "linear-gradient(to left, #0a0118 0%, transparent 100%)" }} />
+                    style={{ background: "linear-gradient(to left, #0d0b0b 0%, transparent 100%)" }} />
 
                 {/* Scrolling track */}
                 <div

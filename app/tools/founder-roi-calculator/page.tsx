@@ -68,7 +68,7 @@ export default function FounderROICalculator() {
     const paybackMonths = contentBudget > 0 ? Math.ceil(contentBudget / ((founderMonthlyRevenue - currentMonthlyRevenue) / 12 + (currentMonthlyCost - founderMonthlyCost) / 12)) : 0;
 
     return (
-        <main className="min-h-screen bg-[#0a0118] text-white">
+        <main className="min-h-screen bg-[#0d0b0b] text-white">
             {showGate && (
                 <EmailGate
                     toolName="Founder Content ROI Calculator"
@@ -189,7 +189,7 @@ export default function FounderROICalculator() {
                 </div>
 
                 {/* CTA */}
-                <div className="mt-16 border-t border-white/10 pt-16 text-center">
+                <div className="mt-16 border-gradient-t pt-16 text-center">
                     <h3 className="text-3xl font-black mb-4 uppercase tracking-tighter">Want these numbers to be real?</h3>
                     <p className="text-gray-400 mb-8 max-w-lg mx-auto">
                         The calculator uses conservative estimates. Our clients typically see results at the higher end. Book a 30-min call to see what's realistic for your specific market.

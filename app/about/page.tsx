@@ -122,7 +122,7 @@ const certifications = [
 
 export default function AboutPage() {
     return (
-        <main className="min-h-screen bg-[#0a0118] text-white">
+        <main className="min-h-screen bg-[#0d0b0b] text-white">
             <div className="md:hidden"><Navbar /></div>
             <NavbarDesktop />
 
@@ -162,7 +162,7 @@ export default function AboutPage() {
                                     className="object-cover object-top"
                                 />
                                 {/* Subtle overlay gradient at bottom */}
-                                <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#0a0118]/60 to-transparent" />
+                                <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#0d0b0b]/60 to-transparent" />
                             </div>
                             {/* Neon accent dot */}
                             <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-6 h-1.5 bg-[#CCFF00] rounded-full shadow-[0_0_12px_#CCFF00]" />
@@ -176,7 +176,7 @@ export default function AboutPage() {
             </section>
 
             {/* Stats */}
-            <section className="py-16 px-6 border-t border-white/5">
+            <section className="py-16 px-6 border-gradient-t">
                 <div className="max-w-5xl mx-auto">
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
                         {stats.map((s) => (
@@ -204,7 +204,7 @@ export default function AboutPage() {
 
 
             {/* USP */}
-            <section className="py-16 px-6 border-t border-white/5">
+            <section className="py-16 px-6 border-gradient-t">
                 <div className="max-w-5xl mx-auto">
                     <h2 className="text-3xl font-black tracking-tighter mb-3 uppercase">Why Moxie Digital</h2>
                     <div className="w-16 h-1 bg-[#CCFF00] mb-8" />
@@ -229,7 +229,7 @@ export default function AboutPage() {
             </section>
 
             {/* Career Timeline */}
-            <section className="py-16 px-6 border-t border-white/5">
+            <section className="py-16 px-6 border-gradient-t">
                 <div className="max-w-5xl mx-auto">
                     <h2 className="text-3xl font-black tracking-tighter mb-3 uppercase">Career Timeline</h2>
                     <div className="w-16 h-1 bg-[#CCFF00] mb-10" />
@@ -275,7 +275,7 @@ export default function AboutPage() {
             </section>
 
             {/* Skills + Tech */}
-            <section className="py-16 px-6 border-t border-white/5">
+            <section className="py-16 px-6 border-gradient-t">
                 <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
                     <div>
                         <h2 className="text-2xl font-black tracking-tighter mb-3 uppercase">Core Competencies</h2>
@@ -299,7 +299,7 @@ export default function AboutPage() {
             </section>
 
             {/* Certifications + Education */}
-            <section className="py-16 px-6 border-t border-white/5">
+            <section className="py-16 px-6 border-gradient-t">
                 <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
                     <div>
                         <h2 className="text-2xl font-black tracking-tighter mb-3 uppercase">Certifications</h2>
@@ -333,7 +333,7 @@ export default function AboutPage() {
             </section>
 
             {/* CTA */}
-            <section className="py-20 px-6 border-t border-white/5">
+            <section className="py-20 px-6 border-gradient-t">
                 <div className="max-w-3xl mx-auto text-center">
                     <span className="text-[#CCFF00] font-mono text-xs uppercase tracking-widest mb-4 block">Let&apos;s Work Together</span>
                     <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-6">Ready to build <br />your pipeline engine?</h2>

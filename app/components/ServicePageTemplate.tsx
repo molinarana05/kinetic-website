@@ -72,7 +72,7 @@ export function ServicePageTemplate({
     };
 
     return (
-        <main className="min-h-screen bg-[#0a0118] text-white selection:bg-[#CCFF00]/30 overflow-x-hidden">
+        <main className="min-h-screen bg-[#0d0b0b] text-white selection:bg-[#CCFF00]/30 overflow-x-hidden">
             <Script
                 id={`service-schema-${tag}`}
                 type="application/ld+json"
@@ -208,7 +208,7 @@ export function ServicePageTemplate({
                         </h2>
                         <div className="space-y-8">
                             {faq.map((item, i) => (
-                                <div key={i} className="border-b border-white/10 pb-8">
+                                <div key={i} className="border-gradient-b pb-8">
                                     <h3 className="text-lg font-bold text-white mb-3">
                                         {item.q}
                                     </h3>
@@ -221,7 +221,7 @@ export function ServicePageTemplate({
             )}
 
             {/* Final CTA */}
-            <section className="py-16 md:py-24 px-6 border-t border-white/5">
+            <section className="py-16 md:py-24 px-6 border-gradient-t">
                 <div className="max-w-4xl mx-auto text-center">
                     <span className="text-[#CCFF00] font-mono text-xs uppercase tracking-[0.3em] mb-4 block">
                         Ready?

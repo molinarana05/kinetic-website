@@ -77,7 +77,7 @@ export default function LinkedInHookGenerator() {
     const canGenerate = industry.trim() && topic.trim() && selectedType;
 
     return (
-        <main className="min-h-screen bg-[#0a0118] text-white">
+        <main className="min-h-screen bg-[#0d0b0b] text-white">
             {showGate && (
                 <EmailGate
                     toolName="LinkedIn Hook Generator"

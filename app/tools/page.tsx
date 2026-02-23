@@ -62,7 +62,7 @@ const tools = [
 
 export default function ToolsPage() {
     return (
-        <main className="min-h-screen bg-[#0a0118] text-white">
+        <main className="min-h-screen bg-[#0d0b0b] text-white">
             <div className="md:hidden"><Navbar /></div>
             <NavbarDesktop />
             <div className="pt-32 pb-24 px-6 max-w-5xl mx-auto">
@@ -92,7 +92,7 @@ export default function ToolsPage() {
                                 {tool.title}
                             </h2>
                             <p className="text-gray-400 text-sm leading-relaxed flex-1">{tool.description}</p>
-                            <div className="flex items-center justify-between mt-5 pt-4 border-t border-white/10">
+                            <div className="flex items-center justify-between mt-5 pt-4 border-gradient-t">
                                 <span className="text-xs text-gray-600 font-mono">{tool.time}</span>
                                 <span className="text-xs uppercase tracking-widest font-bold text-[#CCFF00] group-hover:translate-x-1 transition-transform">
                                     Open →
@@ -102,7 +102,7 @@ export default function ToolsPage() {
                     ))}
                 </div>
 
-                <div className="mt-20 text-center border-t border-white/10 pt-16">
+                <div className="mt-20 text-center border-gradient-t pt-16">
                     <p className="text-gray-500 text-sm mb-6">Built by Moxie Digital. These tools are completely free — forever.</p>
                     <Link href="/" className="text-[#CCFF00] hover:text-white text-sm font-bold uppercase tracking-widest transition-colors">
                         ← Back to Moxie Digital

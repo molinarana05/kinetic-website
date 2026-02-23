@@ -88,7 +88,7 @@ export default async function BlogPost({ params }: Props) {
     };
 
     return (
-        <main className="min-h-screen bg-[#0a0118] text-white selection:bg-neon/30 pb-24">
+        <main className="min-h-screen bg-[#0d0b0b] text-white selection:bg-neon/30 pb-24">
             <Script
                 id={`jsonld-article-${params.slug}`}
                 type="application/ld+json"
@@ -103,7 +103,7 @@ export default async function BlogPost({ params }: Props) {
                     <ArrowLeft size={16} /> Back to Feed
                 </Link>
 
-                <header className="mb-16 border-b border-white/10 pb-12">
+                <header className="mb-16 border-gradient-b pb-12">
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight tracking-tighter text-white">
                         {postData!.title}
                     </h1>

@@ -17,25 +17,25 @@ export const TestimonialsDesktop = () => {
                         {
                             n: "Anuraag Paul",
                             r: "Reliance Group",
-                            q: "Moxie turned our chaotic posting into a precise revenue engine. We stopped guessing and started dominating our niche.",
+                            q: "Before Moxie, we were posting into the void. Within two months we had a system, a voice, and pipeline we could actually trace back to content. It changed how we think about marketing entirely.",
                             img: "/anuraag-paul.png"
                         },
                         {
                             n: "Aparupa Chakravarty",
                             r: "Spatial Eye",
-                            q: "We went from invisible to industry authority. Molina’s framework isn’t just content. It is business strategy disguised as posts.",
+                            q: "We were doing interesting work that nobody knew about. Molina took one conversation with our founder and turned it into a month of content that put us in front of the exact buyers we'd been chasing for years.",
                             img: "/aparupa-chakravarty.png"
                         },
                         {
                             n: "Kavita Rana",
                             r: "Sharda Global School",
-                            q: "Finally, a system that respects my time. One hour with Molina creates a month of high-leverage assets. The clarity is unmatched.",
+                            q: "I kept delaying content because I never had the time or a clear system. Now I show up for one hour a month and Molina handles the rest. The quality is higher than anything we produced internally.",
                             img: "/kavita-rana.png"
                         },
                         {
                             n: "Arjun Mehta",
                             r: "Co-Founder, ScaleUp A.I.",
-                            q: "The clarity we got was instant. We stopped wasting time on content that didn't convert. Moxie is the real deal.",
+                            q: "Enterprise buyers are skeptical. What Moxie built for us didn't just get attention — it built the kind of credibility that made those conversations much easier to close.",
                             img: "/arjun-mehta.png"
                         }
                     ].map((item, i) => (

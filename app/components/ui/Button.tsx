@@ -64,7 +64,7 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps & {
         const styles = cn(
             "px-8 py-4 rounded-[2px] font-[900] tracking-[1px] text-sm uppercase transition-colors duration-300 inline-block text-center relative z-10",
             variant === "primary"
-                ? "bg-[#CCFF00] text-black hover:bg-white hover:text-black shadow-[0_0_20px_rgba(204,255,0,0.5)] hover:shadow-[0_0_30px_rgba(204,255,0,0.8)]"
+                ? "bg-[#CCFF00] text-black hover:bg-white hover:text-black shadow-[0_0_24px_rgba(255,180,80,0.15)] hover:shadow-[0_0_30px_rgba(255,180,80,0.3)]"
                 : "bg-transparent border border-[#CCFF00] text-[#CCFF00] hover:bg-[#CCFF00]/10",
             className
         );

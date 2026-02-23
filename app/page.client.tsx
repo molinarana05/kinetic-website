@@ -12,6 +12,7 @@ import { InteractiveGridDesktop } from "./components/ui/InteractiveGridDesktop";
 import { MatrixLogStream } from "./components/ui/MatrixLogStream";
 import { TestimonialsDesktop } from "./components/TestimonialsDesktop";
 import Link from "next/link";
+import { GamifiedEarlyWins } from "./components/GamifiedEarlyWins";
 
 // ─── Animated heading for Hero ────────────────────────────────────────────────
 const AnimatedHeroHeading = () => {
@@ -369,7 +370,7 @@ export default function HomeClient() {
     const aboutImageY = useTransform(scrollYProgress, [0, 1], [0, -40]);
 
     return (
-        <main className="min-h-screen bg-[#0a0118] text-white relative selection:bg-neon selection:text-black" style={{ backgroundColor: "#0a0118", color: "white" }}>
+        <main className="min-h-screen bg-[#0d0b0b] text-white relative selection:bg-neon selection:text-black" style={{ backgroundColor: "#0d0b0b", color: "white" }}>
             {/* Interactive Grid Background */}
             <div className="md:hidden">
                 <InteractiveGrid />
@@ -477,63 +478,7 @@ export default function HomeClient() {
             <NoiseAndSignal />
 
             {/* Early Wins */}
-            <section id="early-wins" className="py-16 md:py-24 relative overflow-hidden z-10">
-                <div className="container mx-auto px-6 md:px-4 max-w-6xl">
-                    <div className="text-center mb-12">
-                        <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-5xl md:text-6xl font-[900] mb-4 tracking-tight text-white uppercase">EARLY WINS</motion.h2>
-                        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-                            <p className="text-[3vw] md:text-[18px] font-[900] text-[#CCFF00] uppercase tracking-[0.1em] md:tracking-[0.2em] whitespace-nowrap overflow-hidden text-ellipsis">REAL OUTCOMES FROM SYSTEMS WE BUILT.</p>
-                        </motion.div>
-                    </div>
-
-                    <motion.div
-                        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
-                        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.2 } } }}
-                        className="grid md:grid-cols-3 gap-10 mb-20"
-                    >
-                        {[
-                            { tag: "SNAPSHOT", headline: "14 Qualified Demos in 90 Days", context: "B2B SaaS · Revenue Tech · Team of 15–50. Repositioned offer + rebuilt ICP messaging. Launched LinkedIn content system + distribution.", bullets: ["Full details shared on call →"] },
-                            { tag: "SNAPSHOT", headline: "23 Page-1 Rankings in 4 Months", context: "B2B SaaS · Infrastructure · Pre-Seed · Global Clients. Topic + keyword research mapped to funnel. Content built for clarity + skimmability.", bullets: ["Full details shared on call →"] },
-                            { tag: "SNAPSHOT", headline: "500 Units Sold in 11 Days", context: "D2C Launch · Physical Product · First-Time Founder. Launch narrative + landing page copy. Content kit for social + email.", bullets: ["Full details shared on call →"] },
-                        ].map((item, i) => (
-                            <motion.div key={i} variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } } }}>
-                                <Card className="group h-full p-8 border-white/5 bg-black/40 backdrop-blur-sm transition-all duration-500 hover:-translate-y-[6px] hover:shadow-[0_0_40px_rgba(189,0,255,0.15)] hover:border-neon/30 flex flex-col relative overflow-hidden">
-                                    <div className="mb-6">
-                                        <span className="text-[9px] font-bold text-black uppercase tracking-widest border border-neon/30 bg-[#CCFF00] px-2 py-1 rounded">{item.tag}</span>
-                                    </div>
-                                    <div className="text-3xl font-black text-white mb-4 leading-none pr-12 min-h-[3rem] items-center uppercase tracking-tighter flex">
-                                        {i === 0 && <><span className="mr-1">+</span><NumberCounter end={14} duration={1.5} suffix=" QUALIFIED DEMOS" /></>}
-                                        {i === 1 && <><span className="mr-2">TOP</span><NumberCounter end={23} duration={1.5} suffix=" RANKINGS" /></>}
-                                        {i === 2 && "500 UNITS SOLD"}
-                                    </div>
-                                    <p className="text-[11px] text-gray-500 italic mb-8 font-light border-l border-white/10 pl-3">{item.context}</p>
-                                    <ul className="space-y-4 mb-10 flex-grow">
-                                        {item.bullets.map((bullet, j) => (
-                                            <li key={j} className="flex items-start text-gray-400 text-sm">
-                                                <span className="min-w-[4px] h-1 w-1 bg-neon/80 rounded-full mt-2 mr-3" />
-                                                {bullet}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    <div className="pt-6 border-t border-white/[0.03] mt-auto flex justify-end">
-                                        <span className="text-[#CCFF00] group-hover:text-neon underline decoration-[#CCFF00]/30 underline-offset-4 transition-all duration-300 text-[10px] font-medium">Details shared on call →</span>
-                                    </div>
-                                </Card>
-                            </motion.div>
-                        ))}
-                    </motion.div>
-
-                    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center pt-12 border-t border-white/[0.03]">
-                        <p className="text-gray-400 mb-8 text-lg font-light">Ready to install this system in your business?</p>
-                        <Button
-                            className="bg-[#CCFF00] text-black hover:bg-white hover:text-black px-12 py-6 text-lg rounded-[4px] font-[900] uppercase tracking-widest shadow-[0_0_20px_rgba(204,255,0,0.4)] hover:shadow-[0_0_30px_rgba(204,255,0,0.6)] transition-all duration-300 transform hover:scale-105"
-                            onClick={() => window.open('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3L4_zCLswgoxBhyScpqolDXObrnSfhFLh-Kh2Nw68WXVrUpTlD6hPAXhCC0wVMtQ56B2lfDoPz', '_blank')}
-                        >
-                            START THE ENGINE
-                        </Button>
-                    </motion.div>
-                </div>
-            </section>
+            <GamifiedEarlyWins />
 
             {/* Testimonials */}
             <div className="md:hidden">
@@ -586,9 +531,21 @@ export default function HomeClient() {
                             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="flex flex-col md:hidden mb-8 text-center">
                                 <span className="text-[18px] font-bold text-[#CCFF00] uppercase tracking-[0.2em] mb-6 block">THE OPERATOR</span>
                             </motion.div>
-                            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 1 }} style={{ y: aboutImageY }} className="relative group lg:pr-12 order-2 md:order-1">
-                                <div className="relative aspect-[3/4] w-[90%] mx-auto md:w-full rounded-sm overflow-hidden border-[6px] border-[#CCFF00] shadow-[16px_16px_0px_0px_#111] bg-[#0a0118]">
-                                    <img src="/molina-rana-cutout.png" alt="Molina Rana, Senior B2B Content Marketing Consultant and Founder of Moxie Digital" className="w-full h-full object-cover object-top grayscale brightness-[1.05] contrast-[1.2]" />
+                            {/* Portrait Image Column */}
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 1 }}
+                                style={{ y: aboutImageY }}
+                                className="relative group lg:pr-12 order-2 md:order-1"
+                            >
+                                <div className="relative aspect-[3/4] w-[90%] mx-auto md:w-full rounded-sm overflow-hidden border-[6px] border-[#CCFF00] shadow-[16px_16px_0px_0px_#111] bg-[#0d0b0b]">
+                                    <img
+                                        src="/molina-rana-cutout.png"
+                                        alt="Molina Rana, Senior B2B Content Marketing Consultant and Founder of Moxie Digital"
+                                        className="w-full h-full object-cover object-top grayscale brightness-[1.05] contrast-[1.2]"
+                                    />
                                 </div>
                             </motion.div>
                         </div>
@@ -605,11 +562,11 @@ export default function HomeClient() {
                             </div>
                         </motion.div>
                     </div>
-                </div>
-            </section>
+                </div >
+            </section >
 
             {/* FAQ */}
-            <section id="faq" className="py-16 md:py-24 relative z-10">
+            < section id="faq" className="py-16 md:py-24 relative z-10" >
                 <div className="container mx-auto px-6 md:px-4 max-w-4xl">
                     <div className="text-center mb-16">
                         <span className="text-[18px] font-bold text-[#CCFF00] uppercase tracking-[0.2em] mb-4 block">THE KNOWLEDGE BASE</span>
@@ -624,8 +581,18 @@ export default function HomeClient() {
                             { q: "What is the time commitment required from me?", a: "For our flagship Content Repurposing engine, it is just one 60-minute interview per month. We extract your insights and turn that single hour into 30 days of strategic content across every channel." },
                             { q: "Can this content engine actually drive measurable B2B pipeline?", a: "Yes. We don't post for the sake of engagement. Every piece of content—whether it is an SEO article or an AI agent output—is designed to move a prospect through the buyer's journey toward a discovery call." },
                         ].map((item, i) => (
-                            <motion.div key={i} className="border-b border-white/10 pb-6" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
-                                <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full flex items-center justify-between py-6 text-left group transition-colors">
+                            <motion.div
+                                key={i}
+                                className="border-gradient-b pb-6"
+                                initial={{ opacity: 0, y: 10 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1 }}
+                            >
+                                <button
+                                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                                    className="w-full flex items-center justify-between py-6 text-left group transition-colors"
+                                >
                                     <span className="font-bold text-xl text-white group-hover:text-[#CCFF00] transition-colors">{item.q}</span>
                                     {openFaq === i ? <Minus className="text-[#CCFF00] shrink-0 ml-4 w-6 h-6" /> : <Plus className="text-[#CCFF00] shrink-0 ml-4 w-6 h-6" />}
                                 </button>

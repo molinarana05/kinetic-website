@@ -231,7 +231,7 @@ export default function ServicesPage() {
     const [openFaq, setOpenFaq] = useState<number | null>(null);
 
     return (
-        <main className="min-h-screen bg-[#0a0118] text-white overflow-x-hidden">
+        <main className="min-h-screen bg-[#0d0b0b] text-white overflow-x-hidden">
             <div className="md:hidden"><Navbar /></div>
             <NavbarDesktop />
 
@@ -315,7 +315,7 @@ export default function ServicesPage() {
             </section>
 
             {/* ── STATS ────────────────────────────────────────────────── */}
-            <section className="py-16 border-y border-white/5 bg-black/30">
+            <section className="py-16 border-gradient-y bg-black/30">
                 <div className="max-w-5xl mx-auto px-6">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                         {stats.map((s, i) => (
@@ -432,7 +432,7 @@ export default function ServicesPage() {
                                         </div>
                                     </div>
 
-                                    <div className="flex items-center justify-between border-t border-white/10 pt-5">
+                                    <div className="flex items-center justify-between border-gradient-t pt-5">
                                         <span className="text-gray-500 text-sm font-mono">Timeline: <span className="text-white font-bold">{s.timeline}</span></span>
                                         <MagneticBtn href={BOOKING_URL}
                                             className="text-xs font-black uppercase tracking-widest px-5 py-2.5 rounded-xl cursor-pointer flex items-center gap-2"
@@ -471,7 +471,7 @@ export default function ServicesPage() {
             </section>
 
             {/* ── HOW IT WORKS - CONVEYOR BELT ────────────────────────── */}
-            <section className="py-24 bg-black/40 border-y border-white/5 overflow-hidden">
+            <section className="py-24 bg-black/40 border-gradient-y overflow-hidden">
                 <div className="max-w-5xl mx-auto px-6 mb-12">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -565,7 +565,7 @@ export default function ServicesPage() {
             </section>
 
             {/* ── FAQ ──────────────────────────────────────────────────── */}
-            <section className="py-24 px-6 bg-black/40 border-t border-white/5">
+            <section className="py-24 px-6 bg-black/40 border-gradient-t">
                 <div className="max-w-3xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -606,7 +606,7 @@ export default function ServicesPage() {
                                             exit={{ height: 0, opacity: 0 }}
                                             transition={{ duration: 0.25, ease: "easeInOut" }}
                                         >
-                                            <p className="px-7 pb-6 text-gray-400 text-sm leading-relaxed border-t border-white/5 pt-4">{faq.a}</p>
+                                            <p className="px-7 pb-6 text-gray-400 text-sm leading-relaxed border-gradient-t pt-4">{faq.a}</p>
                                         </motion.div>
                                     )}
                                 </AnimatePresence>
