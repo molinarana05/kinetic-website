@@ -25,9 +25,9 @@ export const NavbarDesktop = () => {
             <div
                 className="relative max-w-6xl mx-auto flex items-center justify-between"
             >
-                <Link href="/" className="h-4 relative flex items-center z-[100]">
+                <Link href="/" className="h-8 md:h-10 lg:h-12 relative flex items-center z-[100]">
                     {/* Using the uploaded logo */}
-                    <img src="/logo.png?v=new" alt="Moxie Digital - B2B Content Marketing and Founder-Led Growth Agency Logo" className="object-contain w-full h-full" />
+                    <img src="/logo.png?v=new" alt="Moxie Digital - B2B Content Marketing and Founder-Led Growth Agency Logo" className="object-contain h-full w-auto" />
                 </Link>
 
                 <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-8">

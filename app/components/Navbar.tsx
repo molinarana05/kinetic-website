@@ -38,9 +38,9 @@ export const Navbar = () => {
                 className="relative container mx-auto px-6 md:px-16 h-24 flex items-center justify-between"
             >
                 <div className="max-w-6xl w-full flex items-center justify-between">
-                    <Link href="/" className="relative w-40 md:w-80 h-16 md:h-24 z-50 flex items-center justify-start">
+                    <Link href="/" className="relative h-10 md:h-12 lg:h-14 z-50 flex items-center justify-start">
                         {/* Using the uploaded logo */}
-                        <img src="/logo.png?v=new" alt="Moxie Digital - B2B Content Marketing and Founder-Led Growth Agency Logo" className="object-contain object-left w-full h-full" />
+                        <img src="/logo.png?v=new" alt="Moxie Digital - B2B Content Marketing and Founder-Led Growth Agency Logo" className="object-contain object-left h-full w-auto" />
                     </Link>
 
                     {/* DESKTOP NAV */}
