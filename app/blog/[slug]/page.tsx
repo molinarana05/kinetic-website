@@ -60,7 +60,7 @@ export default async function BlogPost({ params }: Props) {
         "dateModified": postData!.date,
         "author": {
             "@type": "Person",
-            "name": "Molina Rana",
+            "name": (postData as any).author || "Molina Rana",
             "@id": "https://www.moxie-digital.com/#founder",
             "url": "https://www.linkedin.com/in/molina-rana/"
         },
@@ -110,7 +110,7 @@ export default async function BlogPost({ params }: Props) {
                     <div className="flex flex-wrap items-center gap-6 text-gray-400">
                         <time className="font-mono text-[#CCFF00]">{postData!.date}</time>
                         <div className="flex items-center gap-2 text-sm uppercase tracking-widest">
-                            <span>By Molina Rana</span>
+                            <span>By {(postData as any).author || 'Molina Rana'}</span>
                         </div>
                     </div>
                 </header>
@@ -125,30 +125,34 @@ export default async function BlogPost({ params }: Props) {
             <div className="max-w-3xl mx-auto px-6 mt-16">
                 <div className="border border-white/10 rounded-2xl p-8 bg-black/30 flex flex-col sm:flex-row items-start gap-6">
                     <div className="shrink-0 w-16 h-16 rounded-full bg-[#CCFF00]/20 border-2 border-[#CCFF00] flex items-center justify-center text-[#CCFF00] font-black text-2xl select-none">
-                        MR
+                        {((postData as any).author || 'Molina Rana').split(' ').map((n: string) => n[0]).join('')}
                     </div>
                     <div className="flex-1">
                         <div className="flex flex-wrap items-center gap-3 mb-1">
-                            <span className="font-black text-white text-lg">Molina Rana</span>
-                            <span className="text-xs uppercase tracking-widest text-[#CCFF00] font-mono">Founder · Moxie Digital</span>
+                            <span className="font-black text-white text-lg">{(postData as any).author || 'Molina Rana'}</span>
+                            <span className="text-xs uppercase tracking-widest text-[#CCFF00] font-mono">{(postData as any).author ? 'Guest Author' : 'Founder · Moxie Digital'}</span>
                         </div>
-                        <div className="flex flex-wrap gap-2 mb-3">
-                            <span className="text-[10px] uppercase tracking-widest font-bold bg-[#CCFF00]/10 text-[#CCFF00] border border-[#CCFF00]/30 px-2 py-0.5 rounded-full">🏆 Emerging Star Award</span>
-                            <span className="text-[10px] uppercase tracking-widest font-bold bg-[#CCFF00]/10 text-[#CCFF00] border border-[#CCFF00]/30 px-2 py-0.5 rounded-full">✦ HighFlyer Award</span>
-                            <span className="text-[10px] uppercase tracking-widest font-bold bg-white/5 text-gray-400 border border-white/10 px-2 py-0.5 rounded-full">6+ Years · SaaS · FinTech · Consulting</span>
-                        </div>
-                        <p className="text-gray-400 text-sm leading-relaxed mb-3">
-                            Award-winning B2B Brand &amp; Growth Marketing Leader. Built and scaled LinkedIn channels at Aviso AI (24K→37K), HighRadius (150K→270K, 80% growth), and driven 1.8M+ organic impressions and 38% QoQ inbound demo growth. Previously at Paytm, Bajaj Finserv, and Grant Thornton.
-                        </p>
-                        <a
-                            href="https://www.linkedin.com/in/molina-rana/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-[#CCFF00] hover:text-white transition-colors"
-                        >
-                            <svg className="w-4 h-4 fill-current flex-shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
-                            Connect on LinkedIn
-                        </a>
+                        {!(postData as any).author && (
+                            <>
+                                <div className="flex flex-wrap gap-2 mb-3">
+                                    <span className="text-[10px] uppercase tracking-widest font-bold bg-[#CCFF00]/10 text-[#CCFF00] border border-[#CCFF00]/30 px-2 py-0.5 rounded-full">🏆 Emerging Star Award</span>
+                                    <span className="text-[10px] uppercase tracking-widest font-bold bg-[#CCFF00]/10 text-[#CCFF00] border border-[#CCFF00]/30 px-2 py-0.5 rounded-full">✦ HighFlyer Award</span>
+                                    <span className="text-[10px] uppercase tracking-widest font-bold bg-white/5 text-gray-400 border border-white/10 px-2 py-0.5 rounded-full">6+ Years · SaaS · FinTech · Consulting</span>
+                                </div>
+                                <p className="text-gray-400 text-sm leading-relaxed mb-3">
+                                    Award-winning B2B Brand &amp; Growth Marketing Leader. Built and scaled LinkedIn channels at Aviso AI (24K→37K), HighRadius (150K→270K, 80% growth), and driven 1.8M+ organic impressions and 38% QoQ inbound demo growth. Previously at Paytm, Bajaj Finserv, and Grant Thornton.
+                                </p>
+                                <a
+                                    href="https://www.linkedin.com/in/molina-rana/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-[#CCFF00] hover:text-white transition-colors"
+                                >
+                                    <svg className="w-4 h-4 fill-current flex-shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
+                                    Connect on LinkedIn
+                                </a>
+                            </>
+                        )}
                     </div>
                 </div>
             </div>
