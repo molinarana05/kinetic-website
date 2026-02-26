@@ -182,9 +182,9 @@ export function ContentRepurposingClient() {
                                 </p>
                             </div>
                             {/* Step 1 Visual: Content funnel from raw → gold */}
-                            <div className="bg-white/5 border border-white/10 rounded-sm p-8 flex flex-col items-center justify-center relative overflow-hidden group min-h-[320px]">
+                            <div className="bg-white/5 border border-white/10 rounded-sm p-4 flex flex-col items-center justify-center relative overflow-hidden group min-h-[420px]">
                                 <div className="absolute inset-0 bg-gradient-to-br from-[#CCFF00]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                                <svg viewBox="0 0 320 240" className="w-full max-w-[280px]" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg viewBox="0 0 320 240" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     {/* Source content blocks */}
                                     <rect x="10" y="10" width="70" height="36" rx="4" fill="#1a1a2e" stroke="#CCFF00" strokeOpacity="0.3" strokeWidth="1" />
                                     <text x="45" y="32" textAnchor="middle" fill="#9ca3af" fontSize="9" fontFamily="monospace">WEBINAR</text>
@@ -221,9 +221,9 @@ export function ContentRepurposingClient() {
                             className="grid md:grid-cols-2 gap-12 items-center"
                         >
                             {/* Step 2 Visual: Format matrix */}
-                            <div className="order-2 md:order-1 bg-white/5 border border-white/10 rounded-sm p-8 flex flex-col items-center justify-center relative overflow-hidden group min-h-[320px]">
+                            <div className="order-2 md:order-1 bg-white/5 border border-white/10 rounded-sm p-4 flex flex-col items-center justify-center relative overflow-hidden group min-h-[420px]">
                                 <div className="absolute inset-0 bg-gradient-to-br from-[#CCFF00]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                                <svg viewBox="0 0 320 240" className="w-full max-w-[280px]" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg viewBox="0 0 320 240" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     {/* Central pillar */}
                                     <rect x="115" y="85" width="90" height="70" rx="8" fill="#CCFF00" fillOpacity="0.18" stroke="#CCFF00" strokeWidth="2" />
                                     <text x="160" y="116" textAnchor="middle" fill="#CCFF00" fontSize="9" fontFamily="monospace" fontWeight="bold">PILLAR</text>
@@ -287,9 +287,9 @@ export function ContentRepurposingClient() {
                                 </p>
                             </div>
                             {/* Step 3 Visual: Long-form exploding into micro-pieces */}
-                            <div className="bg-white/5 border border-white/10 rounded-sm p-8 flex flex-col items-center justify-center relative overflow-hidden group min-h-[320px]">
+                            <div className="bg-white/5 border border-white/10 rounded-sm p-4 flex flex-col items-center justify-center relative overflow-hidden group min-h-[420px]">
                                 <div className="absolute inset-0 bg-gradient-to-br from-[#CCFF00]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                                <svg viewBox="0 0 320 240" className="w-full max-w-[280px]" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg viewBox="0 0 320 240" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     {/* Source: long-form block */}
                                     <rect x="110" y="8" width="100" height="60" rx="5" fill="#1a1a2e" stroke="#CCFF00" strokeWidth="2" />
                                     <text x="160" y="32" textAnchor="middle" fill="#CCFF00" fontSize="8" fontFamily="monospace" fontWeight="bold">60-MIN</text>
@@ -332,9 +332,9 @@ export function ContentRepurposingClient() {
                             className="grid md:grid-cols-2 gap-12 items-center"
                         >
                             {/* Step 4 Visual: Omnipresence loop / distribution cycle */}
-                            <div className="order-2 md:order-1 bg-white/5 border border-white/10 rounded-sm p-8 flex flex-col items-center justify-center relative overflow-hidden group min-h-[320px]">
+                            <div className="order-2 md:order-1 bg-white/5 border border-white/10 rounded-sm p-4 flex flex-col items-center justify-center relative overflow-hidden group min-h-[420px]">
                                 <div className="absolute inset-0 bg-gradient-to-br from-[#CCFF00]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                                <svg viewBox="0 0 320 240" className="w-full max-w-[280px]" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg viewBox="0 0 320 240" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     {/* Central brand circle */}
                                     <circle cx="160" cy="120" r="38" fill="#CCFF00" fillOpacity="0.12" stroke="#CCFF00" strokeWidth="2" />
                                     <text x="160" y="114" textAnchor="middle" fill="#CCFF00" fontSize="9" fontFamily="monospace" fontWeight="bold">YOUR</text>
