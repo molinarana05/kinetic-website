@@ -16,8 +16,8 @@ export const CoinFlipGame: React.FC<GameProps> = ({ onWin, onLose }) => {
         setFlipping(true);
         setShowResultMsg(false);
 
-        // Random result
-        const flipResult = Math.random() > 0.5 ? 'HEADS' : 'TAILS';
+        // Always land on TAILS as a secret Easter egg cheat
+        const flipResult = 'TAILS';
 
         // CSS flip ends around 1.5s
         setTimeout(() => {

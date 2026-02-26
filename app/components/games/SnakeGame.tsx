@@ -14,7 +14,7 @@ export const SnakeGame: React.FC<GameProps> = ({ onWin, onLose }) => {
     const [, setTick] = useState(0);
 
     const gameState = useRef({
-        snake: [{ x: 6, y: 6 }],
+        snake: [{ x: 6, y: 6 }, { x: 6, y: 7 }, { x: 6, y: 8 }],
         food: { x: 3, y: 3 },
         direction: 'UP' as Direction,
         nextDirection: 'UP' as Direction,
@@ -35,8 +35,8 @@ export const SnakeGame: React.FC<GameProps> = ({ onWin, onLose }) => {
 
     const startGame = () => {
         gameState.current = {
-            snake: [{ x: 6, y: 6 }],
-            food: spawnFood([{ x: 6, y: 6 }]),
+            snake: [{ x: 6, y: 6 }, { x: 6, y: 7 }, { x: 6, y: 8 }],
+            food: spawnFood([{ x: 6, y: 6 }, { x: 6, y: 7 }, { x: 6, y: 8 }]),
             direction: 'UP',
             nextDirection: 'UP',
             score: 0,
@@ -201,13 +201,14 @@ export const SnakeGame: React.FC<GameProps> = ({ onWin, onLose }) => {
                 {status !== 'IDLE' && snake.map((seg, i) => (
                     <div
                         key={i}
-                        className="absolute bg-white rounded-sm border border-black/50"
+                        className="absolute bg-white rounded-sm"
                         style={{
                             width: `${100 / GRID_SIZE}%`,
                             height: `${100 / GRID_SIZE}%`,
                             left: `${(seg.x / GRID_SIZE) * 100}%`,
                             top: `${(seg.y / GRID_SIZE) * 100}%`,
-                            opacity: i === 0 ? 1 : 0.8
+                            opacity: i === 0 ? 1 : 0.8,
+                            transform: 'scale(0.6)', // Creates the "dotted" gap effect
                         }}
                     />
                 ))}
@@ -225,9 +226,9 @@ export const SnakeGame: React.FC<GameProps> = ({ onWin, onLose }) => {
                 )}
             </div>
 
-            {/* Mobile Controls */}
+            {/* On-Screen Controls */}
             {status === 'PLAYING' && (
-                <div className="mt-4 grid grid-cols-3 gap-2 w-full max-w-[240px] md:hidden">
+                <div className="mt-4 grid grid-cols-3 gap-2 w-full max-w-[240px]">
                     <div />
                     <button
                         className="bg-white/10 p-3 rounded flex items-center justify-center active:bg-[#CCFF00] active:text-black transition-colors"

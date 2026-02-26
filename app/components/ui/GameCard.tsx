@@ -103,21 +103,21 @@ export const GameCard: React.FC<GameCardProps> = ({
                         {headlineSuffix}
                     </div>
 
-                    <p className="text-[11px] text-gray-400 italic mb-8 font-light border-l border-[#CCFF00]/50 pl-3 pointer-events-none">
+                    <p className="text-[13px] md:text-sm text-gray-400 italic mb-6 font-light border-l border-[#CCFF00]/50 pl-3 pointer-events-none">
                         {context}
                     </p>
 
                     <ul className="space-y-4 mb-10 flex-grow pointer-events-none">
                         {bullets.map((bullet, j) => (
-                            <li key={j} className="flex items-start text-gray-300 text-sm">
-                                <span className="min-w-[4px] h-1 w-1 bg-[#CCFF00] rounded-full mt-2 mr-3" />
+                            <li key={j} className="flex items-start text-gray-300 text-sm md:text-base">
+                                <span className="min-w-[5px] h-1.5 w-1.5 bg-[#CCFF00] rounded-full mt-2 mr-3" />
                                 {bullet}
                             </li>
                         ))}
                     </ul>
 
-                    <div className="pt-6 border-gradient-t mt-auto flex justify-end">
-                        <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3L4_zCLswgoxBhyScpqolDXObrnSfhFLh-Kh2Nw68WXVrUpTlD6hPAXhCC0wVMtQ56B2lfDoPz" target="_blank" rel="noopener noreferrer" className="text-[10px] font-medium text-gray-600 flex items-center gap-2 group-hover:text-gray-400 transition-colors pointer-events-auto cursor-pointer">
+                    <div className="pt-4 border-gradient-t mt-auto flex justify-end">
+                        <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3L4_zCLswgoxBhyScpqolDXObrnSfhFLh-Kh2Nw68WXVrUpTlD6hPAXhCC0wVMtQ56B2lfDoPz" target="_blank" rel="noopener noreferrer" className="text-xs md:text-sm font-medium text-gray-600 flex items-center gap-2 group-hover:text-gray-400 transition-colors pointer-events-auto cursor-pointer">
                             <span className="text-[#CCFF00] group-hover:text-white underline decoration-[#CCFF00]/30 underline-offset-4 transition-all duration-300">
                                 Details shared on call →
                             </span>

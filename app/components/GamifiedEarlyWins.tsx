@@ -45,8 +45,12 @@ export const GamifiedEarlyWins: React.FC = () => {
                         transition={{ delay: 0.1 }}
                         className=""
                     >
-                        <p className="text-[3vw] md:text-[18px] font-[900] text-[#CCFF00] uppercase tracking-[0.1em] md:tracking-[0.2em] whitespace-nowrap overflow-hidden text-ellipsis">
+                        <p className="text-[3vw] md:text-[18px] font-[900] text-[#CCFF00] uppercase tracking-[0.1em] md:tracking-[0.2em] whitespace-nowrap overflow-hidden text-ellipsis mb-6">
                             REAL OUTCOMES FROM SYSTEMS WE BUILT.
+                        </p>
+                        <p className="text-gray-300 text-sm md:text-base font-medium max-w-2xl mx-auto leading-relaxed">
+                            B2B doesn't have to be boring. We gamified our results using the power of arcade nostalgia to make reading case studies engaging. <br />
+                            <span className="text-[#CCFF00] mt-2 block font-black uppercase tracking-widest text-xs md:text-sm">Win these quick retro challenges to unlock the strategies and numbers behind our early wins.</span>
                         </p>
                     </motion.div>
                 </div>
