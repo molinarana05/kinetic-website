@@ -342,13 +342,22 @@ const NoiseAndSignal = () => {
                                 transition={{ duration: 0.5 }}
                                 className="flex flex-col items-center gap-6"
                             >
-                                <motion.div
-                                    animate={{ opacity: [0.4, 1, 0.4] }}
-                                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                                    className="text-[10px] md:text-xs font-mono text-[#CCFF00] uppercase tracking-[0.4em]"
-                                >
-                                    Click to reveal
-                                </motion.div>
+                                <div className="relative flex items-center justify-center">
+                                    {/* Pulsing ring */}
+                                    <motion.div
+                                        animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
+                                        transition={{ duration: 1.8, repeat: Infinity, ease: "easeOut" }}
+                                        className="absolute w-full h-full rounded-full border border-[#CCFF00]/60"
+                                    />
+                                    <motion.div
+                                        animate={{ scale: [1, 1.05, 1] }}
+                                        transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+                                        className="relative flex items-center gap-2 bg-[#CCFF00] text-black text-xs md:text-sm font-black uppercase tracking-widest px-5 py-2.5 rounded-full shadow-[0_0_30px_rgba(204,255,0,0.5)]"
+                                    >
+                                        <span className="text-base">👆</span>
+                                        Click to reveal
+                                    </motion.div>
+                                </div>
                                 <h2 className="text-3xl md:text-6xl font-black text-white uppercase tracking-tighter leading-none">
                                     The Signal
                                 </h2>
