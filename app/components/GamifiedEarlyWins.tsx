@@ -60,8 +60,13 @@ export const GamifiedEarlyWins: React.FC = () => {
                         tag="SNAPSHOT"
                         headlinePrefix={<><span className="mr-1">+</span><NumberCounter end={3} duration={1.5} suffix=" QUALIFIED DEMOS" /></>}
                         headline=""
-                        context="The founder was posting inconsistently and attracting the wrong audience. We repositioned the offer, rebuilt the ICP messaging, and launched a LinkedIn content system built around proof and pipeline — not vanity metrics. Within 90 days: 14 qualified demos booked, $180K in influenced pipeline, and a content rhythm the founder actually maintains."
-                        bullets={["Full details shared on call →"]}
+                        context="The founder was posting inconsistently and attracting the wrong audience. We stepped in with a complete overhaul:"
+                        bullets={[
+                            "Repositioned the offer and rebuilt ICP messaging",
+                            "Launched a LinkedIn content system built around proof and pipeline",
+                            "Generated 14 qualified demos in 90 days",
+                            "$180K in influenced pipeline directly from our system"
+                        ]}
                         gameThematicTieIn="Flip your odds. Just like we flipped this founder's pipeline."
                         gameComponent={<CoinFlipGame onWin={() => handleWin(0)} onLose={() => handleLose(0)} />}
                         isUnlocked={!!unlockedCards[0]}
@@ -72,8 +77,13 @@ export const GamifiedEarlyWins: React.FC = () => {
                         tag="SNAPSHOT"
                         headlinePrefix={<><span className="mr-2">TOP</span><NumberCounter end={3} duration={1.5} suffix=" RANKINGS" /></>}
                         headline=""
-                        context="No SEO foundation, no organic presence, competing against established players. We mapped topics and keywords to funnel intent, built content for clarity and skimmability, and structured the site for topical authority. Four months later: 23 keywords on page 1, 67% increase in organic traffic, and 4 inbound leads per month from search — up from zero."
-                        bullets={["Full details shared on call →"]}
+                        context="No SEO foundation, no organic presence, competing against established players. We built a topical authority engine:"
+                        bullets={[
+                            "Mapped topics and keywords directly to funnel intent",
+                            "Structured the site and content for clarity and skimmability",
+                            "Ranked 23 keywords on Page 1 within four months",
+                            "Drove a 67% increase in organic traffic and 4 inbound leads/month"
+                        ]}
                         gameThematicTieIn="Navigate the noise. We helped this brand find the path to page 1."
                         gameComponent={<SnakeGame onWin={() => handleWin(1)} onLose={() => handleLose(1)} />}
                         isUnlocked={!!unlockedCards[1]}
@@ -83,8 +93,13 @@ export const GamifiedEarlyWins: React.FC = () => {
                     <GameCard
                         tag="SNAPSHOT"
                         headline="SOLD OUT LAUNCH"
-                        context="No existing audience, no launch playbook. We built the launch narrative, wrote the landing page, created a full content kit for email and social, and built the proof assets to remove purchase hesitation. The result: 1,400 email subscribers pre-launch, a 38% open rate on the launch sequence, and a completely sold-out first batch in 11 days."
-                        bullets={["Full details shared on call →"]}
+                        context="No existing audience and no launch playbook. We established the entire go-to-market content strategy for their first batch:"
+                        bullets={[
+                            "Built the launch narrative and high-converting landing page",
+                            "Created a full content kit across email and social media",
+                            "Generated 1,400 email subscribers pre-launch with a 38% open rate",
+                            "Sold out the entire first batch of 500 units in just 11 days"
+                        ]}
                         gameThematicTieIn="Clear the board. That's exactly what we did for this launch."
                         gameComponent={<PacManGame onWin={() => handleWin(2)} onLose={() => handleLose(2)} />}
                         isUnlocked={!!unlockedCards[2]}

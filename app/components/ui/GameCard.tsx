@@ -116,13 +116,6 @@ export const GameCard: React.FC<GameCardProps> = ({
                         ))}
                     </ul>
 
-                    <div className="pt-4 border-gradient-t mt-auto flex justify-end">
-                        <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3L4_zCLswgoxBhyScpqolDXObrnSfhFLh-Kh2Nw68WXVrUpTlD6hPAXhCC0wVMtQ56B2lfDoPz" target="_blank" rel="noopener noreferrer" className="text-xs md:text-sm font-medium text-gray-600 flex items-center gap-2 group-hover:text-gray-400 transition-colors pointer-events-auto cursor-pointer">
-                            <span className="text-[#CCFF00] group-hover:text-white underline decoration-[#CCFF00]/30 underline-offset-4 transition-all duration-300">
-                                Details shared on call →
-                            </span>
-                        </a>
-                    </div>
                 </Card>
 
             </motion.div>
