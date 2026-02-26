@@ -1,65 +1,12 @@
 import { Metadata } from "next";
-import { ServicePageTemplate } from "../../components/ServicePageTemplate";
+import { LinkedInBrandingClient } from "./LinkedInBrandingClient";
 
 export const metadata: Metadata = {
-    title: "LinkedIn Personal Branding for Founders | Moxie Digital",
-    description: "Launch your founder brand on LinkedIn. We build end-to-end LinkedIn content engines that position you as an industry authority and generate high-intent inbound leads.",
+    title: "17-Minute LinkedIn Personal Branding Strategy | Moxie Digital",
+    description: "Launch your founder brand on LinkedIn in minutes a day. We build end-to-end LinkedIn content engines that position you as an industry authority.",
     alternates: { canonical: "https://www.moxie-digital.com/services/linkedin-branding" },
 };
 
 export default function LinkedInBrandingPage() {
-    return (
-        <ServicePageTemplate
-            meta={{
-                title: "LinkedIn Branding",
-                description: "Turn your profile into a pipeline engine",
-                canonical: "https://www.moxie-digital.com/services/linkedin-branding",
-            }}
-            tag="AUTHORITY"
-            headline="LinkedIn Branding"
-            subheadline="Pipeline from your Profile"
-            description="Most founders post for engagement. We construct architectures that turn your personal LinkedIn into your company's highest-converting acquisition channel."
-            definition="LinkedIn Personal Branding for B2B Founders is the execution of a highly targeted content strategy that leverages the executive's industry expertise to build trust, educate the market, and attract inbound enterprise sales opportunities."
-            features={[
-                {
-                    icon: "👤",
-                    title: "Personal Brand Engine",
-                    description: "Profile optimization, consistent posting cadence, and thought leadership content that positions founders as category experts.",
-                },
-                {
-                    icon: "🏢",
-                    title: "Company Page Strategy",
-                    description: "A company page that amplifies your personal brand and builds institutional credibility — not a ghost town with 12 followers.",
-                },
-                {
-                    icon: "💬",
-                    title: "Engagement Architecture",
-                    description: "Strategic commenting, connection outreach, and conversation-starting content formats that build audience without paid amplification.",
-                },
-            ]}
-            deliverables={[
-                "Full LinkedIn profile optimization (founder)",
-                "Company page setup and optimization",
-                "3–5 LinkedIn posts per week (personal profile)",
-                "2–3 company page posts per week",
-                "Monthly engagement and growth report",
-                "Quarterly content strategy review",
-            ]}
-            outcome="Your LinkedIn profile becomes an inbound machine. Prospects who find you are already pre-sold on your expertise before the first conversation."
-            faq={[
-                {
-                    q: "Do you write posts in my voice or do I?",
-                    a: "We write in your voice, based on a monthly extraction interview. You review and approve before publishing. The content sounds like you because it starts with your ideas.",
-                },
-                {
-                    q: "How fast can I grow a LinkedIn following?",
-                    a: "With consistent, targeted content: 500–2,000 net new followers in the first 90 days is typical for accounts starting below 5,000. Growth accelerates as authority builds.",
-                },
-                {
-                    q: "Is personal branding or company branding more important?",
-                    a: "Personal. Company pages reach 2% of followers organically. Personal profiles reach 5–20%. Your founder's voice is your most valuable distribution asset — the company page amplifies it.",
-                },
-            ]}
-        />
-    );
+    return <LinkedInBrandingClient />;
 }
