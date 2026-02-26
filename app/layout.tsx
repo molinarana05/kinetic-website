@@ -152,6 +152,13 @@ export default function RootLayout({
                     strategy="afterInteractive"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(MOXIE_SITE_JSONLD) }}
                 />
+                <Script
+                    id="vtag-ai-js"
+                    src="https://r2.leadsy.ai/tag.js"
+                    data-pid="1hC3ODv9P3MFngroN"
+                    data-version="062024"
+                    strategy="afterInteractive"
+                />
                 {children}
                 <Footer />
             </body>
