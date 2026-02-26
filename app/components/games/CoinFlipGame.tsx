@@ -52,10 +52,10 @@ export const CoinFlipGame: React.FC<GameProps> = ({ onWin, onLose }) => {
                     className="w-full h-full relative"
                     style={{ transformStyle: 'preserve-3d' }}
                 >
-                    {/* HEADS */}
-                    <div className="absolute inset-0 bg-[#CCFF00] rounded-full flex items-center justify-center border-4 border-black font-black text-black tracking-widest text-sm"
+                    {/* FRONT */}
+                    <div className="absolute inset-0 bg-[#CCFF00] rounded-full flex items-center justify-center text-center px-1 border-4 border-black font-black text-black tracking-widest text-[11px] leading-tight"
                         style={{ backfaceVisibility: 'hidden' }}>
-                        HEADS
+                        FLIP<br />COIN
                     </div>
                     {/* TAILS */}
                     <div className="absolute inset-0 bg-black rounded-full flex items-center justify-center border-4 border-[#CCFF00] text-[#CCFF00] font-black tracking-widest text-sm"

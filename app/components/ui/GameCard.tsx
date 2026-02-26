@@ -61,8 +61,8 @@ export const GameCard: React.FC<GameCardProps> = ({
                     className={`absolute inset-0 group p-8 border-white/5 bg-black/40 backdrop-blur-sm flex flex-col overflow-hidden h-full transition-opacity duration-300 ${!isUnlocked ? 'z-20 pointer-events-auto opacity-100' : 'z-10 pointer-events-none opacity-0'}`}
                 >
                     <div className="flex items-center justify-center gap-2 mb-2 pointer-events-none">
-                        <Lock size={14} className="text-[#CCFF00]" />
-                        <span className="text-[10px] uppercase font-bold text-[#CCFF00] tracking-widest">
+                        <Lock size={16} className="text-[#CCFF00] drop-shadow-[0_0_8px_rgba(204,255,0,0.8)]" />
+                        <span className="text-[12px] md:text-sm uppercase font-black text-[#CCFF00] tracking-widest drop-shadow-[0_0_8px_rgba(204,255,0,0.8)]">
                             PLAY TO UNLOCK
                         </span>
                     </div>
@@ -71,8 +71,8 @@ export const GameCard: React.FC<GameCardProps> = ({
                         {gameComponent}
                     </div>
 
-                    <div className="text-center mt-4 h-10 flex items-end justify-center pointer-events-none">
-                        <p className="text-xs text-gray-400 font-light italic">{gameThematicTieIn}</p>
+                    <div className="text-center mt-4 h-10 flex items-end justify-center pointer-events-none px-2">
+                        <p className="text-sm md:text-base text-gray-300 font-medium italic drop-shadow-md">{gameThematicTieIn}</p>
                     </div>
                 </Card>
 

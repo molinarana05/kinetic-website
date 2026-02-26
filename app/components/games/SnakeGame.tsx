@@ -214,13 +214,13 @@ export const SnakeGame: React.FC<GameProps> = ({ onWin, onLose }) => {
                 ))}
 
                 {/* Overlays */}
-                {status === 'IDLE' && (
+                {(status === 'IDLE' || status === 'LOSE') && (
                     <div className="absolute inset-0 flex items-center justify-center bg-black/60 backdrop-blur-sm z-30 pointer-events-auto">
                         <button
                             onClick={(e) => { e.preventDefault(); e.stopPropagation(); startGame(); }}
                             className="bg-[#CCFF00] text-black px-4 py-2 font-bold uppercase tracking-widest text-xs rounded hover:bg-white transition-colors relative z-50 pointer-events-auto cursor-pointer"
                         >
-                            START GAME
+                            {status === 'IDLE' ? 'START GAME' : 'RETRY'}
                         </button>
                     </div>
                 )}
