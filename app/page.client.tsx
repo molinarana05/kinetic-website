@@ -255,8 +255,7 @@ const NoiseAndSignal = () => {
     return (
         <section
             id="how-it-works"
-            className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-black cursor-pointer border-y border-white/10"
-            onClick={() => setSynthesized(!synthesized)}
+            className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-black border-y border-white/10"
         >
             {/* Left panel: THE NOISE */}
             <motion.div
@@ -299,7 +298,11 @@ const NoiseAndSignal = () => {
                     backgroundColor: synthesized ? "#0a0118" : "#0d0b0b",
                 }}
                 transition={{ duration: 1.2, ease: [0.77, 0, 0.175, 1] }}
-                className="absolute top-0 bottom-0 flex flex-col items-center justify-center overflow-y-auto overflow-x-hidden px-6 md:px-12 py-16 md:py-0"
+                className="absolute top-0 bottom-0 flex flex-col items-center justify-center overflow-y-auto overflow-x-hidden px-6 md:px-12 py-16 md:py-0 cursor-pointer group"
+                onClick={() => setSynthesized(!synthesized)}
+                whileHover={!synthesized ? {
+                    boxShadow: "inset 0 0 60px rgba(204,255,0,0.08), 0 0 40px rgba(204,255,0,0.12)",
+                } : {}}
             >
                 <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center justify-center text-center">
                     <AnimatePresence mode="wait">
@@ -337,33 +340,36 @@ const NoiseAndSignal = () => {
                                 animate={{ opacity: 1, scale: 1 }}
                                 exit={{ opacity: 0, scale: 1.05 }}
                                 transition={{ duration: 0.5 }}
-                                className="flex flex-col items-center"
+                                className="flex flex-col items-center gap-6"
                             >
-                                <h2 className="text-3xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4">The Signal</h2>
-                                <p className="text-sm md:text-xl text-gray-400 font-serif italic">Click to synthesize.</p>
+                                <motion.div
+                                    animate={{ opacity: [0.4, 1, 0.4] }}
+                                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                                    className="text-[10px] md:text-xs font-mono text-[#CCFF00] uppercase tracking-[0.4em]"
+                                >
+                                    Click to reveal
+                                </motion.div>
+                                <h2 className="text-3xl md:text-6xl font-black text-white uppercase tracking-tighter leading-none">
+                                    The Signal
+                                </h2>
+                                <p className="text-sm md:text-lg text-gray-400 font-light max-w-xs text-center leading-relaxed">
+                                    Cut through the chaos. See how we build a system that actually works.
+                                </p>
+                                <motion.div
+                                    animate={{ y: [0, 6, 0] }}
+                                    transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                                    className="mt-2 flex flex-col items-center gap-1"
+                                >
+                                    <div className="w-[1px] h-8 bg-gradient-to-b from-transparent to-[#CCFF00]" />
+                                    <div className="w-2 h-2 rotate-45 border-b-2 border-r-2 border-[#CCFF00]" />
+                                </motion.div>
                             </motion.div>
                         )}
                     </AnimatePresence>
                 </div>
             </motion.div>
 
-            {/* Bottom CTA pill */}
-            {!synthesized && (
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1.5, duration: 1 }}
-                    className="absolute bottom-12 left-1/2 -translate-x-1/2 z-50 text-white flex flex-col items-center gap-2 pointer-events-none"
-                >
-                    <motion.div
-                        animate={{ scale: [1, 1.05, 1], boxShadow: ["0 0 20px rgba(204,255,0,0.2)", "0 0 50px rgba(204,255,0,0.6)", "0 0 20px rgba(204,255,0,0.2)"] }}
-                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                        className="text-xs md:text-sm uppercase tracking-[0.2em] font-black text-black bg-[#CCFF00] px-6 py-3 md:px-8 md:py-4 rounded-full border-2 border-white/20 shadow-2xl"
-                    >
-                        Click Anywhere To Synthesize
-                    </motion.div>
-                </motion.div>
-            )}
+
         </section>
     );
 };
