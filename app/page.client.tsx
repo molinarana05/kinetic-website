@@ -5,7 +5,6 @@ import { NavbarDesktop } from "./components/NavbarDesktop";
 import { Hero } from "./components/Hero";
 import { HeroDesktop } from "./components/HeroDesktop";
 import { CredibilityStrip } from "./components/CredibilityStrip";
-import { ChaosVsCalm } from "./components/ChaosVsCalm";
 import { Services } from "./components/Services";
 import { ServicesDesktop } from "./components/ServicesDesktop";
 import { Button } from "./components/ui/Button";
@@ -479,9 +478,6 @@ export default function HomeClient() {
                 </div>
                 <ServicesDesktop />
             </div>
-
-            {/* 4. Split-Screen Chaos vs. Calm */}
-            <ChaosVsCalm />
 
             {/* Noise & Signal — THE FIXED SECTION */}
             <NoiseAndSignal />
