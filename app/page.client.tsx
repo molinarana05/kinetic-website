@@ -381,6 +381,143 @@ const NoiseAndSignal = () => {
     );
 };
 
+// ─── Shuffling Founders Cards ──────────────────────────────────────────────────
+const founders = [
+    {
+        name: "Anikesh Gaurav",
+        label: "SEO & AEO Lead",
+        src: "/anikesh-gaurav.jpg",
+        alt: "Anikesh Gaurav, SEO & AEO Lead",
+        imgClass: "object-cover object-top filter contrast-[1.1] brightness-[0.95]",
+        labelBg: "bg-[#CCFF00]",
+        labelText: "text-black",
+        borderFront: "border-[#CCFF00]",
+        borderBack: "border-white/20",
+        shadowFront: "shadow-[-16px_16px_0px_0px_rgba(204,255,0,0.2)]",
+        position: { bottom: 0, left: 0 } as React.CSSProperties,
+    },
+    {
+        name: "Molina Rana",
+        label: "Brand & Growth Leader",
+        src: "/molina-rana-cutout.png",
+        alt: "Molina Rana, Brand & Growth Leader",
+        imgClass: "object-cover object-top grayscale-[50%] brightness-[0.9]",
+        labelBg: "bg-black/80",
+        labelText: "text-[#CCFF00]",
+        borderFront: "border-[#CCFF00]",
+        borderBack: "border-white/20",
+        shadowFront: "shadow-[16px_16px_0px_0px_rgba(204,255,0,0.2)]",
+        position: { top: 0, right: 0 } as React.CSSProperties,
+    },
+];
+
+function ShufflingFounders({ aboutImageY }: { aboutImageY: any }) {
+    // topCard = index of founder currently on top (z-20)
+    const [topCard, setTopCard] = useState(1); // Molina starts on top
+    const [isAnimating, setIsAnimating] = useState(false);
+
+    const shuffle = () => {
+        if (isAnimating) return;
+        setIsAnimating(true);
+        setTimeout(() => {
+            setTopCard(prev => (prev + 1) % founders.length);
+            setIsAnimating(false);
+        }, 400);
+    };
+
+    useEffect(() => {
+        const interval = setInterval(shuffle, 3500);
+        return () => clearInterval(interval);
+    }, [isAnimating]);
+
+    return (
+        <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            style={{ y: aboutImageY }}
+            className="relative lg:pr-12 order-2 md:order-1 h-[400px] md:h-[500px] cursor-pointer select-none"
+            onClick={shuffle}
+            title="Click to shuffle"
+        >
+            {founders.map((f, i) => {
+                const isTop = i === topCard;
+                // Offset positions for the stacked look
+                const posStyle: React.CSSProperties = i === 0
+                    ? { bottom: 0, left: 0 }
+                    : { top: 0, right: 0, marginRight: "3rem" };
+
+                return (
+                    <motion.div
+                        key={f.name}
+                        className={`absolute w-[65%] h-[80%] rounded-sm overflow-hidden border-[6px] ${isTop ? f.borderFront : f.borderBack} bg-[#0a0118]`}
+                        style={{ ...posStyle, zIndex: isTop ? 20 : 10 } as React.CSSProperties}
+                        animate={
+                            isTop
+                                ? {
+                                    scale: 1,
+                                    rotate: 0,
+                                    x: 0,
+                                    y: 0,
+                                    boxShadow: i === 0
+                                        ? "-16px 16px 0px 0px rgba(204,255,0,0.2)"
+                                        : "16px 16px 0px 0px rgba(204,255,0,0.2)",
+                                    filter: "brightness(1) grayscale(0%)",
+                                }
+                                : {
+                                    // i=0 Anikesh behind → tilt left (-4°); i=1 Molina behind → tilt right (+5°)
+                                    scale: 0.93,
+                                    rotate: i === 0 ? -4 : 5,
+                                    x: i === 0 ? 8 : -8,
+                                    y: 12,
+                                    boxShadow: "0px 0px 0px 0px rgba(0,0,0,0)",
+                                    filter: "brightness(0.6) grayscale(50%)",
+                                }
+                        }
+                        transition={{ type: "spring", stiffness: 280, damping: 28, mass: 0.9 }}
+                        whileHover={!isTop ? { scale: 0.96, filter: "brightness(0.75) grayscale(20%)" } : {}}
+                    >
+                        <img
+                            src={f.src}
+                            alt={f.alt}
+                            className={`w-full h-full ${f.imgClass}`}
+                        />
+                        {/* Name badge */}
+                        <motion.div
+                            className={`absolute bottom-2 left-2 px-2 py-1 text-[10px] font-bold uppercase tracking-widest ${isTop ? f.labelBg : "bg-black/60"} ${isTop ? f.labelText : "text-gray-400"}`}
+                            animate={{ opacity: isTop ? 1 : 0.5 }}
+                            transition={{ duration: 0.4 }}
+                        >
+                            {f.name}
+                        </motion.div>
+                        {/* "Active" glow ring for top card */}
+                        {isTop && (
+                            <motion.div
+                                className="absolute inset-0 rounded-sm pointer-events-none"
+                                animate={{ boxShadow: ["inset 0 0 0px rgba(204,255,0,0)", "inset 0 0 20px rgba(204,255,0,0.08)", "inset 0 0 0px rgba(204,255,0,0)"] }}
+                                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                            />
+                        )}
+                    </motion.div>
+                );
+            })}
+
+            {/* Shuffle hint dots */}
+            <div className="absolute bottom-[-28px] left-1/2 -translate-x-1/2 flex gap-2">
+                {founders.map((_, i) => (
+                    <motion.div
+                        key={i}
+                        className="w-1.5 h-1.5 rounded-full"
+                        animate={{ backgroundColor: i === topCard ? "#CCFF00" : "rgba(255,255,255,0.2)", scale: i === topCard ? 1.3 : 1 }}
+                        transition={{ duration: 0.3 }}
+                    />
+                ))}
+            </div>
+        </motion.div>
+    );
+}
+
 // ─── Main HomeClient ───────────────────────────────────────────────────────────
 export default function HomeClient() {
     const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -549,35 +686,8 @@ export default function HomeClient() {
                             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="flex flex-col md:hidden mb-8 text-center">
                                 <span className="text-[18px] font-bold text-[#CCFF00] uppercase tracking-[0.2em] mb-6 block">THE OPERATORS</span>
                             </motion.div>
-                            {/* Portrait Images Column */}
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 1 }}
-                                style={{ y: aboutImageY }}
-                                className="relative group lg:pr-12 order-2 md:order-1 h-[400px] md:h-[500px]"
-                            >
-                                {/* Molina Image (Back) */}
-                                <div className="absolute top-0 right-4 md:right-12 w-[65%] h-[80%] rounded-sm overflow-hidden border-[6px] border-white/20 shadow-[16px_16px_0px_0px_#111] bg-[#0a0118] z-10">
-                                    <img
-                                        src="/molina-rana-cutout.png"
-                                        alt="Molina Rana, Brand & Growth Leader"
-                                        className="w-full h-full object-cover object-top grayscale-[50%] brightness-[0.9]"
-                                    />
-                                    <div className="absolute bottom-2 left-2 bg-black/80 px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-[#CCFF00]">Molina Rana</div>
-                                </div>
-
-                                {/* Anikesh Image (Front) */}
-                                <div className="absolute bottom-0 left-0 w-[65%] h-[80%] rounded-sm overflow-hidden border-[6px] border-[#CCFF00] shadow-[-16px_16px_0px_0px_rgba(204,255,0,0.2)] bg-[#0a0118] z-20">
-                                    <img
-                                        src="/anikesh-gaurav.jpg"
-                                        alt="Anikesh Gaurav, SEO & AEO Lead"
-                                        className="w-full h-full object-cover object-top filter contrast-[1.1] brightness-[0.95]"
-                                    />
-                                    <div className="absolute bottom-2 left-2 bg-[#CCFF00] px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-black">Anikesh Gaurav</div>
-                                </div>
-                            </motion.div>
+                            {/* Portrait Images Column — Shuffling Deck */}
+                            <ShufflingFounders aboutImageY={aboutImageY} />
                         </div>
                         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }} className="flex flex-col order-3 md:order-2 md:pl-8">
                             <span className="text-[18px] font-bold text-[#CCFF00] uppercase tracking-[0.2em] mb-6 hidden md:block">THE OPERATORS</span>
