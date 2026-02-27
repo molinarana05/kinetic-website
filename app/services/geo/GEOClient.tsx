@@ -194,9 +194,49 @@ export function GEOClient() {
                                     </li>
                                 </ul>
                             </div>
-                            <div className="bg-white/5 border border-white/10 rounded-sm p-8 aspect-square md:aspect-auto md:h-full flex flex-col items-center justify-center text-center relative overflow-hidden group">
-                                <FileText size={80} className="text-[#CCFF00]/40 group-hover:text-[#CCFF00] transition-colors mb-6 duration-500 group-hover:scale-110" />
-                                <p className="font-mono text-sm text-gray-500 uppercase tracking-widest">Structure For The Prompt</p>
+                            {/* Phase 1 Visual: On-Site Optimization / Content Formatting */}
+                            <div className="bg-white/5 border border-white/10 rounded-sm p-4 flex flex-col items-center justify-center relative overflow-hidden group min-h-[420px]">
+                                <div className="absolute inset-0 bg-gradient-to-br from-[#CCFF00]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                <svg viewBox="0 0 320 240" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    {/* Document Outline */}
+                                    <rect x="40" y="30" width="140" height="180" rx="4" fill="#1a1a2e" stroke="#4b5563" strokeWidth="1" />
+
+                                    {/* Raw Content inside Document */}
+                                    <rect x="55" y="50" width="100" height="6" rx="2" fill="#9ca3af" />
+                                    <rect x="55" y="65" width="110" height="4" rx="2" fill="#4b5563" />
+                                    <rect x="55" y="75" width="105" height="4" rx="2" fill="#4b5563" />
+                                    <rect x="55" y="85" width="90" height="4" rx="2" fill="#4b5563" />
+
+                                    <rect x="55" y="110" width="80" height="6" rx="2" fill="#9ca3af" />
+                                    <rect x="55" y="125" width="100" height="4" rx="2" fill="#4b5563" />
+                                    <rect x="55" y="135" width="110" height="4" rx="2" fill="#4b5563" />
+                                    <rect x="55" y="145" width="85" height="4" rx="2" fill="#4b5563" />
+
+                                    {/* Scanning/Extraction Effect */}
+                                    <path d="M45 95 L175 95" stroke="#CCFF00" strokeWidth="2" strokeDasharray="4 4" className="group-hover:translate-y-6 transition-transform duration-1000 ease-in-out" />
+                                    <path d="M45 155 L175 155" stroke="#CCFF00" strokeWidth="2" strokeDasharray="4 4" className="group-hover:-translate-y-6 transition-transform duration-1000 ease-in-out" />
+
+                                    <rect x="180" y="45" width="12" height="12" rx="2" fill="#1a1a2e" stroke="#CCFF00" strokeWidth="1" />
+                                    <text x="186" y="54" textAnchor="middle" fill="#CCFF00" fontSize="8" fontFamily="sans-serif">H2</text>
+                                    <path d="M192 51 L210 51" stroke="#CCFF00" strokeWidth="1" strokeDasharray="2 2" />
+
+                                    <rect x="180" y="105" width="12" height="12" rx="2" fill="#1a1a2e" stroke="#CCFF00" strokeWidth="1" />
+                                    <text x="186" y="114" textAnchor="middle" fill="#CCFF00" fontSize="8" fontFamily="sans-serif">H2</text>
+                                    <path d="M192 111 L210 111" stroke="#CCFF00" strokeWidth="1" strokeDasharray="2 2" />
+
+                                    {/* Extracted Core Component Box */}
+                                    <rect x="210" y="70" width="80" height="100" rx="4" fill="#CCFF00" fillOpacity="0.1" stroke="#CCFF00" strokeWidth="1.5" />
+                                    <text x="250" y="85" textAnchor="middle" fill="#CCFF00" fontSize="8" fontFamily="monospace" fontWeight="bold">EXTRACTED</text>
+                                    <text x="250" y="95" textAnchor="middle" fill="#CCFF00" fontSize="7" fontFamily="monospace">DIRECT ANSWER</text>
+
+                                    <rect x="220" y="110" width="60" height="4" rx="2" fill="#CCFF00" fillOpacity="0.8" />
+                                    <rect x="220" y="120" width="55" height="4" rx="2" fill="#CCFF00" fillOpacity="0.8" />
+                                    <rect x="220" y="130" width="60" height="4" rx="2" fill="#CCFF00" fillOpacity="0.8" />
+                                    <rect x="220" y="140" width="40" height="4" rx="2" fill="#CCFF00" fillOpacity="0.8" />
+
+                                    {/* Connecting Bracket */}
+                                    <path d="M205 51 Q 200 51 200 65 L 200 111 Q 200 125 205 125 M 200 88 L 210 88" stroke="#CCFF00" strokeWidth="1" fill="none" />
+                                </svg>
                             </div>
                         </motion.div>
 
@@ -208,9 +248,57 @@ export function GEOClient() {
                             variants={fadeInUp}
                             className="grid md:grid-cols-2 gap-12 items-center"
                         >
-                            <div className="order-2 md:order-1 bg-white/5 border border-white/10 rounded-sm p-8 aspect-square md:aspect-auto md:h-full flex flex-col items-center justify-center text-center relative overflow-hidden group">
-                                <Share2 size={80} className="text-[#CCFF00]/40 group-hover:text-[#CCFF00] transition-colors mb-6 duration-500 group-hover:rotate-12" />
-                                <p className="font-mono text-sm text-gray-500 uppercase tracking-widest">Authoritative Footprint</p>
+                            {/* Phase 2 Visual: Off-Site Optimization / Trust Building Loop */}
+                            <div className="order-2 md:order-1 bg-white/5 border border-white/10 rounded-sm p-4 flex flex-col items-center justify-center relative overflow-hidden group min-h-[420px]">
+                                <div className="absolute inset-0 bg-gradient-to-br from-[#CCFF00]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                <svg viewBox="0 0 320 240" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    {/* AI Engine Target */}
+                                    <circle cx="160" cy="120" r="40" fill="#1a1a2e" stroke="#CCFF00" strokeWidth="2" />
+                                    <circle cx="160" cy="120" r="30" stroke="#CCFF00" strokeOpacity="0.5" strokeWidth="1" strokeDasharray="4 4" className="group-hover:rotate-180 origin-center transition-transform duration-[3000ms] ease-linear" />
+                                    <text x="160" y="117" textAnchor="middle" fill="#CCFF00" fontSize="8" fontFamily="monospace" fontWeight="bold">AI ENGINE</text>
+                                    <text x="160" y="128" textAnchor="middle" fill="#9ca3af" fontSize="6" fontFamily="monospace">CONFIDENCE: 98%</text>
+
+                                    {/* Orbiting Elements */}
+                                    <g className="group-hover:animate-[spin_10s_linear_infinite] origin-center" style={{ transformOrigin: '160px 120px' }}>
+                                        <circle cx="160" cy="120" r="80" stroke="#4b5563" strokeWidth="1" strokeDasharray="4 4" fill="none" />
+
+                                        {/* Element 1: Publications */}
+                                        <g transform="translate(160, 40)">
+                                            <circle cx="0" cy="0" r="14" fill="#1a1a2e" stroke="#CCFF00" strokeWidth="1" />
+                                            <rect x="-6" y="-6" width="12" height="12" rx="1" fill="#CCFF00" fillOpacity="0.2" />
+                                            <text x="0" y="-18" textAnchor="middle" fill="#9ca3af" fontSize="6" fontFamily="monospace" className="animate-[spin_-10s_linear_infinite]" style={{ transformOrigin: '0px 0px' }}>PUBLICATIONS</text>
+                                        </g>
+
+                                        {/* Element 2: Social Media */}
+                                        <g transform="translate(240, 120)">
+                                            <circle cx="0" cy="0" r="14" fill="#1a1a2e" stroke="#CCFF00" strokeWidth="1" />
+                                            <circle cx="0" cy="0" r="6" fill="#CCFF00" fillOpacity="0.2" />
+                                            <text x="20" y="3" textAnchor="start" fill="#9ca3af" fontSize="6" fontFamily="monospace" className="animate-[spin_-10s_linear_infinite]" style={{ transformOrigin: '0px 0px' }}>SOCIAL SIGNALS</text>
+                                        </g>
+
+                                        {/* Element 3: Reviews */}
+                                        <g transform="translate(160, 200)">
+                                            <circle cx="0" cy="0" r="14" fill="#1a1a2e" stroke="#CCFF00" strokeWidth="1" />
+                                            <polygon points="0,-6 2,-1 7,-1 3,2 4,7 0,4 -4,7 -3,2 -7,-1 -2,-1" fill="#CCFF00" fillOpacity="0.5" />
+                                            <text x="0" y="24" textAnchor="middle" fill="#9ca3af" fontSize="6" fontFamily="monospace" className="animate-[spin_-10s_linear_infinite]" style={{ transformOrigin: '0px 0px' }}>VERIFIED REVIEWS</text>
+                                        </g>
+
+                                        {/* Element 4: Backlinks */}
+                                        <g transform="translate(80, 120)">
+                                            <circle cx="0" cy="0" r="14" fill="#1a1a2e" stroke="#CCFF00" strokeWidth="1" />
+                                            <path d="M-4 -2 C-6 -2 -6 2 -4 2 L-2 2 M4 -2 C6 -2 6 2 4 2 L2 2 M-2 0 L2 0" stroke="#CCFF00" strokeWidth="1.5" fill="none" />
+                                            <text x="-20" y="3" textAnchor="end" fill="#9ca3af" fontSize="6" fontFamily="monospace" className="animate-[spin_-10s_linear_infinite]" style={{ transformOrigin: '0px 0px' }}>BACKLINKS</text>
+                                        </g>
+                                    </g>
+
+                                    {/* Data Streams into Center */}
+                                    <path d="M160 54 L160 80 M160 186 L160 160 M226 120 L200 120 M94 120 L120 120" stroke="#CCFF00" strokeWidth="1.5" strokeDasharray="2 2" />
+
+                                    <circle cx="160" cy="65" r="2" fill="#CCFF00" className="group-hover:animate-ping" />
+                                    <circle cx="160" cy="175" r="2" fill="#CCFF00" className="group-hover:animate-ping delay-100" />
+                                    <circle cx="215" cy="120" r="2" fill="#CCFF00" className="group-hover:animate-ping delay-200" />
+                                    <circle cx="105" cy="120" r="2" fill="#CCFF00" className="group-hover:animate-ping delay-300" />
+                                </svg>
                             </div>
                             <div className="order-1 md:order-2">
                                 <div className="text-[#CCFF00] font-mono text-sm uppercase tracking-widest mb-4 flex items-center gap-3">
@@ -248,9 +336,50 @@ export function GEOClient() {
                                     By tracking your brand's AI visibility against your competitors, we identify exactly which formats work well and iterate continuously to capture max share-of-voice in your niche.
                                 </p>
                             </div>
-                            <div className="bg-white/5 border border-white/10 rounded-sm p-8 aspect-square md:aspect-auto md:h-full flex flex-col items-center justify-center text-center relative overflow-hidden group">
-                                <Layers size={80} className="text-[#CCFF00]/40 group-hover:text-[#CCFF00] transition-colors mb-6 duration-500 group-hover:-translate-y-2" />
-                                <p className="font-mono text-sm text-gray-500 uppercase tracking-widest">Measure & Iterate</p>
+                            {/* Phase 3 Visual: Visibility Analytics / Comparison Chart */}
+                            <div className="bg-white/5 border border-white/10 rounded-sm p-4 flex flex-col items-center justify-center relative overflow-hidden group min-h-[420px]">
+                                <div className="absolute inset-0 bg-gradient-to-br from-[#CCFF00]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                <svg viewBox="0 0 320 240" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    {/* Chart Axes */}
+                                    <line x1="50" y1="200" x2="280" y2="200" stroke="#4b5563" strokeWidth="1" />
+                                    <line x1="50" y1="40" x2="50" y2="200" stroke="#4b5563" strokeWidth="1" />
+                                    <text x="165" y="25" textAnchor="middle" fill="#CCFF00" fontSize="10" fontFamily="monospace" fontWeight="bold">AI PROMPT TO BRAND CITATION</text>
+
+                                    {/* Grid Lines */}
+                                    <line x1="50" y1="160" x2="280" y2="160" stroke="#4b5563" strokeOpacity="0.2" strokeWidth="1" strokeDasharray="2 2" />
+                                    <line x1="50" y1="120" x2="280" y2="120" stroke="#4b5563" strokeOpacity="0.2" strokeWidth="1" strokeDasharray="2 2" />
+                                    <line x1="50" y1="80" x2="280" y2="80" stroke="#4b5563" strokeOpacity="0.2" strokeWidth="1" strokeDasharray="2 2" />
+
+                                    {/* Bars - Competitor 1 */}
+                                    <rect x="70" y="140" width="30" height="60" rx="2" fill="#1a1a2e" stroke="#4b5563" strokeWidth="1" />
+                                    <rect x="70" y="100" width="30" height="40" rx="2" fill="#1a1a2e" stroke="#4b5563" strokeWidth="1" className="opacity-50" />
+                                    <text x="85" y="215" textAnchor="middle" fill="#9ca3af" fontSize="7" fontFamily="monospace">Comp A</text>
+
+                                    {/* Bars - Competitor 2 */}
+                                    <rect x="120" y="120" width="30" height="80" rx="2" fill="#1a1a2e" stroke="#4b5563" strokeWidth="1" />
+                                    <rect x="120" y="90" width="30" height="30" rx="2" fill="#1a1a2e" stroke="#4b5563" strokeWidth="1" className="opacity-50" />
+                                    <text x="135" y="215" textAnchor="middle" fill="#9ca3af" fontSize="7" fontFamily="monospace">Comp B</text>
+
+                                    {/* Bars - Brand (Glowing/Animated) */}
+                                    <rect x="170" y="90" width="30" height="110" rx="2" fill="#CCFF00" fillOpacity="0.2" stroke="#CCFF00" strokeWidth="1.5" />
+                                    <rect x="170" y="50" width="30" height="40" rx="2" fill="#CCFF00" fillOpacity="0.8" className="group-hover:-translate-y-2 transition-transform duration-500" />
+                                    <text x="185" y="215" textAnchor="middle" fill="#CCFF00" fontSize="7" fontFamily="monospace" fontWeight="bold">BRAND</text>
+
+                                    {/* Arrow showing brand dominance */}
+                                    <path d="M185 30 L185 45 M180 40 L185 45 L190 40" stroke="#CCFF00" strokeWidth="1.5" fill="none" className="group-hover:-translate-y-2 transition-transform duration-500" />
+                                    <text x="185" y="20" textAnchor="middle" fill="#CCFF00" fontSize="8" fontFamily="sans-serif">+32%</text>
+
+                                    {/* Bars - Competitor 3 */}
+                                    <rect x="220" y="150" width="30" height="50" rx="2" fill="#1a1a2e" stroke="#4b5563" strokeWidth="1" />
+                                    <rect x="220" y="130" width="30" height="20" rx="2" fill="#1a1a2e" stroke="#4b5563" strokeWidth="1" className="opacity-50" />
+                                    <text x="235" y="215" textAnchor="middle" fill="#9ca3af" fontSize="7" fontFamily="monospace">Comp C</text>
+
+                                    {/* Legend */}
+                                    <rect x="250" y="50" width="8" height="8" rx="1" fill="#CCFF00" fillOpacity="0.8" />
+                                    <text x="262" y="57" fill="#9ca3af" fontSize="6" fontFamily="monospace">GEO Traffic</text>
+                                    <rect x="250" y="65" width="8" height="8" rx="1" fill="#1a1a2e" stroke="#4b5563" strokeWidth="1" />
+                                    <text x="262" y="72" fill="#9ca3af" fontSize="6" fontFamily="monospace">SEO Traffic</text>
+                                </svg>
                             </div>
                         </motion.div>
 

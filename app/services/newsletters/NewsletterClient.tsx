@@ -194,9 +194,47 @@ export function NewsletterClient() {
                                     </li>
                                 </ul>
                             </div>
-                            <div className="bg-white/5 border border-white/10 rounded-sm p-8 aspect-square md:aspect-auto md:h-full flex flex-col items-center justify-center text-center relative overflow-hidden group">
-                                <FileText size={80} className="text-[#CCFF00]/40 group-hover:text-[#CCFF00] transition-colors mb-6 duration-500 group-hover:scale-110" />
-                                <p className="font-mono text-sm text-gray-500 uppercase tracking-widest">Editorial DNA</p>
+                            {/* Phase 1 Visual: Content Architecture / Template Engine */}
+                            <div className="bg-white/5 border border-white/10 rounded-sm p-4 flex flex-col items-center justify-center relative overflow-hidden group min-h-[420px]">
+                                <div className="absolute inset-0 bg-gradient-to-br from-[#CCFF00]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                <svg viewBox="0 0 320 240" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    {/* The Blueprint Document */}
+                                    <rect x="80" y="30" width="160" height="180" rx="4" fill="#1a1a2e" stroke="#CCFF00" strokeWidth="1.5" />
+                                    <rect x="100" y="50" width="120" height="30" rx="2" fill="#CCFF00" fillOpacity="0.1" stroke="#CCFF00" strokeWidth="1" strokeDasharray="2 2" />
+                                    <text x="160" y="68" textAnchor="middle" fill="#CCFF00" fontSize="8" fontFamily="monospace" fontWeight="bold">HEADER COMPONENT</text>
+
+                                    {/* Content Blocks Injecting */}
+                                    <g className="group-hover:-translate-x-4 transition-transform duration-700 delay-100">
+                                        <rect x="100" y="90" width="80" height="40" rx="2" fill="#4b5563" fillOpacity="0.3" stroke="#4b5563" strokeWidth="1" />
+                                        <rect x="105" y="95" width="40" height="4" rx="1" fill="#9ca3af" />
+                                        <rect x="105" y="105" width="60" height="3" rx="1" fill="#6b7280" />
+                                        <rect x="105" y="112" width="50" height="3" rx="1" fill="#6b7280" />
+                                    </g>
+
+                                    <g className="group-hover:translate-x-4 transition-transform duration-700 delay-200">
+                                        <rect x="140" y="140" width="80" height="50" rx="2" fill="#CCFF00" fillOpacity="0.2" stroke="#CCFF00" strokeWidth="1" />
+                                        <circle cx="160" cy="165" r="10" fill="#1a1a2e" stroke="#CCFF00" strokeWidth="1" />
+                                        <polygon points="158,160 164,165 158,170" fill="#CCFF00" />
+                                        <rect x="175" y="160" width="35" height="4" rx="1" fill="#CCFF00" fillOpacity="0.8" />
+                                        <rect x="175" y="168" width="25" height="3" rx="1" fill="#CCFF00" fillOpacity="0.5" />
+                                    </g>
+
+                                    {/* Floating Data Sources / Inputs */}
+                                    <g className="group-hover:translate-x-12 opacity-0 group-hover:opacity-100 transition-all duration-[1000ms]">
+                                        <rect x="30" y="100" width="40" height="20" rx="2" fill="#1a1a2e" stroke="#CCFF00" strokeWidth="1" />
+                                        <text x="50" y="112" textAnchor="middle" fill="#CCFF00" fontSize="6" fontFamily="sans-serif">Insight .md</text>
+                                        <line x1="70" y1="110" x2="90" y2="110" stroke="#CCFF00" strokeWidth="1" strokeDasharray="2 2" />
+                                    </g>
+
+                                    <g className="group-hover:-translate-x-12 opacity-0 group-hover:opacity-100 transition-all duration-[1000ms] delay-150">
+                                        <rect x="250" y="155" width="40" height="20" rx="2" fill="#1a1a2e" stroke="#CCFF00" strokeWidth="1" />
+                                        <text x="270" y="167" textAnchor="middle" fill="#CCFF00" fontSize="6" fontFamily="sans-serif">Video.mp4</text>
+                                        <line x1="230" y1="165" x2="250" y2="165" stroke="#CCFF00" strokeWidth="1" strokeDasharray="2 2" />
+                                    </g>
+
+                                    {/* Scanning Line */}
+                                    <line x1="80" y1="30" x2="240" y2="30" stroke="#CCFF00" strokeWidth="2" className="group-hover:translate-y-[180px] transition-transform duration-[2000ms] ease-linear" opacity="0.5" />
+                                </svg>
                             </div>
                         </motion.div>
 
@@ -208,9 +246,44 @@ export function NewsletterClient() {
                             variants={fadeInUp}
                             className="grid md:grid-cols-2 gap-12 items-center"
                         >
-                            <div className="order-2 md:order-1 bg-white/5 border border-white/10 rounded-sm p-8 aspect-square md:aspect-auto md:h-full flex flex-col items-center justify-center text-center relative overflow-hidden group">
-                                <Layers size={80} className="text-[#CCFF00]/40 group-hover:text-[#CCFF00] transition-colors mb-6 duration-500 group-hover:rotate-12" />
-                                <p className="font-mono text-sm text-gray-500 uppercase tracking-widest">Relevance at Scale</p>
+                            {/* Phase 2 Visual: Segmentation / Layer Filtering */}
+                            <div className="order-2 md:order-1 bg-white/5 border border-white/10 rounded-sm p-4 flex flex-col items-center justify-center relative overflow-hidden group min-h-[420px]">
+                                <div className="absolute inset-0 bg-gradient-to-br from-[#CCFF00]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                <svg viewBox="0 0 320 240" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    {/* Funnel/Filter Base */}
+                                    <path d="M120 180 L200 180 L160 220 Z" fill="#CCFF00" fillOpacity="0.2" stroke="#CCFF00" strokeWidth="1.5" />
+                                    <text x="160" y="235" textAnchor="middle" fill="#CCFF00" fontSize="8" fontFamily="monospace" fontWeight="bold">TARGETED SEND</text>
+
+                                    {/* Filter Layers */}
+                                    <g className="group-hover:translate-y-2 transition-transform duration-700">
+                                        <polygon points="100,140 220,140 200,165 120,165" fill="#1a1a2e" stroke="#4b5563" strokeWidth="1" />
+                                        <text x="160" y="156" textAnchor="middle" fill="#9ca3af" fontSize="6" fontFamily="monospace">HIGH ENGAGEMENT</text>
+                                        <line x1="160" y1="165" x2="160" y2="180" stroke="#CCFF00" strokeWidth="1" strokeDasharray="2 2" className="group-hover:animate-[ping_2s_infinite]" />
+                                    </g>
+
+                                    <g className="group-hover:translate-y-4 transition-transform duration-700 delay-100">
+                                        <polygon points="80,90 240,90 220,115 100,115" fill="#1a1a2e" stroke="#4b5563" strokeWidth="1" />
+                                        <text x="160" y="106" textAnchor="middle" fill="#9ca3af" fontSize="6" fontFamily="monospace">DECISION MAKERS (CMO/CEO)</text>
+                                        <line x1="160" y1="115" x2="160" y2="140" stroke="#4b5563" strokeWidth="1" strokeDasharray="2 2" />
+                                    </g>
+
+                                    <g className="group-hover:translate-y-6 transition-transform duration-700 delay-200">
+                                        <polygon points="60,40 260,40 240,65 80,65" fill="#1a1a2e" stroke="#4b5563" strokeWidth="1" />
+                                        <text x="160" y="56" textAnchor="middle" fill="#9ca3af" fontSize="6" fontFamily="monospace">MASTER SUBSCRIBER LIST (10K+)</text>
+                                        <line x1="160" y1="65" x2="160" y2="90" stroke="#4b5563" strokeWidth="1" strokeDasharray="2 2" />
+                                    </g>
+
+                                    {/* Subscriber Particles Filtering Down */}
+                                    <circle cx="160" cy="20" r="3" fill="#6b7280" className="group-hover:animate-[bounce_3s_infinite]" />
+                                    <circle cx="130" cy="25" r="3" fill="#6b7280" className="group-hover:animate-[bounce_3.5s_infinite_100ms]" />
+                                    <circle cx="190" cy="25" r="3" fill="#6b7280" className="group-hover:animate-[bounce_3s_infinite_200ms]" />
+                                    <circle cx="100" cy="20" r="3" fill="#6b7280" className="group-hover:animate-[bounce_4s_infinite_300ms]" />
+                                    <circle cx="220" cy="20" r="3" fill="#6b7280" className="group-hover:animate-[bounce_3.2s_infinite_400ms]" />
+
+                                    {/* Specific chosen particles surviving the filter */}
+                                    <circle cx="155" cy="125" r="4" fill="#CCFF00" className="opacity-0 group-hover:opacity-100 transition-opacity duration-1000 delay-500" />
+                                    <circle cx="165" cy="125" r="4" fill="#CCFF00" className="opacity-0 group-hover:opacity-100 transition-opacity duration-1000 delay-700" />
+                                </svg>
                             </div>
                             <div className="order-1 md:order-2">
                                 <div className="text-[#CCFF00] font-mono text-sm uppercase tracking-widest mb-4 flex items-center gap-3">

@@ -174,8 +174,41 @@ export function LinkedInBrandingClient() {
                             variants={fadeInUp}
                             className="flex flex-col md:flex-row gap-8 items-start bg-white/5 border border-white/10 p-8 rounded-sm hover:border-[#CCFF00]/30 transition-colors"
                         >
-                            <div className="shrink-0 w-16 h-16 rounded-full bg-[#CCFF00]/10 border border-[#CCFF00]/20 flex items-center justify-center text-[#CCFF00]">
-                                <Presentation size={32} />
+                            {/* Phase 1 Visual: Topic Creation / Generator */}
+                            <div className="bg-white/5 border border-white/10 rounded-sm p-4 flex flex-col items-center justify-center relative overflow-hidden group min-h-[420px]">
+                                <div className="absolute inset-0 bg-gradient-to-br from-[#CCFF00]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                <svg viewBox="0 0 320 240" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    {/* Input Data / Historical Posts */}
+                                    <path d="M120 40 L200 40 L180 80 L140 80 Z" fill="#1a1a2e" stroke="#4b5563" strokeWidth="1" />
+                                    <rect x="135" y="20" width="15" height="10" fill="#CCFF00" fillOpacity="0.4" className="animate-[bounce_2s_infinite]" />
+                                    <rect x="155" y="10" width="15" height="10" fill="#4b5563" fillOpacity="0.3" className="animate-[bounce_2s_infinite_200ms]" />
+                                    <rect x="175" y="25" width="15" height="10" fill="#CCFF00" fillOpacity="0.8" className="animate-[bounce_2s_infinite_400ms]" />
+                                    <text x="160" y="65" textAnchor="middle" fill="#9ca3af" fontSize="8" fontFamily="monospace">PAST DATA</text>
+
+                                    {/* The "Machine" / Blueprint Interface */}
+                                    <rect x="80" y="80" width="160" height="80" rx="4" fill="#1a1a2e" stroke="#CCFF00" strokeWidth="2" />
+                                    <line x1="80" y1="100" x2="240" y2="100" stroke="#CCFF00" strokeWidth="1" strokeOpacity="0.5" />
+
+                                    <circle cx="100" cy="130" r="12" stroke="#CCFF00" strokeWidth="2" strokeDasharray="2 2" className="group-hover:animate-[spin_4s_linear_infinite]" />
+                                    <circle cx="100" cy="130" r="4" fill="#CCFF00" />
+
+                                    <circle cx="220" cy="130" r="12" stroke="#CCFF00" strokeWidth="2" strokeDasharray="2 2" className="group-hover:animate-[spin_4s_linear_infinite_reverse]" />
+                                    <circle cx="220" cy="130" r="4" fill="#CCFF00" />
+
+                                    <rect x="130" y="115" width="60" height="30" rx="2" fill="#CCFF00" fillOpacity="0.1" stroke="#CCFF00" strokeWidth="1" />
+                                    <path d="M140 130 L150 120 L160 135 L170 125 L180 140" stroke="#CCFF00" strokeWidth="1.5" fill="none" />
+                                    <text x="160" y="93" textAnchor="middle" fill="#CCFF00" fontSize="8" fontFamily="monospace" fontWeight="bold">TEMPLATE ENGINE</text>
+
+                                    {/* Output Generation */}
+                                    <path d="M140 160 L180 160 L200 200 L120 200 Z" fill="#1a1a2e" stroke="#4b5563" strokeWidth="1" />
+
+                                    <g className="group-hover:translate-y-4 transition-transform duration-700">
+                                        <rect x="135" y="200" width="50" height="30" rx="2" fill="#CCFF00" fillOpacity="0.2" stroke="#CCFF00" strokeWidth="1.5" />
+                                        <rect x="140" y="205" width="40" height="4" rx="2" fill="#CCFF00" />
+                                        <rect x="140" y="213" width="35" height="4" rx="2" fill="#CCFF00" fillOpacity="0.5" />
+                                        <rect x="140" y="221" width="20" height="4" rx="2" fill="#CCFF00" fillOpacity="0.5" />
+                                    </g>
+                                </svg>
                             </div>
                             <div>
                                 <h3 className="text-2xl font-black uppercase tracking-wide text-white mb-2 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
@@ -196,8 +229,40 @@ export function LinkedInBrandingClient() {
                             variants={fadeInUp}
                             className="flex flex-col md:flex-row gap-8 items-start bg-white/5 border border-white/10 p-8 rounded-sm hover:border-[#CCFF00]/30 transition-colors"
                         >
-                            <div className="shrink-0 w-16 h-16 rounded-full bg-[#CCFF00]/10 border border-[#CCFF00]/20 flex items-center justify-center text-[#CCFF00]">
-                                <Rss size={32} />
+                            {/* Phase 2 Visual: Industry News / Radar */}
+                            <div className="shrink-0 w-full md:w-64 bg-white/5 border border-white/10 rounded-sm p-4 flex flex-col items-center justify-center relative overflow-hidden group min-h-[240px]">
+                                <div className="absolute inset-0 bg-gradient-to-br from-[#CCFF00]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                <svg viewBox="0 0 320 240" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    {/* Radar UI */}
+                                    <circle cx="160" cy="120" r="90" fill="#1a1a2e" stroke="#CCFF00" strokeOpacity="0.2" strokeWidth="1" />
+                                    <circle cx="160" cy="120" r="60" stroke="#CCFF00" strokeOpacity="0.2" strokeWidth="1" />
+                                    <circle cx="160" cy="120" r="30" stroke="#CCFF00" strokeOpacity="0.2" strokeWidth="1" />
+                                    <circle cx="160" cy="120" r="4" fill="#CCFF00" />
+
+                                    <line x1="160" y1="30" x2="160" y2="210" stroke="#CCFF00" strokeOpacity="0.2" strokeWidth="1" />
+                                    <line x1="70" y1="120" x2="250" y2="120" stroke="#CCFF00" strokeOpacity="0.2" strokeWidth="1" />
+
+                                    {/* Radar Sweep */}
+                                    <path d="M160 120 L160 30 A 90 90 0 0 1 250 120 Z" fill="#CCFF00" fillOpacity="0.1" className="group-hover:animate-[spin_4s_linear_infinite] origin-center" style={{ transformOrigin: '160px 120px' }} />
+                                    <line x1="160" y1="120" x2="160" y2="30" stroke="#CCFF00" strokeWidth="2" className="group-hover:animate-[spin_4s_linear_infinite] origin-center" style={{ transformOrigin: '160px 120px' }} />
+
+                                    {/* Detected News Nodes */}
+                                    <circle cx="210" cy="70" r="6" fill="#CCFF00" className="group-hover:animate-ping" />
+                                    <text x="220" y="73" fill="#9ca3af" fontSize="8" fontFamily="monospace">Tech Update</text>
+
+                                    <circle cx="100" cy="90" r="4" fill="#CCFF00" className="opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity delay-150" />
+                                    <text x="95" y="85" textAnchor="end" fill="#9ca3af" fontSize="8" fontFamily="monospace" className="opacity-0 group-hover:opacity-100 transition-opacity">Competitor Move</text>
+
+                                    <circle cx="130" cy="180" r="5" fill="#CCFF00" className="opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity delay-300" />
+                                    <text x="125" y="195" textAnchor="end" fill="#9ca3af" fontSize="8" fontFamily="monospace" className="opacity-0 group-hover:opacity-100 transition-opacity">Market Shift</text>
+
+                                    {/* Perspective Filter Box */}
+                                    <path d="M150 120 L270 120 M150 120 L150 200" stroke="#CCFF00" strokeWidth="1" strokeDasharray="2 2" opacity="0.3" />
+                                    <rect x="230" y="160" width="70" height="40" rx="4" fill="#1a1a2e" stroke="#CCFF00" strokeWidth="1.5" />
+                                    <text x="265" y="175" textAnchor="middle" fill="#CCFF00" fontSize="7" fontFamily="monospace" fontWeight="bold">BRAND LENS</text>
+                                    <rect x="240" y="182" width="50" height="3" rx="1.5" fill="#CCFF00" fillOpacity="0.5" />
+                                    <rect x="240" y="189" width="30" height="3" rx="1.5" fill="#CCFF00" fillOpacity="0.5" />
+                                </svg>
                             </div>
                             <div>
                                 <h3 className="text-2xl font-black uppercase tracking-wide text-white mb-2 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
@@ -218,8 +283,48 @@ export function LinkedInBrandingClient() {
                             variants={fadeInUp}
                             className="flex flex-col md:flex-row gap-8 items-start bg-white/5 border border-white/10 p-8 rounded-sm hover:border-[#CCFF00]/30 transition-colors"
                         >
-                            <div className="shrink-0 w-16 h-16 rounded-full bg-[#CCFF00]/10 border border-[#CCFF00]/20 flex items-center justify-center text-[#CCFF00]">
-                                <Users size={32} />
+                            {/* Phase 3 Visual: Interacting / Network Graph */}
+                            <div className="shrink-0 w-full md:w-64 bg-white/5 border border-white/10 rounded-sm p-4 flex flex-col items-center justify-center relative overflow-hidden group min-h-[240px]">
+                                <div className="absolute inset-0 bg-gradient-to-br from-[#CCFF00]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                <svg viewBox="0 0 320 240" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    {/* Central Founder Node */}
+                                    <circle cx="160" cy="120" r="24" fill="#1a1a2e" stroke="#CCFF00" strokeWidth="2" />
+                                    <text x="160" y="123" textAnchor="middle" fill="#CCFF00" fontSize="8" fontFamily="monospace" fontWeight="bold">FOUNDER</text>
+
+                                    {/* Target ICP Nodes */}
+                                    <circle cx="260" cy="60" r="16" fill="#1a1a2e" stroke="#4b5563" strokeWidth="1.5" className="group-hover:stroke-[#CCFF00] transition-colors duration-500" />
+                                    <text x="260" y="62" textAnchor="middle" fill="#9ca3af" fontSize="6" fontFamily="monospace">CMO</text>
+
+                                    <circle cx="60" cy="60" r="16" fill="#1a1a2e" stroke="#4b5563" strokeWidth="1.5" className="group-hover:stroke-[#CCFF00] transition-colors duration-500 delay-100" />
+                                    <text x="60" y="62" textAnchor="middle" fill="#9ca3af" fontSize="6" fontFamily="monospace">CEO</text>
+
+                                    <circle cx="40" cy="180" r="16" fill="#1a1a2e" stroke="#4b5563" strokeWidth="1.5" className="group-hover:stroke-[#CCFF00] transition-colors duration-500 delay-200" />
+                                    <text x="40" y="182" textAnchor="middle" fill="#9ca3af" fontSize="6" fontFamily="monospace">VP SALES</text>
+
+                                    <circle cx="280" cy="180" r="16" fill="#1a1a2e" stroke="#4b5563" strokeWidth="1.5" className="group-hover:stroke-[#CCFF00] transition-colors duration-500 delay-300" />
+                                    <text x="280" y="182" textAnchor="middle" fill="#9ca3af" fontSize="6" fontFamily="monospace">FOUNDER</text>
+
+                                    {/* Neutral / Non-ICP Nodes */}
+                                    <circle cx="160" cy="20" r="10" fill="#1a1a2e" stroke="#4b5563" strokeWidth="1" strokeOpacity="0.5" />
+                                    <circle cx="300" cy="120" r="8" fill="#1a1a2e" stroke="#4b5563" strokeWidth="1" strokeOpacity="0.5" />
+
+                                    {/* Interaction Lines (Comments/Likes) */}
+                                    <g stroke="#CCFF00" strokeWidth="1.5" strokeDasharray="4 4" className="opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                        <line x1="175" y1="105" x2="245" y2="70" />
+                                        <line x1="145" y1="105" x2="75" y2="70" />
+                                        <line x1="145" y1="135" x2="55" y2="170" />
+                                        <line x1="175" y1="135" x2="265" y2="170" />
+                                    </g>
+
+                                    {/* Pulse animations moving outward */}
+                                    <circle cx="210" cy="87" r="3" fill="#CCFF00" className="opacity-0 group-hover:animate-[ping_3s_infinite_100ms]" />
+                                    <circle cx="110" cy="87" r="3" fill="#CCFF00" className="opacity-0 group-hover:animate-[ping_3s_infinite_300ms]" />
+                                    <circle cx="100" cy="152" r="3" fill="#CCFF00" className="opacity-0 group-hover:animate-[ping_3s_infinite_500ms]" />
+                                    <circle cx="220" cy="152" r="3" fill="#CCFF00" className="opacity-0 group-hover:animate-[ping_3s_infinite_700ms]" />
+
+                                    {/* Impression Rings */}
+                                    <circle cx="160" cy="120" r="50" stroke="#CCFF00" strokeWidth="1" strokeOpacity="0.2" className="group-hover:scale-150 transform origin-center transition-transform duration-[2000ms] opacity-0 group-hover:opacity-100" />
+                                </svg>
                             </div>
                             <div>
                                 <h3 className="text-2xl font-black uppercase tracking-wide text-white mb-2 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
@@ -240,8 +345,58 @@ export function LinkedInBrandingClient() {
                             variants={fadeInUp}
                             className="flex flex-col md:flex-row gap-8 items-start bg-white/5 border border-white/10 p-8 rounded-sm hover:border-[#CCFF00]/30 transition-colors"
                         >
-                            <div className="shrink-0 w-16 h-16 rounded-full bg-[#CCFF00]/10 border border-[#CCFF00]/20 flex items-center justify-center text-[#CCFF00]">
-                                <Layers size={32} />
+                            {/* Phase 4 Visual: Queue Management / Calendar Track */}
+                            <div className="shrink-0 w-full md:w-64 bg-white/5 border border-white/10 rounded-sm p-4 flex flex-col items-center justify-center relative overflow-hidden group min-h-[240px]">
+                                <div className="absolute inset-0 bg-gradient-to-br from-[#CCFF00]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                <svg viewBox="0 0 320 240" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    {/* Timeline Background */}
+                                    <rect x="40" y="40" width="240" height="160" rx="4" fill="#1a1a2e" stroke="#4b5563" strokeWidth="1" />
+                                    <path d="M40,70 L280,70" stroke="#4b5563" strokeWidth="1" />
+
+                                    {/* Days Label Header */}
+                                    <text x="80" y="60" textAnchor="middle" fill="#9ca3af" fontSize="8" fontFamily="monospace">MON</text>
+                                    <text x="160" y="60" textAnchor="middle" fill="#9ca3af" fontSize="8" fontFamily="monospace">TUE</text>
+                                    <text x="240" y="60" textAnchor="middle" fill="#9ca3af" fontSize="8" fontFamily="monospace">WED</text>
+
+                                    <line x1="120" y1="40" x2="120" y2="200" stroke="#4b5563" strokeWidth="1" strokeDasharray="2 2" />
+                                    <line x1="200" y1="40" x2="200" y2="200" stroke="#4b5563" strokeWidth="1" strokeDasharray="2 2" />
+
+                                    {/* Time Tracks (Rows) */}
+                                    <text x="25" y="95" textAnchor="end" fill="#6b7280" fontSize="7" fontFamily="monospace">08:00</text>
+                                    <line x1="40" y1="92" x2="280" y2="92" stroke="#4b5563" strokeWidth="1" strokeOpacity="0.3" />
+
+                                    <text x="25" y="145" textAnchor="end" fill="#6b7280" fontSize="7" fontFamily="monospace">12:00</text>
+                                    <line x1="40" y1="142" x2="280" y2="142" stroke="#4b5563" strokeWidth="1" strokeOpacity="0.3" />
+
+                                    <text x="25" y="195" textAnchor="end" fill="#6b7280" fontSize="7" fontFamily="monospace">16:00</text>
+
+                                    {/* Scheduled Posts */}
+                                    <g className="group-hover:opacity-100 opacity-60 transition-opacity duration-500">
+                                        {/* Mon 8am Post */}
+                                        <rect x="50" y="80" width="60" height="24" rx="2" fill="#CCFF00" fillOpacity="0.2" stroke="#CCFF00" strokeWidth="1" />
+                                        <text x="55" y="91" fill="#CCFF00" fontSize="6" fontFamily="sans-serif">Story / Frame</text>
+                                        <circle cx="102" cy="92" r="4" fill="#CCFF00" />
+                                        <path d="M100 92 L102 94 L105 90" stroke="#1a1a2e" strokeWidth="1" fill="none" />
+
+                                        {/* Tue 12pm Post */}
+                                        <rect x="130" y="130" width="60" height="24" rx="2" fill="#CCFF00" fillOpacity="0.2" stroke="#CCFF00" strokeWidth="1" />
+                                        <text x="135" y="141" fill="#CCFF00" fontSize="6" fontFamily="sans-serif">Carousel</text>
+                                        <circle cx="182" cy="142" r="4" fill="#CCFF00" />
+                                        <path d="M180 142 L182 144 L185 140" stroke="#1a1a2e" strokeWidth="1" fill="none" />
+
+                                        {/* Wed 8am Post - Animating in */}
+                                        <g className="group-hover:translate-x-0 -translate-x-4 opacity-0 group-hover:opacity-100 transition-all duration-700">
+                                            <rect x="210" y="80" width="60" height="24" rx="2" fill="#CCFF00" fillOpacity="0.8" stroke="#CCFF00" strokeWidth="1" />
+                                            <text x="215" y="91" fill="#1a1a2e" fontSize="6" fontFamily="sans-serif" fontWeight="bold">Video Snippet</text>
+                                            <circle cx="262" cy="92" r="4" fill="#1a1a2e" />
+                                            <path d="M260 92 L262 94 L265 90" stroke="#CCFF00" strokeWidth="1" fill="none" />
+                                        </g>
+                                    </g>
+
+                                    {/* Current Time Indicator */}
+                                    <line x1="200" y1="40" x2="200" y2="200" stroke="#ef4444" strokeWidth="1.5" className="group-hover:translate-x-10 transition-transform duration-[2000ms] ease-linear" />
+                                    <polygon points="197,40 203,40 200,45" fill="#ef4444" className="group-hover:translate-x-10 transition-transform duration-[2000ms] ease-linear" />
+                                </svg>
                             </div>
                             <div>
                                 <h3 className="text-2xl font-black uppercase tracking-wide text-white mb-2 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">

@@ -169,9 +169,29 @@ export function SEOClient() {
                                     <li className="flex items-start text-gray-300"><span className="text-[#CCFF00] mr-2">✓</span> They follow internal links to map your entire site structure.</li>
                                 </ul>
                             </div>
-                            <div className="bg-white/5 border border-white/10 rounded-sm p-8 aspect-square md:aspect-auto md:h-full flex flex-col items-center justify-center text-center relative overflow-hidden group">
-                                <Globe size={80} className="text-[#CCFF00]/40 group-hover:text-[#CCFF00] transition-colors mb-6 duration-500 group-hover:rotate-180" />
-                                <p className="font-mono text-sm text-gray-500 uppercase tracking-widest">Global Discovery</p>
+                            {/* Step 1 Visual: Crawler / Discovery */}
+                            <div className="bg-white/5 border border-white/10 rounded-sm p-4 flex flex-col items-center justify-center relative overflow-hidden group min-h-[420px]">
+                                <div className="absolute inset-0 bg-gradient-to-br from-[#CCFF00]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                <svg viewBox="0 0 320 240" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    {/* Web Nodes */}
+                                    <circle cx="60" cy="50" r="16" fill="#1a1a2e" stroke="#4b5563" strokeWidth="1" />
+                                    <circle cx="160" cy="30" r="16" fill="#1a1a2e" stroke="#4b5563" strokeWidth="1" />
+                                    <circle cx="260" cy="50" r="16" fill="#1a1a2e" stroke="#4b5563" strokeWidth="1" />
+                                    <circle cx="40" cy="120" r="16" fill="#1a1a2e" stroke="#4b5563" strokeWidth="1" />
+                                    <circle cx="280" cy="120" r="16" fill="#1a1a2e" stroke="#4b5563" strokeWidth="1" />
+                                    <circle cx="160" cy="200" r="24" fill="#CCFF00" fillOpacity="0.1" stroke="#CCFF00" strokeWidth="2" />
+                                    {/* Links */}
+                                    <path d="M72 40 L148 35 M172 35 L248 40 M50 63 L45 105 M270 63 L275 105 M52 130 L140 190 M268 130 L180 190 M75 55 L145 190 M245 55 L175 190 M160 46 L160 176" stroke="#4b5563" strokeWidth="0.5" strokeDasharray="3 3" />
+                                    {/* Crawler Agent */}
+                                    <circle cx="160" cy="110" r="12" fill="#CCFF00" />
+                                    <circle cx="160" cy="110" r="30" stroke="#CCFF00" strokeOpacity="0.3" strokeWidth="1" strokeDasharray="4 2" className="group-hover:stroke-[#CCFF00] transition-colors duration-700" />
+                                    <path d="M150 110 L120 90 M170 110 L200 90 M150 115 L110 140 M170 115 L210 140" stroke="#CCFF00" strokeWidth="1.5" />
+                                    {/* Scan lines & Labels */}
+                                    <line x1="80" y1="110" x2="140" y2="110" stroke="#CCFF00" strokeWidth="2" strokeDasharray="2 4" />
+                                    <line x1="240" y1="110" x2="180" y2="110" stroke="#CCFF00" strokeWidth="2" strokeDasharray="2 4" />
+                                    <text x="160" y="204" textAnchor="middle" fill="#CCFF00" fontSize="10" fontFamily="monospace" fontWeight="bold">YOUR SITE</text>
+                                    <text x="160" y="80" textAnchor="middle" fill="#CCFF00" fontSize="8" fontFamily="monospace" className="opacity-0 group-hover:opacity-100 transition-opacity">CRAWLING</text>
+                                </svg>
                             </div>
                         </motion.div>
 
@@ -183,9 +203,31 @@ export function SEOClient() {
                             variants={fadeInUp}
                             className="grid md:grid-cols-2 gap-12 items-center"
                         >
-                            <div className="order-2 md:order-1 bg-white/5 border border-white/10 rounded-sm p-8 aspect-square md:aspect-auto md:h-full flex flex-col items-center justify-center text-center relative overflow-hidden group">
-                                <Search size={80} className="text-[#CCFF00]/40 group-hover:text-[#CCFF00] transition-colors mb-6 duration-500 group-hover:scale-110" />
-                                <p className="font-mono text-sm text-gray-500 uppercase tracking-widest">Database Storage</p>
+                            {/* Step 2 Visual: Indexing / Database */}
+                            <div className="order-2 md:order-1 bg-white/5 border border-white/10 rounded-sm p-4 flex flex-col items-center justify-center relative overflow-hidden group min-h-[420px]">
+                                <div className="absolute inset-0 bg-gradient-to-br from-[#CCFF00]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                <svg viewBox="0 0 320 240" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    {/* Filter Funnel */}
+                                    <path d="M60 40 L260 40 L190 120 L130 120 Z" fill="#1a1a2e" stroke="#4b5563" strokeWidth="1" />
+                                    {/* Incoming Data */}
+                                    <rect x="80" y="20" width="30" height="10" fill="#CCFF00" fillOpacity="0.4" />
+                                    <rect x="140" y="10" width="40" height="15" fill="#4b5563" fillOpacity="0.3" />
+                                    <rect x="200" y="25" width="25" height="12" fill="#CCFF00" fillOpacity="0.8" />
+                                    {/* Processing Area */}
+                                    <line x1="100" y1="80" x2="220" y2="80" stroke="#CCFF00" strokeWidth="2" strokeDasharray="4 4" className="group-hover:stroke-white transition-colors" />
+                                    <text x="160" y="75" textAnchor="middle" fill="#CCFF00" fontSize="8" fontFamily="monospace">QUALITY EVALUATION</text>
+                                    {/* Rejected Data */}
+                                    <path d="M120 100 Q 80 140 40 180" stroke="#ef4444" strokeWidth="1" strokeDasharray="2 2" fill="none" />
+                                    <text x="40" y="195" textAnchor="middle" fill="#ef4444" fontSize="8" fontFamily="monospace">DISCARDED</text>
+                                    {/* Database Storage (Indexed) */}
+                                    <rect x="110" y="150" width="100" height="60" rx="4" fill="#CCFF00" fillOpacity="0.1" stroke="#CCFF00" strokeWidth="2" />
+                                    <line x1="110" y1="165" x2="210" y2="165" stroke="#CCFF00" strokeOpacity="0.3" strokeWidth="1" />
+                                    <line x1="110" y1="180" x2="210" y2="180" stroke="#CCFF00" strokeOpacity="0.3" strokeWidth="1" />
+                                    <line x1="110" y1="195" x2="210" y2="195" stroke="#CCFF00" strokeOpacity="0.3" strokeWidth="1" />
+                                    <text x="160" y="175" textAnchor="middle" fill="#CCFF00" fontSize="10" fontFamily="monospace" fontWeight="bold">SITE IN INDEX</text>
+                                    {/* Arrow pointing down to DB */}
+                                    <path d="M160 125 L160 145 M155 140 L160 145 L165 140" stroke="#CCFF00" strokeWidth="2" fill="none" />
+                                </svg>
                             </div>
                             <div className="order-1 md:order-2">
                                 <div className="text-[#CCFF00] font-mono text-sm uppercase tracking-widest mb-4 flex items-center gap-3">
@@ -225,9 +267,43 @@ export function SEOClient() {
                                     <li className="flex items-start text-gray-300"><span className="text-[#CCFF00] mr-2">✓</span> We target search intent over keyword stuffing.</li>
                                 </ul>
                             </div>
-                            <div className="bg-white/5 border border-white/10 rounded-sm p-8 aspect-square md:aspect-auto md:h-full flex flex-col items-center justify-center text-center relative overflow-hidden group">
-                                <BarChart size={80} className="text-[#CCFF00]/40 group-hover:text-[#CCFF00] transition-colors mb-6 duration-500 group-hover:-translate-y-2" />
-                                <p className="font-mono text-sm text-gray-500 uppercase tracking-widest">Position & Visibility</p>
+                            {/* Step 3 Visual: Ranking Algorithm */}
+                            <div className="bg-white/5 border border-white/10 rounded-sm p-4 flex flex-col items-center justify-center relative overflow-hidden group min-h-[420px]">
+                                <div className="absolute inset-0 bg-gradient-to-br from-[#CCFF00]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                <svg viewBox="0 0 320 240" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    {/* Search Bar */}
+                                    <rect x="60" y="20" width="200" height="24" rx="12" fill="#1a1a2e" stroke="#CCFF00" strokeOpacity="0.5" strokeWidth="1" />
+                                    <circle cx="75" cy="32" r="4" stroke="#CCFF00" strokeWidth="1" />
+                                    <line x1="78" y1="35" x2="82" y2="39" stroke="#CCFF00" strokeWidth="1" />
+                                    <text x="95" y="35" fill="#9ca3af" fontSize="9" fontFamily="monospace">"b2b saas solution"</text>
+
+                                    {/* Ranking Blocks */}
+                                    <g className="group-hover:-translate-y-2 transition-transform duration-500 delay-100">
+                                        <rect x="80" y="70" width="160" height="36" rx="4" fill="#CCFF00" fillOpacity="0.15" stroke="#CCFF00" strokeWidth="2" />
+                                        <text x="95" y="88" fill="#CCFF00" fontSize="10" fontFamily="monospace" fontWeight="bold">1. YOUR CONTENT</text>
+                                        <rect x="200" y="78" width="30" height="12" rx="2" fill="#CCFF00" fillOpacity="0.2" />
+                                        <text x="215" y="86" textAnchor="middle" fill="#CCFF00" fontSize="6" fontFamily="monospace">E-E-A-T</text>
+                                    </g>
+
+                                    <g className="opacity-70">
+                                        <rect x="80" y="115" width="160" height="30" rx="4" fill="#1a1a2e" stroke="#4b5563" strokeWidth="1" />
+                                        <text x="95" y="132" fill="#6b7280" fontSize="9" fontFamily="monospace">2. Competitor A</text>
+                                    </g>
+
+                                    <g className="opacity-50">
+                                        <rect x="80" y="155" width="160" height="30" rx="4" fill="#1a1a2e" stroke="#4b5563" strokeWidth="1" />
+                                        <text x="95" y="172" fill="#6b7280" fontSize="9" fontFamily="monospace">3. Competitor B</text>
+                                    </g>
+
+                                    <g className="opacity-30">
+                                        <rect x="80" y="195" width="160" height="30" rx="4" fill="#1a1a2e" stroke="#4b5563" strokeWidth="1" />
+                                        <text x="95" y="212" fill="#6b7280" fontSize="9" fontFamily="monospace">4. Competitor C</text>
+                                    </g>
+
+                                    {/* Algorithmic lines */}
+                                    <path d="M260 88 Q 290 88 290 140 Q 290 192 260 192" stroke="#CCFF00" strokeOpacity="0.3" strokeWidth="1" strokeDasharray="3 3" fill="none" />
+                                    <text x="290" y="135" textAnchor="middle" fill="#CCFF00" fontSize="8" fontFamily="monospace" transform="rotate(90 290 135)">RANKBRAIN</text>
+                                </svg>
                             </div>
                         </motion.div>
 
@@ -239,9 +315,35 @@ export function SEOClient() {
                             variants={fadeInUp}
                             className="grid md:grid-cols-2 gap-12 items-center"
                         >
-                            <div className="order-2 md:order-1 bg-white/5 border border-white/10 rounded-sm p-8 aspect-square md:aspect-auto md:h-full flex flex-col items-center justify-center text-center relative overflow-hidden group">
-                                <Bot size={80} className="text-[#CCFF00]/40 group-hover:text-[#CCFF00] transition-colors mb-6 duration-500 group-hover:rotate-12" />
-                                <p className="font-mono text-sm text-gray-500 uppercase tracking-widest">AI Overviews & SGE</p>
+                            {/* Step 4 Visual: AI/SGE Integration */}
+                            <div className="order-2 md:order-1 bg-white/5 border border-white/10 rounded-sm p-4 flex flex-col items-center justify-center relative overflow-hidden group min-h-[420px]">
+                                <div className="absolute inset-0 bg-gradient-to-br from-[#CCFF00]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                <svg viewBox="0 0 320 240" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    {/* AI Overview Box */}
+                                    <rect x="40" y="30" width="240" height="90" rx="8" fill="#1a1a2e" stroke="#CCFF00" strokeWidth="1" />
+                                    <path d="M40 50 L280 50" stroke="#CCFF00" strokeOpacity="0.3" strokeWidth="1" />
+                                    <text x="55" y="44" fill="#CCFF00" fontSize="8" fontFamily="monospace" fontWeight="bold">✨ AI OVERVIEW</text>
+
+                                    {/* Generated Text Lines */}
+                                    <rect x="55" y="65" width="200" height="4" rx="2" fill="#9ca3af" fillOpacity="0.8" />
+                                    <rect x="55" y="77" width="180" height="4" rx="2" fill="#9ca3af" fillOpacity="0.8" />
+                                    <rect x="55" y="89" width="150" height="4" rx="2" fill="#9ca3af" fillOpacity="0.8" />
+
+                                    {/* Citation Badge */}
+                                    <rect x="55" y="102" width="90" height="14" rx="4" fill="#CCFF00" fillOpacity="0.2" stroke="#CCFF00" strokeWidth="1" />
+                                    <text x="60" y="111" fill="#CCFF00" fontSize="7" fontFamily="monospace">"Source: Your Brand"</text>
+
+                                    {/* Connection to Traditional Results */}
+                                    <line x1="160" y1="120" x2="160" y2="150" stroke="#CCFF00" strokeOpacity="0.5" strokeWidth="2" strokeDasharray="4 4" />
+                                    <circle cx="160" cy="150" r="3" fill="#CCFF00" />
+
+                                    {/* Traditional Result snippet */}
+                                    <rect x="60" y="160" width="200" height="50" rx="4" fill="#1a1a2e" stroke="#4b5563" strokeWidth="1" />
+                                    <text x="70" y="175" fill="#3b82f6" fontSize="10" fontFamily="sans-serif" className="group-hover:underline cursor-pointer">Your Brand Guide 2026</text>
+                                    <text x="70" y="185" fill="#10b981" fontSize="7" fontFamily="monospace">https://yourbrand.com/guide</text>
+                                    <rect x="70" y="195" width="170" height="3" rx="1.5" fill="#6b7280" />
+                                    <rect x="70" y="202" width="130" height="3" rx="1.5" fill="#6b7280" />
+                                </svg>
                             </div>
                             <div className="order-1 md:order-2">
                                 <div className="text-[#CCFF00] font-mono text-sm uppercase tracking-widest mb-4 flex items-center gap-3">
