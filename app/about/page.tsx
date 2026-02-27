@@ -190,7 +190,7 @@ const anikeshData = {
 };
 
 
-function ProfileSection({ name, title, bio, image, isReversed, linkedin }: { name: string, title: string, bio: React.ReactNode, image: string, isReversed?: boolean, linkedin: string }) {
+function ProfileSection({ name, title, bio, image, isReversed, linkedin, imageClassName = "object-cover object-top" }: { name: string, title: string, bio: React.ReactNode, image: string, isReversed?: boolean, linkedin: string, imageClassName?: string }) {
     return (
         <div className={`grid md:grid-cols-2 gap-12 items-center ${isReversed ? 'md:grid-flow-col-dense' : ''}`}>
             <div className={isReversed ? 'md:col-start-2' : ''}>
@@ -214,7 +214,7 @@ function ProfileSection({ name, title, bio, image, isReversed, linkedin }: { nam
                         src={image}
                         alt={`${name}, ${title} at Moxie Digital`}
                         fill
-                        className="object-cover object-top"
+                        className={imageClassName}
                     />
                     <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#0a0118]/60 to-transparent" />
                 </div>
