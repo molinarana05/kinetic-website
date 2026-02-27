@@ -547,36 +547,48 @@ export default function HomeClient() {
                     <div className="grid md:grid-cols-2 gap-10 items-start">
                         <div className="contents md:block">
                             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="flex flex-col md:hidden mb-8 text-center">
-                                <span className="text-[18px] font-bold text-[#CCFF00] uppercase tracking-[0.2em] mb-6 block">THE OPERATOR</span>
+                                <span className="text-[18px] font-bold text-[#CCFF00] uppercase tracking-[0.2em] mb-6 block">THE OPERATORS</span>
                             </motion.div>
-                            {/* Portrait Image Column */}
+                            {/* Portrait Images Column */}
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.95 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 1 }}
                                 style={{ y: aboutImageY }}
-                                className="relative group lg:pr-12 order-2 md:order-1"
+                                className="relative group lg:pr-12 order-2 md:order-1 h-[400px] md:h-[500px]"
                             >
-                                <div className="relative aspect-[3/4] w-[90%] mx-auto md:w-full rounded-sm overflow-hidden border-[6px] border-[#CCFF00] shadow-[16px_16px_0px_0px_#111] bg-[#0a0118]">
+                                {/* Molina Image (Back) */}
+                                <div className="absolute top-0 right-4 md:right-12 w-[65%] h-[80%] rounded-sm overflow-hidden border-[6px] border-white/20 shadow-[16px_16px_0px_0px_#111] bg-[#0a0118] z-10">
                                     <img
                                         src="/molina-rana-cutout.png"
-                                        alt="Molina Rana, Senior B2B Content Marketing Consultant and Founder of Moxie Digital"
-                                        className="w-full h-full object-cover object-top grayscale brightness-[1.05] contrast-[1.2]"
+                                        alt="Molina Rana, Brand & Growth Leader"
+                                        className="w-full h-full object-cover object-top grayscale-[50%] brightness-[0.9]"
                                     />
+                                    <div className="absolute bottom-2 left-2 bg-black/80 px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-[#CCFF00]">Molina Rana</div>
+                                </div>
+
+                                {/* Anikesh Image (Front) */}
+                                <div className="absolute bottom-0 left-0 w-[65%] h-[80%] rounded-sm overflow-hidden border-[6px] border-[#CCFF00] shadow-[-16px_16px_0px_0px_rgba(204,255,0,0.2)] bg-[#0a0118] z-20">
+                                    <img
+                                        src="/anikesh-gaurav.jpg"
+                                        alt="Anikesh Gaurav, SEO & AEO Lead"
+                                        className="w-full h-full object-cover object-top filter contrast-[1.1] brightness-[0.95]"
+                                    />
+                                    <div className="absolute bottom-2 left-2 bg-[#CCFF00] px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-black">Anikesh Gaurav</div>
                                 </div>
                             </motion.div>
                         </div>
                         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }} className="flex flex-col order-3 md:order-2 md:pl-8">
-                            <span className="text-[18px] font-bold text-[#CCFF00] uppercase tracking-[0.2em] mb-6 hidden md:block">THE OPERATOR</span>
-                            <h2 className="text-3xl md:text-5xl font-[900] text-white mb-6 md:mb-10 leading-none uppercase">I AM NOT AN AGENCY. I AM A PARTNER.</h2>
+                            <span className="text-[18px] font-bold text-[#CCFF00] uppercase tracking-[0.2em] mb-6 hidden md:block">THE OPERATORS</span>
+                            <h2 className="text-3xl md:text-5xl font-[900] text-white mb-6 md:mb-10 leading-none uppercase">WE ARE NOT AN AGENCY. WE ARE YOUR PARTNERS.</h2>
                             <div className="space-y-6 md:space-y-8 text-gray-300 text-lg leading-[1.6] font-medium px-4 md:px-0">
-                                <p>Agencies charge for overhead. I charge for impact.</p>
-                                <p>When you hire Moxie, you get me. I have built the growth systems for market leaders like Paytm, Bajaj Finserv, and Grant Thornton. Now I install those same systems for you.</p>
-                                <p>No juniors. No account managers. No fluff. I am a senior operator running your content engine so you can stay in your zone of genius.</p>
+                                <p>Agencies charge for overhead. We charge for impact.</p>
+                                <p>When you hire Moxie, you get <span className="text-white font-bold">us</span>. Molina has built growth systems for leaders like Paytm and Bajaj Finserv. Anikesh secures top-10 search rankings for scaling B2B brands. Now we install those same systems for you.</p>
+                                <p>No juniors. No account managers. No fluff. We are two senior operators running your brand, search, and demand gen engine so you can stay in your zone of genius.</p>
                             </div>
                             <div className="mt-8 md:mt-12 flex flex-col items-center md:items-start">
-                                <Button href="#services" className="bg-[#CCFF00] text-black px-8 py-4 font-[900] tracking-[1px] uppercase text-sm hover:bg-white transition-colors duration-300 rounded-[4px]">START THE ENGINE</Button>
+                                <Button href="/about" className="bg-[#CCFF00] text-black px-8 py-4 font-[900] tracking-[1px] uppercase text-sm hover:bg-white transition-colors duration-300 rounded-[4px] shadow-[0_0_20px_rgba(204,255,0,0.2)]">MEET THE FOUNDERS →</Button>
                             </div>
                         </motion.div>
                     </div>
