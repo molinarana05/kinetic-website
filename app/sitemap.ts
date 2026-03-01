@@ -15,6 +15,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
         'what-does-a-branding-consultant-do',
         'top-marketing-agencies-comparison',
         'personal-branding-agency-guide',
+        // AEO / AI Search cluster
+        'answer-engine-optimization-guide',
+        'seo-vs-aeo-2026',
+        'generative-engine-optimization-guide',
+        'zero-click-search-strategy',
+        'ai-agents-for-marketing',
+        // Content & Email cluster
+        'content-repurposing-strategy',
+        'email-marketing-b2b',
+        'newsletter-community-building',
+        // LinkedIn & Personal Branding
+        'linkedin-personal-branding',
+        'seo-for-b2b-saas',
     ]
 
     const toolSlugs = [

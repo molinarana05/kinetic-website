@@ -736,9 +736,11 @@ export default function HomeClient() {
                                     <span className="font-bold text-xl text-white group-hover:text-[#CCFF00] transition-colors">{item.q}</span>
                                     {openFaq === i ? <Minus className="text-[#CCFF00] shrink-0 ml-4 w-6 h-6" /> : <Plus className="text-[#CCFF00] shrink-0 ml-4 w-6 h-6" />}
                                 </button>
+                                {/* Always-in-DOM answer for AI crawlers (screen-reader accessible) */}
+                                <span className="sr-only">{item.a}</span>
                                 <AnimatePresence>
                                     {openFaq === i && (
-                                        <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
+                                        <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden" aria-hidden="true">
                                             <div className="pt-4 text-white text-lg font-medium leading-relaxed opacity-90 max-w-3xl">{item.a}</div>
                                         </motion.div>
                                     )}

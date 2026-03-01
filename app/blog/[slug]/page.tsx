@@ -18,21 +18,28 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         return { title: 'Post Not Found' };
     }
 
+    const author = (postData as any).author || 'Molina Rana';
+    const description = postData.description || "Read the latest insights from Moxie Digital.";
+    const image = (postData as any).image || "https://www.moxie-digital.com/og-default.png";
+
     return {
         title: `${postData.title} | Moxie Digital`,
-        description: postData.description || "Read the latest insights from Moxie Digital.",
+        description,
+        alternates: { canonical: `https://www.moxie-digital.com/blog/${params.slug}` },
         openGraph: {
             title: `${postData.title} | Moxie Digital`,
-            description: postData.description || "Read the latest insights from Moxie Digital.",
+            description,
             type: 'article',
             publishedTime: postData.date,
             url: `https://www.moxie-digital.com/blog/${params.slug}`,
-            authors: ['Molina Rana'],
+            authors: [author],
+            images: [{ url: image, width: 1200, height: 630, alt: postData.title }],
         },
         twitter: {
             card: 'summary_large_image',
             title: `${postData.title} | Moxie Digital`,
-            description: postData.description || "Read the latest insights from Moxie Digital.",
+            description,
+            images: [image],
         }
     };
 }
@@ -51,16 +58,27 @@ export default async function BlogPost({ params }: Props) {
         notFound();
     }
 
+    const postAuthor = (postData as any).author || "Molina Rana";
+    const postImage = (postData as any).image || "https://www.moxie-digital.com/og-default.png";
+    const postTags = (postData as any).tags || [];
+
     const articleJsonLd = {
         "@context": "https://schema.org",
-        "@type": "Article",
+        "@type": "BlogPosting",
         "headline": postData!.title,
         "description": postData!.description || "",
         "datePublished": postData!.date,
         "dateModified": postData!.date,
+        "keywords": postTags.join(", "),
+        "image": {
+            "@type": "ImageObject",
+            "url": postImage,
+            "width": 1200,
+            "height": 630
+        },
         "author": {
             "@type": "Person",
-            "name": (postData as any).author || "Molina Rana",
+            "name": postAuthor,
             "@id": "https://www.moxie-digital.com/#founder",
             "url": "https://www.linkedin.com/in/molina-rana/"
         },
@@ -78,13 +96,37 @@ export default async function BlogPost({ params }: Props) {
             "@id": `https://www.moxie-digital.com/blog/${params.slug}`
         },
         "url": `https://www.moxie-digital.com/blog/${params.slug}`,
-        "image": "https://www.moxie-digital.com/og-default.png",
         "isPartOf": {
             "@type": "Blog",
             "@id": "https://www.moxie-digital.com/blog",
-            "name": "Moxie Digital | The Feed",
+            "name": "The Moxie Journal",
             "publisher": { "@id": "https://www.moxie-digital.com/#organization" }
         }
+    };
+
+    const breadcrumbJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.moxie-digital.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://www.moxie-digital.com/blog"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": postData!.title,
+                "item": `https://www.moxie-digital.com/blog/${params.slug}`
+            }
+        ]
     };
 
     return (
@@ -94,6 +136,12 @@ export default async function BlogPost({ params }: Props) {
                 type="application/ld+json"
                 strategy="beforeInteractive"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+            />
+            <Script
+                id={`jsonld-breadcrumb-${params.slug}`}
+                type="application/ld+json"
+                strategy="beforeInteractive"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
             />
             <div className="md:hidden"><Navbar /></div>
             <NavbarDesktop />

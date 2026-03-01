@@ -104,3 +104,10 @@ GEO metrics are different from SEO metrics. You are not measuring rankings — y
 GEO is a long game. But unlike paid advertising, the citations compound. Every piece of authoritative content you publish increases the probability that an AI tool will choose you as a source.
 
 [See how Moxie Digital implements GEO for B2B brands →](/services/geo)
+
+---
+
+**Related reading:**
+- [What is AEO? The Complete Guide to Answer Engine Optimization](/blog/answer-engine-optimization-guide)
+- [Zero-Click Searches: How to Win Without the Click](/blog/zero-click-search-strategy)
+- [SEO vs AEO: What's Changed in 2026](/blog/seo-vs-aeo-2026)
