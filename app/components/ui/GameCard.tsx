@@ -97,15 +97,17 @@ export const GameCard: React.FC<GameCardProps> = ({
                         </span>
                     </div>
 
-                    <div className="text-3xl font-black text-white mb-4 leading-none pr-12 min-h-[3rem] items-center uppercase tracking-tighter flex pointer-events-none">
-                        {headlinePrefix}
-                        {headline}
-                        {headlineSuffix}
-                    </div>
+                    <div className="flex flex-col min-h-[220px] md:min-h-[260px]">
+                        <div className="text-3xl font-black text-white mb-4 leading-none pr-4 md:pr-12 min-h-[60px] md:min-h-[72px] items-start uppercase tracking-tighter flex flex-wrap pointer-events-none">
+                            {headlinePrefix}
+                            {headline}
+                            {headlineSuffix}
+                        </div>
 
-                    <p className="text-[13px] md:text-sm text-gray-400 italic mb-6 font-light border-l border-[#CCFF00]/50 pl-3 pointer-events-none">
-                        {context}
-                    </p>
+                        <p className="text-[13px] md:text-sm text-gray-400 italic mb-6 font-light border-l border-[#CCFF00]/50 pl-3 pointer-events-none">
+                            {context}
+                        </p>
+                    </div>
 
                     <ul className="space-y-4 mb-10 flex-grow pointer-events-none">
                         {bullets.map((bullet, j) => (
