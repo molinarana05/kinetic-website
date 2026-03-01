@@ -10,17 +10,17 @@ type Direction = 'UP' | 'DOWN' | 'LEFT' | 'RIGHT';
 
 const INITIAL_LAYOUT = [
     "WWWWWWWWWWWWWWW",
-    "W.   .   .   .W",
+    "W .         . W",
     "W WWWW   WWWW W",
-    "W.           .W",
+    "W      .      W",
     "W WWWW W WWWW W",
     "W      W      W",
     "W.WW W G W WW.W",
-    "W    W   W    W",
-    "W.WW W G W WW.W",
-    "W             W",
-    "W.  WW W WW  .W",
-    "W.     P     .W",
+    "W    W . W    W",
+    "W WW W G W WW W",
+    "W      .      W",
+    "W   WW W WW   W",
+    "W      P      W",
     "WWWWWWWWWWWWWWW",
 ];
 
@@ -271,26 +271,26 @@ export const PacManGame: React.FC<GameProps> = ({ onWin, onLose }) => {
                 )}
             </div>
 
-            {/* Mobile Controls */}
+            {/* On-Screen D-Pad */}
             {status === 'PLAYING' && (
-                <div className="mt-4 grid grid-cols-3 gap-2 w-full max-w-[240px] md:hidden">
+                <div className="mt-4 grid grid-cols-3 gap-2 w-full max-w-[240px]">
                     <div />
                     <button
                         className="bg-white/10 p-3 rounded flex items-center justify-center active:bg-[#CCFF00] active:text-black transition-colors"
-                        onClick={() => gameState.current.nextDirection = 'UP'}
+                        onClick={() => { gameState.current.nextDirection = 'UP'; }}
                     >↑</button>
                     <div />
                     <button
                         className="bg-white/10 p-3 rounded flex items-center justify-center active:bg-[#CCFF00] active:text-black transition-colors"
-                        onClick={() => gameState.current.nextDirection = 'LEFT'}
+                        onClick={() => { gameState.current.nextDirection = 'LEFT'; }}
                     >←</button>
                     <button
                         className="bg-white/10 p-3 rounded flex items-center justify-center active:bg-[#CCFF00] active:text-black transition-colors"
-                        onClick={() => gameState.current.nextDirection = 'DOWN'}
+                        onClick={() => { gameState.current.nextDirection = 'DOWN'; }}
                     >↓</button>
                     <button
                         className="bg-white/10 p-3 rounded flex items-center justify-center active:bg-[#CCFF00] active:text-black transition-colors"
-                        onClick={() => gameState.current.nextDirection = 'RIGHT'}
+                        onClick={() => { gameState.current.nextDirection = 'RIGHT'; }}
                     >→</button>
                 </div>
             )}

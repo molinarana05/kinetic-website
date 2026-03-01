@@ -55,7 +55,7 @@ export const GamifiedEarlyWins: React.FC = () => {
                     </motion.div>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-10 mb-20 min-h-[500px]">
+                <div className="grid md:grid-cols-3 gap-10 mb-20 md:min-h-[480px]">
                     <GameCard
                         tag="SNAPSHOT"
                         headlinePrefix={<><span className="mr-1">+</span><NumberCounter end={3} duration={1.5} suffix=" QUALIFIED DEMOS" /></>}

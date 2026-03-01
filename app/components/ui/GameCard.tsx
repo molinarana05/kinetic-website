@@ -79,7 +79,7 @@ export const GameCard: React.FC<GameCardProps> = ({
                 {/* Back (Revealed Content) */}
                 <Card
                     style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
-                    className={`absolute inset-0 group p-8 border-[#CCFF00]/30 shadow-[0_0_30px_rgba(204,255,0,0.15)] bg-black/80 backdrop-blur-sm flex flex-col overflow-hidden h-full transition-opacity duration-300 ${isUnlocked ? 'z-20 pointer-events-auto opacity-100' : 'z-10 pointer-events-none opacity-0'}`}
+                    className={`absolute inset-0 group p-6 border-[#CCFF00]/30 shadow-[0_0_30px_rgba(204,255,0,0.15)] bg-black/80 backdrop-blur-sm flex flex-col overflow-y-auto h-full transition-opacity duration-300 ${isUnlocked ? 'z-20 pointer-events-auto opacity-100' : 'z-10 pointer-events-none opacity-0'}`}
                 >
                     {/* Unlocked Flash */}
                     {isUnlocked && (
@@ -91,28 +91,34 @@ export const GameCard: React.FC<GameCardProps> = ({
                         />
                     )}
 
-                    <div className="mb-6 pointer-events-none">
+                    {/* Tag badge */}
+                    <div className="mb-4 pointer-events-none flex-shrink-0">
                         <span className="text-[9px] font-bold text-black uppercase tracking-widest border border-[#CCFF00] bg-[#CCFF00] px-2 py-1 rounded shadow-[0_0_15px_rgba(204,255,0,0.5)]">
                             {tag}
                         </span>
                     </div>
 
-                    <div className="flex flex-col min-h-[220px] md:min-h-[260px]">
-                        <div className="text-3xl font-black text-white mb-4 leading-none pr-4 md:pr-12 min-h-[60px] md:min-h-[72px] items-start uppercase tracking-tighter flex flex-wrap pointer-events-none">
+                    {/* Fixed-height headline zone — same across all cards */}
+                    <div className="h-24 flex-shrink-0 pointer-events-none flex items-start">
+                        <div className="text-3xl font-black text-white leading-tight uppercase tracking-tighter flex flex-wrap">
                             {headlinePrefix}
                             {headline}
                             {headlineSuffix}
                         </div>
+                    </div>
 
-                        <p className="text-[13px] md:text-sm text-gray-400 italic mb-6 font-light border-l border-[#CCFF00]/50 pl-3 pointer-events-none">
+                    {/* Fixed-height context zone — same across all cards */}
+                    <div className="h-24 flex-shrink-0 pointer-events-none overflow-hidden">
+                        <p className="text-[13px] md:text-sm text-gray-400 italic font-light border-l border-[#CCFF00]/50 pl-3">
                             {context}
                         </p>
                     </div>
 
-                    <ul className="space-y-4 mb-10 flex-grow pointer-events-none">
+                    {/* Bullets — always start at the same vertical position */}
+                    <ul className="space-y-3 pointer-events-none mt-2">
                         {bullets.map((bullet, j) => (
                             <li key={j} className="flex items-start text-gray-300 text-sm md:text-base">
-                                <span className="min-w-[5px] h-1.5 w-1.5 bg-[#CCFF00] rounded-full mt-2 mr-3" />
+                                <span className="flex-shrink-0 h-1.5 w-1.5 bg-[#CCFF00] rounded-full mt-[7px] mr-3" />
                                 {bullet}
                             </li>
                         ))}
