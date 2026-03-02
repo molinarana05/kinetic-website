@@ -7,8 +7,8 @@ import { TypewriterEffect } from "./ui/TypewriterEffect";
 export const Hero = () => {
     return (
         // Removed explicit bg-color allowing InteractiveGrid to show through
-        // Changed items-center to items-start to allow top-padding to define position
-        <section className="relative min-h-screen flex items-start pt-32 md:pt-48 overflow-hidden">
+        // Added flex-col to stack the top section and the centered section naturally
+        <section className="relative min-h-screen flex flex-col items-start justify-center pt-24 md:pt-32 pb-24 overflow-hidden">
 
             {/* Desktop-Only: Restored Atmospheric Elements */}
             <div className="absolute inset-0 z-0 hidden md:block pointer-events-none">
@@ -22,26 +22,36 @@ export const Hero = () => {
             <div className="relative z-10 container mx-auto px-6 md:px-16"> {/* Increased side padding for mobile */}
                 <div className="max-w-6xl">
                     {/* Cluster 1: Message (Headline) */}
-                    <div className="mb-4 md:mb-8 text-white">
+                    <div className="mb-4 md:mb-6 text-white">
                         <HeroHeadline />
                     </div>
 
                     {/* Cluster 2: Support (Promise) */}
-                    <div className="flex flex-col items-start gap-6 mb-12 animate-fade-in-up" style={{ animationDelay: "300ms" }}>
+                    <div className="flex flex-col items-start gap-4 mb-10 animate-fade-in-up" style={{ animationDelay: "300ms" }}>
                         {/* Promise Line */}
-                        <div className="flex flex-col gap-4">
-                            <h2 className="text-lg md:text-2xl text-gray-200 max-w-4xl font-light leading-relaxed">
-                                A full-stack content studio powered by <span className="text-[#CCFF00] font-[900]">AI precision</span> and <span className="text-[#CCFF00] font-[900]">senior human strategy</span>.{" "}
-                                <span className="text-[#CCFF00] font-[900]">
-                                    <TypewriterEffect text="Eight engines. One system. Compounding pipeline." delay={2000} speed={40} cursor={true} className="inline" />
-                                </span>
-                            </h2>
-                        </div>
+                        <h2 className="text-lg md:text-2xl text-gray-200 w-full max-w-4xl font-light leading-relaxed">
+                            A full-stack content studio powered by <span className="text-[#CCFF00] font-[900]">AI precision</span> and <span className="text-[#CCFF00] font-[900]">senior human strategy</span>.
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+            {/* Visual Break / Divider */}
+            <div className="w-full h-px bg-white/10 md:bg-transparent max-w-6xl mx-auto px-6 md:px-16 mb-8 mt-4 hidden md:block" />
+
+            {/* Centered Area: Tagline + CTAs */}
+            <div className="relative z-10 container mx-auto px-6 md:px-16 flex flex-col items-center text-center">
+                <div className="max-w-4xl w-full flex flex-col items-center">
+                    {/* Tagline */}
+                    <div className="mb-8 animate-fade-in-up" style={{ animationDelay: "400ms" }}>
+                        <span className="text-sm md:text-lg text-[#CCFF00] font-[900] tracking-widest uppercase">
+                            <TypewriterEffect text="Eight engines. One system. Compounding pipeline." delay={2000} speed={40} cursor={true} className="inline" />
+                        </span>
                     </div>
 
                     {/* Cluster 3: Action (CTA) + Credibility */}
-                    <div className="flex flex-col items-start gap-8 opacity-0 animate-fade-in-up w-full" style={{ animationDelay: "500ms", animationFillMode: "forwards" }}>
-                        <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                    <div className="flex flex-col items-center gap-6 opacity-0 animate-fade-in-up w-full" style={{ animationDelay: "500ms", animationFillMode: "forwards" }}>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
                             <div className="relative w-full sm:w-auto">
                                 <Button
                                     href="#how-it-works"
@@ -56,7 +66,7 @@ export const Hero = () => {
                         </div>
 
                         {/* Credibility Line (Moved below buttons) */}
-                        <p className="text-xs md:text-sm font-medium text-gray-500">
+                        <p className="text-xs md:text-sm font-medium text-gray-500 text-center">
                             <span className="text-gray-400">Led by Molina Rana</span> <span className="mx-2 text-gray-600">/</span> Paytm <span className="mx-2 text-gray-600">/</span> Bajaj Finserv <span className="mx-2 text-gray-600">/</span> Grant Thornton Bharat
                         </p>
                     </div>

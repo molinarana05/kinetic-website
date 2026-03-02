@@ -6,6 +6,7 @@ import { Hero } from "./components/Hero";
 import { HeroDesktop } from "./components/HeroDesktop";
 import { CredibilityStrip } from "./components/CredibilityStrip";
 import { Services } from "./components/Services";
+import { LogoMarquee } from "./components/LogoMarquee";
 import { ServicesDesktop } from "./components/ServicesDesktop";
 import { Button } from "./components/ui/Button";
 import { Card } from "./components/ui/Card";
@@ -70,9 +71,20 @@ const AnimatedHeroHeading = () => {
         <h1 className="text-[9.5vw] md:text-8xl lg:text-[85px] xl:text-[90px] font-black tracking-tighter mb-6 lg:mb-8 leading-[1.1] md:leading-tight uppercase min-h-[3.3em] md:min-h-[2.2em]">
             {phase < 5 ? (
                 <div className="flex items-center text-white min-h-[3.3em] md:min-h-0">
-                    <span className={`leading-tight break-words transition-all duration-300 ${phase >= 3 ? "line-through decoration-[#CCFF00] decoration-[4px] md:decoration-[8px] opacity-50" : ""}`}>
-                        {typed1}
-                    </span>
+                    <div className="relative inline-block">
+                        <span className="leading-tight break-words transition-opacity duration-300">
+                            {typed1}
+                        </span>
+                        {/* Animated Strikethrough */}
+                        {phase >= 3 && (
+                            <motion.span
+                                initial={{ width: "0%" }}
+                                animate={{ width: "100%" }}
+                                transition={{ duration: 0.8, ease: "easeOut" }}
+                                className="absolute top-[50%] left-0 h-[4px] md:h-[8px] bg-[#CCFF00] -translate-y-1/2 pointer-events-none"
+                            />
+                        )}
+                    </div>
                     <motion.span
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -542,24 +554,39 @@ export default function HomeClient() {
             <NavbarDesktop />
 
             {/* Hero — Mobile */}
-            <section className="relative min-h-screen flex items-start pt-32 md:pt-48 overflow-hidden md:hidden">
+            <section className="relative min-h-screen flex flex-col items-start justify-center pt-24 md:pt-48 pb-20 overflow-hidden md:hidden">
                 <div className="relative z-10 container mx-auto px-6 md:px-16">
                     <div className="max-w-6xl">
                         <div className="mb-4 md:mb-8 text-white">
                             <AnimatedHeroHeading />
                         </div>
-                        <div className="flex flex-col items-start gap-6 mb-12 animate-fade-in-up" style={{ animationDelay: "300ms" }}>
-                            <h2 className="text-lg md:text-2xl text-gray-200 max-w-4xl font-light leading-relaxed">
-                                A full-stack content studio powered by <span className="text-[#CCFF00] font-[900]">AI precision</span> and <span className="text-[#CCFF00] font-[900]">senior human strategy</span>. <span className="text-[#CCFF00] font-[900]">Eight engines. One system. Compounding pipeline.</span>
+                        <div className="flex flex-col items-start gap-4 mb-8 animate-fade-in-up" style={{ animationDelay: "300ms" }}>
+                            <h2 className="text-lg md:text-2xl text-gray-200 w-full max-w-4xl font-light leading-relaxed">
+                                A full-stack content studio powered by <span className="text-[#CCFF00] font-[900]">AI precision</span> and <span className="text-[#CCFF00] font-[900]">senior human strategy</span>.
                             </h2>
                         </div>
-                        <div className="flex flex-col items-start gap-8 opacity-0 animate-fade-in-up w-full" style={{ animationDelay: "500ms", animationFillMode: "forwards" }}>
-                            <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                    </div>
+                </div>
+
+                {/* Visual Break / Divider mobile */}
+                <div className="w-full h-px bg-white/10 max-w-6xl mx-auto px-6 mb-8 mt-2" />
+
+                <div className="relative z-10 container mx-auto px-6 flex flex-col items-center text-center">
+                    <div className="max-w-4xl w-full flex flex-col items-center">
+                        <div className="mb-8 animate-fade-in-up" style={{ animationDelay: "400ms" }}>
+                            <span className="text-sm md:text-lg text-[#CCFF00] font-[900] tracking-widest uppercase">
+                                <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2 }}>Eight engines. One system. Compounding pipeline.</motion.span>
+                                <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ repeat: Infinity, repeatType: "reverse", duration: 0.4 }} className="inline-block w-[6px] h-[0.8em] bg-[#CCFF00] ml-1 align-middle" />
+                            </span>
+                        </div>
+
+                        <div className="flex flex-col items-center gap-6 opacity-0 animate-fade-in-up w-full" style={{ animationDelay: "500ms", animationFillMode: "forwards" }}>
+                            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
                                 <Button href="#how-it-works" className="w-full sm:w-auto px-8 py-4 text-lg shadow-[0_0_40px_rgba(204,255,0,0.5)] hover:shadow-[0_0_50px_rgba(204,255,0,0.8)] transition-all duration-300 hover:-translate-y-1 bg-[#CCFF00] text-black hover:bg-white rounded-[4px] font-[900]">START THE ENGINE</Button>
                                 <Button variant="secondary" className="w-full sm:w-auto border-white/20 text-white hover:border-[#CCFF00] hover:text-[#CCFF00] px-8 py-4 text-lg rounded-[4px] font-[900] transition-all duration-300 hover:-translate-y-1">GET IN TOUCH</Button>
                             </div>
-                            <p className="text-xs md:text-sm font-medium text-gray-500">
-                                <span className="text-gray-400">Led by Molina Rana</span> <span className="mx-2 text-gray-600">/</span> Paytm <span className="mx-2 text-gray-600">/</span> Bajaj Finserv <span className="mx-2 text-gray-600">/</span> Grant Thornton Bharat
+                            <p className="text-xs md:text-sm font-medium text-gray-500 text-center">
+                                <span className="text-gray-400">Led by Molina Rana</span> <br className="block sm:hidden" /><span className="hidden sm:inline mx-2 text-gray-600">/</span> <span className="sm:hidden text-gray-600 text-[10px]">&mdash; </span>Paytm <span className="mx-1 sm:mx-2 text-gray-600">/</span> Bajaj <span className="mx-1 sm:mx-2 text-gray-600">/</span> Grant Thornton
                             </p>
                         </div>
                     </div>
@@ -568,44 +595,69 @@ export default function HomeClient() {
             </section>
 
             {/* Hero — Desktop */}
-            <section className="relative min-h-screen flex items-center pt-20 overflow-hidden hidden md:flex">
-                <div className="relative z-10 container mx-auto px-4">
+            <section className="relative min-h-screen flex flex-col items-start justify-center pt-24 md:pt-32 pb-24 overflow-hidden hidden md:flex">
+                {/* Desktop-Only: Restored Atmospheric Elements */}
+                <div className="absolute inset-0 z-0 hidden md:block pointer-events-none">
+                    {/* Right-side Gradient Blob (Purple/Cosmic) */}
+                    <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-[radial-gradient(circle,rgba(120,40,200,0.4)_0%,transparent_70%)] blur-[100px] mix-blend-screen opacity-60" />
+
+                    {/* Left-side Subtle Glow (Lime/Electric) */}
+                    <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(204,255,0,0.15)_0%,transparent_70%)] blur-[80px] mix-blend-screen opacity-40" />
+                </div>
+
+                <div className="relative z-10 container mx-auto px-6 md:px-16">
                     <div className="max-w-6xl">
-                        <AnimatedHeroHeading />
-                        <div className="flex flex-col items-start gap-6 mb-12 animate-fade-in-up" style={{ animationDelay: "300ms" }}>
-                            <p className="text-xl md:text-2xl text-gray-200 max-w-4xl font-light leading-relaxed">
-                                A full-stack content studio powered by <span className="text-[#CCFF00] font-[900]">AI precision</span> and <span className="text-[#CCFF00] font-[900]">senior human strategy</span>. <span className="text-[#CCFF00] font-[900]">Eight engines. One system. Compounding pipeline.</span>
-                            </p>
+                        <div className="mb-4 md:mb-6 text-white">
+                            <AnimatedHeroHeading />
                         </div>
-                        <div className="flex flex-col items-start gap-8 opacity-0 animate-fade-in-up" style={{ animationDelay: "500ms", animationFillMode: "forwards" }}>
-                            <div className="flex flex-col sm:flex-row items-center gap-6">
-                                <Button href="#how-it-works" className="px-8 py-4 text-lg shadow-[0_0_40px_rgba(204,255,0,0.5)] hover:shadow-[0_0_50px_rgba(204,255,0,0.8)] transition-all duration-300 hover:-translate-y-1 bg-[#CCFF00] text-black hover:bg-white rounded-[4px] font-[900]">START THE ENGINE</Button>
-                                <Button variant="secondary" className="border-white/20 text-white hover:border-[#CCFF00] hover:text-[#CCFF00] px-8 py-4 text-lg rounded-[4px] font-[900] transition-all duration-300 hover:-translate-y-1">GET IN TOUCH</Button>
+                        <div className="flex flex-col items-start gap-4 mb-10 animate-fade-in-up" style={{ animationDelay: "300ms" }}>
+                            <h2 className="text-lg md:text-2xl text-gray-200 w-full max-w-4xl font-light leading-relaxed">
+                                A full-stack content studio powered by <span className="text-[#CCFF00] font-[900]">AI precision</span> and <span className="text-[#CCFF00] font-[900]">senior human strategy</span>.
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Visual Break / Divider */}
+                <div className="w-full h-px bg-white/10 md:bg-transparent max-w-6xl mx-auto px-6 md:px-16 mb-8 mt-4 hidden md:block" />
+
+                {/* Centered Area: Tagline + CTAs */}
+                <div className="relative z-10 container mx-auto px-6 md:px-16 flex flex-col items-center text-center">
+                    <div className="max-w-4xl w-full flex flex-col items-center">
+                        <div className="mb-8 animate-fade-in-up" style={{ animationDelay: "400ms" }}>
+                            <span className="text-sm md:text-lg text-[#CCFF00] font-[900] tracking-widest uppercase">
+                                <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2 }}>Eight engines. One system. Compounding pipeline.</motion.span>
+                                <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ repeat: Infinity, repeatType: "reverse", duration: 0.4 }} className="inline-block w-[6px] h-[0.8em] bg-[#CCFF00] ml-1 align-middle" />
+                            </span>
+                        </div>
+
+                        <div className="flex flex-col items-center gap-6 opacity-0 animate-fade-in-up w-full" style={{ animationDelay: "500ms", animationFillMode: "forwards" }}>
+                            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+                                <div className="relative w-full sm:w-auto">
+                                    <Button
+                                        href="#how-it-works"
+                                        className="w-full sm:w-auto px-8 py-4 text-lg shadow-[0_0_40px_rgba(204,255,0,0.5)] hover:shadow-[0_0_50px_rgba(204,255,0,0.8)] transition-all duration-300 hover:-translate-y-1 bg-[#CCFF00] text-black hover:bg-white rounded-[4px] font-[900]"
+                                    >
+                                        START THE ENGINE
+                                    </Button>
+                                </div>
+                                <Button variant="secondary" className="w-full sm:w-auto border-white/20 text-white hover:border-[#CCFF00] hover:text-[#CCFF00] px-8 py-4 text-lg rounded-[4px] font-[900] transition-all duration-300 hover:-translate-y-1">
+                                    GET IN TOUCH
+                                </Button>
                             </div>
-                            <p className="text-xs text-gray-600 font-mono uppercase tracking-widest">
-                                Led by Molina Rana — Paytm / Bajaj Finserv / Grant Thornton
+                            <p className="text-xs md:text-sm font-medium text-gray-500 text-center">
+                                <span className="text-gray-400">Led by Molina Rana</span> <br className="block sm:hidden" /><span className="hidden sm:inline mx-2 text-gray-600">/</span> <span className="sm:hidden text-gray-600 text-[10px]">&mdash; </span>Paytm <span className="mx-1 sm:mx-2 text-gray-600">/</span> Bajaj <span className="mx-1 sm:mx-2 text-gray-600">/</span> Grant Thornton
                             </p>
                         </div>
                     </div>
                 </div>
+
                 <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0a0118] to-transparent pointer-events-none z-0" />
             </section>
 
             {/* Credibility Strip */}
             <div className="relative z-10 -mt-24 md:mt-0">
-                <section className="py-10 md:py-16 border-gradient-y bg-[#0a0118] relative z-20">
-                    <div className="w-full px-5 md:px-[80px] relative z-10 grid md:grid-cols-[200px_1fr] items-center gap-8 md:gap-12">
-                        <h3 className="text-xs text-gray-500 font-medium uppercase tracking-widest text-center md:text-left whitespace-nowrap">Trusted by / Past work</h3>
-                        <div className="relative w-full overflow-hidden" style={{ maskImage: "linear-gradient(to right, transparent, black 5%, black 95%, transparent)", WebkitMaskImage: "linear-gradient(to right, transparent, black 5%, black 95%, transparent)" }}>
-                            {/* Logo marquee — simplified static version */}
-                            <div className="flex items-center gap-8 overflow-hidden opacity-60">
-                                {["Paytm", "Bajaj Finserv", "Grant Thornton", "HighRadius", "Aviso AI", "Reliance", "Allianz", "ScaleUp AI"].map((name, i) => (
-                                    <span key={i} className="text-xs text-gray-400 font-mono uppercase tracking-widest whitespace-nowrap shrink-0">{name}</span>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <LogoMarquee />
             </div>
 
             {/* AI + Human Philosophy Strip */}

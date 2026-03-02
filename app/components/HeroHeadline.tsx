@@ -102,11 +102,20 @@ export const HeroHeadline = () => {
         <h1 className="text-[9.5vw] md:text-8xl lg:text-[85px] xl:text-[90px] font-black tracking-tighter mb-6 lg:mb-8 leading-[1.1] md:leading-tight uppercase min-h-[3.3em] md:min-h-[2.2em]">
             {step < 5 ? (
                 <div className="flex items-center text-white min-h-[3.3em] md:min-h-0">
-                    <span
-                        className={`leading-tight break-words transition-all duration-300 ${step >= 3 ? "line-through decoration-[#CCFF00] decoration-[4px] md:decoration-[8px] opacity-50" : ""}`}
-                    >
-                        {genericDisplay}
-                    </span>
+                    <div className="relative inline-block">
+                        <span className="leading-tight break-words transition-opacity duration-300">
+                            {genericDisplay}
+                        </span>
+                        {/* Animated Strikethrough */}
+                        {step >= 3 && (
+                            <motion.span
+                                initial={{ width: "0%" }}
+                                animate={{ width: "100%" }}
+                                transition={{ duration: 0.8, ease: "easeOut" }}
+                                className="absolute top-[50%] left-0 h-[4px] md:h-[8px] bg-[#CCFF00] -translate-y-1/2 pointer-events-none"
+                            />
+                        )}
+                    </div>
                     {/* Blinking cursor */}
                     <motion.span
                         initial={{ opacity: 0 }}

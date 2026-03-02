@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 
+import { motion } from "framer-motion";
+
 // All 10 company logos — golden tinted via CSS filter
 const ALL_LOGOS = [
     { src: "/company-paytm.png", alt: "Paytm", w: 80 },
@@ -44,11 +46,10 @@ export function LogoMarquee({ label = "Trusted by", speed = 30 }: Props) {
                     style={{ background: "linear-gradient(to left, #0a0118 0%, transparent 100%)" }} />
 
                 {/* Scrolling track */}
-                <div
+                <motion.div
                     className="flex items-center gap-16 w-max"
-                    style={{
-                        animation: `marquee-scroll ${speed}s linear infinite`,
-                    }}
+                    animate={{ x: ["0%", "-50%"] }}
+                    transition={{ duration: speed, ease: "linear", repeat: Infinity }}
                 >
                     {LOGOS.map((logo, i) => (
                         <div
@@ -65,15 +66,8 @@ export function LogoMarquee({ label = "Trusted by", speed = 30 }: Props) {
                             />
                         </div>
                     ))}
-                </div>
+                </motion.div>
             </div>
-
-            <style>{`
-                @keyframes marquee-scroll {
-                    from { transform: translateX(0); }
-                    to   { transform: translateX(-50%); }
-                }
-            `}</style>
         </section>
     );
 }
