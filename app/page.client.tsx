@@ -22,6 +22,16 @@ import { GamifiedEarlyWins } from "./components/GamifiedEarlyWins";
 
 // ─── Animated heading for Hero ────────────────────────────────────────────────
 const AnimatedHeroHeading = () => {
+    // Phases:
+    // 0 = reset/init
+    // 1 = typing "GENERIC B2B CONTENT AGENCY"
+    // 2 = pause before strikethrough
+    // 3 = strikethrough animates L→R (900ms, then pause 600ms)
+    // 4 = backspace R→L
+    // 5 = type "AI + HUMAN"
+    // 6 = type " CONTENT AT"
+    // 7 = type "BREAKNECK SPEED"
+    // 8 = hold, then reset
     const [phase, setPhase] = useState(0);
     const genericAgency = "GENERIC B2B CONTENT AGENCY";
     const [typed1, setTyped1] = useState("");
@@ -38,17 +48,21 @@ const AnimatedHeroHeading = () => {
             setTyped1(""); setTyped2(""); setTyped3(""); setTyped4("");
             timer = setTimeout(() => setPhase(1), 500);
         } else if (phase === 1) {
+            // Type out "GENERIC B2B CONTENT AGENCY"
             if (typed1.length < genericAgency.length)
-                timer = setTimeout(() => setTyped1(genericAgency.substring(0, typed1.length + 1)), 40);
-            else timer = setTimeout(() => setPhase(2), 1500);
+                timer = setTimeout(() => setTyped1(genericAgency.substring(0, typed1.length + 1)), 45);
+            else timer = setTimeout(() => setPhase(2), 900); // pause before strike
         } else if (phase === 2) {
-            setPhase(3);
+            // Strikethrough is rendered — wait for it to fully draw (900ms) then pause
+            timer = setTimeout(() => setPhase(3), 1500);
         } else if (phase === 3) {
-            timer = setTimeout(() => setPhase(4), 800);
+            // Pause after strikethrough drawn, then start backspace
+            timer = setTimeout(() => setPhase(4), 400);
         } else if (phase === 4) {
+            // Backspace R→L
             if (typed1.length > 0)
-                timer = setTimeout(() => setTyped1(t => t.substring(0, t.length - 1)), 30);
-            else timer = setTimeout(() => setPhase(5), 300);
+                timer = setTimeout(() => setTyped1(t => t.substring(0, t.length - 1)), 28);
+            else timer = setTimeout(() => setPhase(5), 200);
         } else if (phase === 5) {
             if (typed2.length < aiHuman.length)
                 timer = setTimeout(() => setTyped2(aiHuman.substring(0, typed2.length + 1)), 40);
@@ -67,24 +81,35 @@ const AnimatedHeroHeading = () => {
         return () => clearTimeout(timer);
     }, [phase, typed1, typed2, typed3, typed4]);
 
+    // Strikethrough is visible during phase 2, 3, and 4 (until text is gone)
+    const showStrike = phase === 2 || phase === 3 || (phase === 4 && typed1.length > 0);
+
     return (
         <h1 className="text-[9.5vw] md:text-8xl lg:text-[85px] xl:text-[90px] font-black tracking-tighter mb-6 lg:mb-8 leading-[1.1] md:leading-tight uppercase min-h-[3.3em] md:min-h-[2.2em]">
             {phase < 5 ? (
                 <div className="flex items-center text-white min-h-[3.3em] md:min-h-0">
                     <div className="relative inline-block">
-                        <span className="leading-tight break-words transition-opacity duration-300">
-                            {typed1}
-                        </span>
-                        {/* Animated Strikethrough */}
-                        {phase >= 3 && (
-                            <motion.span
+                        <span className="leading-tight break-words">{typed1}</span>
+                        {/* Strikethrough: absolutely positioned bar, centered vertically */}
+                        {showStrike && (
+                            <motion.div
                                 initial={{ width: "0%" }}
                                 animate={{ width: "100%" }}
-                                transition={{ duration: 0.8, ease: "easeOut" }}
-                                className="absolute top-[50%] left-0 h-[4px] md:h-[8px] bg-[#CCFF00] -translate-y-1/2 pointer-events-none"
+                                transition={{ duration: 0.9, ease: "easeInOut" }}
+                                style={{
+                                    position: "absolute",
+                                    top: "50%",
+                                    left: 0,
+                                    transform: "translateY(-50%)",
+                                    height: "6px",
+                                    background: "#CCFF00",
+                                    pointerEvents: "none",
+                                    borderRadius: "2px",
+                                }}
                             />
                         )}
                     </div>
+                    {/* Blinking cursor */}
                     <motion.span
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
