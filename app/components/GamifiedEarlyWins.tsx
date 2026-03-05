@@ -12,6 +12,11 @@ import { PacManGame } from "./games/PacManGame";
 export const GamifiedEarlyWins: React.FC = () => {
     const [unlockedCards, setUnlockedCards] = useState<Record<number, boolean>>({});
     const [lostCards, setLostCards] = useState<Record<number, boolean>>({});
+    const [playingCards, setPlayingCards] = useState<Record<number, boolean>>({});
+
+    const handleStart = (index: number) => {
+        setPlayingCards((prev) => ({ ...prev, [index]: true }));
+    };
 
     const handleWin = (index: number) => {
         setUnlockedCards((prev) => ({ ...prev, [index]: true }));
@@ -20,7 +25,8 @@ export const GamifiedEarlyWins: React.FC = () => {
 
     const handleLose = (index: number) => {
         setLostCards((prev) => ({ ...prev, [index]: true }));
-        // optionally reset lost card state after a delay if we want them to keep trying
+        // Allow retry — reset playing state so overlay comes back on retry
+        setPlayingCards((prev) => ({ ...prev, [index]: false }));
         setTimeout(() => {
             setLostCards((prev) => ({ ...prev, [index]: false }));
         }, 1000);
@@ -43,19 +49,18 @@ export const GamifiedEarlyWins: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className=""
                     >
-                        <p className="text-[3vw] md:text-[18px] font-[900] text-[#CCFF00] uppercase tracking-[0.1em] md:tracking-[0.2em] whitespace-nowrap overflow-hidden text-ellipsis mb-6">
+                        <p className="text-[3vw] md:text-[18px] font-[900] text-[#CCFF00] uppercase tracking-[0.1em] md:tracking-[0.2em] whitespace-nowrap overflow-hidden text-ellipsis mb-3">
                             REAL OUTCOMES FROM SYSTEMS WE BUILT.
                         </p>
-                        <p className="text-gray-300 text-sm md:text-base font-medium max-w-2xl mx-auto leading-relaxed">
-                            B2B doesn't have to be boring. We gamified our results using the power of arcade nostalgia to make reading case studies engaging. <br />
-                            <span className="text-[#CCFF00] mt-2 block font-black uppercase tracking-widest text-xs md:text-sm">Win these quick retro challenges to unlock the strategies and numbers behind our early wins.</span>
+                        <p className="text-[#CCFF00] font-black uppercase tracking-widest text-xs md:text-sm">
+                            Win these quick retro challenges to unlock the strategies and numbers behind our early wins.
                         </p>
                     </motion.div>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-10 mb-20 md:min-h-[480px]">
+                {/* Cards — taller min-height so content is visible without scrolling */}
+                <div className="grid md:grid-cols-3 gap-10 mb-20 md:min-h-[560px]">
                     <GameCard
                         tag="SNAPSHOT"
                         headlinePrefix={<><span className="mr-1">+</span><NumberCounter end={3} duration={1.5} suffix=" QUALIFIED DEMOS" /></>}
@@ -68,9 +73,10 @@ export const GamifiedEarlyWins: React.FC = () => {
                             "$180K in influenced pipeline directly from our system"
                         ]}
                         gameThematicTieIn="Flip your odds. Just like we flipped this founder's pipeline."
-                        gameComponent={<CoinFlipGame onWin={() => handleWin(0)} onLose={() => handleLose(0)} />}
+                        gameComponent={<CoinFlipGame onWin={() => handleWin(0)} onLose={() => handleLose(0)} onStart={() => handleStart(0)} />}
                         isUnlocked={!!unlockedCards[0]}
                         hasLost={!!lostCards[0]}
+                        isPlaying={!!playingCards[0]}
                     />
 
                     <GameCard
@@ -85,9 +91,10 @@ export const GamifiedEarlyWins: React.FC = () => {
                             "Drove a 67% increase in organic traffic and 4 inbound leads/month"
                         ]}
                         gameThematicTieIn="Navigate the noise. We helped this brand find the path to page 1."
-                        gameComponent={<SnakeGame onWin={() => handleWin(1)} onLose={() => handleLose(1)} />}
+                        gameComponent={<SnakeGame onWin={() => handleWin(1)} onLose={() => handleLose(1)} onStart={() => handleStart(1)} />}
                         isUnlocked={!!unlockedCards[1]}
                         hasLost={!!lostCards[1]}
+                        isPlaying={!!playingCards[1]}
                     />
 
                     <GameCard
@@ -101,9 +108,10 @@ export const GamifiedEarlyWins: React.FC = () => {
                             "Sold out the entire first batch of 500 units in just 11 days"
                         ]}
                         gameThematicTieIn="Clear the board. That's exactly what we did for this launch."
-                        gameComponent={<PacManGame onWin={() => handleWin(2)} onLose={() => handleLose(2)} />}
+                        gameComponent={<PacManGame onWin={() => handleWin(2)} onLose={() => handleLose(2)} onStart={() => handleStart(2)} />}
                         isUnlocked={!!unlockedCards[2]}
                         hasLost={!!lostCards[2]}
+                        isPlaying={!!playingCards[2]}
                     />
                 </div>
 

@@ -9,7 +9,7 @@ const WIN_SCORE = 3;
 type Point = { x: number; y: number };
 type Direction = 'UP' | 'DOWN' | 'LEFT' | 'RIGHT';
 
-export const SnakeGame: React.FC<GameProps> = ({ onWin, onLose }) => {
+export const SnakeGame: React.FC<GameProps> = ({ onWin, onLose, onStart }) => {
     const [status, setStatus] = useState<'IDLE' | 'PLAYING' | 'WIN' | 'LOSE'>('IDLE');
     const [, setTick] = useState(0);
 
@@ -43,6 +43,7 @@ export const SnakeGame: React.FC<GameProps> = ({ onWin, onLose }) => {
             timeLeft: INITIAL_TIME
         };
         setStatus('PLAYING');
+        onStart?.();
     };
 
     const handleGameOver = useCallback((isWin: boolean) => {

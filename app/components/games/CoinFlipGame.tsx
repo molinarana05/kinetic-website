@@ -4,15 +4,17 @@ import { motion } from 'framer-motion';
 export interface GameProps {
     onWin: () => void;
     onLose: () => void;
+    onStart?: () => void;
 }
 
-export const CoinFlipGame: React.FC<GameProps> = ({ onWin, onLose }) => {
+export const CoinFlipGame: React.FC<GameProps> = ({ onWin, onLose, onStart }) => {
     const [flipping, setFlipping] = useState(false);
     const [result, setResult] = useState<'HEADS' | 'TAILS' | null>(null);
     const [showResultMsg, setShowResultMsg] = useState(false);
 
     const handleFlip = (choice: 'HEADS' | 'TAILS') => {
         if (flipping) return;
+        onStart?.();
         setFlipping(true);
         setShowResultMsg(false);
 

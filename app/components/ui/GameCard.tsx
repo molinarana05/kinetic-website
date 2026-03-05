@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { Card } from './Card';
 import { Lock } from 'lucide-react';
-import { NumberCounter } from './NumberCounter';
 
 interface GameCardProps {
     tag: string;
@@ -15,6 +14,7 @@ interface GameCardProps {
     gameThematicTieIn: string;
     isUnlocked: boolean;
     hasLost: boolean;
+    isPlaying?: boolean; // true once the game has been started
 }
 
 export const GameCard: React.FC<GameCardProps> = ({
@@ -27,7 +27,8 @@ export const GameCard: React.FC<GameCardProps> = ({
     gameComponent,
     gameThematicTieIn,
     isUnlocked,
-    hasLost
+    hasLost,
+    isPlaying = false,
 }) => {
     const controls = useAnimation();
 
@@ -40,7 +41,6 @@ export const GameCard: React.FC<GameCardProps> = ({
         }
     }, [hasLost, controls]);
 
-    // Flip animation variants
     const cardVariants = {
         locked: { rotateY: 0 },
         unlocked: { rotateY: 180, transition: { duration: 0.6, type: 'spring', stiffness: 60 } }
@@ -60,14 +60,19 @@ export const GameCard: React.FC<GameCardProps> = ({
                     style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: 'rotateY(0deg)' }}
                     className={`absolute inset-0 group p-8 border-white/5 bg-black/40 backdrop-blur-sm flex flex-col overflow-hidden h-full transition-opacity duration-300 ${!isUnlocked ? 'z-20 pointer-events-auto opacity-100' : 'z-10 pointer-events-none opacity-0'}`}
                 >
-                    <div className="flex items-center justify-center gap-2 mb-2 pointer-events-none">
+                    {/* "Play to Unlock" — fades out once game starts */}
+                    <motion.div
+                        className="flex items-center justify-center gap-2 mb-2 pointer-events-none"
+                        animate={{ opacity: isPlaying ? 0 : 1, y: isPlaying ? -6 : 0 }}
+                        transition={{ duration: 0.4 }}
+                    >
                         <Lock size={16} className="text-[#CCFF00] drop-shadow-[0_0_8px_rgba(204,255,0,0.8)]" />
                         <span className="text-[12px] md:text-sm uppercase font-black text-[#CCFF00] tracking-widest drop-shadow-[0_0_8px_rgba(204,255,0,0.8)]">
                             PLAY TO UNLOCK
                         </span>
-                    </div>
+                    </motion.div>
 
-                    <div className="flex-1 flex flex-col items-center justify-center w-full min-h-[250px] relative z-30">
+                    <div className="flex-1 flex flex-col items-center justify-center w-full min-h-[280px] relative z-30">
                         {gameComponent}
                     </div>
 
@@ -98,7 +103,7 @@ export const GameCard: React.FC<GameCardProps> = ({
                         </span>
                     </div>
 
-                    {/* Fixed-height headline zone — same across all cards */}
+                    {/* Fixed-height headline zone */}
                     <div className="h-24 flex-shrink-0 pointer-events-none flex items-start">
                         <div className="text-3xl font-black text-white leading-tight uppercase tracking-tighter flex flex-wrap">
                             {headlinePrefix}
@@ -107,14 +112,14 @@ export const GameCard: React.FC<GameCardProps> = ({
                         </div>
                     </div>
 
-                    {/* Fixed-height context zone — same across all cards */}
+                    {/* Fixed-height context zone */}
                     <div className="h-24 flex-shrink-0 pointer-events-none overflow-hidden">
                         <p className="text-[13px] md:text-sm text-gray-400 italic font-light border-l border-[#CCFF00]/50 pl-3">
                             {context}
                         </p>
                     </div>
 
-                    {/* Bullets — always start at the same vertical position */}
+                    {/* Bullets */}
                     <ul className="space-y-3 pointer-events-none mt-2">
                         {bullets.map((bullet, j) => (
                             <li key={j} className="flex items-start text-gray-300 text-sm md:text-base">

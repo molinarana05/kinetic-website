@@ -44,7 +44,7 @@ const parseMap = () => {
 
 const mapData = parseMap();
 
-export const PacManGame: React.FC<GameProps> = ({ onWin, onLose }) => {
+export const PacManGame: React.FC<GameProps> = ({ onWin, onLose, onStart }) => {
     const [status, setStatus] = useState<'IDLE' | 'PLAYING' | 'WIN' | 'LOSE'>('IDLE');
     const [, setTick] = useState(0);
 
@@ -67,6 +67,7 @@ export const PacManGame: React.FC<GameProps> = ({ onWin, onLose }) => {
             tickCount: 0
         };
         setStatus('PLAYING');
+        onStart?.();
     };
 
     const handleGameOver = useCallback((isWin: boolean) => {
