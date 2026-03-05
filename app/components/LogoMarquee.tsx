@@ -20,9 +20,7 @@ const ALL_LOGOS = [
 // Double the array so the loop is seamless
 const LOGOS = [...ALL_LOGOS, ...ALL_LOGOS];
 
-// CSS sepia+saturate+hue-rotate to make any logo look gold/amber
-const GOLD_FILTER =
-    "sepia(1) saturate(3) hue-rotate(5deg) brightness(1.1)";
+
 
 interface Props {
     label?: string;
@@ -62,7 +60,7 @@ export function LogoMarquee({ label = "Trusted by", speed = 30 }: Props) {
                                 alt={`${logo.alt} - Trusted B2B Brand & Enterprise Marketing Client`}
                                 fill
                                 className="object-contain object-center"
-                                style={{ filter: GOLD_FILTER, opacity: 0.75 }}
+                                style={{ opacity: 0.85 }}
                             />
                         </div>
                     ))}
