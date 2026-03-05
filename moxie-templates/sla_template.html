@@ -19,68 +19,59 @@
             font-family: 'Helvetica Neue', Arial, sans-serif;
             font-size: 9.5px;
             color: #222;
-            line-height: 1.5;
+            line-height: 1.45;
             width: 210mm;
             min-height: 297mm;
         }
 
-        /* TOP LOGO STRIP - white bg, black logo */
         .logo-strip {
             background: #fff;
-            padding: 12px 36px 10px;
+            padding: 10px 34px 8px;
             border-bottom: 1px solid #e0e0e0;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo-strip img {
-            height: 26px;
-            width: auto;
-        }
-
-        .logo-strip .doc-badge {
-            font-size: 8px;
+        .logo-strip span {
+            font-size: 7.5px;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: #888;
+            color: #aaa;
         }
 
-        /* DARK HEADER BAND */
         .header-band {
             background: #0a0a0a;
             color: #fff;
-            padding: 14px 36px 12px;
+            padding: 12px 34px 10px;
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
         }
 
         .doc-title {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 900;
             letter-spacing: 2px;
             text-transform: uppercase;
         }
 
         .doc-subtitle {
-            font-size: 8.5px;
+            font-size: 8px;
             color: #aaa;
             margin-top: 2px;
             letter-spacing: 1px;
-            text-transform: uppercase;
         }
 
         .meta-right {
             text-align: right;
-            font-size: 9px;
+            font-size: 8.5px;
             color: #ccc;
             line-height: 1.8;
         }
 
         .meta-right strong {
             color: #fff;
-            font-size: 9.5px;
         }
 
         .accent-bar {
@@ -88,7 +79,6 @@
             background: #ccff00;
         }
 
-        /* PARTIES ROW */
         .parties-row {
             display: flex;
             background: #f7f7f7;
@@ -97,7 +87,7 @@
 
         .party-block {
             flex: 1;
-            padding: 10px 36px;
+            padding: 8px 34px;
             border-right: 1px solid #e0e0e0;
         }
 
@@ -106,70 +96,68 @@
         }
 
         .party-label {
-            font-size: 7.5px;
+            font-size: 7px;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             color: #888;
-            margin-bottom: 3px;
+            margin-bottom: 2px;
         }
 
         .party-name {
-            font-size: 10.5px;
+            font-size: 10px;
             font-weight: 700;
             color: #111;
         }
 
         .party-addr {
-            font-size: 8.5px;
+            font-size: 8px;
             color: #555;
             margin-top: 1px;
-            line-height: 1.5;
+            line-height: 1.4;
         }
 
-        /* BODY */
         .doc-body {
-            padding: 14px 36px 12px;
+            padding: 12px 34px 10px;
         }
 
         .section {
-            margin-bottom: 13px;
+            margin-bottom: 11px;
         }
 
         .section-title {
-            font-size: 7.5px;
+            font-size: 7px;
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
             color: #888;
             border-bottom: 1px solid #e8e8e8;
-            padding-bottom: 4px;
-            margin-bottom: 8px;
+            padding-bottom: 3px;
+            margin-bottom: 7px;
         }
 
         .section-num {
             display: inline-block;
             background: #0a0a0a;
             color: #ccff00;
-            font-size: 7px;
+            font-size: 6.5px;
             font-weight: 900;
-            padding: 1px 5px;
+            padding: 1px 4px;
             margin-right: 5px;
-            letter-spacing: 1px;
         }
 
         p {
-            margin-bottom: 4px;
-            font-size: 9.5px;
+            margin-bottom: 3px;
+            font-size: 9px;
         }
 
         ul {
-            padding-left: 12px;
-            margin-bottom: 4px;
+            padding-left: 11px;
+            margin-bottom: 3px;
         }
 
         li {
             margin-bottom: 2px;
-            font-size: 9.5px;
+            font-size: 9px;
         }
 
         strong {
@@ -180,56 +168,54 @@
             color: #666;
         }
 
-        /* DELIVERABLES GRID */
         .deliverables-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 7px 14px;
-            margin-bottom: 6px;
+            gap: 6px 12px;
+            margin-bottom: 4px;
         }
 
         .deliverable-card {
             background: #f9f9f9;
             border: 1px solid #e8e8e8;
             border-left: 3px solid #0a0a0a;
-            padding: 6px 8px;
+            padding: 5px 7px;
             border-radius: 2px;
         }
 
         .card-title {
-            font-size: 8.5px;
+            font-size: 8px;
             font-weight: 700;
             color: #111;
             margin-bottom: 2px;
         }
 
         .deliverable-card p {
-            font-size: 8.5px;
+            font-size: 8px;
             color: #444;
             margin: 0;
         }
 
-        /* PAYMENT TABLE */
         .payment-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 6px;
+            margin-top: 5px;
         }
 
         .payment-table th {
             background: #0a0a0a;
             color: #ccff00;
-            padding: 5px 10px;
+            padding: 5px 9px;
             text-align: left;
-            font-size: 7.5px;
+            font-size: 7px;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
 
         .payment-table td {
-            padding: 6px 10px;
+            padding: 5px 9px;
             border-bottom: 1px solid #eee;
-            font-size: 9.5px;
+            font-size: 9px;
         }
 
         .payment-table .total-row td {
@@ -238,58 +224,49 @@
             border-top: 2px solid #0a0a0a;
         }
 
-        /* SIGNATURE BLOCK */
         .sig-section {
-            margin-top: 14px;
+            margin-top: 12px;
             border-top: 2px solid #0a0a0a;
-            padding-top: 12px;
+            padding-top: 10px;
         }
 
         .sig-heading {
-            font-size: 7.5px;
+            font-size: 7px;
             text-transform: uppercase;
             letter-spacing: 2px;
             color: #888;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .sig-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 24px;
+            gap: 20px;
         }
 
         .sig-party-name {
-            font-size: 10px;
+            font-size: 9.5px;
             font-weight: 700;
             margin-bottom: 2px;
         }
 
         .sig-addr {
-            font-size: 8px;
+            font-size: 7.5px;
             color: #666;
-            margin-bottom: 7px;
-            line-height: 1.5;
-        }
-
-        .sig-col img {
-            height: 38px;
-            width: auto;
-            display: block;
-            margin-bottom: 3px;
-            object-fit: contain;
+            margin-bottom: 6px;
+            line-height: 1.4;
         }
 
         .sig-line-blank {
-            width: 160px;
+            width: 150px;
             border-bottom: 1px solid #999;
-            height: 38px;
+            height: 34px;
             margin-bottom: 3px;
         }
 
         .sig-fields {
-            font-size: 8.5px;
-            line-height: 1.9;
+            font-size: 8px;
+            line-height: 1.8;
             color: #333;
         }
 
@@ -301,13 +278,11 @@
 
 <body>
 
-    <!-- BLACK LOGO STRIP -->
     <div class="logo-strip">
-        <img src="logo.png" alt="Moxie-Digital">
-        <span class="doc-badge">Service Level Agreement</span>
+        <img src="logo.png" style="height:22px; width:auto;" alt="Moxie-Digital">
+        <span>Service Level Agreement</span>
     </div>
 
-    <!-- DARK HEADER -->
     <div class="header-band">
         <div>
             <div class="doc-title">Service Level Agreement</div>
@@ -321,7 +296,6 @@
     </div>
     <div class="accent-bar"></div>
 
-    <!-- PARTIES -->
     <div class="parties-row">
         <div class="party-block">
             <div class="party-label">Provider</div>
@@ -337,10 +311,8 @@
         </div>
     </div>
 
-    <!-- BODY -->
     <div class="doc-body">
 
-        <!-- SECTION 1 -->
         <div class="section">
             <div class="section-title"><span class="section-num">01</span> Scope of Services &amp; Deliverables</div>
             <div class="deliverables-grid">
@@ -361,13 +333,12 @@
                 </div>
                 <div class="deliverable-card">
                     <div class="card-title">SEO / AEO Maintenance (Ongoing)</div>
-                    <p>Monthly monitoring of keyword/entity rankings. Adaptive copy adjustments based on algorithm and
-                        AI search engine changes.</p>
+                    <p>Monthly monitoring of keyword/entity rankings. Adaptive adjustments based on algorithm and AI
+                        search engine changes.</p>
                 </div>
             </div>
         </div>
 
-        <!-- SECTION 2 -->
         <div class="section">
             <div class="section-title"><span class="section-num">02</span> Payment Terms</div>
             <table class="payment-table">
@@ -381,8 +352,8 @@
                 <tbody>
                     <tr>
                         <td><strong>Monthly Retainer</strong></td>
-                        <td>Covers all services in Section 1. No one-time setup fees. Foundational work absorbed. Billed
-                            on the 1st of each month.</td>
+                        <td>Covers all services in Section 1. No setup fees. Foundational work absorbed. Billed on the
+                            1st of each month.</td>
                         <td style="text-align:right;"><strong>₹55,000 / month</strong></td>
                     </tr>
                     <tr class="total-row">
@@ -393,7 +364,6 @@
             </table>
         </div>
 
-        <!-- SECTION 3 -->
         <div class="section">
             <div class="section-title"><span class="section-num">03</span> Content Ownership &amp; Rights</div>
             <p>Upon receipt of payment, the Client holds full ownership of all original copy, content calendars, and
@@ -401,14 +371,12 @@
             </p>
         </div>
 
-        <!-- SECTION 4 -->
         <div class="section">
             <div class="section-title"><span class="section-num">04</span> Client Responsibilities</div>
             <p>The Client is solely responsible for generation of visual assets (photography, graphic design, video
                 reels) and the manual publishing of posts as directed by the weekly Content Calendar.</p>
         </div>
 
-        <!-- SIGNATURES -->
         <div class="sig-section">
             <div class="sig-heading">Authorised Signatures</div>
             <div class="sig-grid">
@@ -416,14 +384,14 @@
                     <div class="sig-party-name">Moxie-Digital (Provider)</div>
                     <div class="sig-addr">601, 1A, Sector CHI 2, Gurjinder Vihar, AWHO Township, Greater Noida – 201310
                     </div>
-                    <img
-                        src="/Users/molinarana/.gemini/antigravity/brain/0e205d5a-a8b8-45d3-a4cd-bf03f215b36c/media__1772739256263.jpg">
+                    <img src="/Users/molinarana/.gemini/antigravity/brain/0e205d5a-a8b8-45d3-a4cd-bf03f215b36c/media__1772739256263.jpg"
+                        style="height:34px; max-height:34px; width:auto; max-width:130px; display:block; margin-bottom:2px; object-fit:contain;">
                     <div class="sig-fields">
                         <span>Name: Anikesh Gaurav &nbsp;|&nbsp; Title: CTO</span>
                         <span>Date: 1/3/2026</span>
                     </div>
-                    <img style="margin-top:8px;"
-                        src="/Users/molinarana/.gemini/antigravity/brain/0e205d5a-a8b8-45d3-a4cd-bf03f215b36c/media__1772739256437.png">
+                    <img src="/Users/molinarana/.gemini/antigravity/brain/0e205d5a-a8b8-45d3-a4cd-bf03f215b36c/media__1772739256437.png"
+                        style="height:34px; max-height:34px; width:auto; max-width:130px; display:block; margin-top:6px; margin-bottom:2px; object-fit:contain;">
                     <div class="sig-fields">
                         <span>Name: Molina Rana &nbsp;|&nbsp; Title: Founder &amp; CEO</span>
                         <span>Date: 1/3/2026</span>
