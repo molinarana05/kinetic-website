@@ -17,55 +17,74 @@
 
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
-            font-size: 10.5px;
+            font-size: 9.5px;
             color: #222;
-            line-height: 1.6;
+            line-height: 1.5;
             width: 210mm;
             min-height: 297mm;
-            padding: 0;
         }
 
-        /* TOP HEADER BAND */
+        /* TOP LOGO STRIP - white bg, black logo */
+        .logo-strip {
+            background: #fff;
+            padding: 12px 36px 10px;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-strip img {
+            height: 26px;
+            width: auto;
+        }
+
+        .logo-strip .doc-badge {
+            font-size: 8px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #888;
+        }
+
+        /* DARK HEADER BAND */
         .header-band {
             background: #0a0a0a;
             color: #fff;
-            padding: 28px 40px 20px;
+            padding: 14px 36px 12px;
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
         }
 
-        .header-band .doc-title {
-            font-size: 22px;
+        .doc-title {
+            font-size: 18px;
             font-weight: 900;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            color: #fff;
         }
 
-        .header-band .doc-subtitle {
-            font-size: 10px;
+        .doc-subtitle {
+            font-size: 8.5px;
             color: #aaa;
-            margin-top: 3px;
+            margin-top: 2px;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
 
-        .header-band .meta-right {
+        .meta-right {
             text-align: right;
-            font-size: 10px;
+            font-size: 9px;
             color: #ccc;
             line-height: 1.8;
         }
 
-        .header-band .meta-right strong {
+        .meta-right strong {
             color: #fff;
-            font-size: 11px;
+            font-size: 9.5px;
         }
 
-        /* ACCENT BAR */
         .accent-bar {
-            height: 4px;
+            height: 3px;
             background: #ccff00;
         }
 
@@ -78,7 +97,7 @@
 
         .party-block {
             flex: 1;
-            padding: 14px 40px;
+            padding: 10px 36px;
             border-right: 1px solid #e0e0e0;
         }
 
@@ -87,70 +106,70 @@
         }
 
         .party-label {
-            font-size: 8.5px;
+            font-size: 7.5px;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             color: #888;
-            margin-bottom: 4px;
+            margin-bottom: 3px;
         }
 
         .party-name {
-            font-size: 12px;
+            font-size: 10.5px;
             font-weight: 700;
             color: #111;
         }
 
         .party-addr {
-            font-size: 9.5px;
+            font-size: 8.5px;
             color: #555;
-            margin-top: 2px;
+            margin-top: 1px;
             line-height: 1.5;
         }
 
         /* BODY */
         .doc-body {
-            padding: 24px 40px 20px;
+            padding: 14px 36px 12px;
         }
 
         .section {
-            margin-bottom: 18px;
+            margin-bottom: 13px;
         }
 
         .section-title {
-            font-size: 9px;
+            font-size: 7.5px;
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
             color: #888;
             border-bottom: 1px solid #e8e8e8;
-            padding-bottom: 5px;
-            margin-bottom: 10px;
+            padding-bottom: 4px;
+            margin-bottom: 8px;
         }
 
         .section-num {
             display: inline-block;
             background: #0a0a0a;
             color: #ccff00;
-            font-size: 8px;
+            font-size: 7px;
             font-weight: 900;
-            padding: 2px 6px;
-            margin-right: 6px;
+            padding: 1px 5px;
+            margin-right: 5px;
             letter-spacing: 1px;
         }
 
         p {
-            margin-bottom: 6px;
-            font-size: 10.5px;
+            margin-bottom: 4px;
+            font-size: 9.5px;
         }
 
         ul {
-            padding-left: 14px;
-            margin-bottom: 6px;
+            padding-left: 12px;
+            margin-bottom: 4px;
         }
 
         li {
-            margin-bottom: 3px;
-            font-size: 10.5px;
+            margin-bottom: 2px;
+            font-size: 9.5px;
         }
 
         strong {
@@ -161,31 +180,31 @@
             color: #666;
         }
 
-        /* DELIVERABLES TWO-COL */
+        /* DELIVERABLES GRID */
         .deliverables-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px 20px;
-            margin-bottom: 8px;
+            gap: 7px 14px;
+            margin-bottom: 6px;
         }
 
         .deliverable-card {
             background: #f9f9f9;
             border: 1px solid #e8e8e8;
             border-left: 3px solid #0a0a0a;
-            padding: 8px 10px;
+            padding: 6px 8px;
             border-radius: 2px;
         }
 
-        .deliverable-card .card-title {
-            font-size: 9.5px;
+        .card-title {
+            font-size: 8.5px;
             font-weight: 700;
             color: #111;
-            margin-bottom: 3px;
+            margin-bottom: 2px;
         }
 
         .deliverable-card p {
-            font-size: 9.5px;
+            font-size: 8.5px;
             color: #444;
             margin: 0;
         }
@@ -194,23 +213,23 @@
         .payment-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 8px;
+            margin-top: 6px;
         }
 
         .payment-table th {
             background: #0a0a0a;
             color: #ccff00;
-            padding: 7px 12px;
+            padding: 5px 10px;
             text-align: left;
-            font-size: 8.5px;
+            font-size: 7.5px;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
 
         .payment-table td {
-            padding: 8px 12px;
+            padding: 6px 10px;
             border-bottom: 1px solid #eee;
-            font-size: 10.5px;
+            font-size: 9.5px;
         }
 
         .payment-table .total-row td {
@@ -221,58 +240,56 @@
 
         /* SIGNATURE BLOCK */
         .sig-section {
-            margin-top: 20px;
+            margin-top: 14px;
             border-top: 2px solid #0a0a0a;
-            padding-top: 16px;
+            padding-top: 12px;
         }
 
-        .sig-section .sig-heading {
-            font-size: 8.5px;
+        .sig-heading {
+            font-size: 7.5px;
             text-transform: uppercase;
             letter-spacing: 2px;
             color: #888;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .sig-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            gap: 24px;
         }
 
-        .sig-col {}
-
-        .sig-col .sig-party-name {
-            font-size: 11px;
+        .sig-party-name {
+            font-size: 10px;
             font-weight: 700;
             margin-bottom: 2px;
         }
 
-        .sig-col .sig-addr {
-            font-size: 9px;
+        .sig-addr {
+            font-size: 8px;
             color: #666;
-            margin-bottom: 8px;
+            margin-bottom: 7px;
             line-height: 1.5;
         }
 
         .sig-col img {
-            height: 44px;
+            height: 38px;
             width: auto;
             display: block;
-            margin-bottom: 4px;
+            margin-bottom: 3px;
             object-fit: contain;
         }
 
-        .sig-col .sig-line-blank {
-            width: 180px;
+        .sig-line-blank {
+            width: 160px;
             border-bottom: 1px solid #999;
-            height: 44px;
-            margin-bottom: 4px;
+            height: 38px;
+            margin-bottom: 3px;
         }
 
         .sig-fields {
-            font-size: 9.5px;
-            line-height: 2;
+            font-size: 8.5px;
+            line-height: 1.9;
             color: #333;
         }
 
@@ -284,11 +301,15 @@
 
 <body>
 
-    <!-- HEADER -->
+    <!-- BLACK LOGO STRIP -->
+    <div class="logo-strip">
+        <img src="logo.png" alt="Moxie-Digital">
+        <span class="doc-badge">Service Level Agreement</span>
+    </div>
+
+    <!-- DARK HEADER -->
     <div class="header-band">
         <div>
-            <img src="logo.png"
-                style="height: 28px; width: auto; display: block; margin-bottom: 10px; filter: brightness(0) invert(1);">
             <div class="doc-title">Service Level Agreement</div>
             <div class="doc-subtitle">Moxie-Digital &nbsp;·&nbsp; Digital Growth Partnership</div>
         </div>
@@ -325,24 +346,23 @@
             <div class="deliverables-grid">
                 <div class="deliverable-card">
                     <div class="card-title">SEO / AEO Audit (Month 1)</div>
-                    <p>Full technical and content audit of the Client's website. Ensures compatibility with traditional
-                        search algorithms and generative AI engines (ChatGPT, Google SGE, Perplexity).</p>
+                    <p>Full technical and content audit ensuring compatibility with traditional search and generative AI
+                        engines (ChatGPT, Google SGE, Perplexity).</p>
                 </div>
                 <div class="deliverable-card">
                     <div class="card-title">Website Copy Refresh (Month 1)</div>
                     <p>Complete overhaul of website copy — entity-rich, conversational, and optimized for Answer Engine
-                        Optimization (AEO) and human-first readability.</p>
+                        Optimization (AEO).</p>
                 </div>
                 <div class="deliverable-card">
                     <div class="card-title">Weekly Social Media Calendar (Ongoing)</div>
-                    <p>Ready-to-execute content calendar via Moxie — strategy, copywriting, hashtags, and visual briefs.
-                        <em>Client is responsible for graphic creation and posting execution.</em>
-                    </p>
+                    <p>Ready-to-execute calendar via Moxie — strategy, copywriting, hashtags &amp; visual briefs.
+                        <em>Client handles graphic creation and posting.</em></p>
                 </div>
                 <div class="deliverable-card">
                     <div class="card-title">SEO / AEO Maintenance (Ongoing)</div>
-                    <p>Monthly monitoring of keyword and entity rankings. Adaptive copy adjustments based on algorithm
-                        updates and AI search engine changes.</p>
+                    <p>Monthly monitoring of keyword/entity rankings. Adaptive copy adjustments based on algorithm and
+                        AI search engine changes.</p>
                 </div>
             </div>
         </div>
@@ -355,14 +375,14 @@
                     <tr>
                         <th>Fee Type</th>
                         <th>Description</th>
-                        <th style="text-align:right; width:130px;">Amount</th>
+                        <th style="text-align:right; width:120px;">Amount</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td><strong>Monthly Retainer</strong></td>
-                        <td>Covers all services outlined in Section 1. No one-time or setup fees. Foundational work
-                            absorbed into the retainer. Billed on the 1st of each month.</td>
+                        <td>Covers all services in Section 1. No one-time setup fees. Foundational work absorbed. Billed
+                            on the 1st of each month.</td>
                         <td style="text-align:right;"><strong>₹55,000 / month</strong></td>
                     </tr>
                     <tr class="total-row">
@@ -392,26 +412,26 @@
         <div class="sig-section">
             <div class="sig-heading">Authorised Signatures</div>
             <div class="sig-grid">
-                <div class="sig-col">
+                <div>
                     <div class="sig-party-name">Moxie-Digital (Provider)</div>
-                    <div class="sig-addr">601, 1A, Sector CHI 2, Gurjinder Vihar, AWHO Township,<br>Greater Noida –
-                        201310</div>
+                    <div class="sig-addr">601, 1A, Sector CHI 2, Gurjinder Vihar, AWHO Township, Greater Noida – 201310
+                    </div>
                     <img
                         src="/Users/molinarana/.gemini/antigravity/brain/0e205d5a-a8b8-45d3-a4cd-bf03f215b36c/media__1772739256263.jpg">
                     <div class="sig-fields">
                         <span>Name: Anikesh Gaurav &nbsp;|&nbsp; Title: CTO</span>
                         <span>Date: 1/3/2026</span>
                     </div>
-                    <img style="margin-top:10px;"
+                    <img style="margin-top:8px;"
                         src="/Users/molinarana/.gemini/antigravity/brain/0e205d5a-a8b8-45d3-a4cd-bf03f215b36c/media__1772739256437.png">
                     <div class="sig-fields">
                         <span>Name: Molina Rana &nbsp;|&nbsp; Title: Founder &amp; CEO</span>
                         <span>Date: 1/3/2026</span>
                     </div>
                 </div>
-                <div class="sig-col">
+                <div>
                     <div class="sig-party-name">The Aangan Story (Client)</div>
-                    <div class="sig-addr">Jbr Tech Park, Plot No. 77, 6th Rd, EPIP Zone,<br>Whitefield, Bengaluru,
+                    <div class="sig-addr">Jbr Tech Park, Plot No. 77, 6th Rd, EPIP Zone, Whitefield, Bengaluru,
                         Karnataka – 560066</div>
                     <div class="sig-line-blank"></div>
                     <div class="sig-fields">
