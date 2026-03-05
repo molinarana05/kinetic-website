@@ -90,24 +90,23 @@ const AnimatedHeroHeading = () => {
                 <div className="flex items-center text-white min-h-[3.3em] md:min-h-0">
                     <div className="relative inline-block">
                         <span className="leading-tight break-words">{typed1}</span>
-                        {/* Strikethrough: absolutely positioned bar, centered vertically */}
-                        {showStrike && (
-                            <motion.div
-                                initial={{ width: "0%" }}
-                                animate={{ width: "100%" }}
-                                transition={{ duration: 0.9, ease: "easeInOut" }}
-                                style={{
-                                    position: "absolute",
-                                    top: "50%",
-                                    left: 0,
-                                    transform: "translateY(-50%)",
-                                    height: "6px",
-                                    background: "#CCFF00",
-                                    pointerEvents: "none",
-                                    borderRadius: "2px",
-                                }}
-                            />
-                        )}
+                        {/* Strikethrough bar — always mounted, animates via CSS transition on scaleX */}
+                        <span
+                            style={{
+                                position: "absolute",
+                                top: "50%",
+                                left: 0,
+                                transform: showStrike ? "translateY(-50%) scaleX(1)" : "translateY(-50%) scaleX(0)",
+                                transformOrigin: "left center",
+                                transition: showStrike ? "transform 0.9s cubic-bezier(0.4,0,0.2,1)" : "none",
+                                width: "100%",
+                                height: "7px",
+                                background: "#CCFF00",
+                                pointerEvents: "none",
+                                borderRadius: "2px",
+                                display: "block",
+                            }}
+                        />
                     </div>
                     {/* Blinking cursor */}
                     <motion.span
