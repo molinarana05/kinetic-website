@@ -102,20 +102,40 @@ export const HeroHeadline = () => {
         <h1 className="text-[9.5vw] md:text-8xl lg:text-[85px] xl:text-[90px] font-black tracking-tighter mb-6 lg:mb-8 leading-[1.1] md:leading-tight uppercase min-h-[3.3em] md:min-h-[2.2em]">
             {step < 5 ? (
                 <div className="flex items-center text-white min-h-[3.3em] md:min-h-0">
-                    <div className="relative inline-block">
-                        <span className="leading-tight break-words transition-opacity duration-300">
+                    {/*
+                     * Strikethrough strategy:
+                     * Render the text TWICE stacked in a relative container.
+                     *  - Bottom layer: plain white text
+                     *  - Top layer: same text with CSS text-decoration:line-through in #CCFF00,
+                     *    clipped by clipPath inset(0 X% 0 0) that animates X from 100→0
+                     *    so the strike "draws" left-to-right through each line correctly.
+                     * The browser handles multi-line line-through positioning perfectly.
+                     */}
+                    <div className="relative">
+                        {/* Base text */}
+                        <span className={`leading-tight break-words transition-opacity duration-300 ${step >= 3 ? "opacity-50" : ""}`}>
                             {genericDisplay}
                         </span>
-                        {/* Animated Strikethrough */}
+
+                        {/* Decorated overlay — draws left to right via clipPath */}
                         {step >= 3 && (
                             <motion.span
-                                initial={{ width: "0%" }}
-                                animate={{ width: "100%" }}
+                                aria-hidden="true"
+                                className="absolute inset-0 leading-tight break-words pointer-events-none text-white"
+                                style={{
+                                    textDecoration: "line-through",
+                                    textDecorationColor: "#CCFF00",
+                                    textDecorationThickness: "7px",
+                                }}
+                                initial={{ clipPath: "inset(0 100% 0 0)" }}
+                                animate={{ clipPath: "inset(0 0% 0 0)" }}
                                 transition={{ duration: 0.8, ease: "easeOut" }}
-                                className="absolute top-[50%] left-0 h-[4px] md:h-[8px] bg-[#CCFF00] -translate-y-1/2 pointer-events-none"
-                            />
+                            >
+                                {genericDisplay}
+                            </motion.span>
                         )}
                     </div>
+
                     {/* Blinking cursor */}
                     <motion.span
                         initial={{ opacity: 0 }}

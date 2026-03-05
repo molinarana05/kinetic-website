@@ -87,18 +87,30 @@ const AnimatedHeroHeading = () => {
     return (
         <h1 className="text-[9.5vw] md:text-8xl lg:text-[85px] xl:text-[90px] font-black tracking-tighter mb-6 lg:mb-8 leading-[1.1] md:leading-tight uppercase min-h-[3.3em] md:min-h-[2.2em] text-center w-full">
             {phase < 5 ? (
-                <div className="flex items-center justify-center text-white min-h-[3.3em] md:min-h-0">
-                    <span
-                        className="leading-tight break-words inline"
-                        style={{
-                            backgroundImage: "linear-gradient(transparent calc(50% - 3px), #CCFF00 calc(50% - 3px), #CCFF00 calc(50% + 3px), transparent calc(50% + 3px))",
-                            backgroundSize: showStrike ? "100% 100%" : "0% 100%",
-                            backgroundRepeat: "no-repeat",
-                            transition: showStrike ? "background-size 0.9s cubic-bezier(0.4,0,0.2,1)" : "none",
-                        }}
-                    >
-                        {typed1}
-                    </span>
+                <div className="flex items-center text-white min-h-[3.3em] md:min-h-0">
+                    <div className="relative">
+                        {/* Base text */}
+                        <span className={`leading-tight break-words transition-opacity duration-300 ${showStrike ? "opacity-50" : ""}`}>
+                            {typed1}
+                        </span>
+                        {/* Decorated overlay — clips left→right to "draw" the strike through each line */}
+                        {showStrike && (
+                            <motion.span
+                                aria-hidden="true"
+                                className="absolute inset-0 leading-tight break-words pointer-events-none text-white"
+                                style={{
+                                    textDecoration: "line-through",
+                                    textDecorationColor: "#CCFF00",
+                                    textDecorationThickness: "7px",
+                                }}
+                                initial={{ clipPath: "inset(0 100% 0 0)" }}
+                                animate={{ clipPath: "inset(0 0% 0 0)" }}
+                                transition={{ duration: 0.9, ease: "easeOut" }}
+                            >
+                                {typed1}
+                            </motion.span>
+                        )}
+                    </div>
                     {/* Blinking cursor */}
                     <motion.span
                         initial={{ opacity: 0 }}
