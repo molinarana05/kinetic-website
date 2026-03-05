@@ -65,10 +65,8 @@ export const Hero = () => {
                             </Button>
                         </div>
 
-                        {/* Credibility Line (Moved below buttons) */}
-                        <p className="text-xs md:text-sm font-medium text-gray-500 text-center">
-                            <span className="text-gray-400">Led by Molina Rana</span> <span className="mx-2 text-gray-600">/</span> Paytm <span className="mx-2 text-gray-600">/</span> Bajaj Finserv <span className="mx-2 text-gray-600">/</span> Grant Thornton Bharat
-                        </p>
+
+
                     </div>
                 </div>
             </div>

@@ -85,7 +85,7 @@ const AnimatedHeroHeading = () => {
     const showStrike = phase === 2 || phase === 3 || (phase === 4 && typed1.length > 0);
 
     return (
-        <h1 className="text-[9.5vw] md:text-8xl lg:text-[85px] xl:text-[90px] font-black tracking-tighter mb-6 lg:mb-8 leading-[1.1] md:leading-tight uppercase min-h-[3.3em] md:min-h-[2.2em] text-center w-full">
+        <h1 className="text-[9.5vw] md:text-8xl lg:text-[85px] xl:text-[90px] font-black tracking-tighter mb-6 lg:mb-8 leading-[1.1] md:leading-tight uppercase min-h-[3.3em] md:min-h-[2.2em]">
             {phase < 5 ? (
                 <div className="flex items-center text-white min-h-[3.3em] md:min-h-0">
                     <div className="relative">
@@ -612,9 +612,7 @@ export default function HomeClient() {
                                 <Button href="#how-it-works" className="w-full sm:w-auto px-8 py-4 text-lg shadow-[0_0_40px_rgba(204,255,0,0.5)] hover:shadow-[0_0_50px_rgba(204,255,0,0.8)] transition-all duration-300 hover:-translate-y-1 bg-[#CCFF00] text-black hover:bg-white rounded-[4px] font-[900]">START THE ENGINE</Button>
                                 <Button variant="secondary" className="w-full sm:w-auto border-white/20 text-white hover:border-[#CCFF00] hover:text-[#CCFF00] px-8 py-4 text-lg rounded-[4px] font-[900] transition-all duration-300 hover:-translate-y-1">GET IN TOUCH</Button>
                             </div>
-                            <p className="text-xs md:text-sm font-medium text-gray-500 text-center">
-                                <span className="text-gray-400">Led by Molina Rana</span> <br className="block sm:hidden" /><span className="hidden sm:inline mx-2 text-gray-600">/</span> <span className="sm:hidden text-gray-600 text-[10px]">&mdash; </span>Paytm <span className="mx-1 sm:mx-2 text-gray-600">/</span> Bajaj <span className="mx-1 sm:mx-2 text-gray-600">/</span> Grant Thornton
-                            </p>
+
                         </div>
                     </div>
                 </div>
@@ -622,7 +620,7 @@ export default function HomeClient() {
             </section>
 
             {/* Hero — Desktop */}
-            <section className="relative min-h-screen flex flex-col items-center justify-center pt-24 md:pt-32 pb-24 overflow-hidden hidden md:flex">
+            <section className="relative min-h-screen flex flex-col items-start justify-center pt-24 md:pt-32 pb-24 overflow-hidden hidden md:flex">
                 {/* Desktop-Only: Restored Atmospheric Elements */}
                 <div className="absolute inset-0 z-0 hidden md:block pointer-events-none">
                     {/* Right-side Gradient Blob (Purple/Cosmic) */}
@@ -632,13 +630,13 @@ export default function HomeClient() {
                     <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(204,255,0,0.15)_0%,transparent_70%)] blur-[80px] mix-blend-screen opacity-40" />
                 </div>
 
-                <div className="relative z-10 container mx-auto px-6 md:px-16 text-center">
-                    <div className="max-w-6xl mx-auto flex flex-col items-center">
+                <div className="relative z-10 container mx-auto px-6 md:px-16">
+                    <div className="max-w-6xl">
                         <div className="mb-4 md:mb-6 text-white w-full">
                             <AnimatedHeroHeading />
                         </div>
-                        <div className="flex flex-col items-center gap-4 mb-10 animate-fade-in-up w-full" style={{ animationDelay: "300ms" }}>
-                            <h2 className="text-lg md:text-2xl text-gray-200 w-full max-w-4xl font-light leading-relaxed text-center">
+                        <div className="flex flex-col items-start gap-4 mb-10 animate-fade-in-up" style={{ animationDelay: "300ms" }}>
+                            <h2 className="text-lg md:text-2xl text-gray-200 w-full max-w-4xl font-light leading-relaxed">
                                 A full-stack content studio powered by <span className="text-[#CCFF00] font-[900]">AI precision</span> and <span className="text-[#CCFF00] font-[900]">senior human strategy</span>.
                             </h2>
                         </div>
@@ -672,9 +670,7 @@ export default function HomeClient() {
                                     GET IN TOUCH
                                 </Button>
                             </div>
-                            <p className="text-xs md:text-sm font-medium text-gray-500 text-center">
-                                <span className="text-gray-400">Led by Molina Rana</span> <br className="block sm:hidden" /><span className="hidden sm:inline mx-2 text-gray-600">/</span> <span className="sm:hidden text-gray-600 text-[10px]">&mdash; </span>Paytm <span className="mx-1 sm:mx-2 text-gray-600">/</span> Bajaj <span className="mx-1 sm:mx-2 text-gray-600">/</span> Grant Thornton
-                            </p>
+
                         </div>
                     </div>
                 </div>
