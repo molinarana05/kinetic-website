@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 11px;
+            color: #222;
+            line-height: 1.65;
+            width: 210mm;
+            min-height: 297mm;
+        }
+
+        /* HEADER */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 36px 48px 28px;
+            border-bottom: 3px solid #0a0a0a;
+        }
+
+        .brand-name {
+            font-size: 11px;
+            font-weight: 700;
+            color: #999;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: #0a0a0a;
+        }
+
+        .inv-meta {
+            text-align: right;
+        }
+
+        .inv-meta .label {
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #999;
+        }
+
+        .inv-meta .value {
+            font-size: 13px;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .inv-meta .inv-num {
+            font-size: 10px;
+            color: #666;
+        }
+
+        /* BILLING */
+        .billing-section {
+            display: flex;
+            justify-content: space-between;
+            padding: 24px 48px;
+            background: #f8f8f8;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .billing-block .block-label {
+            font-size: 8.5px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #999;
+            margin-bottom: 6px;
+        }
+
+        .billing-block .co-name {
+            font-size: 12px;
+            font-weight: 700;
+            color: #0a0a0a;
+            margin-bottom: 3px;
+        }
+
+        .billing-block .addr {
+            font-size: 10px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* ACCENT */
+        .accent-bar {
+            height: 4px;
+            background: #ccff00;
+            margin-bottom: 0;
+        }
+
+        /* TABLE */
+        .inv-body {
+            padding: 28px 48px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 0;
+        }
+
+        thead tr {
+            background: #0a0a0a;
+        }
+
+        thead th {
+            padding: 10px 14px;
+            text-align: left;
+            color: #ccff00;
+            font-size: 8.5px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #eee;
+        }
+
+        tbody td {
+            padding: 12px 14px;
+            vertical-align: top;
+            font-size: 10.5px;
+        }
+
+        tbody td ul {
+            padding-left: 14px;
+            margin-top: 4px;
+        }
+
+        tbody td li {
+            margin-bottom: 2px;
+            color: #444;
+            font-size: 10px;
+        }
+
+        .total-row {
+            background: #f2f2f2;
+        }
+
+        .total-row td {
+            font-size: 13px;
+            font-weight: 900;
+            border-top: 2px solid #0a0a0a;
+            padding: 12px 14px;
+        }
+
+        .amount-col {
+            text-align: right;
+            width: 130px;
+        }
+
+        /* BANK DETAILS */
+        .bank-section {
+            margin-top: 20px;
+            background: #0a0a0a;
+            color: #fff;
+            padding: 16px 20px;
+            border-radius: 2px;
+            display: flex;
+            gap: 40px;
+        }
+
+        .bank-section .bank-label {
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #ccff00;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .bank-section .bank-field {
+            font-size: 10px;
+            color: #ccc;
+            line-height: 1.9;
+        }
+
+        .bank-section .bank-field strong {
+            color: #fff;
+        }
+
+        .note {
+            margin-top: 12px;
+            font-size: 9.5px;
+            color: #888;
+            font-style: italic;
+            padding: 0 2px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="header">
+        <div>
+            <div class="brand-name">Moxie-Digital</div>
+            <h1>INVOICE</h1>
+        </div>
+        <div class="inv-meta">
+            <span class="label">Date</span>
+            <span class="value">1 March 2026</span>
+            <div class="inv-num">Invoice #: INV-2026-001</div>
+        </div>
+    </div>
+    <div class="accent-bar"></div>
+
+    <!-- BILLING -->
+    <div class="billing-section">
+        <div class="billing-block">
+            <div class="block-label">Billed To</div>
+            <div class="co-name">The Aangan Story</div>
+            <div class="addr">
+                Jbr Tech Park, Plot No. 77, 6th Rd,<br>
+                EPIP Zone, Whitefield,<br>
+                Bengaluru, Karnataka – 560066
+            </div>
+        </div>
+        <div class="billing-block" style="text-align:right;">
+            <div class="block-label">From</div>
+            <div class="co-name">Moxie-Digital</div>
+            <div class="addr">
+                601, 1A, Sector CHI 2, Gurjinder Vihar,<br>
+                AWHO Township, Greater Noida – 201310<br>
+                molina@moxie-digital.com
+            </div>
+        </div>
+    </div>
+
+    <!-- TABLE -->
+    <div class="inv-body">
+        <table>
+            <thead>
+                <tr>
+                    <th>Description of Services</th>
+                    <th class="amount-col">Amount (INR)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <strong>Monthly Retainer – Month 1</strong>
+                        <ul>
+                            <li>Comprehensive SEO / AEO Audit</li>
+                            <li>Complete Website Copy Refresh — optimized for generative AI models</li>
+                            <li>Technical &amp; Local SEO implementation</li>
+                            <li>Weekly Social Media Content Calendar Delivery (copy, strategy &amp; visual briefs)</li>
+                        </ul>
+                    </td>
+                    <td class="amount-col"><strong>₹55,000 / month</strong></td>
+                </tr>
+                <tr class="total-row">
+                    <td style="text-align:right; font-size:11px; font-weight:400; color:#555;">Total Due (Flat Monthly
+                        Retainer)</td>
+                    <td class="amount-col">₹55,000 / month</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- BANK DETAILS -->
+        <div class="bank-section">
+            <div>
+                <span class="bank-label">Bank Details for Transfer</span>
+                <div class="bank-field">
+                    <strong>Bank Name:</strong> State Bank of India<br>
+                    <strong>Account Name:</strong> Molina Rana<br>
+                    <strong>Account Number:</strong> 36985291479<br>
+                    <strong>IFSC Code:</strong> SBIN0031830
+                </div>
+            </div>
+        </div>
+        <p class="note">* Payment is due upon receipt prior to the commencement of work.</p>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 10.5px;
+            color: #222;
+            line-height: 1.6;
+            width: 210mm;
+            min-height: 297mm;
+            padding: 0;
+        }
+
+        /* TOP HEADER BAND */
+        .header-band {
+            background: #0a0a0a;
+            color: #fff;
+            padding: 28px 40px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .header-band .doc-title {
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        .header-band .doc-subtitle {
+            font-size: 10px;
+            color: #aaa;
+            margin-top: 3px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .header-band .meta-right {
+            text-align: right;
+            font-size: 10px;
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        .header-band .meta-right strong {
+            color: #fff;
+            font-size: 11px;
+        }
+
+        /* ACCENT BAR */
+        .accent-bar {
+            height: 4px;
+            background: #ccff00;
+        }
+
+        /* PARTIES ROW */
+        .parties-row {
+            display: flex;
+            background: #f7f7f7;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .party-block {
+            flex: 1;
+            padding: 14px 40px;
+            border-right: 1px solid #e0e0e0;
+        }
+
+        .party-block:last-child {
+            border-right: none;
+        }
+
+        .party-label {
+            font-size: 8.5px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #888;
+            margin-bottom: 4px;
+        }
+
+        .party-name {
+            font-size: 12px;
+            font-weight: 700;
+            color: #111;
+        }
+
+        .party-addr {
+            font-size: 9.5px;
+            color: #555;
+            margin-top: 2px;
+            line-height: 1.5;
+        }
+
+        /* BODY */
+        .doc-body {
+            padding: 24px 40px 20px;
+        }
+
+        .section {
+            margin-bottom: 18px;
+        }
+
+        .section-title {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #888;
+            border-bottom: 1px solid #e8e8e8;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .section-num {
+            display: inline-block;
+            background: #0a0a0a;
+            color: #ccff00;
+            font-size: 8px;
+            font-weight: 900;
+            padding: 2px 6px;
+            margin-right: 6px;
+            letter-spacing: 1px;
+        }
+
+        p {
+            margin-bottom: 6px;
+            font-size: 10.5px;
+        }
+
+        ul {
+            padding-left: 14px;
+            margin-bottom: 6px;
+        }
+
+        li {
+            margin-bottom: 3px;
+            font-size: 10.5px;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        em {
+            color: #666;
+        }
+
+        /* DELIVERABLES TWO-COL */
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 20px;
+            margin-bottom: 8px;
+        }
+
+        .deliverable-card {
+            background: #f9f9f9;
+            border: 1px solid #e8e8e8;
+            border-left: 3px solid #0a0a0a;
+            padding: 8px 10px;
+            border-radius: 2px;
+        }
+
+        .deliverable-card .card-title {
+            font-size: 9.5px;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 3px;
+        }
+
+        .deliverable-card p {
+            font-size: 9.5px;
+            color: #444;
+            margin: 0;
+        }
+
+        /* PAYMENT TABLE */
+        .payment-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+        }
+
+        .payment-table th {
+            background: #0a0a0a;
+            color: #ccff00;
+            padding: 7px 12px;
+            text-align: left;
+            font-size: 8.5px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .payment-table td {
+            padding: 8px 12px;
+            border-bottom: 1px solid #eee;
+            font-size: 10.5px;
+        }
+
+        .payment-table .total-row td {
+            background: #f2f2f2;
+            font-weight: 700;
+            border-top: 2px solid #0a0a0a;
+        }
+
+        /* SIGNATURE BLOCK */
+        .sig-section {
+            margin-top: 20px;
+            border-top: 2px solid #0a0a0a;
+            padding-top: 16px;
+        }
+
+        .sig-section .sig-heading {
+            font-size: 8.5px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888;
+            margin-bottom: 12px;
+        }
+
+        .sig-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .sig-col {}
+
+        .sig-col .sig-party-name {
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .sig-col .sig-addr {
+            font-size: 9px;
+            color: #666;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .sig-col img {
+            height: 44px;
+            width: auto;
+            display: block;
+            margin-bottom: 4px;
+            object-fit: contain;
+        }
+
+        .sig-col .sig-line-blank {
+            width: 180px;
+            border-bottom: 1px solid #999;
+            height: 44px;
+            margin-bottom: 4px;
+        }
+
+        .sig-fields {
+            font-size: 9.5px;
+            line-height: 2;
+            color: #333;
+        }
+
+        .sig-fields span {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="header-band">
+        <div>
+            <div class="doc-title">Service Level Agreement</div>
+            <div class="doc-subtitle">Moxie-Digital &nbsp;·&nbsp; Digital Growth Partnership</div>
+        </div>
+        <div class="meta-right">
+            <strong>Effective Date: 1 March 2026</strong><br>
+            Agreement ID: MXD-SLA-2026-001<br>
+            Duration: Monthly Rolling
+        </div>
+    </div>
+    <div class="accent-bar"></div>
+
+    <!-- PARTIES -->
+    <div class="parties-row">
+        <div class="party-block">
+            <div class="party-label">Provider</div>
+            <div class="party-name">Moxie-Digital</div>
+            <div class="party-addr">601, 1A, Sector CHI 2, Gurjinder Vihar,<br>AWHO Township, Greater Noida – 201310
+            </div>
+        </div>
+        <div class="party-block">
+            <div class="party-label">Client</div>
+            <div class="party-name">The Aangan Story</div>
+            <div class="party-addr">Jbr Tech Park, Plot No. 77, 6th Rd,<br>EPIP Zone, Whitefield, Bengaluru, Karnataka –
+                560066</div>
+        </div>
+    </div>
+
+    <!-- BODY -->
+    <div class="doc-body">
+
+        <!-- SECTION 1 -->
+        <div class="section">
+            <div class="section-title"><span class="section-num">01</span> Scope of Services &amp; Deliverables</div>
+            <div class="deliverables-grid">
+                <div class="deliverable-card">
+                    <div class="card-title">SEO / AEO Audit (Month 1)</div>
+                    <p>Full technical and content audit of the Client's website. Ensures compatibility with traditional
+                        search algorithms and generative AI engines (ChatGPT, Google SGE, Perplexity).</p>
+                </div>
+                <div class="deliverable-card">
+                    <div class="card-title">Website Copy Refresh (Month 1)</div>
+                    <p>Complete overhaul of website copy — entity-rich, conversational, and optimized for Answer Engine
+                        Optimization (AEO) and human-first readability.</p>
+                </div>
+                <div class="deliverable-card">
+                    <div class="card-title">Weekly Social Media Calendar (Ongoing)</div>
+                    <p>Ready-to-execute content calendar via Moxie — strategy, copywriting, hashtags, and visual briefs.
+                        <em>Client is responsible for graphic creation and posting execution.</em></p>
+                </div>
+                <div class="deliverable-card">
+                    <div class="card-title">SEO / AEO Maintenance (Ongoing)</div>
+                    <p>Monthly monitoring of keyword and entity rankings. Adaptive copy adjustments based on algorithm
+                        updates and AI search engine changes.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2 -->
+        <div class="section">
+            <div class="section-title"><span class="section-num">02</span> Payment Terms</div>
+            <table class="payment-table">
+                <thead>
+                    <tr>
+                        <th>Fee Type</th>
+                        <th>Description</th>
+                        <th style="text-align:right; width:130px;">Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Monthly Retainer</strong></td>
+                        <td>Covers all services outlined in Section 1. No one-time or setup fees. Foundational work
+                            absorbed into the retainer. Billed on the 1st of each month.</td>
+                        <td style="text-align:right;"><strong>₹55,000 / month</strong></td>
+                    </tr>
+                    <tr class="total-row">
+                        <td colspan="2" style="text-align:right;">Monthly Total Due</td>
+                        <td style="text-align:right;">₹55,000 / month</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- SECTION 3 -->
+        <div class="section">
+            <div class="section-title"><span class="section-num">03</span> Content Ownership &amp; Rights</div>
+            <p>Upon receipt of payment, the Client holds full ownership of all original copy, content calendars, and
+                strategies delivered. The Provider may reference the engagement for portfolio and case study purposes.
+            </p>
+        </div>
+
+        <!-- SECTION 4 -->
+        <div class="section">
+            <div class="section-title"><span class="section-num">04</span> Client Responsibilities</div>
+            <p>The Client is solely responsible for generation of visual assets (photography, graphic design, video
+                reels) and the manual publishing of posts as directed by the weekly Content Calendar.</p>
+        </div>
+
+        <!-- SIGNATURES -->
+        <div class="sig-section">
+            <div class="sig-heading">Authorised Signatures</div>
+            <div class="sig-grid">
+                <div class="sig-col">
+                    <div class="sig-party-name">Moxie-Digital (Provider)</div>
+                    <div class="sig-addr">601, 1A, Sector CHI 2, Gurjinder Vihar, AWHO Township,<br>Greater Noida –
+                        201310</div>
+                    <img
+                        src="/Users/molinarana/.gemini/antigravity/brain/0e205d5a-a8b8-45d3-a4cd-bf03f215b36c/media__1772739256263.jpg">
+                    <div class="sig-fields">
+                        <span>Name: Anikesh Gaurav &nbsp;|&nbsp; Title: CTO</span>
+                        <span>Date: 1/3/2026</span>
+                    </div>
+                    <img style="margin-top:10px;"
+                        src="/Users/molinarana/.gemini/antigravity/brain/0e205d5a-a8b8-45d3-a4cd-bf03f215b36c/media__1772739256437.png">
+                    <div class="sig-fields">
+                        <span>Name: Molina Rana &nbsp;|&nbsp; Title: Founder &amp; CEO</span>
+                        <span>Date: 1/3/2026</span>
+                    </div>
+                </div>
+                <div class="sig-col">
+                    <div class="sig-party-name">The Aangan Story (Client)</div>
+                    <div class="sig-addr">Jbr Tech Park, Plot No. 77, 6th Rd, EPIP Zone,<br>Whitefield, Bengaluru,
+                        Karnataka – 560066</div>
+                    <div class="sig-line-blank"></div>
+                    <div class="sig-fields">
+                        <span>Name: _________________________________</span>
+                        <span>Title: __________________________________</span>
+                        <span>Date: __________________________________</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
