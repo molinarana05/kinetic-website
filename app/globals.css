@@ -163,24 +163,14 @@ body {
   transform-style: preserve-3d;
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-scroll {
-  animation: scroll 120s linear infinite;
-  display: flex;
-  width: max-content;
-}
-
-.hover\:pause:hover {
-  animation-play-state: paused;
+/**
+ * Marquee: animates exactly −50% so a 2× duplicated track loops seamlessly.
+ * Speed and pause are controlled via inline styles in the component,
+ * keeping CSS concerns cleanly separated from component logic.
+ */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

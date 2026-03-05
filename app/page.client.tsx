@@ -657,7 +657,7 @@ export default function HomeClient() {
 
             {/* Credibility Strip */}
             <div className="relative z-10 -mt-24 md:mt-0">
-                <LogoMarquee />
+                <CredibilityStrip />
             </div>
 
             {/* AI + Human Philosophy Strip */}
