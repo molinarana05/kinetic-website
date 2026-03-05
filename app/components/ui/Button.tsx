@@ -26,27 +26,22 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps & {
 
                 const { clientX, clientY } = e;
                 const rect = targetRef.current.getBoundingClientRect();
-                const centerX = rect.left + rect.width / 2;
-                const centerY = rect.top + rect.height / 2;
 
-                const distanceX = clientX - centerX;
-                const distanceY = clientY - centerY;
+                // Define a "magnetic field" 100px around the button's actual edges
+                const captureMargin = 100;
 
-                // User Request: Snap within 30px with high-frequency vibration
-                const maxDistance = 150; // Capture range (larger than snap range to start pulling)
-                const snapRange = 30; // The "urgent" zone
+                if (
+                    clientX >= rect.left - captureMargin &&
+                    clientX <= rect.right + captureMargin &&
+                    clientY >= rect.top - captureMargin &&
+                    clientY <= rect.bottom + captureMargin
+                ) {
+                    const centerX = rect.left + rect.width / 2;
+                    const centerY = rect.top + rect.height / 2;
 
-                if (Math.abs(distanceX) < maxDistance && Math.abs(distanceY) < maxDistance) {
-                    // Calculate pull
-                    let moveX = distanceX * 0.2;
-                    let moveY = distanceY * 0.2;
-
-                    // Add vibration if within the tight snap range
-                    if (Math.abs(distanceX) < snapRange && Math.abs(distanceY) < snapRange) {
-                        // High frequency vibration (jitter)
-                        moveX += (Math.random() - 0.5) * 10;
-                        moveY += (Math.random() - 0.5) * 10;
-                    }
+                    // Pull the button ~30% towards the mouse cursor
+                    const moveX = (clientX - centerX) * 0.3;
+                    const moveY = (clientY - centerY) * 0.3;
 
                     setPosition({ x: moveX, y: moveY });
                 } else {

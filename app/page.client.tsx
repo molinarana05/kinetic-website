@@ -85,29 +85,20 @@ const AnimatedHeroHeading = () => {
     const showStrike = phase === 2 || phase === 3 || (phase === 4 && typed1.length > 0);
 
     return (
-        <h1 className="text-[9.5vw] md:text-8xl lg:text-[85px] xl:text-[90px] font-black tracking-tighter mb-6 lg:mb-8 leading-[1.1] md:leading-tight uppercase min-h-[3.3em] md:min-h-[2.2em]">
+        <h1 className="text-[9.5vw] md:text-8xl lg:text-[85px] xl:text-[90px] font-black tracking-tighter mb-6 lg:mb-8 leading-[1.1] md:leading-tight uppercase min-h-[3.3em] md:min-h-[2.2em] text-center w-full">
             {phase < 5 ? (
-                <div className="flex items-center text-white min-h-[3.3em] md:min-h-0">
-                    <div className="relative inline-block">
-                        <span className="leading-tight break-words">{typed1}</span>
-                        {/* Strikethrough bar — always mounted, animates via CSS transition on scaleX */}
-                        <span
-                            style={{
-                                position: "absolute",
-                                top: "50%",
-                                left: 0,
-                                transform: showStrike ? "translateY(-50%) scaleX(1)" : "translateY(-50%) scaleX(0)",
-                                transformOrigin: "left center",
-                                transition: showStrike ? "transform 0.9s cubic-bezier(0.4,0,0.2,1)" : "none",
-                                width: "100%",
-                                height: "7px",
-                                background: "#CCFF00",
-                                pointerEvents: "none",
-                                borderRadius: "2px",
-                                display: "block",
-                            }}
-                        />
-                    </div>
+                <div className="flex items-center justify-center text-white min-h-[3.3em] md:min-h-0">
+                    <span
+                        className="leading-tight break-words inline"
+                        style={{
+                            backgroundImage: "linear-gradient(transparent calc(50% - 3px), #CCFF00 calc(50% - 3px), #CCFF00 calc(50% + 3px), transparent calc(50% + 3px))",
+                            backgroundSize: showStrike ? "100% 100%" : "0% 100%",
+                            backgroundRepeat: "no-repeat",
+                            transition: showStrike ? "background-size 0.9s cubic-bezier(0.4,0,0.2,1)" : "none",
+                        }}
+                    >
+                        {typed1}
+                    </span>
                     {/* Blinking cursor */}
                     <motion.span
                         initial={{ opacity: 0 }}
@@ -117,8 +108,8 @@ const AnimatedHeroHeading = () => {
                     />
                 </div>
             ) : (
-                <div className="flex flex-col gap-2 md:gap-4 items-start">
-                    <div className="flex items-center gap-2 md:gap-4 flex-wrap leading-tight">
+                <div className="flex flex-col gap-2 md:gap-4 items-center justify-center w-full">
+                    <div className="flex items-center justify-center gap-2 md:gap-4 flex-wrap leading-tight text-center">
                         <span className={`inline-block border-[3px] border-[#CCFF00] ${phase >= 5 ? "bg-[#CCFF00] text-black px-2 md:px-4 py-1 rounded-[4px]" : "text-transparent border-transparent px-2 md:px-4 py-1"}`}>
                             {typed2}
                             {phase === 5 && (
@@ -140,8 +131,8 @@ const AnimatedHeroHeading = () => {
                             />
                         )}
                     </div>
-                    <div className="flex items-center leading-tight">
-                        <span className="text-white">{typed4}</span>
+                    <div className="flex items-center justify-center leading-tight w-full">
+                        <span className="text-white text-center">{typed4}</span>
                         {phase >= 7 && (
                             <motion.span
                                 initial={{ opacity: 0 }}
@@ -578,14 +569,14 @@ export default function HomeClient() {
             <NavbarDesktop />
 
             {/* Hero — Mobile */}
-            <section className="relative min-h-screen flex flex-col items-start justify-center pt-24 md:pt-48 pb-20 overflow-hidden md:hidden">
-                <div className="relative z-10 container mx-auto px-6 md:px-16">
-                    <div className="max-w-6xl">
-                        <div className="mb-4 md:mb-8 text-white">
+            <section className="relative min-h-screen flex flex-col items-center justify-center pt-24 md:pt-48 pb-20 overflow-hidden md:hidden">
+                <div className="relative z-10 container mx-auto px-6 md:px-16 text-center">
+                    <div className="max-w-6xl mx-auto flex flex-col items-center">
+                        <div className="mb-4 md:mb-8 text-white w-full">
                             <AnimatedHeroHeading />
                         </div>
-                        <div className="flex flex-col items-start gap-4 mb-8 animate-fade-in-up" style={{ animationDelay: "300ms" }}>
-                            <h2 className="text-lg md:text-2xl text-gray-200 w-full max-w-4xl font-light leading-relaxed">
+                        <div className="flex flex-col items-center gap-4 mb-8 animate-fade-in-up w-full" style={{ animationDelay: "300ms" }}>
+                            <h2 className="text-lg md:text-2xl text-gray-200 w-full max-w-4xl font-light leading-relaxed text-center">
                                 A full-stack content studio powered by <span className="text-[#CCFF00] font-[900]">AI precision</span> and <span className="text-[#CCFF00] font-[900]">senior human strategy</span>.
                             </h2>
                         </div>
@@ -619,7 +610,7 @@ export default function HomeClient() {
             </section>
 
             {/* Hero — Desktop */}
-            <section className="relative min-h-screen flex flex-col items-start justify-center pt-24 md:pt-32 pb-24 overflow-hidden hidden md:flex">
+            <section className="relative min-h-screen flex flex-col items-center justify-center pt-24 md:pt-32 pb-24 overflow-hidden hidden md:flex">
                 {/* Desktop-Only: Restored Atmospheric Elements */}
                 <div className="absolute inset-0 z-0 hidden md:block pointer-events-none">
                     {/* Right-side Gradient Blob (Purple/Cosmic) */}
@@ -629,13 +620,13 @@ export default function HomeClient() {
                     <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(204,255,0,0.15)_0%,transparent_70%)] blur-[80px] mix-blend-screen opacity-40" />
                 </div>
 
-                <div className="relative z-10 container mx-auto px-6 md:px-16">
-                    <div className="max-w-6xl">
-                        <div className="mb-4 md:mb-6 text-white">
+                <div className="relative z-10 container mx-auto px-6 md:px-16 text-center">
+                    <div className="max-w-6xl mx-auto flex flex-col items-center">
+                        <div className="mb-4 md:mb-6 text-white w-full">
                             <AnimatedHeroHeading />
                         </div>
-                        <div className="flex flex-col items-start gap-4 mb-10 animate-fade-in-up" style={{ animationDelay: "300ms" }}>
-                            <h2 className="text-lg md:text-2xl text-gray-200 w-full max-w-4xl font-light leading-relaxed">
+                        <div className="flex flex-col items-center gap-4 mb-10 animate-fade-in-up w-full" style={{ animationDelay: "300ms" }}>
+                            <h2 className="text-lg md:text-2xl text-gray-200 w-full max-w-4xl font-light leading-relaxed text-center">
                                 A full-stack content studio powered by <span className="text-[#CCFF00] font-[900]">AI precision</span> and <span className="text-[#CCFF00] font-[900]">senior human strategy</span>.
                             </h2>
                         </div>
