@@ -171,6 +171,7 @@ export default function RootLayout({
                         function gtag(){dataLayer.push(arguments);}
                         gtag('js', new Date());
                         gtag('config', 'G-JJ26KN47JT');
+                        gtag('config', 'AW-18012781118');
                     `}
                 </Script>
                 {/* Ahrefs Analytics */}
