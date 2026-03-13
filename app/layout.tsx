@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+    metadataBase: new URL("https://www.moxie-digital.com"),
     title: {
         default: "Moxie Digital | Full-Stack Content Studio",
         template: "%s | Moxie Digital"
