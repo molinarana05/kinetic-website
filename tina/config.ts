@@ -78,6 +78,11 @@ export default defineConfig({
                         list: true,
                     },
                     {
+                        type: "string",
+                        name: "readingTime",
+                        label: "Reading Time",
+                    },
+                    {
                         type: "image",
                         name: "image",
                         label: "Cover Image (OG)",
