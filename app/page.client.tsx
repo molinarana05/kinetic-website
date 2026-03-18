@@ -581,26 +581,26 @@ export default function HomeClient() {
             <NavbarDesktop />
 
             {/* Hero — Mobile */}
-            <section className="relative min-h-screen flex flex-col items-center justify-center pt-24 md:pt-48 pb-20 overflow-hidden md:hidden">
+            <section className="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-20 overflow-hidden md:hidden">
                 <div className="relative z-10 container mx-auto px-6 md:px-16 text-center">
                     <div className="max-w-6xl mx-auto flex flex-col items-center">
-                        <div className="mb-4 md:mb-8 text-white w-full">
+                        <div className="mb-6 md:mb-12 text-white w-full">
                             <AnimatedHeroHeading />
                         </div>
-                        <div className="flex flex-col items-center gap-4 mb-8 animate-fade-in-up w-full" style={{ animationDelay: "300ms" }}>
-                            <h2 className="text-lg md:text-2xl text-gray-200 w-full max-w-4xl font-light leading-relaxed text-center">
+                        <div className="flex flex-col items-center gap-4 mb-12 animate-fade-in-up w-full" style={{ animationDelay: "300ms" }}>
+                            <h2 className="text-xl md:text-2xl text-gray-200 w-full max-w-4xl font-light leading-relaxed text-center">
                                 A full-stack content studio powered by <span className="text-[#CCFF00] font-[900]">AI precision</span> and <span className="text-[#CCFF00] font-[900]">senior human strategy</span>.
                             </h2>
                         </div>
                     </div>
                 </div>
 
-                {/* Visual Break / Divider mobile */}
-                <div className="w-full h-px bg-white/10 max-w-6xl mx-auto px-6 mb-8 mt-2" />
+                {/* Visual Break / Divider */}
+                <div className="w-full h-px bg-white/10 max-w-6xl mx-auto px-6 mb-16 mt-4 md:hidden" />
 
                 <div className="relative z-10 container mx-auto px-6 flex flex-col items-center text-center">
                     <div className="max-w-4xl w-full flex flex-col items-center">
-                        <div className="mb-8 animate-fade-in-up" style={{ animationDelay: "400ms" }}>
+                        <div className="mb-12 animate-fade-in-up" style={{ animationDelay: "400ms" }}>
                             <span className="text-sm md:text-lg text-[#CCFF00] font-[900] tracking-widest uppercase">
                                 <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2 }}>Eight engines. One system. Compounding pipeline.</motion.span>
                                 <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ repeat: Infinity, repeatType: "reverse", duration: 0.4 }} className="inline-block w-[6px] h-[0.8em] bg-[#CCFF00] ml-1 align-middle" />
@@ -620,7 +620,7 @@ export default function HomeClient() {
             </section>
 
             {/* Hero — Desktop */}
-            <section className="relative min-h-screen flex flex-col items-start justify-center pt-24 md:pt-32 pb-24 overflow-hidden hidden md:flex">
+            <section className="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-24 overflow-hidden hidden md:flex">
                 {/* Desktop-Only: Restored Atmospheric Elements */}
                 <div className="absolute inset-0 z-0 hidden md:block pointer-events-none">
                     {/* Right-side Gradient Blob (Purple/Cosmic) */}
@@ -630,13 +630,13 @@ export default function HomeClient() {
                     <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(204,255,0,0.15)_0%,transparent_70%)] blur-[80px] mix-blend-screen opacity-40" />
                 </div>
 
-                <div className="relative z-10 container mx-auto px-6 md:px-16">
-                    <div className="max-w-6xl">
-                        <div className="mb-4 md:mb-6 text-white w-full">
+                <div className="relative z-10 container mx-auto px-6 md:px-16 text-center">
+                    <div className="max-w-6xl mx-auto flex flex-col items-center">
+                        <div className="mb-10 text-white w-full">
                             <AnimatedHeroHeading />
                         </div>
-                        <div className="flex flex-col items-start gap-4 mb-10 animate-fade-in-up" style={{ animationDelay: "300ms" }}>
-                            <h2 className="text-lg md:text-2xl text-gray-200 w-full max-w-4xl font-light leading-relaxed">
+                        <div className="flex flex-col items-center gap-4 mb-16 animate-fade-in-up w-full" style={{ animationDelay: "300ms" }}>
+                            <h2 className="text-2xl xl:text-3xl text-gray-200 w-full max-w-4xl font-light leading-relaxed text-center">
                                 A full-stack content studio powered by <span className="text-[#CCFF00] font-[900]">AI precision</span> and <span className="text-[#CCFF00] font-[900]">senior human strategy</span>.
                             </h2>
                         </div>
