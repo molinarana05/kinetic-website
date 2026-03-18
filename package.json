@@ -4,14 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "dev:tina": "tinacms dev -c \"next dev\"",
-    "build": "(tinacms build || echo 'TinaCMS build skipped') && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
-    "@tinacms/cli": "^2.1.9",
     "clsx": "^2.1.0",
     "date-fns": "^4.1.0",
     "framer-motion": "^11.0.8",
@@ -23,8 +21,7 @@
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.1",
     "remark-html": "^16.0.1",
-    "tailwind-merge": "^2.2.1",
-    "tinacms": "^3.6.1"
+    "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {
     "@types/node": "^20",
