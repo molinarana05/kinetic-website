@@ -423,19 +423,6 @@ const NoiseAndSignal = () => {
 // ─── Shuffling Founders Cards ──────────────────────────────────────────────────
 const founders = [
     {
-        name: "Anikesh Gaurav",
-        label: "SEO & AEO Lead",
-        src: "/anikesh-gaurav.jpg",
-        alt: "Anikesh Gaurav, SEO & AEO Lead",
-        imgClass: "object-cover object-top filter contrast-[1.1] brightness-[0.95]",
-        labelBg: "bg-[#CCFF00]",
-        labelText: "text-black",
-        borderFront: "border-[#CCFF00]",
-        borderBack: "border-white/20",
-        shadowFront: "shadow-[-16px_16px_0px_0px_rgba(204,255,0,0.2)]",
-        position: { bottom: 0, left: 0 } as React.CSSProperties,
-    },
-    {
         name: "Molina Rana",
         label: "Brand & Growth Leader",
         src: "/molina-rana-cutout.png",
@@ -448,11 +435,24 @@ const founders = [
         shadowFront: "shadow-[16px_16px_0px_0px_rgba(204,255,0,0.2)]",
         position: { top: 0, right: 0 } as React.CSSProperties,
     },
+    {
+        name: "Anikesh Gaurav",
+        label: "SEO & AEO Lead",
+        src: "/anikesh-gaurav.jpg",
+        alt: "Anikesh Gaurav, SEO & AEO Lead",
+        imgClass: "object-cover object-top filter contrast-[1.1] brightness-[0.95]",
+        labelBg: "bg-[#CCFF00]",
+        labelText: "text-black",
+        borderFront: "border-[#CCFF00]",
+        borderBack: "border-white/20",
+        shadowFront: "shadow-[-16px_16px_0px_0px_rgba(204,255,0,0.2)]",
+        position: { bottom: 0, left: 0 } as React.CSSProperties,
+    },
 ];
 
 function ShufflingFounders({ aboutImageY }: { aboutImageY: any }) {
     // topCard = index of founder currently on top (z-20)
-    const [topCard, setTopCard] = useState(1); // Molina starts on top
+    const [topCard, setTopCard] = useState(0); // Molina starts on top (index 0)
     const [isAnimating, setIsAnimating] = useState(false);
 
     const shuffle = () => {
@@ -465,9 +465,13 @@ function ShufflingFounders({ aboutImageY }: { aboutImageY: any }) {
     };
 
     useEffect(() => {
-        const interval = setInterval(shuffle, 3500);
-        return () => clearInterval(interval);
-    }, [isAnimating]);
+        if (isAnimating) return;
+        // Wait 4.5s on Molina (0) before swiping to Anikesh, causing a 1s delay.
+        // Wait 3.5s on Anikesh (1) before swiping back to Molina.
+        const delay = topCard === 0 ? 4500 : 3500;
+        const timer = setTimeout(shuffle, delay);
+        return () => clearTimeout(timer);
+    }, [topCard, isAnimating]);
 
     return (
         <motion.div
@@ -505,7 +509,7 @@ function ShufflingFounders({ aboutImageY }: { aboutImageY: any }) {
                                     filter: "brightness(1) grayscale(0%)",
                                 }
                                 : {
-                                    // i=0 Anikesh behind → tilt left (-4°); i=1 Molina behind → tilt right (+5°)
+                                    // i=0 Molina behind → tilt left (-4°); i=1 Anikesh behind → tilt right (+5°)
                                     scale: 0.93,
                                     rotate: i === 0 ? -4 : 5,
                                     x: i === 0 ? 8 : -8,
@@ -834,8 +838,8 @@ export default function HomeClient() {
                         <span className="text-[18px] font-bold text-[#CCFF00] uppercase tracking-[0.2em] mb-6 block">THE DECISION</span>
                         <h2 className="text-4xl md:text-6xl font-[900] text-white mb-10 leading-[1.1] uppercase">STOP GUESSING.<br />START OPERATING.</h2>
                         <div className="space-y-6 text-white text-lg md:text-xl font-medium leading-[1.6] max-w-2xl mb-12 px-8 md:px-0">
-                            <p>Agencies want your retainer. I want your results.</p>
-                            <p>The system is built. The engine is ready to be installed. I only partner with 2 founders at a time to ensure deep impact. If you are ready for a revenue-first content strategy, let us talk.</p>
+                            <p>Agencies want your retainer. We want your results.</p>
+                            <p>The system is built. The engine is ready to be installed. We only partner with 2 founders at a time to ensure deep impact. If you are ready for a revenue-first content strategy, let us talk.</p>
                         </div>
                         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="block w-[90%] sm:w-auto mx-auto md:mx-0">
                             <Button
