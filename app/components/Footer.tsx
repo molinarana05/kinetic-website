@@ -43,8 +43,12 @@ export default function Footer() {
                         <div>
                             <p className="text-xs uppercase tracking-widest font-bold text-gray-500 mb-3">Contact</p>
                             <a href="mailto:molina@moxie-digital.com"
-                                className="text-gray-300 hover:text-[#CCFF00] text-sm transition-colors">
+                                className="text-gray-300 hover:text-[#CCFF00] text-sm transition-colors block">
                                 molina@moxie-digital.com
+                            </a>
+                            <a href="mailto:anikesh@moxie-digital.com"
+                                className="text-gray-300 hover:text-[#CCFF00] text-sm transition-colors block mt-1">
+                                anikesh@moxie-digital.com
                             </a>
                         </div>
                     </div>
