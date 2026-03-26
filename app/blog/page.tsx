@@ -17,8 +17,8 @@ export default function BlogIndex() {
     // Safety check since we might not have enough posts to fill the exact NYT grid perfectly
     const leadPost = posts[0];
     const leftColPosts = posts.slice(1, 3);
-    const rightColPosts = posts.slice(3, 7);
-    const remainingPosts = posts.slice(7);
+    const rightColPosts = posts.slice(3, 11);
+    const remainingPosts = posts.slice(11);
 
     // Current date for the dateline
     const today = new Date().toLocaleDateString("en-US", {
@@ -104,7 +104,7 @@ export default function BlogIndex() {
                                         </span>
                                     ))}
                                 </div>
-                                <p className="text-xl lg:text-2xl text-gray-300 font-serif leading-relaxed text-center mb-8 px-4 lg:px-12">
+                                <p className="text-2xl lg:text-3xl text-gray-300 font-serif leading-relaxed text-center mb-8 px-4 lg:px-12">
                                     {leadPost.description}
                                 </p>
                                 <div className="flex text-center justify-center items-center gap-4 text-sm uppercase tracking-widest font-mono text-gray-400 border-t border-gradient-b py-4">

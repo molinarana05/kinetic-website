@@ -1,0 +1,7 @@
+Error: Client not configured properly. Missing clientId, token. Please visit https://tina.io/docs/r/what-is-tinacloud for more information
+    at Codegen._createApiUrl (file:///Users/molinarana/Desktop/Antigravity_Rescue/projects/kinetic-website/node_modules/@tinacms/cli/dist/index.js:624:13)
+    at Codegen.execute (file:///Users/molinarana/Desktop/Antigravity_Rescue/projects/kinetic-website/node_modules/@tinacms/cli/dist/index.js:530:53)
+    at async BuildCommand.execute (file:///Users/molinarana/Desktop/Antigravity_Rescue/projects/kinetic-website/node_modules/@tinacms/cli/dist/index.js:3193:20)
+    at async BuildCommand.validateAndExecute (/Users/molinarana/Desktop/Antigravity_Rescue/projects/kinetic-website/node_modules/clipanion/lib/advanced/Command.js:73:26)
+    at async Cli.run (/Users/molinarana/Desktop/Antigravity_Rescue/projects/kinetic-website/node_modules/clipanion/lib/advanced/Cli.js:223:24)
+    at async Cli.runExit (/Users/molinarana/Desktop/Antigravity_Rescue/projects/kinetic-website/node_modules/clipanion/lib/advanced/Cli.js:232:28)
