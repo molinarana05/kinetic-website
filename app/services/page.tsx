@@ -13,8 +13,7 @@ import { Navbar } from "../components/Navbar";
 import Link from "next/link";
 import Image from "next/image";
 
-const BOOKING_URL =
-    "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3L4_zCLswgoxBhyScpqolDXObrnSfhFLh-Kh2Nw68WXVrUpTlD6hPAXhCC0wVMtQ56B2lfDoPz";
+const BOOKING_URL = "/demo";
 
 /* ─── Animated Counter ─────────────────────────────────────────────────── */
 function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
