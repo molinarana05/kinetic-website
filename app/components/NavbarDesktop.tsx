@@ -20,6 +20,7 @@ const menuData = {
                 label: "Core Services",
                 items: [
                     { icon: <Search size={15} />, label: "B2B SEO Agency India", href: "/services/b2b-seo", desc: "Search intent that converts enterprise buyers" },
+                    { icon: <Search size={15} />, label: "SEO Agency for SaaS", href: "/services/seo-agency-for-saas", desc: "Pipeline-first SEO for SaaS companies" },
                     { icon: <FileText size={15} />, label: "Content Marketing India", href: "/services/content-marketing-india", desc: "Authority-first content, never volume-first" },
                     { icon: <Linkedin size={15} />, label: "LinkedIn Ghostwriting", href: "/services/linkedin-ghostwriting", desc: "Founder voice that earns pipeline, not likes" },
                     { icon: <Repeat2 size={15} />, label: "Content Repurposing", href: "/services/content-repurposing", desc: "1 hour of your time → 30+ strategic assets" },

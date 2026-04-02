@@ -3,6 +3,7 @@ import Image from "next/image";
 
 const services = [
     { href: "/services/b2b-seo", label: "B2B SEO Agency India" },
+    { href: "/services/seo-agency-for-saas", label: "SEO Agency for SaaS" },
     { href: "/services/content-marketing-india", label: "Content Marketing India" },
     { href: "/services/linkedin-ghostwriting", label: "LinkedIn Ghostwriting" },
     { href: "/services/content-repurposing", label: "Content Repurposing" },
