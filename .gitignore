@@ -4,3 +4,15 @@ node_modules
 .env
 .next/
 .tina/__generated__
+check-notion.js
+check-recent-leads.js
+list-notion-dbs.js
+db_id.txt
+db-schema.json
+headers.txt
+error.log
+error_utf8.log
+push_error.txt
+test-api.js
+test-crash.js
+out.txt
