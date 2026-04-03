@@ -49,9 +49,7 @@ export const NavbarDesktop = () => {
                 </div>
 
                 <Button
-                    href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3L4_zCLswgoxBhyScpqolDXObrnSfhFLh-Kh2Nw68WXVrUpTlD6hPAXhCC0wVMtQ56B2lfDoPz"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/demo"
                     variant="primary"
                     className="block"
                 >

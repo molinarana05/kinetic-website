@@ -839,9 +839,7 @@ export default function HomeClient() {
                         </div>
                         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="block w-[90%] sm:w-auto mx-auto md:mx-0">
                             <Button
-                                href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3L4_zCLswgoxBhyScpqolDXObrnSfhFLh-Kh2Nw68WXVrUpTlD6hPAXhCC0wVMtQ56B2lfDoPz"
-                                target="_blank"
-                                rel="noopener noreferrer"
+                                href="/demo"
                                 className="w-full sm:w-auto bg-[#CCFF00] text-black px-8 py-4 font-[900] tracking-[1px] text-sm uppercase rounded-[4px] border-none hover:bg-white hover:text-black transition-colors duration-300 shadow-[0_0_20px_rgba(204,255,0,0.3)]"
                             >
                                 BOOK YOUR ENGINE CALL

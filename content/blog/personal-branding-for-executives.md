@@ -96,6 +96,6 @@ This isn't about gaming an algorithm. It's about systematically putting your gen
 
 ---
 
-*Moxie Digital's [Founder Engine](/) does this for busy executives who want the outcomes of a world-class personal brand without spending 3 hours a day on content. [Book a call](https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3L4_zCLswgoxBhyScpqolDXObrnSfhFLh-Kh2Nw68WXVrUpTlD6hPAXhCC0wVMtQ56B2lfDoPz).*
+*Moxie Digital's [Founder Engine](/) does this for busy executives who want the outcomes of a world-class personal brand without spending 3 hours a day on content. [Book a call](/demo).*
 
 *Also worth reading: [Why B2B Founders Should Write Their Own LinkedIn Content](/blog/b2b-founders-linkedin-content) and [What Does a Branding Consultant Actually Do?](/blog/what-does-a-branding-consultant-do).*

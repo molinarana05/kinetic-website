@@ -97,6 +97,6 @@ Before signing anything, walk away if you see:
 
 ---
 
-*Moxie Digital operates as a [founder-led brand and content partner](/) — not a traditional branding consultant. We combine strategic clarity with operational execution so your brand gets distributed, not just defined. [Book a session](https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3L4_zCLswgoxBhyScpqolDXObrnSfhFLh-Kh2Nw68WXVrUpTlD6hPAXhCC0wVMtQ56B2lfDoPz).*
+*Moxie Digital operates as a [founder-led brand and content partner](/) — not a traditional branding consultant. We combine strategic clarity with operational execution so your brand gets distributed, not just defined. [Book a session](/demo).*
 
 *Also worth reading: [Personal Branding for Executives](/blog/personal-branding-for-executives) and [B2B Branding Agency or Founder-Led Growth?](/blog/b2b-branding-agency-vs-founder).*

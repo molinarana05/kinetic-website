@@ -5,7 +5,7 @@ import { Navbar } from "../../components/Navbar";
 import { EmailGate } from "../../components/EmailGate";
 import Link from "next/link";
 
-const BOOKING_URL = "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3L4_zCLswgoxBhyScpqolDXObrnSfhFLh-Kh2Nw68WXVrUpTlD6hPAXhCC0wVMtQ56B2lfDoPz";
+const BOOKING_URL = "/demo";
 
 const postTypes = [
     { id: "story", label: "📖 Personal Story", desc: "A lesson from your own experience" },
