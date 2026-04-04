@@ -45,7 +45,7 @@ export const HeroDesktop = () => {
                                     START THE ENGINE
                                 </Button>
                             </div>
-                            <Button variant="secondary" className="border-white/20 text-white hover:border-[#CCFF00] hover:text-[#CCFF00] px-8 py-4 text-lg rounded-[4px] font-[900] transition-all duration-300 hover:-translate-y-1">
+                            <Button href="/demo" variant="secondary" className="border-white/20 text-white hover:border-[#CCFF00] hover:text-[#CCFF00] px-8 py-4 text-lg rounded-[4px] font-[900] transition-all duration-300 hover:-translate-y-1">
                                 GET IN TOUCH
                             </Button>
                         </div>

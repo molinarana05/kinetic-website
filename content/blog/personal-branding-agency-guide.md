@@ -77,6 +77,6 @@ The right personal branding agency — whether it's a large firm or a senior sol
 
 ---
 
-*Moxie Digital works as a senior personal brand operator for B2B founders. We run a monthly [Extraction Session](/) to pull your genuine expertise into content that converts. [Book a call to see if we're a fit](https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3L4_zCLswgoxBhyScpqolDXObrnSfhFLh-Kh2Nw68WXVrUpTlD6hPAXhCC0wVMtQ56B2lfDoPz).*
+*Moxie Digital works as a senior personal brand operator for B2B founders. We run a monthly [Extraction Session](/) to pull your genuine expertise into content that converts. [Book a call to see if we're a fit](/demo).*
 
 *Also worth reading: [Personal Branding for Executives](/blog/personal-branding-for-executives) and [The LinkedIn Growth Blueprint for B2B Founders](/blog/linkedin-growth-strategy-b2b).*

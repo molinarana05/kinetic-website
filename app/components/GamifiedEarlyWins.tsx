@@ -127,7 +127,7 @@ export const GamifiedEarlyWins: React.FC = () => {
                     </p>
                     <Button
                         className="bg-[#CCFF00] text-black hover:bg-white hover:text-black px-12 py-6 text-lg rounded-[4px] font-[900] uppercase tracking-widest shadow-[0_0_20px_rgba(204,255,0,0.4)] hover:shadow-[0_0_30px_rgba(204,255,0,0.6)] transition-all duration-300 transform hover:scale-105 border-transparent"
-                        onClick={() => window.open('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3L4_zCLswgoxBhyScpqolDXObrnSfhFLh-Kh2Nw68WXVrUpTlD6hPAXhCC0wVMtQ56B2lfDoPz', '_blank')}
+                        onClick={() => window.open('/demo', '_blank')}
                     >
                         START THE ENGINE
                     </Button>

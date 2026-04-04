@@ -5,7 +5,7 @@ import { Navbar } from "../../components/Navbar";
 import { EmailGate } from "../../components/EmailGate";
 import Link from "next/link";
 
-const BOOKING_URL = "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3L4_zCLswgoxBhyScpqolDXObrnSfhFLh-Kh2Nw68WXVrUpTlD6hPAXhCC0wVMtQ56B2lfDoPz";
+const BOOKING_URL = "/demo";
 
 const questions = [
     { id: "headline", text: "Does your headline include your target keyword or the problem you solve (not just your job title)?", tip: "e.g. 'Helping B2B SaaS founders build inbound pipeline' beats 'Founder at Acme Corp'" },

@@ -262,9 +262,7 @@ export const NavbarDesktop = () => {
 
                 {/* CTA */}
                 <Button
-                    href={calendarUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/demo"
                     variant="primary"
                     className="block">
                     BOOK A CALL

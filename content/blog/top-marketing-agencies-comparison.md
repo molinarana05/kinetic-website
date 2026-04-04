@@ -85,6 +85,6 @@ This approach has lower upfront cost, faster feedback loops, and higher trust si
 
 ---
 
-*Moxie Digital is a [founder-led growth operator](/) — not a traditional marketing agency. We build the content system around your voice and your expertise, on a fraction of the agency retainer cost. [Talk to us](https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3L4_zCLswgoxBhyScpqolDXObrnSfhFLh-Kh2Nw68WXVrUpTlD6hPAXhCC0wVMtQ56B2lfDoPz).*
+*Moxie Digital is a [founder-led growth operator](/) — not a traditional marketing agency. We build the content system around your voice and your expertise, on a fraction of the agency retainer cost. [Talk to us](/demo).*
 
 *Also worth reading: [B2B Branding Agency or Founder-Led Growth?](/blog/b2b-branding-agency-vs-founder) and [Agency vs. In-house vs. Founder-Led Marketing: Which is Better?](/blog/agency-vs-in-house-vs-founder-led).*

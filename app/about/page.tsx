@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     alternates: { canonical: "https://www.moxie-digital.com/about" },
 };
 
-const BOOKING_URL = "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3L4_zCLswgoxBhyScpqolDXObrnSfhFLh-Kh2Nw68WXVrUpTlD6hPAXhCC0wVMtQ56B2lfDoPz";
+const BOOKING_URL = "/demo";
 
 const LOGO_MAP: Record<string, string> = {
     "Aviso AI": "/company-aviso-ai.png",

@@ -6,7 +6,7 @@ import { Navbar } from "../../components/Navbar";
 import { EmailGate } from "../../components/EmailGate";
 import Link from "next/link";
 
-const BOOKING_URL = "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3L4_zCLswgoxBhyScpqolDXObrnSfhFLh-Kh2Nw68WXVrUpTlD6hPAXhCC0wVMtQ56B2lfDoPz";
+const BOOKING_URL = "/demo";
 
 function Slider({ label, min, max, step, value, onChange, prefix = "", suffix = "", helpText = "" }: {
     label: string; min: number; max: number; step: number; value: number;

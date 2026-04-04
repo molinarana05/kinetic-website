@@ -614,7 +614,7 @@ export default function HomeClient() {
                         <div className="flex flex-col items-center gap-6 opacity-0 animate-fade-in-up w-full" style={{ animationDelay: "500ms", animationFillMode: "forwards" }}>
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
                                 <Button href="#how-it-works" className="w-full sm:w-auto px-8 py-4 text-lg shadow-[0_0_40px_rgba(204,255,0,0.5)] hover:shadow-[0_0_50px_rgba(204,255,0,0.8)] transition-all duration-300 hover:-translate-y-1 bg-[#CCFF00] text-black hover:bg-white rounded-[4px] font-[900]">START THE ENGINE</Button>
-                                <Button variant="secondary" className="w-full sm:w-auto border-white/20 text-white hover:border-[#CCFF00] hover:text-[#CCFF00] px-8 py-4 text-lg rounded-[4px] font-[900] transition-all duration-300 hover:-translate-y-1">GET IN TOUCH</Button>
+                                <Button href="/demo" variant="secondary" className="w-full sm:w-auto border-white/20 text-white hover:border-[#CCFF00] hover:text-[#CCFF00] px-8 py-4 text-lg rounded-[4px] font-[900] transition-all duration-300 hover:-translate-y-1">GET IN TOUCH</Button>
                             </div>
 
                         </div>
@@ -670,7 +670,7 @@ export default function HomeClient() {
                                         START THE ENGINE
                                     </Button>
                                 </div>
-                                <Button variant="secondary" className="w-full sm:w-auto border-white/20 text-white hover:border-[#CCFF00] hover:text-[#CCFF00] px-8 py-4 text-lg rounded-[4px] font-[900] transition-all duration-300 hover:-translate-y-1">
+                                <Button href="/demo" variant="secondary" className="w-full sm:w-auto border-white/20 text-white hover:border-[#CCFF00] hover:text-[#CCFF00] px-8 py-4 text-lg rounded-[4px] font-[900] transition-all duration-300 hover:-translate-y-1">
                                     GET IN TOUCH
                                 </Button>
                             </div>
@@ -843,9 +843,7 @@ export default function HomeClient() {
                         </div>
                         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="block w-[90%] sm:w-auto mx-auto md:mx-0">
                             <Button
-                                href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3L4_zCLswgoxBhyScpqolDXObrnSfhFLh-Kh2Nw68WXVrUpTlD6hPAXhCC0wVMtQ56B2lfDoPz"
-                                target="_blank"
-                                rel="noopener noreferrer"
+                                href="/demo"
                                 className="w-full sm:w-auto bg-[#CCFF00] text-black px-8 py-4 font-[900] tracking-[1px] text-sm uppercase rounded-[4px] border-none hover:bg-white hover:text-black transition-colors duration-300 shadow-[0_0_20px_rgba(204,255,0,0.3)]"
                             >
                                 BOOK YOUR ENGINE CALL
