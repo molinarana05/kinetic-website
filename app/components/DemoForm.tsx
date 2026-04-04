@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { Button } from "./ui/Button";
 
+const calendarUrl = "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3L4_zCLswgoxBhyScpqolDXObrnSfhFLh-Kh2Nw68WXVrUpTlD6hPAXhCC0wVMtQ56B2lfDoPz";
+
 interface FormData {
     name: string;
     email: string;
@@ -58,6 +60,11 @@ export function DemoForm() {
             }
 
             setStatus("success");
+            
+            const url = new URL(calendarUrl);
+            if (formData.name) url.searchParams.set("name", formData.name);
+            if (formData.email) url.searchParams.set("email", formData.email);
+            window.location.href = url.toString();
         } catch (error: any) {
             setStatus("error");
             setErrorMessage(error.message || "An unexpected error occurred.");
@@ -85,15 +92,29 @@ export function DemoForm() {
                 </motion.div>
                 <h3 className="text-3xl font-black text-white uppercase tracking-tighter mb-4">Request Received</h3>
                 <p className="text-gray-300 text-lg max-w-md mx-auto mb-8">
-                    We've securely logged your requirements. Our system is processing it, and we will be in touch shortly to deploy your engine.
+                    We've securely logged your requirements. A scheduling page should have automatically opened so you can book your deployment call.
                 </p>
-                <Button 
-                    onClick={() => { setStatus("idle"); setFormData({name: "", email: "", role: "", message: "", newsletter: true}); }}
-                    variant="secondary"
-                    className="border-white/20 hover:border-[#CCFF00] hover:text-[#CCFF00]"
-                >
-                    SUBMIT ANOTHER
-                </Button>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <Button 
+                        onClick={() => {
+                            const url = new URL(calendarUrl);
+                            if (formData.name) url.searchParams.set("name", formData.name);
+                            if (formData.email) url.searchParams.set("email", formData.email);
+                            window.location.href = url.toString();
+                        }}
+                        variant="primary"
+                        className="w-full sm:w-auto bg-[#CCFF00] text-black border-transparent font-black shadow-[0_0_20px_rgba(204,255,0,0.2)] hover:shadow-[0_0_30px_rgba(204,255,0,0.4)] hover:bg-white"
+                    >
+                        BOOK YOUR SLOT NOW
+                    </Button>
+                    <Button 
+                        onClick={() => { setStatus("idle"); setFormData({name: "", email: "", role: "", message: "", newsletter: true}); }}
+                        variant="secondary"
+                        className="w-full sm:w-auto border-white/20 hover:border-[#CCFF00] hover:text-[#CCFF00]"
+                    >
+                        SUBMIT ANOTHER
+                    </Button>
+                </div>
             </motion.div>
         );
     }
