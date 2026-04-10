@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+  <circle cx="40" cy="40" r="16" stroke="#CCFF00" stroke-width="2.5" fill="none"/>
+  <path d="M32 44 Q40 24 48 44" stroke="#CCFF00" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <circle cx="40" cy="40" r="3" fill="#CCFF00"/>
+  <text x="66" y="47" fill="white" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700">Antigravity</text>
+</svg>

@@ -19,6 +19,7 @@ import { MatrixLogStream } from "./components/ui/MatrixLogStream";
 import { TestimonialsDesktop } from "./components/TestimonialsDesktop";
 import Link from "next/link";
 import { GamifiedEarlyWins } from "./components/GamifiedEarlyWins";
+import { TechStackStrip } from "./components/TechStackStrip";
 
 // ─── Animated heading for Hero ────────────────────────────────────────────────
 const AnimatedHeroHeading = () => {
@@ -756,6 +757,9 @@ export default function HomeClient() {
                 </section>
             </div>
             <TestimonialsDesktop />
+
+            {/* AI Tools & Tech Stack */}
+            <TechStackStrip />
 
             {/* About */}
             <section id="about" className="py-16 md:py-40 relative z-10">
