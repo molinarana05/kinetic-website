@@ -592,11 +592,9 @@ export default function HomeClient() {
                         <div className="mb-6 md:mb-12 text-white w-full">
                             <AnimatedHeroHeading />
                         </div>
-                        <div className="flex flex-col items-center gap-4 mb-12 animate-fade-in-up w-full" style={{ animationDelay: "300ms" }}>
                             <h2 className="text-xl md:text-2xl text-gray-200 w-full max-w-4xl font-light leading-relaxed text-center">
-                                A full-stack content studio powered by <span className="text-[#CCFF00] font-[900]">AI precision</span> and <span className="text-[#CCFF00] font-[900]">senior human strategy</span>.
+                                A full-stack content studio where <span className="text-[#CCFF00] font-[900]">AI precision</span> meets <span className="text-[#CCFF00] font-[900]">senior human strategy</span>.
                             </h2>
-                        </div>
                     </div>
                 </div>
 
@@ -642,7 +640,7 @@ export default function HomeClient() {
                         </div>
                         <div className="flex flex-col items-center gap-4 mb-16 animate-fade-in-up w-full" style={{ animationDelay: "300ms" }}>
                             <h2 className="text-2xl xl:text-3xl text-gray-200 w-full max-w-4xl font-light leading-relaxed text-center">
-                                A full-stack content studio powered by <span className="text-[#CCFF00] font-[900]">AI precision</span> and <span className="text-[#CCFF00] font-[900]">senior human strategy</span>.
+                                A full-stack content studio where <span className="text-[#CCFF00] font-[900]">AI precision</span> meets <span className="text-[#CCFF00] font-[900]">senior human strategy</span>.
                             </h2>
                         </div>
                     </div>

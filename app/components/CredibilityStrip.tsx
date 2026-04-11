@@ -28,13 +28,24 @@ const TRACK = [...LOGOS, ...LOGOS];
 
 export const CredibilityStrip = () => {
     return (
-        <section className="py-10 md:py-16 border-gradient-y bg-[#0a0118] relative z-20">
-            <div className="w-full px-5 md:px-[80px] relative z-10 grid md:grid-cols-[200px_1fr] items-center gap-8 md:gap-12">
-
-                {/* Label */}
-                <h3 className="text-xs text-gray-500 font-medium uppercase tracking-widest text-center md:text-left whitespace-nowrap">
-                    Trusted by / Past work
-                </h3>
+        <section className="py-20 md:py-24 border-y border-white/5 bg-black relative z-20">
+            <div className="container mx-auto px-6 max-w-6xl relative z-10">
+                
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-10 mb-16">
+                    <div className="max-w-2xl">
+                        <span className="text-[#CCFF00] font-mono text-xs uppercase tracking-[0.3em] mb-4 block">
+                            Our Ecosystem
+                        </span>
+                        <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-white leading-[1.1] mb-6">
+                            Built Alongside<br />
+                            the Teams Shaping AI.
+                        </h2>
+                        <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-light">
+                            We operate inside the ecosystems that matter. Early adopters, active contributors, 
+                            and direct access to the platforms rewriting how B2B growth actually works.
+                        </p>
+                    </div>
+                </div>
 
                 {/* Marquee — overflow hidden + edge fade */}
                 <div
@@ -46,16 +57,11 @@ export const CredibilityStrip = () => {
                             "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
                     }}
                 >
-                    {/*
-                     * The inner track is exactly 2× the logo set wide.
-                     * `marquee` keyframe shifts it −50%, which lands on the
-                     * start of the duplicate → perfect seamless loop.
-                     */}
                     <div
-                        className="flex items-center gap-10"
+                        className="flex items-center gap-16 py-4"
                         style={{
                             width: "max-content",
-                            animation: "marquee 30s linear infinite",
+                            animation: "marquee 40s linear infinite",
                             willChange: "transform",
                         }}
                         onMouseEnter={e =>
@@ -68,14 +74,14 @@ export const CredibilityStrip = () => {
                         {TRACK.map((logo, i) => (
                             <div
                                 key={i}
-                                className="shrink-0 flex items-center justify-center"
-                                style={{ width: 120, height: 48 }}
+                                className="shrink-0 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-500 opacity-40 hover:opacity-100"
+                                style={{ width: 140, height: 56 }}
                             >
                                 <Image
                                     src={logo.src}
-                                    alt={`${logo.alt} – Moxie Digital client`}
-                                    width={120}
-                                    height={48}
+                                    alt={`${logo.alt} – Moxie Digital ecosystem`}
+                                    width={140}
+                                    height={56}
                                     className="object-contain max-w-full max-h-full"
                                     style={{ objectFit: "contain" }}
                                     draggable={false}
