@@ -699,6 +699,9 @@ export default function HomeClient() {
                 </div>
             </section>
 
+            {/* AI Tools & Tech Stack */}
+            <TechStackStrip />
+
             {/* Services */}
             <div id="services">
                 <div className="relative z-10 md:hidden">
@@ -755,9 +758,6 @@ export default function HomeClient() {
                 </section>
             </div>
             <TestimonialsDesktop />
-
-            {/* AI Tools & Tech Stack */}
-            <TechStackStrip />
 
             {/* About */}
             <section id="about" className="py-16 md:py-40 relative z-10">

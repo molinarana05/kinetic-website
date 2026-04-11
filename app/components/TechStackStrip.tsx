@@ -53,7 +53,7 @@ export const TechStackStrip = () => {
                     viewport={{ once: true }}
                     className="text-3xl md:text-5xl font-[900] tracking-tight uppercase mb-4"
                 >
-                    POWERED BY THE BEST
+                    BUILT ALONGSIDE THE TEAMS SHAPING AI
                 </motion.h2>
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
@@ -62,9 +62,9 @@ export const TechStackStrip = () => {
                     transition={{ delay: 0.1 }}
                     className="text-gray-400 text-sm md:text-lg max-w-2xl mx-auto leading-relaxed"
                 >
-                    We integrate the world&apos;s most advanced AI platforms
-                    into our content engine&mdash;so you get superhuman speed
-                    without sacrificing quality.
+                    We operate inside the ecosystems that matter. Early adopters,
+                    active contributors, and direct access to the platforms
+                    rewriting how B2B growth actually works.
                 </motion.p>
             </div>
 
@@ -105,7 +105,7 @@ export const TechStackStrip = () => {
                             >
                                 <Image
                                     src={tool.src}
-                                    alt={`${tool.name} – AI tool used by Moxie Digital`}
+                                    alt={`${tool.name} – used by Moxie Digital`}
                                     width={tool.w}
                                     height={48}
                                     className="object-contain max-h-full"
