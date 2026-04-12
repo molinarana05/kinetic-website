@@ -10,18 +10,21 @@ import { motion } from "framer-motion";
  * so they render as white-on-dark automatically.
  */
 const TOOLS: Tool[] = [
-    { name: "OpenAI",         src: "/tool-openai.png",       w: 160, invert: true },
-    { name: "Google Gemini",  src: "/tool-gemini.png",        w: 52,  invert: false },
-    { name: "Claude",         src: "/tool-claude.png",        w: 48,  invert: false, roundIcon: true },
-    { name: "Perplexity",     src: "/tool-perplexity.png",    w: 48,  invert: false, roundIcon: true },
-    { name: "Antigravity",    src: "/tool-antigravity.png",   w: 52,  invert: false },
-    { name: "Lovable",        src: "/tool-lovable.png",       w: 150, invert: true },
+    { name: "OpenAI",         src: "/tool-openai.png",       invert: true },
+    { name: "Google Gemini",  src: "/tool-gemini.png",        invert: false },
+    { name: "Claude",         src: "/tool-claude.png",        invert: false, roundIcon: true },
+    { name: "Perplexity",     src: "/tool-perplexity.png",    invert: false, roundIcon: true },
+    { name: "Codex",          src: "/tool-codex.png",         invert: false, roundIcon: true },
+    { name: "Cursor",         src: "/tool-cursor.png",        invert: true, roundIcon: true },
+    { name: "Meta AI",        src: "/tool-meta-ai.png",       invert: false, roundIcon: true },
+    { name: "Granola",        src: "/tool-granola.png",       invert: false, roundIcon: true },
+    { name: "Antigravity",    src: "/tool-antigravity.png",   invert: false },
+    { name: "Lovable",        src: "/tool-lovable.png",       invert: true },
 ];
 
 interface Tool {
     name: string;
     src: string;
-    w: number;
     invert: boolean;
     roundIcon?: boolean;
 }
@@ -79,10 +82,10 @@ export const TechStackStrip = () => {
                 }}
             >
                 <div
-                    className="flex items-center gap-16 md:gap-24"
+                    className="flex items-center gap-16 md:gap-20"
                     style={{
                         width: "max-content",
-                        animation: "marquee 28s linear infinite",
+                        animation: "marquee 45s linear infinite",
                         willChange: "transform",
                     }}
                     onMouseEnter={(e) =>
@@ -98,15 +101,15 @@ export const TechStackStrip = () => {
                             className="shrink-0 flex items-center justify-center gap-3"
                             style={{ height: 56 }}
                         >
-                            {/* Logo image */}
+                            {/* Logo icon — uniform 48×48 */}
                             <div
                                 className={`relative flex items-center justify-center ${tool.roundIcon ? "rounded-xl overflow-hidden" : ""}`}
-                                style={{ width: tool.w, height: 48 }}
+                                style={{ width: 48, height: 48 }}
                             >
                                 <Image
                                     src={tool.src}
                                     alt={`${tool.name} – used by Moxie Digital`}
-                                    width={tool.w}
+                                    width={48}
                                     height={48}
                                     className="object-contain max-h-full"
                                     style={{
@@ -119,12 +122,10 @@ export const TechStackStrip = () => {
                                 />
                             </div>
 
-                            {/* Name label (only for icon-only logos) */}
-                            {!tool.invert && (
-                                <span className="text-white/70 text-sm md:text-base font-bold uppercase tracking-wider whitespace-nowrap">
-                                    {tool.name}
-                                </span>
-                            )}
+                            {/* Name label — always shown */}
+                            <span className="text-white/70 text-sm md:text-base font-bold uppercase tracking-wider whitespace-nowrap">
+                                {tool.name}
+                            </span>
                         </div>
                     ))}
                 </div>
