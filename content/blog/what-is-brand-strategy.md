@@ -83,6 +83,6 @@ Write down your answers. That's your brand strategy. Everything else — the con
 
 ---
 
-*Moxie Digital builds [brand strategy into a live content engine](/), not a static PDF. If you'd like your brand strategy to generate inbound leads, [book a strategy call](https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3L4_zCLswgoxBhyScpqolDXObrnSfhFLh-Kh2Nw68WXVrUpTlD6hPAXhCC0wVMtQ56B2lfDoPz).*
+*Moxie Digital builds [brand strategy into a live content engine](/), not a static PDF. If you'd like your brand strategy to generate inbound leads, [book a strategy call](/demo).*
 
 *Also worth reading: [The LinkedIn Growth Blueprint for B2B Founders](/blog/linkedin-growth-strategy-b2b) and [Agency vs. In-house vs. Founder-led Marketing: Which is Better?](/blog/agency-vs-in-house-vs-founder-led).*

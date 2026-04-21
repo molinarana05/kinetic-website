@@ -7,7 +7,7 @@ import { NavbarDesktop } from "../../components/NavbarDesktop";
 import { ArrowRight, Search, Code, FileText, Link as LinkIcon, Bot, BarChart, Globe } from "lucide-react";
 
 export function SEOClient() {
-    const calendarUrl = "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3L4_zCLswgoxBhyScpqolDXObrnSfhFLh-Kh2Nw68WXVrUpTlD6hPAXhCC0wVMtQ56B2lfDoPz";
+    const calendarUrl = "/demo";
 
     const fadeInUp = {
         hidden: { opacity: 0, y: 30 },

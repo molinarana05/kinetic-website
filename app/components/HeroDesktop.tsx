@@ -49,8 +49,11 @@ export const HeroDesktop = () => {
 
                         {/* Credibility Line (Moved below buttons) */}
                         {/* Company Logo Strip */}
-                        <div className="flex items-center gap-3 flex-wrap">
-                            <span className="text-xs text-gray-600 font-mono uppercase tracking-widest">Led by Molina Rana — built at</span>
+                        <div className="flex flex-col md:flex-row items-center gap-4 flex-wrap">
+                            <span className="text-xs text-gray-600 font-mono uppercase tracking-widest leading-relaxed">
+                                Strategic insight from industry leaders —
+                            </span>
+                            <div className="flex items-center gap-4 flex-wrap">
                             {[
                                 { src: "/company-paytm.png", name: "Paytm", w: 56 },
                                 { src: "/company-bajaj-finserv.png", name: "Bajaj Finserv", w: 64 },
@@ -68,6 +71,7 @@ export const HeroDesktop = () => {
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
 
 

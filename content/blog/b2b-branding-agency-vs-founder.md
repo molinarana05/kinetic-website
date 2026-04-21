@@ -80,6 +80,6 @@ If they can't answer specifically and confidently, you have your answer.
 
 ---
 
-*Moxie Digital is a [Founder-Led Growth Engine](/) — not a traditional branding agency. We install a system that distributes your brand strategy through your own voice, generating inbound B2B pipeline without the overhead. [Book a call](https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3L4_zCLswgoxBhyScpqolDXObrnSfhFLh-Kh2Nw68WXVrUpTlD6hPAXhCC0wVMtQ56B2lfDoPz).*
+*Moxie Digital is a [Founder-Led Growth Engine](/) — not a traditional branding agency. We install a system that distributes your brand strategy through your own voice, generating inbound B2B pipeline without the overhead. [Book a call](/demo).*
 
 *Also worth reading: [Agency vs. In-house vs. Founder-Led Marketing: Which is Better?](/blog/agency-vs-in-house-vs-founder-led) and [What Is Brand Strategy?](/blog/what-is-brand-strategy).*

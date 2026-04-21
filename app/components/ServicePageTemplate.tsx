@@ -40,7 +40,7 @@ export function ServicePageTemplate({
     faq,
 }: ServicePageProps) {
     const calendarUrl =
-        "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3L4_zCLswgoxBhyScpqolDXObrnSfhFLh-Kh2Nw68WXVrUpTlD6hPAXhCC0wVMtQ56B2lfDoPz";
+        "/demo";
 
     const serviceSchema = {
         "@context": "https://schema.org",

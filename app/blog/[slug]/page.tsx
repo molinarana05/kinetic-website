@@ -210,7 +210,7 @@ export default async function BlogPost({ params }: Props) {
                 <div className="bg-black/40 border border-[#CCFF00]/30 p-10 rounded-2xl text-center">
                     <h3 className="text-2xl font-black mb-4 text-white uppercase tracking-tighter">Ready to build your engine?</h3>
                     <p className="text-gray-400 mb-8 max-w-lg mx-auto">Skip the generic agency retainers. Let's build a founder-led pipeline that actually pulls your ideal buyers inbound.</p>
-                    <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3L4_zCLswgoxBhyScpqolDXObrnSfhFLh-Kh2Nw68WXVrUpTlD6hPAXhCC0wVMtQ56B2lfDoPz" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#CCFF00] text-black font-black uppercase tracking-widest px-8 py-4 rounded hover:bg-white hover:-translate-y-1 transition-all">
+                    <a href="/demo" className="inline-block bg-[#CCFF00] text-black font-black uppercase tracking-widest px-8 py-4 rounded hover:bg-white hover:-translate-y-1 transition-all">
                         Book a Strategy Call
                     </a>
                 </div>

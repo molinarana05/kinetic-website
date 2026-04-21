@@ -103,6 +103,6 @@ Impressions are vanity. These metrics are signal.
 
 ---
 
-*Moxie Digital builds [brand awareness campaigns that are engineered for pipeline](/), not for applause. If you want to book more business with less cold outreach, [let's talk](https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3L4_zCLswgoxBhyScpqolDXObrnSfhFLh-Kh2Nw68WXVrUpTlD6hPAXhCC0wVMtQ56B2lfDoPz).*
+*Moxie Digital builds [brand awareness campaigns that are engineered for pipeline](/), not for applause. If you want to book more business with less cold outreach, [let's talk](/demo).*
 
 *Also worth reading: [What Is Brand Strategy?](/blog/what-is-brand-strategy) and [The LinkedIn Growth Blueprint for B2B Founders](/blog/linkedin-growth-strategy-b2b).*

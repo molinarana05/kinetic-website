@@ -8,7 +8,7 @@ import Link from "next/link";
 import { ArrowRight, RefreshCw, Maximize, Target, Image as ImageIcon, LayoutTemplate, Share2 } from "lucide-react";
 
 export function ContentRepurposingClient() {
-    const calendarUrl = "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3L4_zCLswgoxBhyScpqolDXObrnSfhFLh-Kh2Nw68WXVrUpTlD6hPAXhCC0wVMtQ56B2lfDoPz";
+    const calendarUrl = "/demo";
 
     const fadeInUp = {
         hidden: { opacity: 0, y: 30 },

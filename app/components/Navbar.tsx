@@ -63,9 +63,7 @@ export const Navbar = () => {
                     </div>
 
                     <Button
-                        href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3L4_zCLswgoxBhyScpqolDXObrnSfhFLh-Kh2Nw68WXVrUpTlD6hPAXhCC0wVMtQ56B2lfDoPz"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href="/demo"
                         variant="primary"
                         className="hidden md:block"
                     >
@@ -101,9 +99,7 @@ export const Navbar = () => {
                                     </Link>
                                 ))}
                                 <Link
-                                    href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3L4_zCLswgoxBhyScpqolDXObrnSfhFLh-Kh2Nw68WXVrUpTlD6hPAXhCC0wVMtQ56B2lfDoPz"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                    href="/demo"
                                     onClick={() => setIsOpen(false)}
                                     className="text-[#CCFF00] text-lg font-bold uppercase tracking-widest mt-4 border border-[#CCFF00] px-8 py-4 rounded hover:bg-[#CCFF00] hover:text-black transition-all"
                                 >

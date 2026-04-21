@@ -37,7 +37,7 @@ Consider Julia, a Marketing Director at an $80M ARR SaaS company. She has exactl
 
 Because her team lacks a dedicated content operator, Julia spends her evenings copy-editing technical articles, chasing down salespeople for quotes, and formatting WordPress posts. **The result?** Her team executes "random acts of content" just to meet publishing quotas, strategy is universally abandoned, and pipeline growth stalls at $2M per quarter because nobody has the bandwidth to properly distribute the content or attribute pipeline correctly. 
 
-This is where a specialized B2B content marketing agency transitions from being an "outsourced vendor" to an active strategic catalyst.
+This is where a [specialized B2B content marketing agency](/services/b2b-content-marketing) transitions from being an "outsourced vendor" to an active strategic catalyst.
 
 ---
 

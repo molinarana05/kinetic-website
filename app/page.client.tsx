@@ -19,6 +19,7 @@ import { MatrixLogStream } from "./components/ui/MatrixLogStream";
 import { TestimonialsDesktop } from "./components/TestimonialsDesktop";
 import Link from "next/link";
 import { GamifiedEarlyWins } from "./components/GamifiedEarlyWins";
+import { TechStackStrip } from "./components/TechStackStrip";
 
 // ─── Animated heading for Hero ────────────────────────────────────────────────
 const AnimatedHeroHeading = () => {
@@ -423,19 +424,6 @@ const NoiseAndSignal = () => {
 // ─── Shuffling Founders Cards ──────────────────────────────────────────────────
 const founders = [
     {
-        name: "Anikesh Gaurav",
-        label: "SEO & AEO Lead",
-        src: "/anikesh-gaurav.jpg",
-        alt: "Anikesh Gaurav, SEO & AEO Lead",
-        imgClass: "object-cover object-top filter contrast-[1.1] brightness-[0.95]",
-        labelBg: "bg-[#CCFF00]",
-        labelText: "text-black",
-        borderFront: "border-[#CCFF00]",
-        borderBack: "border-white/20",
-        shadowFront: "shadow-[-16px_16px_0px_0px_rgba(204,255,0,0.2)]",
-        position: { bottom: 0, left: 0 } as React.CSSProperties,
-    },
-    {
         name: "Molina Rana",
         label: "Brand & Growth Leader",
         src: "/molina-rana-cutout.png",
@@ -448,11 +436,24 @@ const founders = [
         shadowFront: "shadow-[16px_16px_0px_0px_rgba(204,255,0,0.2)]",
         position: { top: 0, right: 0 } as React.CSSProperties,
     },
+    {
+        name: "Anikesh Gaurav",
+        label: "SEO & AEO Lead",
+        src: "/anikesh-gaurav.jpg",
+        alt: "Anikesh Gaurav, SEO & AEO Lead",
+        imgClass: "object-cover object-top filter contrast-[1.1] brightness-[0.95]",
+        labelBg: "bg-[#CCFF00]",
+        labelText: "text-black",
+        borderFront: "border-[#CCFF00]",
+        borderBack: "border-white/20",
+        shadowFront: "shadow-[-16px_16px_0px_0px_rgba(204,255,0,0.2)]",
+        position: { bottom: 0, left: 0 } as React.CSSProperties,
+    },
 ];
 
 function ShufflingFounders({ aboutImageY }: { aboutImageY: any }) {
     // topCard = index of founder currently on top (z-20)
-    const [topCard, setTopCard] = useState(1); // Molina starts on top
+    const [topCard, setTopCard] = useState(0); // Molina starts on top (index 0)
     const [isAnimating, setIsAnimating] = useState(false);
 
     const shuffle = () => {
@@ -465,9 +466,13 @@ function ShufflingFounders({ aboutImageY }: { aboutImageY: any }) {
     };
 
     useEffect(() => {
-        const interval = setInterval(shuffle, 3500);
-        return () => clearInterval(interval);
-    }, [isAnimating]);
+        if (isAnimating) return;
+        // Wait 4.5s on Molina (0) before swiping to Anikesh, causing a 1s delay.
+        // Wait 3.5s on Anikesh (1) before swiping back to Molina.
+        const delay = topCard === 0 ? 4500 : 3500;
+        const timer = setTimeout(shuffle, delay);
+        return () => clearTimeout(timer);
+    }, [topCard, isAnimating]);
 
     return (
         <motion.div
@@ -505,7 +510,7 @@ function ShufflingFounders({ aboutImageY }: { aboutImageY: any }) {
                                     filter: "brightness(1) grayscale(0%)",
                                 }
                                 : {
-                                    // i=0 Anikesh behind → tilt left (-4°); i=1 Molina behind → tilt right (+5°)
+                                    // i=0 Molina behind → tilt left (-4°); i=1 Anikesh behind → tilt right (+5°)
                                     scale: 0.93,
                                     rotate: i === 0 ? -4 : 5,
                                     x: i === 0 ? 8 : -8,
@@ -587,11 +592,9 @@ export default function HomeClient() {
                         <div className="mb-6 md:mb-12 text-white w-full">
                             <AnimatedHeroHeading />
                         </div>
-                        <div className="flex flex-col items-center gap-4 mb-12 animate-fade-in-up w-full" style={{ animationDelay: "300ms" }}>
                             <h2 className="text-xl md:text-2xl text-gray-200 w-full max-w-4xl font-light leading-relaxed text-center">
-                                A full-stack content studio powered by <span className="text-[#CCFF00] font-[900]">AI precision</span> and <span className="text-[#CCFF00] font-[900]">senior human strategy</span>.
+                                A full-stack content studio where <span className="text-[#CCFF00] font-[900]">AI precision</span> meets <span className="text-[#CCFF00] font-[900]">senior human strategy</span>.
                             </h2>
-                        </div>
                     </div>
                 </div>
 
@@ -610,7 +613,7 @@ export default function HomeClient() {
                         <div className="flex flex-col items-center gap-6 opacity-0 animate-fade-in-up w-full" style={{ animationDelay: "500ms", animationFillMode: "forwards" }}>
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
                                 <Button href="#how-it-works" className="w-full sm:w-auto px-8 py-4 text-lg shadow-[0_0_40px_rgba(204,255,0,0.5)] hover:shadow-[0_0_50px_rgba(204,255,0,0.8)] transition-all duration-300 hover:-translate-y-1 bg-[#CCFF00] text-black hover:bg-white rounded-[4px] font-[900]">START THE ENGINE</Button>
-                                <Button variant="secondary" className="w-full sm:w-auto border-white/20 text-white hover:border-[#CCFF00] hover:text-[#CCFF00] px-8 py-4 text-lg rounded-[4px] font-[900] transition-all duration-300 hover:-translate-y-1">GET IN TOUCH</Button>
+                                <Button href="/demo" variant="secondary" className="w-full sm:w-auto border-white/20 text-white hover:border-[#CCFF00] hover:text-[#CCFF00] px-8 py-4 text-lg rounded-[4px] font-[900] transition-all duration-300 hover:-translate-y-1">GET IN TOUCH</Button>
                             </div>
 
                         </div>
@@ -637,7 +640,7 @@ export default function HomeClient() {
                         </div>
                         <div className="flex flex-col items-center gap-4 mb-16 animate-fade-in-up w-full" style={{ animationDelay: "300ms" }}>
                             <h2 className="text-2xl xl:text-3xl text-gray-200 w-full max-w-4xl font-light leading-relaxed text-center">
-                                A full-stack content studio powered by <span className="text-[#CCFF00] font-[900]">AI precision</span> and <span className="text-[#CCFF00] font-[900]">senior human strategy</span>.
+                                A full-stack content studio where <span className="text-[#CCFF00] font-[900]">AI precision</span> meets <span className="text-[#CCFF00] font-[900]">senior human strategy</span>.
                             </h2>
                         </div>
                     </div>
@@ -666,7 +669,7 @@ export default function HomeClient() {
                                         START THE ENGINE
                                     </Button>
                                 </div>
-                                <Button variant="secondary" className="w-full sm:w-auto border-white/20 text-white hover:border-[#CCFF00] hover:text-[#CCFF00] px-8 py-4 text-lg rounded-[4px] font-[900] transition-all duration-300 hover:-translate-y-1">
+                                <Button href="/demo" variant="secondary" className="w-full sm:w-auto border-white/20 text-white hover:border-[#CCFF00] hover:text-[#CCFF00] px-8 py-4 text-lg rounded-[4px] font-[900] transition-all duration-300 hover:-translate-y-1">
                                     GET IN TOUCH
                                 </Button>
                             </div>
@@ -695,6 +698,9 @@ export default function HomeClient() {
                     </div>
                 </div>
             </section>
+
+            {/* AI Tools & Tech Stack */}
+            <TechStackStrip />
 
             {/* Services */}
             <div id="services">
@@ -834,14 +840,12 @@ export default function HomeClient() {
                         <span className="text-[18px] font-bold text-[#CCFF00] uppercase tracking-[0.2em] mb-6 block">THE DECISION</span>
                         <h2 className="text-4xl md:text-6xl font-[900] text-white mb-10 leading-[1.1] uppercase">STOP GUESSING.<br />START OPERATING.</h2>
                         <div className="space-y-6 text-white text-lg md:text-xl font-medium leading-[1.6] max-w-2xl mb-12 px-8 md:px-0">
-                            <p>Agencies want your retainer. I want your results.</p>
-                            <p>The system is built. The engine is ready to be installed. I only partner with 2 founders at a time to ensure deep impact. If you are ready for a revenue-first content strategy, let us talk.</p>
+                            <p>Agencies want your retainer. We want your results.</p>
+                            <p>The system is built. The engine is ready to be installed. We only partner with 2 founders at a time to ensure deep impact. If you are ready for a revenue-first content strategy, let us talk.</p>
                         </div>
                         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="block w-[90%] sm:w-auto mx-auto md:mx-0">
                             <Button
-                                href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3L4_zCLswgoxBhyScpqolDXObrnSfhFLh-Kh2Nw68WXVrUpTlD6hPAXhCC0wVMtQ56B2lfDoPz"
-                                target="_blank"
-                                rel="noopener noreferrer"
+                                href="/demo"
                                 className="w-full sm:w-auto bg-[#CCFF00] text-black px-8 py-4 font-[900] tracking-[1px] text-sm uppercase rounded-[4px] border-none hover:bg-white hover:text-black transition-colors duration-300 shadow-[0_0_20px_rgba(204,255,0,0.3)]"
                             >
                                 BOOK YOUR ENGINE CALL
