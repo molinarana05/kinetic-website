@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const NOTION_TOKEN = process.env.NOTION_TOKEN;
+const NOTION_TOKEN = process.env.NOTION_API_KEY;
 const NOTION_DATABASE_ID = process.env.NOTION_DATABASE_ID;
 
 export async function POST(req: NextRequest) {
