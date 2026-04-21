@@ -50,13 +50,11 @@ export const Hero = () => {
                     </div>
 
                     {/* Cluster 3: Action (CTA) + Credibility */}
+                    <div className="flex flex-col items-center gap-6 opacity-0 animate-fade-in-up w-full" style={{ animationDelay: "500ms", animationFillMode: "forwards" }}>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-8 w-full px-4">
-                            <Button href="/demo" className="w-full sm:w-auto px-10 py-5 text-xl shadow-[0_0_40px_rgba(204,255,0,0.5)] hover:shadow-[0_0_50px_rgba(204,255,0,0.8)] transition-all duration-300 hover:-translate-y-1 bg-[#CCFF00] text-black hover:bg-white rounded-[4px] font-[900]">START THE ENGINE!!!</Button>
+                            <Button href="/demo" className="w-full sm:w-auto px-10 py-5 text-xl shadow-[0_0_40px_rgba(204,255,0,0.5)] hover:shadow-[0_0_50px_rgba(204,255,0,0.8)] transition-all duration-300 hover:-translate-y-1 bg-[#CCFF00] text-black hover:bg-white rounded-[4px] font-[900]">START THE ENGINE</Button>
                             <Button href="/demo" className="w-full sm:w-auto px-10 py-5 text-xl transition-all duration-300 hover:-translate-y-1 bg-white text-black hover:bg-[#CCFF00] rounded-[4px] font-[900]">BOOK A DEMO</Button>
                         </div>
-
-
-
                     </div>
                 </div>
             </div>
