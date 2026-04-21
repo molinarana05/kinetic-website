@@ -54,15 +54,12 @@ export const Hero = () => {
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
                             <div className="relative w-full sm:w-auto">
                                 <Button
-                                    href="#how-it-works"
+                                    href="https://www.moxie-digital.com/demo"
                                     className="w-full sm:w-auto px-8 py-4 text-lg shadow-[0_0_40px_rgba(204,255,0,0.5)] hover:shadow-[0_0_50px_rgba(204,255,0,0.8)] transition-all duration-300 hover:-translate-y-1 bg-[#CCFF00] text-black hover:bg-white rounded-[4px] font-[900]"
                                 >
                                     START THE ENGINE
                                 </Button>
                             </div>
-                            <Button href="/demo" variant="secondary" className="w-full sm:w-auto border-white/20 text-white hover:border-[#CCFF00] hover:text-[#CCFF00] px-8 py-4 text-lg rounded-[4px] font-[900] transition-all duration-300 hover:-translate-y-1">
-                                GET IN TOUCH
-                            </Button>
                         </div>
 
 
