@@ -19,7 +19,7 @@ One fair warning first. Ahrefs says the two studies are not a perfect match. Its
 
 **An AEO checklist is a fixed set of page and brand fixes that shape whether AI assistants name your company when a buyer asks who to hire. Moxie's version has 11 points, and each one comes with its source.**
 
-AEO means [answer engine optimization](/services/answer-engine-optimization). The goal is to get your company named and quoted inside AI answers, beyond appearing on a search results page.
+AEO means [answer engine optimization](/services/aeo). The goal is to get your company named and quoted inside AI answers, beyond appearing on a search results page.
 
 This matters because the buying process has changed. [Gartner surveyed 646 B2B buyers](https://www.gartner.com/en/newsroom/press-releases/2026-03-09-gartner-sales-survey-finds-67-percent-of-b2b-buyers-prefer-a-rep-free-experience) between August and September 2025 and published the findings on 9 March 2026. 67% said they prefer buying with no sales rep at all. 45% used AI during a recent purchase. Your next client could first see your company as one line inside a machine's answer. This checklist shapes what that line says and whether your name appears.
 
