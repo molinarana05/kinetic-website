@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-    title: "About Us | Moxie Digital",
+    title: "About Us",
     description: "Meet the founders of Moxie Digital: Molina Rana (Brand & Growth Marketing) and Anikesh Gaurav (SEO & AEO Specialist). Building revenue-first content systems.",
     alternates: { canonical: "https://www.moxie-digital.com/about" },
 };
