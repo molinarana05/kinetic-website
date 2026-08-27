@@ -1,11 +1,11 @@
-import { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { NewsletterClient } from "./NewsletterClient";
 
-export const metadata: Metadata = {
-    title: "B2B Newsletter Creation & Community Building | Moxie Digital",
+export const metadata = pageMeta({
+    title: "B2B Newsletter Creation & Community Building",
     description: "Build a compounding owned audience. We create strategic B2B newsletters that turn passive industry observers into an engaged community yielding massive ROI.",
-    alternates: { canonical: "https://www.moxie-digital.com/services/newsletters" },
-};
+    path: "/services/newsletters",
+});
 
 export default function NewslettersPage() {
     return <NewsletterClient />;
