@@ -1,11 +1,11 @@
-import { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { ContentRepurposingClient } from "./ContentRepurposingClient";
 
-export const metadata: Metadata = {
-    title: "Content Repurposing | Marketing Hub | Moxie Digital",
+export const metadata = pageMeta({
+    title: "Content Repurposing | Marketing Hub",
     description: "What is Content Repurposing? Discover why content repurposing is important and how to scale your brand by adapting evergreen content across visual formats.",
-    alternates: { canonical: "https://www.moxie-digital.com/services/content-repurposing" },
-};
+    path: "/services/content-repurposing",
+});
 
 export default function ContentRepurposingPage() {
     return <ContentRepurposingClient />;
