@@ -1,11 +1,11 @@
-import { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { CityPageClient } from "../../components/CityPageClient";
 
-export const metadata: Metadata = {
-    title: "Content Marketing Agency Mumbai | Enterprise B2B Marketing | Moxie Digital",
+export const metadata = pageMeta({
+    title: "Content Marketing Agency Mumbai | Enterprise B2B Marketing",
     description: "Mumbai's enterprise and fintech ecosystem requires a content agency that understands institutional risk. We write for CFOs and CISOs, not junior buyers.",
-    alternates: { canonical: "https://www.moxie-digital.com/services/content-marketing-mumbai" },
-};
+    path: "/services/content-marketing-mumbai",
+});
 
 export default function MumbaiPage() {
     return (
