@@ -1,11 +1,11 @@
-import { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { LinkedInBrandingClient } from "./LinkedInBrandingClient";
 
-export const metadata: Metadata = {
-    title: "17-Minute LinkedIn Personal Branding Strategy | Moxie Digital",
+export const metadata = pageMeta({
+    title: "17-Minute LinkedIn Personal Branding Strategy",
     description: "Launch your founder brand on LinkedIn in minutes a day. We build end-to-end LinkedIn content engines that position you as an industry authority.",
-    alternates: { canonical: "https://www.moxie-digital.com/services/linkedin-branding" },
-};
+    path: "/services/linkedin-branding",
+});
 
 export default function LinkedInBrandingPage() {
     return <LinkedInBrandingClient />;
