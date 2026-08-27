@@ -1,11 +1,11 @@
-import { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { CityPageClient } from "../../components/CityPageClient";
 
-export const metadata: Metadata = {
-    title: "Content Marketing Agency Delhi NCR | B2B Gurgaon Noida | Moxie Digital",
+export const metadata = pageMeta({
+    title: "Content Marketing Agency Delhi NCR | B2B Gurgaon Noida",
     description: "NCR's fastest-scaling B2B companies need a content partner that understands complex enterprise pipelines, not consumer hustle culture.",
-    alternates: { canonical: "https://www.moxie-digital.com/services/content-marketing-delhi" },
-};
+    path: "/services/content-marketing-delhi",
+});
 
 export default function DelhiPage() {
     return (
