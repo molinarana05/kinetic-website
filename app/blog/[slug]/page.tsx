@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const image = (postData as any).image || "https://www.moxie-digital.com/og-default.png";
 
     return {
-        title: `${postData.title} | Moxie Digital`,
+        title: postData.title,
         description,
         alternates: { canonical: `https://www.moxie-digital.com/blog/${params.slug}` },
         openGraph: {
