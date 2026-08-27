@@ -1,11 +1,11 @@
+import { pageMeta } from "@/lib/seo";
 import { ServicePageTemplate } from "../../components/ServicePageTemplate";
-import { Metadata } from "next";
 
-export const metadata: Metadata = {
-    title: "AI Agent Workflows for Marketing Teams | Moxie Digital",
+export const metadata = pageMeta({
+    title: "AI Agent Workflows for Marketing Teams",
     description: "Deploy autonomous AI agents that research, create, and distribute B2B marketing content at scale. Stop acting like a prompt engineer and start acting like a manager.",
-    alternates: { canonical: "https://www.moxie-digital.com/services/ai-agents" },
-};
+    path: "/services/ai-agents",
+});
 
 export default function AIAgentsPage() {
     return (
