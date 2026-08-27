@@ -3,7 +3,7 @@ import { Navbar } from "../components/Navbar";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Privacy Policy | Moxie Digital",
+    title: "Privacy Policy",
     description: "Privacy Policy for Moxie Digital — how we collect, use, and protect your information.",
     alternates: { canonical: "https://www.moxie-digital.com/privacy-policy" },
 };
