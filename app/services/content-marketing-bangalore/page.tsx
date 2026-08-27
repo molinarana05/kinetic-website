@@ -1,11 +1,11 @@
-import { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { CityPageClient } from "../../components/CityPageClient";
 
-export const metadata: Metadata = {
-    title: "Content Marketing Agency Bangalore | B2B SaaS Marketing | Moxie Digital",
+export const metadata = pageMeta({
+    title: "Content Marketing Agency Bangalore | B2B SaaS Marketing",
     description: "The only B2B content marketing agency that understands Bangalore's SaaS ecosystem. We build Signal-first content for Indiranagar to HSR Layout.",
-    alternates: { canonical: "https://www.moxie-digital.com/services/content-marketing-bangalore" },
-};
+    path: "/services/content-marketing-bangalore",
+});
 
 export default function BangalorePage() {
     return (
