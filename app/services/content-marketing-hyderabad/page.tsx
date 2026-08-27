@@ -1,11 +1,11 @@
-import { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { CityPageClient } from "../../components/CityPageClient";
 
-export const metadata: Metadata = {
-    title: "Content Marketing Agency Hyderabad | Deep Tech & GCC Marketing | Moxie Digital",
+export const metadata = pageMeta({
+    title: "Content Marketing Agency Hyderabad | Deep Tech & GCC Marketing",
     description: "Hyderabad's GCCs, pharma, and deep-tech companies need a content agency that speaks enterprise. We write technical authority that closes procurement deals.",
-    alternates: { canonical: "https://www.moxie-digital.com/services/content-marketing-hyderabad" },
-};
+    path: "/services/content-marketing-hyderabad",
+});
 
 export default function HyderabadPage() {
     return (
