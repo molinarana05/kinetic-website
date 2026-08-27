@@ -1,12 +1,12 @@
-import { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { AEOClient } from "./AEOClient";
 import Script from "next/script";
 
-export const metadata: Metadata = {
-    title: "What is Answer Engine Optimization? | AEO Services | Moxie Digital",
+export const metadata = pageMeta({
+    title: "What is Answer Engine Optimization? | AEO Services",
     description: "Explore what answer engine optimization (AEO) is and why it's necessary to stay competitive in an AI-driven digital landscape like ChatGPT and Perplexity.",
-    alternates: { canonical: "https://www.moxie-digital.com/services/aeo" },
-};
+    path: "/services/aeo",
+});
 
 const aeoFaqJsonLd = {
     "@context": "https://schema.org",
