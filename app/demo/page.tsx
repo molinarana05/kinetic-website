@@ -6,7 +6,7 @@ import { InteractiveGridDesktop } from '../components/ui/InteractiveGridDesktop'
 import { MatrixLogStream } from '../components/ui/MatrixLogStream';
 
 export const metadata: Metadata = {
-    title: 'Deploy The Engine | Moxie Digital',
+    title: 'Deploy The Engine',
     description: 'Provide your requirements and let us map the blueprint for your compounding pipeline engine.',
     robots: {
         index: false,
