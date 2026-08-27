@@ -3,7 +3,7 @@ import { Navbar } from "../components/Navbar";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Terms of Service | Moxie Digital",
+    title: "Terms of Service",
     description: "Terms of Service for Moxie Digital — the rules and conditions governing use of our website and services.",
     alternates: { canonical: "https://www.moxie-digital.com/terms-of-service" },
 };
