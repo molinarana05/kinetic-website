@@ -4,7 +4,7 @@ import { Navbar } from "../components/Navbar";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Free B2B Marketing Tools | Moxie Digital",
+    title: "Free B2B Marketing Tools",
     description: "Free tools for B2B founders: LinkedIn profile grader, founder brand score, hook generator, content idea bank, and content agency readiness quiz.",
     alternates: { canonical: "https://www.moxie-digital.com/tools" },
 };
