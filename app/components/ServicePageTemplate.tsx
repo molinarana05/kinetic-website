@@ -2,8 +2,6 @@ import Link from "next/link";
 import { NavbarDesktop } from "./NavbarDesktop";
 import { Navbar } from "./Navbar";
 import { Metadata } from "next";
-import Script from "next/script";
-
 interface ServiceFeature {
     icon: string;
     title: string;
@@ -73,13 +71,13 @@ export function ServicePageTemplate({
 
     return (
         <main className="min-h-screen bg-[#0a0118] text-white selection:bg-[#CCFF00]/30 overflow-x-hidden">
-            <Script
+            <script
                 id={`service-schema-${tag}`}
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
             />
             {faq.length > 0 && (
-                <Script
+                <script
                     id={`faq-schema-${tag}`}
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
