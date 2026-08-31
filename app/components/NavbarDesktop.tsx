@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "./ui/Button";
 import { cn } from "@/lib/utils";
 import {
@@ -222,7 +223,7 @@ export const NavbarDesktop = () => {
             <div className="relative max-w-6xl mx-auto flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="h-10 md:h-14 lg:h-20 relative flex items-center z-10">
-                    <img src="/logo.png?v=new" alt="Moxie Digital Logo" className="object-contain h-full w-auto" />
+                    <Image src="/logo.png" alt="Moxie Digital Logo" width={500} height={500} sizes="80px" priority className="object-contain h-full w-auto" />
                 </Link>
 
                 {/* Nav Items */}
