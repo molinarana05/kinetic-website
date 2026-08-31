@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { Navbar } from "../../components/Navbar";
 import { NavbarDesktop } from "../../components/NavbarDesktop";
 import Link from "next/link";
-import Script from "next/script";
 import {
     ArrowRight,
     Search,
@@ -128,10 +127,9 @@ function FAQSection() {
 export function SaaSSEOClient() {
     return (
         <main className="min-h-screen bg-[#0a0118] text-white selection:bg-[#CCFF00]/30 overflow-x-hidden">
-            <Script
+            <script
                 id="faq-schema-saas-seo"
                 type="application/ld+json"
-                strategy="beforeInteractive"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
             <div className="md:hidden">
