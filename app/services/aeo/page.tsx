@@ -1,7 +1,5 @@
 import { pageMeta } from "@/lib/seo";
 import { AEOClient } from "./AEOClient";
-import Script from "next/script";
-
 export const metadata = pageMeta({
     title: "What is Answer Engine Optimization? | AEO Services",
     description: "Explore what answer engine optimization (AEO) is and why it's necessary to stay competitive in an AI-driven digital landscape like ChatGPT and Perplexity.",
@@ -68,16 +66,14 @@ const aeoServiceJsonLd = {
 export default function AEOPage() {
     return (
         <>
-            <Script
+            <script
                 id="jsonld-aeo-faq"
                 type="application/ld+json"
-                strategy="beforeInteractive"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(aeoFaqJsonLd) }}
             />
-            <Script
+            <script
                 id="jsonld-aeo-breadcrumb"
                 type="application/ld+json"
-                strategy="beforeInteractive"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(aeoServiceJsonLd) }}
             />
             <AEOClient />
