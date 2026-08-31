@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "./ui/Button";
 import { TypewriterEffect } from "./ui/TypewriterEffect";
 import { cn } from "@/lib/utils";
@@ -40,7 +41,7 @@ export const Navbar = () => {
                 <div className="max-w-6xl w-full flex items-center justify-between">
                     <Link href="/" className="relative h-10 md:h-14 lg:h-16 z-50 flex items-center justify-start">
                         {/* Using the uploaded logo */}
-                        <img src="/logo.png?v=new" alt="Moxie Digital - B2B Content Marketing and Founder-Led Growth Agency Logo" className="object-contain object-left h-full w-auto" />
+                        <Image src="/logo.png" alt="Moxie Digital - B2B Content Marketing and Founder-Led Growth Agency Logo" width={500} height={500} sizes="64px" priority className="object-contain object-left h-full w-auto" />
                     </Link>
 
                     {/* DESKTOP NAV */}
