@@ -45,7 +45,7 @@ export default function Footer() {
                     {/* Brand — spans 2 cols */}
                     <div className="sm:col-span-2 md:col-span-2">
                         <Link href="/" className="block w-36 h-10 mb-5 relative">
-                            <Image src="/logo.png" alt="Moxie Digital - B2B Content Marketing and Founder-Led Growth Agency Logo" fill className="object-contain object-left" />
+                            <Image src="/logo.png" alt="Moxie Digital - B2B Content Marketing and Founder-Led Growth Agency Logo" fill sizes="144px" className="object-contain object-left" />
                         </Link>
                         <p className="text-gray-400 text-sm leading-relaxed max-w-xs mb-5">
                             Founder-led content engines for B2B challenger brands. Revenue-first. No fluff.
