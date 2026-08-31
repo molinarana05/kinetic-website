@@ -147,10 +147,9 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${inter.className} bg-[#0a0118] text-[#e8e4df] antialiased overflow-x-hidden`}>
-                <Script
+                <script
                     id="jsonld-sitewide"
                     type="application/ld+json"
-                    strategy="afterInteractive"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(MOXIE_SITE_JSONLD) }}
                 />
                 <Script
