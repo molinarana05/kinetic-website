@@ -1,7 +1,5 @@
 import { Metadata } from "next";
 import HomeClient from "./page.client";
-import Script from "next/script";
-
 export const metadata: Metadata = {
     title: "Moxie Digital | Full-Stack Content Studio",
     description: "A full-stack content studio powered by AI precision and senior human strategy. Eight engines. One system. Compounding pipeline.",
@@ -73,10 +71,9 @@ const faqJsonLd = {
 export default function Home() {
     return (
         <>
-            <Script
+            <script
                 id="jsonld-faqpage"
                 type="application/ld+json"
-                strategy="beforeInteractive"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
             />
             <HomeClient />
