@@ -5,8 +5,6 @@ import { Navbar } from "../../components/Navbar";
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
-import Script from 'next/script';
-
 type Props = {
     params: { slug: string };
 };
@@ -131,16 +129,14 @@ export default async function BlogPost({ params }: Props) {
 
     return (
         <main className="min-h-screen bg-[#0a0118] text-white selection:bg-neon/30 pb-24">
-            <Script
+            <script
                 id={`jsonld-article-${params.slug}`}
                 type="application/ld+json"
-                strategy="beforeInteractive"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
             />
-            <Script
+            <script
                 id={`jsonld-breadcrumb-${params.slug}`}
                 type="application/ld+json"
-                strategy="beforeInteractive"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
             />
             <div className="md:hidden"><Navbar /></div>
