@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { Navbar } from "./Navbar";
 import { NavbarDesktop } from "./NavbarDesktop";
 import Link from "next/link";
-import Script from "next/script";
 import { ArrowRight, FileText, Zap, Target, BarChart2, Users, ChevronDown } from "lucide-react";
 
 const calendarUrl = "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3L4_zCLswgoxBhyScpqolDXObrnSfhFLh-Kh2Nw68WXVrUpTlD6hPAXhCC0wVMtQ56B2lfDoPz";
@@ -155,7 +154,7 @@ export function CityPageClient({ city, subtitle, heroLine1, heroLine2, problem, 
 
     return (
         <main className="min-h-screen bg-[#0a0118] text-white selection:bg-[#CCFF00]/30 overflow-x-hidden">
-            <Script id={`faq-schema-${city.toLowerCase().replace(/[\/\s]/g, '-')}`} type="application/ld+json" strategy="beforeInteractive"
+            <script id={`faq-schema-${city.toLowerCase().replace(/[\/\s]/g, '-')}`} type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
             <div className="md:hidden"><Navbar /></div>
             <NavbarDesktop />
