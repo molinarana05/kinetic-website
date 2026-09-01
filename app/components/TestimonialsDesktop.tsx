@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export const TestimonialsDesktop = () => {
@@ -51,7 +52,7 @@ export const TestimonialsDesktop = () => {
                             <div className="flex items-center gap-4">
                                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#CCFF00] to-black flex items-center justify-center font-bold text-black border border-[#CCFF00] overflow-hidden">
                                     {item.img ? (
-                                        <img src={item.img} alt={`${item.n}, ${item.r} - Testimonial for Moxie Digital Marketing`} className="w-full h-full object-cover" />
+                                        <Image src={item.img} alt={`${item.n}, ${item.r} - Testimonial for Moxie Digital Marketing`} width={96} height={96} sizes="48px" className="w-full h-full object-cover" />
                                     ) : (
                                         item.n.charAt(0)
                                     )}
