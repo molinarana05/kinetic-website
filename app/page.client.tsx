@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 import { Navbar } from "./components/Navbar";
 import { NavbarDesktop } from "./components/NavbarDesktop";
 import { Hero } from "./components/Hero";
@@ -522,9 +523,11 @@ function ShufflingFounders({ aboutImageY }: { aboutImageY: any }) {
                         transition={{ type: "spring", stiffness: 280, damping: 28, mass: 0.9 }}
                         whileHover={!isTop ? { scale: 0.96, filter: "brightness(0.75) grayscale(20%)" } : {}}
                     >
-                        <img
+                        <Image
                             src={f.src}
                             alt={f.alt}
+                            fill
+                            sizes="(max-width: 768px) 60vw, 33vw"
                             className={`w-full h-full ${f.imgClass}`}
                         />
                         {/* Name badge */}
@@ -730,7 +733,7 @@ export default function HomeClient() {
                                                 <p className="text-gray-300 text-lg mb-8 leading-relaxed font-light italic relative z-10 pt-4">&ldquo;{t.quote}&rdquo;</p>
                                                 <div className="mt-auto flex items-center gap-3 relative z-10">
                                                     <div className="w-10 h-10 rounded-full overflow-hidden border border-white/20 shrink-0">
-                                                        <img src={t.image} alt={`${t.name}, B2B client testimonial for Moxie Digital`} className="w-full h-full object-cover" onError={(e) => e.currentTarget.style.display = 'none'} />
+                                                        <Image src={t.image} alt={`${t.name}, B2B client testimonial for Moxie Digital`} width={96} height={96} sizes="40px" className="w-full h-full object-cover" onError={(e) => e.currentTarget.style.display = 'none'} />
                                                     </div>
                                                     <div className="flex-1">
                                                         <div className="font-bold text-neon tracking-widest text-sm mb-1 uppercase">{t.name}</div>
